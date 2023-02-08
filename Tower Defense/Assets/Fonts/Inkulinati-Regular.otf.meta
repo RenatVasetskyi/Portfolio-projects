@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 8260681d70f1a9d4e83bcbde824b0cab
+guid: 5fcb6f1103abed343b0f37ebaf6f96c4
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 180
+  fontSize: 100
   forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Square Meal
+  - Inkulinati 210706
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 8260681d70f1a9d4e83bcbde824b0cab
+guid: 6827bea880d9f80428f753ec7878c3bb
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 180
-  forceTextureCase: -1
+  fontSize: 100
+  forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Square Meal
+  - Dirtchunk
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class WaweController : MonoBehaviour
 {
@@ -13,6 +15,13 @@ public class WaweController : MonoBehaviour
     [SerializeField] private GameObject _goblin;
 
     [SerializeField] private Dictionary<EnemyType, GameObject> _prefabs;
+
+    [SerializeField] private Button _waveButton;
+
+    private void Awake()
+    {      
+        _waveButton.onClick.AddListener(OnWaveButtonClickHandler);
+    }
 
     private IEnumerator RunWave()
     {
@@ -31,16 +40,16 @@ public class WaweController : MonoBehaviour
                 foreach (var enemySpawnData in enemyOnWaveData.EnemySpawnDatas)
                 {
                     for (int i = 0; i < enemySpawnData.EnemyCount; i++)
-                    {                       
-                        Instantiate(_prefabs[enemySpawnData.Enemy], _startPoint.position, _startPoint.rotation, _parent);
-                    }                                    
+                    {
+                        Instantiate(_prefabs[enemySpawnData.Enemy], _startPoint.position, _startPoint.rotation, _parent);                       
+                    }
                 }
             }
         }
     }
 
-    private void Start()
-    {
+    private void OnWaveButtonClickHandler()
+    {       
         StartCoroutine(RunWave());
     }
 }
