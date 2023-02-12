@@ -80,7 +80,7 @@ Animator:
   m_GameObject: {fileID: 209798540425749090}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8bbf8b7b8b5f1144ba263c0e541f0452, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e0a36003694c2b94588496a577d65eb4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -3489,6 +3489,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  _camera: {fileID: 0}
 --- !u!1 &8139494151910112159
 GameObject:
   m_ObjectHideFlags: 0
