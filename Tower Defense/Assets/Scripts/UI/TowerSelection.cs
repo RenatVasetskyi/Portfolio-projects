@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class TowerSelection : MonoBehaviour
 {
-    [SerializeField] private GameObject _buildView;
+    [SerializeField] protected GameObject _builView;
 
     [SerializeField] private Button _mageTowerButton;
     [SerializeField] private Button _cannonTowerButton;
@@ -20,7 +20,7 @@ public class TowerSelection : MonoBehaviour
 
     [SerializeField] private Image _towerDescriptionBackground;
 
-    [SerializeField] private TextMeshProUGUI _towerDescription;
+    [SerializeField] private TextMeshProUGUI _towerDescription;  
 
     private float _descriptionShift = 400;
    
@@ -41,6 +41,12 @@ public class TowerSelection : MonoBehaviour
         _megaTowerImage.gameObject.SetActive(true);
         _speedTowerImage.gameObject.SetActive(true);
         _towerDescriptionBackground.gameObject.SetActive(false);
+    }
+    
+    private void HideBuildView()
+    {
+        _builView.SetActive(false);
+        ResetSelectionView();
     }
 
     private void OnMageTowerButtonClickHandler()
@@ -65,8 +71,8 @@ public class TowerSelection : MonoBehaviour
 
     private void OnCheckMarkButtonClickHandler()
     {
-        ResetSelectionView();
-
+        HideBuildView();
+        //Creating tower method
     }
 
     private void ViewingTheTower(TowerType towerType)

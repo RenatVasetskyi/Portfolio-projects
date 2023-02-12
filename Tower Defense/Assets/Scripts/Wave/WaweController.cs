@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -18,9 +19,12 @@ public class WaweController : MonoBehaviour
 
     [SerializeField] private Button _waveButton;
 
+    [SerializeField] private TextMeshProUGUI _waveCountText;
+
     private void Awake()
     {      
-        _waveButton.onClick.AddListener(OnWaveButtonClickHandler);
+        _waveButton.onClick.AddListener(OnWaveButtonClickHandler);       
+        _waveCountText.text = $"Wave {0} / {_waveDescription.WaveDatas.Count}";
     }
 
     private IEnumerator RunWave()
@@ -33,6 +37,8 @@ public class WaweController : MonoBehaviour
 
         foreach (var waveData in _waveDescription.WaveDatas)
         {
+            _waveCountText.text = $"Wave {waveData.WaveNumber} / {_waveDescription.WaveDatas.Count}";
+
             foreach (var enemyOnWaveData in waveData.EnemyOnWaveDatas)
             {
                 yield return new WaitForSeconds(enemyOnWaveData.TimeDelay);
@@ -51,5 +57,6 @@ public class WaweController : MonoBehaviour
     private void OnWaveButtonClickHandler()
     {       
         StartCoroutine(RunWave());
+        _waveButton.interactable = false;
     }
 }

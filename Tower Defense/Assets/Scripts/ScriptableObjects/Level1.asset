@@ -18,13 +18,13 @@ MonoBehaviour:
     - _enemySpawnDatas:
       - _enemy: 1
         _enemyCount: 3
-      _timeDelay: 5
+      _timeDelay: 10
   - _waveNumber: 2
     _enemyOnWaveDatas:
     - _enemySpawnDatas:
       - _enemy: 0
         _enemyCount: 4
-      _timeDelay: 7
+      _timeDelay: 20
   - _waveNumber: 3
     _enemyOnWaveDatas:
     - _enemySpawnDatas:
@@ -32,5 +32,5 @@ MonoBehaviour:
         _enemyCount: 3
       - _enemy: 1
         _enemyCount: 3
-      _timeDelay: 10
+      _timeDelay: 25
   _level: 1

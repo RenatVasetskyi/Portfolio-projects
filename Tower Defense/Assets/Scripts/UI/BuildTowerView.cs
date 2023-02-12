@@ -7,15 +7,13 @@ public class BuildTowerView : TowerSelection
 
     [SerializeField] private Camera _camera;  
 
-    [SerializeField] private GameObject _buildButton;
-
     private void LateUpdate()
-    {                   
-        OpenBuildView();
-        HideBuildView();       
+    {
+        OpenBuildViewWithTouch();
+        HideBuildViewWithTouch();       
     }
 
-    private void OpenBuildView()
+    private void OpenBuildViewWithTouch()
     {
         if (Input.touchCount > 0)
         {
@@ -29,15 +27,15 @@ public class BuildTowerView : TowerSelection
                 {
                     if (hit.collider.gameObject.layer == 6)
                     {
-                        _buildButton.gameObject.SetActive(true);
-                        _buildButton.transform.position = touch.position;
+                        _builView.gameObject.SetActive(true);
+                        _builView.transform.position = touch.position;
                     }
                 }
             }
         }
     }
-
-    private void HideBuildView()
+    
+    private void HideBuildViewWithTouch()
     {
         if (Input.touchCount > 0)
         {
@@ -51,7 +49,7 @@ public class BuildTowerView : TowerSelection
                 {
                     if (hit.collider.gameObject.layer == 7)
                     {
-                        _buildButton.gameObject.SetActive(false);
+                        _builView.gameObject.SetActive(false);
                         ResetSelectionView();
                     }
                 }
