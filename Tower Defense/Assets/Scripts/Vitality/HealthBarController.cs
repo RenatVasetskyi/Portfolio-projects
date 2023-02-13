@@ -10,8 +10,6 @@ public class HealthBarController : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image _fill;
     [SerializeField] private Gradient _gradient;
 
-    [SerializeField] private Transform _camera;
-
     public void SetMaxHealth(float health)
     {
         _slider.maxValue = health;
@@ -30,6 +28,6 @@ public class HealthBarController : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.LookAt(_camera);
+        transform.LookAt(Camera.main.transform);
     }
 }

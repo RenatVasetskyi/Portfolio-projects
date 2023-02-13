@@ -20,7 +20,7 @@ public class TowerSelection : MonoBehaviour
 
     [SerializeField] private Image _towerDescriptionBackground;
 
-    [SerializeField] private TextMeshProUGUI _towerDescription;  
+    [SerializeField] private TextMeshProUGUI _towerDescription;
 
     private float _descriptionShift = 400;
    
@@ -52,27 +52,43 @@ public class TowerSelection : MonoBehaviour
     private void OnMageTowerButtonClickHandler()
     {
         ViewingTheTower(TowerType.Mage);
+
+        _cannonTowerImage.gameObject.SetActive(true);      
+        _megaTowerImage.gameObject.SetActive(true);
+        _speedTowerImage.gameObject.SetActive(true);           
     }
 
     private void OnCannonTowerButtonClickHandler()
     {
         ViewingTheTower(TowerType.Cannon);
+
+        _mageTowerImage.gameObject.SetActive(true);
+        _megaTowerImage.gameObject.SetActive(true);
+        _speedTowerImage.gameObject.SetActive(true);
     }
 
     private void OnMegaTowerButtonClickHandler()
     {
         ViewingTheTower(TowerType.Mega);
+
+        _mageTowerImage.gameObject.SetActive(true);
+        _cannonTowerImage.gameObject.SetActive(true);       
+        _speedTowerImage.gameObject.SetActive(true);
     }
 
     private void OnSpeedTowerButtonClickHandler()
     {
         ViewingTheTower(TowerType.Speed);
+
+        _mageTowerImage.gameObject.SetActive(true);
+        _cannonTowerImage.gameObject.SetActive(true);
+        _megaTowerImage.gameObject.SetActive(true);             
     }
 
     private void OnCheckMarkButtonClickHandler()
     {
         HideBuildView();
-        //Creating tower method
+        //Tower creation method
     }
 
     private void ViewingTheTower(TowerType towerType)
@@ -86,7 +102,7 @@ public class TowerSelection : MonoBehaviour
                 _towerDescriptionBackground.gameObject.SetActive(true);
                 _towerDescriptionBackground.transform.position = new Vector2(_mageTowerImage.transform.position.x + _descriptionShift, _mageTowerImage.transform.position.y);
                 _towerDescription.text = $"<size=22><color=#CDF537>Mage</color></size><size=16><color=#F0E6B9>\nThis tower shoots crystals and deals a lot of damage." +
-                    $"</color></size><color=#94BA47>\nPrice:</color><color=yellow> {100} </color><color=#94BA47>\nDamage:</color><color=red> {12} </color>";               
+                    $"</color></size><color=#94BA47>\nPrice:</color><color=yellow> {100} </color><color=#94BA47>\nDamage:</color><color=red> {12} </color>";
                 break;
             case TowerType.Cannon:
                 _cannonTowerImage.gameObject.SetActive(false);
