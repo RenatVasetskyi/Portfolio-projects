@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class TowerSelection : MonoBehaviour
 {
-    [SerializeField] protected GameObject _builView;
+    [SerializeField] protected GameObject _buildView;
 
     [SerializeField] private Button _mageTowerButton;
     [SerializeField] private Button _cannonTowerButton;
@@ -45,7 +45,7 @@ public class TowerSelection : MonoBehaviour
     
     private void HideBuildView()
     {
-        _builView.SetActive(false);
+        _buildView.SetActive(false);
         ResetSelectionView();
     }
 

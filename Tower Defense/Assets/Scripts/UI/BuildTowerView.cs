@@ -1,12 +1,15 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BuildTowerView : TowerSelection
 {
     [SerializeField] private LayerMask _towerPlace;
     [SerializeField] private LayerMask _environment;
 
-    [SerializeField] private Camera _camera;  
+    [SerializeField] private Camera _camera;
 
+    private float _maxRayDistance = 120f;
+   
     private void LateUpdate()
     {
         OpenBuildViewWithTouch();
@@ -20,16 +23,13 @@ public class BuildTowerView : TowerSelection
             Touch touch = Input.GetTouch(0);
 
             if (touch.phase == TouchPhase.Began && touch.phase != TouchPhase.Moved)
-            {
+            {               
                 Ray ray = _camera.ScreenPointToRay(touch.position);
-
-                if (Physics.Raycast(ray, out RaycastHit hit))
+ 
+                if (Physics.Raycast(ray, _maxRayDistance, _towerPlace))
                 {
-                    if (hit.collider.gameObject.layer == 6)
-                    {
-                        _builView.gameObject.SetActive(true);
-                        _builView.transform.position = touch.position;
-                    }
+                    _buildView.SetActive(true);
+                    _buildView.transform.position = touch.position;                  
                 }
             }
         }
@@ -41,17 +41,20 @@ public class BuildTowerView : TowerSelection
         {
             Touch touch = Input.GetTouch(0);
 
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
             if (touch.phase == TouchPhase.Began && touch.phase != TouchPhase.Moved)
-            {
+            {               
                 Ray ray = _camera.ScreenPointToRay(touch.position);
 
-                if (Physics.Raycast(ray, out RaycastHit hit))
-                {
-                    if (hit.collider.gameObject.layer == 7)
-                    {
-                        _builView.gameObject.SetActive(false);
-                        ResetSelectionView();
-                    }
+                if (Physics.Raycast(ray, _maxRayDistance, _towerPlace))
+                    return;
+
+                if (Physics.Raycast(ray, _maxRayDistance, _environment))
+                {                                     
+                    _buildView.SetActive(false);
+                    ResetSelectionView();
                 }
             }
         }

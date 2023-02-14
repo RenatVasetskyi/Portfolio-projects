@@ -14255,69 +14255,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 470658, guid: f28b03d0c78691c46b6b38a0b71415b9, type: 3}
   m_PrefabInstance: {fileID: 459123070}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &459253529
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 459253530}
-  - component: {fileID: 459253531}
-  m_Layer: 0
-  m_Name: BuildViewController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &459253530
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 459253529}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 597772269}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &459253531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 459253529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28b9b10130d00fc4eacabfbaa6ba9051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _builView: {fileID: 1084546773}
-  _mageTowerButton: {fileID: 1001713443}
-  _cannonTowerButton: {fileID: 1984094415}
-  _megaTowerButton: {fileID: 1577241213}
-  _speedTowerButton: {fileID: 1649032738}
-  _mageTowerImage: {fileID: 1268677957}
-  _cannonTowerImage: {fileID: 234557493}
-  _megaTowerImage: {fileID: 1135021482}
-  _speedTowerImage: {fileID: 175664753}
-  _checkMark: {fileID: 2088355566}
-  _towerDescriptionBackground: {fileID: 830910263}
-  _towerDescription: {fileID: 1147132540}
-  _towerPlace:
-    serializedVersion: 2
-    m_Bits: 64
-  _environment:
-    serializedVersion: 2
-    m_Bits: 384
-  _camera: {fileID: 963194227}
 --- !u!1001 &461768948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18766,7 +18703,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2097629440}
-  - {fileID: 459253530}
   - {fileID: 1487242587}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -32536,6 +32472,7 @@ GameObject:
   - component: {fileID: 1030625977}
   - component: {fileID: 1030625976}
   - component: {fileID: 1030625975}
+  - component: {fileID: 1030625979}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -32629,6 +32566,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1030625979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030625974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b9b10130d00fc4eacabfbaa6ba9051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buildView: {fileID: 1084546773}
+  _mageTowerButton: {fileID: 1001713443}
+  _cannonTowerButton: {fileID: 1984094415}
+  _megaTowerButton: {fileID: 1577241213}
+  _speedTowerButton: {fileID: 1649032738}
+  _mageTowerImage: {fileID: 1268677957}
+  _cannonTowerImage: {fileID: 234557493}
+  _megaTowerImage: {fileID: 1135021482}
+  _speedTowerImage: {fileID: 175664753}
+  _checkMark: {fileID: 2088355566}
+  _towerDescriptionBackground: {fileID: 830910263}
+  _towerDescription: {fileID: 1147132540}
+  _towerPlace:
+    serializedVersion: 2
+    m_Bits: 64
+  _environment:
+    serializedVersion: 2
+    m_Bits: 384
+  _camera: {fileID: 963194227}
 --- !u!1001 &1033601161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34061,7 +34029,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1084546774
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45001,7 +44969,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 597772269}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1487242588
 MonoBehaviour:
