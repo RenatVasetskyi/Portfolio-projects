@@ -28,6 +28,10 @@ public class BuildTowerView : MonoBehaviour
 
     [SerializeField] private Camera _camera;
 
+    [SerializeField] private GameObject _buildSelection;
+
+    [SerializeField] private BuildSelectionAnimationsPlayer _buildSelectionAnimationsPlayer;
+
     private float _maxRayDistance = 120f; 
 
     private void Start()
@@ -53,12 +57,6 @@ public class BuildTowerView : MonoBehaviour
         _megaTowerImage.gameObject.SetActive(true);
         _speedTowerImage.gameObject.SetActive(true);
         _towerDescriptionBackground.gameObject.SetActive(false);
-    }
-
-    private void HideBuildView()
-    {
-        _buildView.SetActive(false);
-        ResetSelectionView();
     }
 
     private void OnMageTowerButtonClickHandler()
@@ -99,7 +97,8 @@ public class BuildTowerView : MonoBehaviour
 
     private void OnCheckMarkButtonClickHandler()
     {
-        HideBuildView();
+        ResetSelectionView();
+        _buildSelectionAnimationsPlayer.PlayClose();
         //Tower creation method
     }
 
@@ -154,9 +153,9 @@ public class BuildTowerView : MonoBehaviour
 
                 if (Physics.Raycast(ray, _maxRayDistance, _towerPlace))
                 {
-                    ResetSelectionView();
-                    _buildView.SetActive(true);
+                    _buildSelectionAnimationsPlayer.PlayOpen();
                     _buildView.transform.position = touch.position;
+                    ResetSelectionView();
                 }
             }
         }
@@ -180,7 +179,11 @@ public class BuildTowerView : MonoBehaviour
 
                 if (Physics.Raycast(ray, _maxRayDistance, _environment))
                 {                             
-                    _buildView.SetActive(false);
+                    if (_buildSelection.transform.localScale == new Vector3(0, 0, 0))                   
+                        return;                   
+                    else
+                        _buildSelectionAnimationsPlayer.PlayClose();
+                    
                     ResetSelectionView();
                 }
             }

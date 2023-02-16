@@ -4528,7 +4528,7 @@ RectTransform:
   m_GameObject: {fileID: 146640057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1001713440}
@@ -32693,6 +32693,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 384
   _camera: {fileID: 963194227}
+  _buildSelection: {fileID: 146640057}
+  _buildSelectionAnimationsPlayer: {fileID: 146640062}
 --- !u!1001 &1033601161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34125,7 +34127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1084546774
 RectTransform:
   m_ObjectHideFlags: 0
