@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6256231012156537515}
   - component: {fileID: 6256231012156537514}
   - component: {fileID: 6256231012156537509}
+  - component: {fileID: 909956572678668337}
   m_Layer: 0
   m_Name: Bottle3
   m_TagString: Bottle
@@ -111,3 +112,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8846495, y: 4.535602}
   m_EdgeRadius: 0
+--- !u!114 &909956572678668337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6256231012156537508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d260fccf1595de24fa315be337514fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

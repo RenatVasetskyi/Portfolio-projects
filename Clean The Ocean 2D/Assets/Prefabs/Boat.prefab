@@ -4823,11 +4823,10 @@ GameObject:
   - component: {fileID: 3589538758041158276}
   - component: {fileID: 3589538758041158277}
   - component: {fileID: 3589538758041158274}
+  - component: {fileID: 1104801162042534677}
   - component: {fileID: 3589538758041158275}
   - component: {fileID: 3589538758041158273}
   - component: {fileID: 3589538758041158285}
-  - component: {fileID: 3589538758041158287}
-  - component: {fileID: 3589538758041158286}
   m_Layer: 6
   m_Name: Boat
   m_TagString: Bottle
@@ -4913,6 +4912,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 590e279cc65fd12479a57646e0218857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1104801162042534677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3589538758041158278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96988ced3019734291049e3232125f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &3589538758041158275
@@ -5016,27 +5027,3 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &3589538758041158287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3589538758041158278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e3f27cec0e62847b397385d86e5bd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3589538758041158286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3589538758041158278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b302b4f340d5342a3f2c260e479d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

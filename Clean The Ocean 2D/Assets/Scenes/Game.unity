@@ -303,7 +303,7 @@ RectTransform:
   - {fileID: 1696236659}
   - {fileID: 1072496494}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1480,7 +1480,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &3589538757000193687
 PrefabInstance:
@@ -1515,7 +1515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3589538758041158276, guid: 0cffa9acef699ea4f92a1d96b1b9aaa5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3589538758041158276, guid: 0cffa9acef699ea4f92a1d96b1b9aaa5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1561,5 +1561,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boat
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3589538758041158278, guid: 0cffa9acef699ea4f92a1d96b1b9aaa5, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3589538758041158285, guid: 0cffa9acef699ea4f92a1d96b1b9aaa5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3589538758041158286, guid: 0cffa9acef699ea4f92a1d96b1b9aaa5, type: 3}
+    - {fileID: 3589538758041158287, guid: 0cffa9acef699ea4f92a1d96b1b9aaa5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0cffa9acef699ea4f92a1d96b1b9aaa5, type: 3}

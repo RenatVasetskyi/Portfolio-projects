@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    private int _score = 0;
-
     [SerializeField] private TextMeshProUGUI _scoreText;
+
+    private int _score = 0;
 
     private void Awake()
     {      
