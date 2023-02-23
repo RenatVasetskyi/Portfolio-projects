@@ -2,25 +2,43 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class MainMenuCanvas : MonoBehaviour
 {
+    public static MainMenuCanvas Instance;
+
+    [SerializeField] private GameObject _menuPanel;
+
     [SerializeField] private Button _play;
     [SerializeField] private Button _settings;
-    [SerializeField] private Button _exit;
-
-    [SerializeField] private GameObject _settingsPanel;
-    [SerializeField] private Button _closePanelButton;
-
-    private float _scaleDuration = 0.2f; 
+    [SerializeField] private Button _exit; 
        
+    public void HideMainMenu()
+    {
+        _menuPanel.SetActive(false);
+    }
+
+    public void OpenMenuPanel()
+    {
+        _menuPanel.SetActive(true);
+    }
+
     private void Awake()
     {
         _play.onClick.AddListener(OnPlayClickHandler);
         _settings.onClick.AddListener(OnSettingsClickHandler);
-        _exit.onClick.AddListener(OnExitClickHandler);
-        _closePanelButton.onClick.AddListener(OnClosePanelClickHandler);
+        _exit.onClick.AddListener(OnExitClickHandler);      
 
-        AudioManager.Instance.PlayMusic(MusicType.Menu);       
+        AudioManager.Instance.PlayMusic(MusicType.Menu);
+
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnPlayClickHandler()
@@ -29,12 +47,14 @@ public class MainMenu : MonoBehaviour
         AudioManager.Instance.PlayMusic(MusicType.Game);
         AudioManager.Instance.PlayBoatSfx(BoatSfxType.Engine);
         
-        SceneManager.LoadScene(Scenes.Game.ToString());     
+        SceneManager.LoadScene(Scenes.Game.ToString());       
+
+        HideMainMenu();
     }
 
     private void OnSettingsClickHandler()
     {
-        LeanTween.scale(_settingsPanel, Vector3.one, _scaleDuration);
+        SettingsPanelCanvas.Instance.OpenSettingsPanel();     
         AudioManager.Instance.PlaySfx(SfxType.Click);             
     }
     
@@ -42,11 +62,5 @@ public class MainMenu : MonoBehaviour
     {     
         AudioManager.Instance.PlaySfx(SfxType.Click);
         Application.Quit();      
-    }
-
-    private void OnClosePanelClickHandler()
-    {
-        LeanTween.scale(_settingsPanel, Vector3.zero, _scaleDuration);
-        AudioManager.Instance.PlaySfx(SfxType.Click);       
-    }
+    }  
 }

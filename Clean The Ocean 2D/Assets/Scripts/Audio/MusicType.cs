@@ -1,5 +1,5 @@
 public enum MusicType
 {
    Game,
-   Menu,
+   Menu
 }

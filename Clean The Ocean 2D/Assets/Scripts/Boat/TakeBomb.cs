@@ -1,7 +1,4 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TakeBomb : MonoBehaviour
 {
@@ -16,7 +13,7 @@ public class TakeBomb : MonoBehaviour
             gameObject.GetComponent<BoatMovement>().StopBoat();
 
             AudioManager.Instance.PlaySfx(SfxType.Explosion);
-            AudioManager.Instance.PlaySfx(SfxType.GameOver);                  
+            AudioManager.Instance.PlaySfx(SfxType.GameOver);
         }
     }
 }
