@@ -4,7 +4,7 @@ public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private Transform _target;
 
-    private Vector3 _offset = new Vector3(0, 4, -10);
+    private Vector3 _offset = new Vector3(0, 2.5f, -10);
     
     private void LateUpdate()
     {
@@ -12,8 +12,7 @@ public class CameraMovement : MonoBehaviour
     }
 
     private void Move()
-    {
-        var nextPosition = Vector3.Lerp(transform.position, _target.position + _offset, Time.deltaTime);
-        transform.position = nextPosition;
+    {      
+        transform.position = new Vector3(0, _target.position.y + _offset.y, _target.position.z + _offset.z);
     }
 }

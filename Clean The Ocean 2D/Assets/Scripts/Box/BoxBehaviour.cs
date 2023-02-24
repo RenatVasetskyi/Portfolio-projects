@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class BombBehaviour : MonoBehaviour
+public class BoxBehaviour : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem _combustion;
-    [SerializeField] private ParticleSystem _explosion;
+    [SerializeField] private ParticleSystem _destroyBox;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,21 +13,15 @@ public class BombBehaviour : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        _combustion.Play();
-    }
-
     private void PlayExplosion()
     {
-        _combustion.Stop();
-        _explosion.Play();
+        _destroyBox.Play();
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private void PlayExplosionSound()
     {
-        AudioManager.Instance.PlaySfx(SfxType.Explosion);
+        AudioManager.Instance.PlaySfx(SfxType.BoxDestroying);
         AudioManager.Instance.PlaySfx(SfxType.GameOver);
     }
 }

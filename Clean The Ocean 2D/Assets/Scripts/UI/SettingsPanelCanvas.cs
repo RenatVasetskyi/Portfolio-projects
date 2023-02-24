@@ -82,7 +82,14 @@ public class SettingsPanelCanvas : MonoBehaviour
 
     private void BoatSfxVolume()
     {
-        _boatSfxSource.volume = _sfxVolume.value;
+        if (_sfxToggle.isOn == true)
+        {
+            _boatSfxSource.volume = _sfxVolume.value;
+        }
+        else
+        {
+            _boatSfxSource.volume = 0;
+        }      
     }
 
     private void OnClosePanelClickHandler()

@@ -3,30 +3,30 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
-{
-    [SerializeField] private Button _pauseButton;
+{ 
     [SerializeField] private GameObject _pauseWindow;
 
-    [SerializeField] private Button _continue;
+    [SerializeField] private Button _pause;
+    [SerializeField] private Button _resume;
     [SerializeField] private Button _settings;
     [SerializeField] private Button _backToMenu;
 
     private float _scaleDuration = 0.2f;
     
     private void Start()
-    {       
-        _pauseButton.onClick.AddListener(OnPauseButtonClickHandler);
-        _continue.onClick.AddListener(OnContinueButtonClickHandler);
+    {
+        _pause.onClick.AddListener(OnPauseButtonClickHandler);
+        _resume.onClick.AddListener(OnResumeButtonClickHandler);
         _backToMenu.onClick.AddListener(OnBackToMenuButtonClickHandler);
         _settings.onClick.AddListener(OnSettingsButtonClickHandler);
     }
-  
+
     private void OnPauseButtonClickHandler()
     {
-        OpenPauseWindow();       
+        OpenPauseWindow();
     }
 
-    private void OnContinueButtonClickHandler()
+    private void OnResumeButtonClickHandler()
     {
         ClosePauseWindow();
     }
@@ -44,7 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OpenPauseWindow()
     {
-        LeanTween.scale(_pauseWindow, Vector3.one, _scaleDuration * Time.unscaledDeltaTime);
+        LeanTween.scale(_pauseWindow, Vector3.one, _scaleDuration);
     }
 
     private void ClosePauseWindow()

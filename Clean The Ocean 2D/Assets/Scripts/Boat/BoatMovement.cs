@@ -6,7 +6,7 @@ public class BoatMovement : MonoBehaviour
 
     private float _directionX;
 
-    private float _horizontalSpeed = 1f;
+    private float _horizontalSpeed = 15f;
     private float _verticalSpeed = 2f;
 
     public void StopBoat()
@@ -34,7 +34,7 @@ public class BoatMovement : MonoBehaviour
 
     private void HorizontalMove()
     {
-        _rigidbody.velocity = new Vector3(_directionX, 0f);
+        _rigidbody.velocity = new Vector3(_directionX, 0f);         
     }
 
     private void MoveForward()

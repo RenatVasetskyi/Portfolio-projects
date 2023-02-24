@@ -14,20 +14,20 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource _boatSource;
 
     public void PlayMusic(MusicType musicType)
-    {
+    {     
         var musicData = GetMusicData(musicType);
         _musicSource.clip = musicData.Clip;
         _musicSource.Play();
     }
 
     public void PlaySfx(SfxType sfxType) 
-    {
+    {      
         var sfxData = GetSfxData(sfxType);
         _sfxSource.PlayOneShot(sfxData.Clip);
     }
 
     public void PlayBoatSfx(BoatSfxType boatSfxType)
-    {
+    {                
         var boatsfxData = GetBoatSfxData(boatSfxType);
         _boatSource.PlayOneShot(boatsfxData.Clip);       
     }

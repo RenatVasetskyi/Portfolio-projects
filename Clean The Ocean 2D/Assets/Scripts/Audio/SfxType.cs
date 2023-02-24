@@ -3,5 +3,6 @@ public enum SfxType
    TakeBottle,
    Click,
    Explosion,
-   GameOver
+   GameOver,
+   BoxDestroying
 }

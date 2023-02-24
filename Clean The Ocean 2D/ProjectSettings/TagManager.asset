@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bottle
   - Bomb
+  - Box
   layers:
   - Default
   - TransparentFX
