@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenuCanvas : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
-    public static MainMenuCanvas Instance;
+    public static MainMenu Instance;
 
     [SerializeField] private GameObject _menuPanel;
 
@@ -54,7 +54,7 @@ public class MainMenuCanvas : MonoBehaviour
 
     private void OnSettingsClickHandler()
     {
-        SettingsPanelCanvas.Instance.OpenSettingsPanel();     
+        SettingsPanel.Instance.OpenSettingsPanel();     
         AudioManager.Instance.PlaySfx(SfxType.Click);             
     }
     

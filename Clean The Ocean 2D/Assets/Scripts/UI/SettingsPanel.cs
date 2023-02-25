@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingsPanelCanvas : MonoBehaviour
+public class SettingsPanel : MonoBehaviour
 {
-    public static SettingsPanelCanvas Instance;
+    public static SettingsPanel Instance;
 
     [SerializeField] private GameObject _settingsPanel;
 

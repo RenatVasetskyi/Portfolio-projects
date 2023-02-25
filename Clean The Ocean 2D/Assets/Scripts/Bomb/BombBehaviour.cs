@@ -9,6 +9,7 @@ public class BombBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == Constants.PlayerTag)
         {
+            StopCombustion();
             PlayExplosion();
             PlayExplosionSound();
         }
@@ -21,9 +22,13 @@ public class BombBehaviour : MonoBehaviour
 
     private void PlayExplosion()
     {
-        _combustion.Stop();
         _explosion.Play();
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    private void StopCombustion()
+    {
+        _combustion.Stop();
     }
 
     private void PlayExplosionSound()

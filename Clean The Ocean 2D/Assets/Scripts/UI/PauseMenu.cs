@@ -33,12 +33,12 @@ public class PauseMenu : MonoBehaviour
 
     private void OnSettingsButtonClickHandler()
     {
-        SettingsPanelCanvas.Instance.OpenSettingsPanel();
+        SettingsPanel.Instance.OpenSettingsPanel();
     }
 
     private void OnBackToMenuButtonClickHandler()
     {
-        MainMenuCanvas.Instance.OpenMenuPanel();
+        MainMenu.Instance.OpenMenuPanel();
         SceneManager.LoadScene(Scenes.MainMenu.ToString());
     }
 
