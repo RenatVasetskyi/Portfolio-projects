@@ -95,6 +95,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle1
       objectReference: {fileID: 0}
+    - target: {fileID: 7257784602826420793, guid: ab0ffe8f69a9c77499fd5c0adf8a0435, type: 3}
+      propertyPath: m_BackSortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257784602826420793, guid: ab0ffe8f69a9c77499fd5c0adf8a0435, type: 3}
+      propertyPath: m_FrontSortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257784602826420793, guid: ab0ffe8f69a9c77499fd5c0adf8a0435, type: 3}
+      propertyPath: m_IsCustomRangeActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab0ffe8f69a9c77499fd5c0adf8a0435, type: 3}
 --- !u!4 &5787465576516970109 stripped

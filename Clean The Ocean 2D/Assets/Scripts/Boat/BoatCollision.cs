@@ -9,13 +9,13 @@ public class BoatCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == Constants.BoxTag || collision.gameObject.tag == Constants.BombTag)
         {
-            StartCoroutine(GameOverCourutine());
+            StartCoroutine(GameOverCoroutine());
             gameObject.GetComponentInChildren<ParticleSystem>().Stop();
             gameObject.GetComponent<BoatMovement>().StopBoat();
         }
     }
 
-    private IEnumerator GameOverCourutine()
+    private IEnumerator GameOverCoroutine()
     {
         yield return new WaitForSeconds(_delay);
         EventSystem.SendGameOver();

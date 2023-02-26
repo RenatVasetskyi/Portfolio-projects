@@ -43,6 +43,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomb
       objectReference: {fileID: 0}
+    - target: {fileID: 4921937766295770561, guid: 398abe144ec5fdf459cbde373e51b90b, type: 3}
+      propertyPath: m_BackSortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921937766295770561, guid: 398abe144ec5fdf459cbde373e51b90b, type: 3}
+      propertyPath: m_FrontSortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921937766295770561, guid: 398abe144ec5fdf459cbde373e51b90b, type: 3}
+      propertyPath: m_IsCustomRangeActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7360768546438163894, guid: 398abe144ec5fdf459cbde373e51b90b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

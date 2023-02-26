@@ -24,11 +24,13 @@ public class SettingsPanel : MonoBehaviour
     public void CloseSettingsPanel()
     {
         LeanTween.scale(_settingsPanel, Vector3.zero, _scaleDuration);
+        AudioManager.Instance.PlaySfx(SfxType.Click);
     }
 
     public void OpenSettingsPanel()
     {
         LeanTween.scale(_settingsPanel, Vector3.one, _scaleDuration);
+        AudioManager.Instance.PlaySfx(SfxType.Click);
     }
 
     private void Update()

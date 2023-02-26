@@ -39,6 +39,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6698503793000255958}
     m_Modifications:
+    - target: {fileID: 1216031094482945971, guid: 0d3d3b052426a0c47864a960be25f5df, type: 3}
+      propertyPath: m_FrontSortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216031094482945971, guid: 0d3d3b052426a0c47864a960be25f5df, type: 3}
+      propertyPath: m_IsCustomRangeActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6256231012156537508, guid: 0d3d3b052426a0c47864a960be25f5df, type: 3}
       propertyPath: m_Name
       value: Bottle3

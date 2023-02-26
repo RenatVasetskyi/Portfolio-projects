@@ -7,7 +7,9 @@ public class BoatMovement : MonoBehaviour
     private float _directionX;
 
     private float _horizontalSpeed = 15f;
-    private float _verticalSpeed = 2f;
+    private float _verticalSpeed = 3f;
+
+    private float _speedIncreasing = 0.05f;
 
     public void StopBoat()
     {
@@ -23,7 +25,7 @@ public class BoatMovement : MonoBehaviour
     void Update()
     {
         MoveForward();
-
+        IncreaseSpeed();
         _directionX = Input.acceleration.x * _horizontalSpeed;
     }
 
@@ -40,5 +42,10 @@ public class BoatMovement : MonoBehaviour
     private void MoveForward()
     {
         transform.Translate(Vector2.up * _verticalSpeed * Time.deltaTime, Space.World);
+    }
+
+    private void IncreaseSpeed()
+    {
+        _verticalSpeed += Time.deltaTime * _speedIncreasing; 
     }
 }

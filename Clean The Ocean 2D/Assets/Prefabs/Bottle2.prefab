@@ -39,6 +39,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3950885335533475991}
     m_Modifications:
+    - target: {fileID: 1231816127481184614, guid: c4ca0ba5054ec814eb884707dd1b2a76, type: 3}
+      propertyPath: m_BackSortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231816127481184614, guid: c4ca0ba5054ec814eb884707dd1b2a76, type: 3}
+      propertyPath: m_FrontSortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231816127481184614, guid: c4ca0ba5054ec814eb884707dd1b2a76, type: 3}
+      propertyPath: m_IsCustomRangeActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4687409110705651323, guid: c4ca0ba5054ec814eb884707dd1b2a76, type: 3}
       propertyPath: m_RootOrder
       value: 0

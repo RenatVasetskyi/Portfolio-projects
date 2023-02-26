@@ -32,6 +32,12 @@ public class AudioManager : MonoBehaviour
         _boatSource.PlayOneShot(boatsfxData.Clip);       
     }
 
+    public void StopBoatSfx(BoatSfxType boatSfxType)
+    {
+        var boatsfxData = GetBoatSfxData(boatSfxType);
+        _boatSource.Stop();
+    }
+
     private void Awake()
     {
         if (Instance == null)
