@@ -3,13 +3,12 @@ using UnityEngine;
 
 public class BoatCollision : MonoBehaviour
 {
-    private float _delay = 1f;
+    private float _delay = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == Constants.BoxTag || collision.gameObject.tag == Constants.BombTag)
-        {
-            AudioManager.Instance.StopBoatSfx(BoatSfxType.Engine);
+        {         
             StartCoroutine(GameOverCoroutine());
             gameObject.GetComponentInChildren<ParticleSystem>().Stop();
             gameObject.GetComponent<BoatMovement>().StopBoat();

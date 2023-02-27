@@ -30,6 +30,7 @@ public class GameOverView : MonoBehaviour
 
     private void OnBackToMenuButtonClickHandler()
     {
+        AudioManager.Instance.PlaySfx(SfxType.Click);
         MainMenu.Instance.OpenMenuPanel();
         SceneManager.LoadScene(Scenes.MainMenu.ToString());
     }

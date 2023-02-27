@@ -19,7 +19,7 @@ public class BoatMovement : MonoBehaviour
 
     void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();      
     }
 
     void Update()

@@ -23,33 +23,38 @@ public class PauseMenu : MonoBehaviour
 
     private void OnPauseButtonClickHandler()
     {
+        AudioManager.Instance.PlaySfx(SfxType.Click);
         OpenPauseWindow();
     }
 
     private void OnResumeButtonClickHandler()
     {
+        AudioManager.Instance.PlaySfx(SfxType.Click);
         ClosePauseWindow();
     }
 
     private void OnSettingsButtonClickHandler()
     {
+        AudioManager.Instance.PlaySfx(SfxType.Click);
         SettingsPanel.Instance.OpenSettingsPanel();
     }
 
     private void OnBackToMenuButtonClickHandler()
     {
-        MainMenu.Instance.OpenMenuPanel();
-        AudioManager.Instance.StopBoatSfx(BoatSfxType.Engine);
+        AudioManager.Instance.StopBoatSfx();
+        MainMenu.Instance.OpenMenuPanel();     
         SceneManager.LoadScene(Scenes.MainMenu.ToString());
     }
 
     private void OpenPauseWindow()
     {
+        AudioManager.Instance.PlaySfx(SfxType.Click);
         LeanTween.scale(_pauseWindow, Vector3.one, _scaleDuration);
     }
 
     private void ClosePauseWindow()
     {
+        AudioManager.Instance.PlaySfx(SfxType.Click);
         LeanTween.scale(_pauseWindow, Vector3.zero, _scaleDuration);
     }
 }

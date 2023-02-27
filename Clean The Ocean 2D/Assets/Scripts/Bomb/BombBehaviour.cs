@@ -9,6 +9,7 @@ public class BombBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == Constants.PlayerTag)
         {
+            collision.enabled = false;
             StopCombustion();
             PlayExplosion();
             PlayExplosionSound();

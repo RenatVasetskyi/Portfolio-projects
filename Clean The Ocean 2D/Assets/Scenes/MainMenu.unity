@@ -1411,6 +1411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1223010746}
   - component: {fileID: 1223010747}
+  - component: {fileID: 1223010748}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1470,6 +1471,18 @@ MonoBehaviour:
   _sfxSource: {fileID: 320207519}
   _musicSource: {fileID: 256773053}
   _boatSource: {fileID: 26218409}
+--- !u!114 &1223010748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223010744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1334db60aeab343a2b6756cac8a4f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1396918938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,6 +1892,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1097616848032594936, guid: 0f25b816db862e44c8c2dc353fc08c0d, type: 3}
   m_PrefabInstance: {fileID: 413240735}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1952772952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1952772954}
+  - component: {fileID: 1952772953}
+  m_Layer: 0
+  m_Name: SceneController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1952772953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952772952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ee519fbe554624fb9c68817a84d387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1952772954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952772952}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2014317026
 GameObject:
   m_ObjectHideFlags: 0

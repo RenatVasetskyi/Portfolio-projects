@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
@@ -24,6 +23,8 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
+        EventSystem.OnGameStarted.AddListener(HideMainMenu);
+
         _play.onClick.AddListener(OnPlayClickHandler);
         _settings.onClick.AddListener(OnSettingsClickHandler);
         _exit.onClick.AddListener(OnExitClickHandler);      
@@ -43,13 +44,8 @@ public class MainMenu : MonoBehaviour
 
     private void OnPlayClickHandler()
     {
-        AudioManager.Instance.PlaySfx(SfxType.Click);
-        AudioManager.Instance.PlayMusic(MusicType.Game);
-        AudioManager.Instance.PlayBoatSfx(BoatSfxType.Engine);
-        
-        SceneManager.LoadScene(Scenes.Game.ToString());       
-
-        HideMainMenu();
+        AudioManager.Instance.PlaySfx(SfxType.Click);     
+        EventSystem.SendGameStarted();
     }
 
     private void OnSettingsClickHandler()
