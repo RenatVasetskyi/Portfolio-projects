@@ -13,5 +13,5 @@ public class EventSystem
     public static void SendGameOver() 
     {
         OnGameOver.Invoke();
-    }
+    }  
 }

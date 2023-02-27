@@ -1,6 +1,6 @@
 {
-    "MusicVolume": 0.02901785634458065,
-    "SfxVolume": 0.02008928544819355,
-    "MusicToggle": true,
-    "SfxToggle": true
+    "MusicVolume": 0.0,
+    "SfxVolume": 0.0,
+    "MusicToggle": false,
+    "SfxToggle": false
 }

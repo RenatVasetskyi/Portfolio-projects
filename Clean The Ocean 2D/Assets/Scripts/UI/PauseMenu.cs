@@ -39,6 +39,7 @@ public class PauseMenu : MonoBehaviour
     private void OnBackToMenuButtonClickHandler()
     {
         MainMenu.Instance.OpenMenuPanel();
+        AudioManager.Instance.StopBoatSfx(BoatSfxType.Engine);
         SceneManager.LoadScene(Scenes.MainMenu.ToString());
     }
 

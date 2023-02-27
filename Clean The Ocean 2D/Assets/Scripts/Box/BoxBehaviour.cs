@@ -8,6 +8,7 @@ public class BoxBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == Constants.PlayerTag)
         {
+            collision.enabled = false;
             PlayExplosion();
             PlayExplosionSound();
         }
