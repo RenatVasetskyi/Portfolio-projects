@@ -6,7 +6,7 @@ public class BoatMovement : MonoBehaviour
 
     private float _directionX;
 
-    private float _horizontalSpeed = 15f;
+    private float _horizontalSpeed = 30f;
     private float _verticalSpeed = 3f;
 
     private float _speedIncreasing = 0.05f;
