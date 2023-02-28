@@ -39,6 +39,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 448867833335832675}
     m_Modifications:
+    - target: {fileID: 2494073922483857390, guid: 398abe144ec5fdf459cbde373e51b90b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2494073922483857391, guid: 398abe144ec5fdf459cbde373e51b90b, type: 3}
       propertyPath: m_Name
       value: Bomb
@@ -49,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921937766295770561, guid: 398abe144ec5fdf459cbde373e51b90b, type: 3}
       propertyPath: m_FrontSortingOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4921937766295770561, guid: 398abe144ec5fdf459cbde373e51b90b, type: 3}
       propertyPath: m_IsCustomRangeActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7360768546438163894, guid: 398abe144ec5fdf459cbde373e51b90b, type: 3}
       propertyPath: m_Pivot.x

@@ -53,15 +53,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5035852489164662585, guid: ab0ffe8f69a9c77499fd5c0adf8a0435, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.9419043
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5035852489164662585, guid: ab0ffe8f69a9c77499fd5c0adf8a0435, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0819404
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5035852489164662585, guid: ab0ffe8f69a9c77499fd5c0adf8a0435, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.4901795
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5035852489164662585, guid: ab0ffe8f69a9c77499fd5c0adf8a0435, type: 3}
       propertyPath: m_LocalRotation.w
@@ -91,6 +91,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -25
       objectReference: {fileID: 0}
+    - target: {fileID: 5035852489164662586, guid: ab0ffe8f69a9c77499fd5c0adf8a0435, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035852489164662588, guid: ab0ffe8f69a9c77499fd5c0adf8a0435, type: 3}
       propertyPath: m_Name
       value: Bottle1
@@ -101,11 +105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7257784602826420793, guid: ab0ffe8f69a9c77499fd5c0adf8a0435, type: 3}
       propertyPath: m_FrontSortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7257784602826420793, guid: ab0ffe8f69a9c77499fd5c0adf8a0435, type: 3}
       propertyPath: m_IsCustomRangeActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab0ffe8f69a9c77499fd5c0adf8a0435, type: 3}

@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3271453843066029748, guid: d83cb5347d7727640a3ef825de21bfaa, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3271453843066029748, guid: d83cb5347d7727640a3ef825de21bfaa, type: 3}
       propertyPath: m_SortingLayerID
@@ -57,15 +57,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3271453843066029749, guid: d83cb5347d7727640a3ef825de21bfaa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.26190436
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3271453843066029749, guid: d83cb5347d7727640a3ef825de21bfaa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9719404
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3271453843066029749, guid: d83cb5347d7727640a3ef825de21bfaa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.4901795
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3271453843066029749, guid: d83cb5347d7727640a3ef825de21bfaa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -105,11 +105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004016409985319014, guid: d83cb5347d7727640a3ef825de21bfaa, type: 3}
       propertyPath: m_FrontSortingOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5004016409985319014, guid: d83cb5347d7727640a3ef825de21bfaa, type: 3}
       propertyPath: m_IsCustomRangeActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d83cb5347d7727640a3ef825de21bfaa, type: 3}
