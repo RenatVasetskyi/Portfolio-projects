@@ -874,6 +874,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingsPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 1097616848032594939, guid: 0f25b816db862e44c8c2dc353fc08c0d, type: 3}
+      propertyPath: m_Color.a
+      value: 0.98039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097616848032594939, guid: 0f25b816db862e44c8c2dc353fc08c0d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097616848032594939, guid: 0f25b816db862e44c8c2dc353fc08c0d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097616848032594939, guid: 0f25b816db862e44c8c2dc353fc08c0d, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1097616848492993720, guid: 0f25b816db862e44c8c2dc353fc08c0d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

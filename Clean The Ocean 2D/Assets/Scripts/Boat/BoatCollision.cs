@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BoatCollision : MonoBehaviour
 {
-    private float _delay = 1;
+    private float _delay = 0.5f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

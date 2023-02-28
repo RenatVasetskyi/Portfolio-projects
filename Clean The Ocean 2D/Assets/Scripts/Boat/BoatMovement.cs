@@ -15,6 +15,7 @@ public class BoatMovement : MonoBehaviour
     {
         _horizontalSpeed = 0;
         _verticalSpeed = 0;
+        _speedIncreasing = 0;
     }
 
     void Start()
