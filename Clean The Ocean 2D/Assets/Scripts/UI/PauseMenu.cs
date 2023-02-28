@@ -25,7 +25,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OnPauseButtonClickHandler()
     {
-        _pauseGame.PauseGame();
+        _pauseGame.PauseGame();       
         AudioManager.Instance.PlaySfx(SfxType.Click);
         OpenPauseWindow();
     }

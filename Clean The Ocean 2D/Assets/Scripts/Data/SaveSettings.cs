@@ -14,8 +14,8 @@ public class SaveSettings : MonoBehaviour
     private string _fileName = "Volume.json";
     
     private void Awake()
-    {      
-#if UNITY_IOS && !UNITY_EDITOR
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
         _savePath = Path.Combine(Application.persistentDataPath, _fileName);
 #else
         _savePath = Path.Combine(Application.dataPath, _fileName);
