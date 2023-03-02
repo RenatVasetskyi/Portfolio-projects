@@ -2468,6 +2468,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3842fae8cb451c643a26ebeafdc749fb, type: 3}
+    - target: {fileID: 3589538758041158277, guid: 0cffa9acef699ea4f92a1d96b1b9aaa5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3589538758041158278, guid: 0cffa9acef699ea4f92a1d96b1b9aaa5, type: 3}
       propertyPath: m_Name
       value: Boat
