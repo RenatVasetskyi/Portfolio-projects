@@ -6,6 +6,8 @@ public class Spawner : MonoBehaviour
 {
 
     [Header("Fruit")]
+    [SerializeField] private Transform _parent;
+
     [SerializeField] private List<GameObject> _fruitPrefabs;
       
     [SerializeField] private float _minSpeed = 25f;
@@ -29,6 +31,7 @@ public class Spawner : MonoBehaviour
     private void Awake()
     {
         _spawnZone = GetComponent<Collider>();
+        Events.OnGameOver.AddListener(StopAllCoroutines);
     }
 
     private void OnEnable()
@@ -61,12 +64,11 @@ public class Spawner : MonoBehaviour
 
             Quaternion rotation = Quaternion.Euler(0f, 0f, Random.Range(_minAngle, _maxAngle));
 
-            GameObject fruit = Instantiate(prefab, position, rotation);
+            GameObject fruit = Instantiate(prefab, position, rotation, _parent);
             Destroy(fruit, _maxLifeTime);
 
             float force = Random.Range(_minSpeed, _maxSpeed);
-            fruit.GetComponent<Rigidbody>().AddForce(fruit.transform.up * force, ForceMode.Impulse);
-            
+            fruit.GetComponent<Rigidbody>().AddForce(fruit.transform.up * force, ForceMode.Impulse);               
 
             yield return new WaitForSeconds(Random.Range(_minSpawnDelay, _maxSpawnDelay));
         }
