@@ -4,6 +4,7 @@ public class Events
 {
     public static UnityEvent OnFruitSliced = new UnityEvent();
     public static UnityEvent OnGameOver = new UnityEvent();
+    public static UnityEvent OnGameStarted = new UnityEvent();
 
     public static void SendOnFruitSliced()
     {
@@ -13,5 +14,10 @@ public class Events
     public static void SendOnGameOver() 
     { 
         OnGameOver.Invoke();
+    }
+
+    public static void SendOnGameStarted()
+    {
+        OnGameStarted.Invoke();
     }
 }

@@ -1037,7 +1037,7 @@ MonoBehaviour:
   _maxSpawnDelay: 1.5
   _maxLifeTime: 8
   _bombPrefab: {fileID: 5638360428001624541, guid: 0f2c858bddd0527448efe1c87d101a78, type: 3}
-  _bombChance: 0.05
+  _bombChance: 0.1
 --- !u!1 &1140730658
 GameObject:
   m_ObjectHideFlags: 0

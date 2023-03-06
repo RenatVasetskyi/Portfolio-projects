@@ -39,6 +39,7 @@ public class GameOverPanel : MonoBehaviour
         _scoreText.text = _score.GetComponent<Score>().GameScore.ToString();
         LeanTween.scale(_gameOverPanel, Vector3.one, _scaleDuration).setIgnoreTimeScale(true);
         _gameOverText.gameObject.SetActive(false);
+        AudioManager.Instance.PlaySfx(SfxType.GameOver);
     }
 
     private void StartOpenGameOverPanelCoroutine()
@@ -48,6 +49,8 @@ public class GameOverPanel : MonoBehaviour
 
     private void OnRetryButtonClickHandler()
     {
+        Events.SendOnGameStarted();
+        AudioManager.Instance.StopSfx();
         SceneManager.LoadScene(Scenes.Game.ToString());
     }
 

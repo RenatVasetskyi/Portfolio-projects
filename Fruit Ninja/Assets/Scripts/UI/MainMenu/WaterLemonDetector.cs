@@ -14,6 +14,7 @@ public class WaterLemonDetector : MonoBehaviour
     private IEnumerator LoadGameScene()
     {
         yield return new WaitForSeconds(_delay);
+        Events.SendOnGameStarted();
         SceneManager.LoadScene(Scenes.Game.ToString());
     }
 }

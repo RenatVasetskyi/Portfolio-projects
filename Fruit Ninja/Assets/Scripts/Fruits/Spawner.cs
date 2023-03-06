@@ -65,6 +65,8 @@ public class Spawner : MonoBehaviour
             Quaternion rotation = Quaternion.Euler(0f, 0f, Random.Range(_minAngle, _maxAngle));
 
             GameObject fruit = Instantiate(prefab, position, rotation, _parent);
+            AudioManager.Instance.PlaySfx(SfxType.TossUp);
+
             Destroy(fruit, _maxLifeTime);
 
             float force = Random.Range(_minSpeed, _maxSpeed);

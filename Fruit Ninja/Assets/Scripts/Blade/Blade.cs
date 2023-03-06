@@ -15,7 +15,7 @@ public class Blade : MonoBehaviour
     private bool _slicing;
 
     private void Awake()
-    {
+    {     
         _bladeCollider = GetComponent<Collider>();
         _trailRenderer = GetComponentInChildren<TrailRenderer>();
     }

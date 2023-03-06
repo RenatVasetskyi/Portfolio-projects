@@ -95,6 +95,34 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 446f7ca68bf807c43990a9debf5ebf94, type: 2}
+    - target: {fileID: 8372681827998896125, guid: fa05686d6ac897f49be5744465231ca0, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372681827998896125, guid: fa05686d6ac897f49be5744465231ca0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.24528301
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372681827998896125, guid: fa05686d6ac897f49be5744465231ca0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.24528301
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372681827998896125, guid: fa05686d6ac897f49be5744465231ca0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.24528301
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372681827998896125, guid: fa05686d6ac897f49be5744465231ca0, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 0.53098863
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372681827998896125, guid: fa05686d6ac897f49be5744465231ca0, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 0.6733341
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372681827998896125, guid: fa05686d6ac897f49be5744465231ca0, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].value
+      value: 0.46666908
+      objectReference: {fileID: 0}
     - target: {fileID: 9221824405432759266, guid: fa05686d6ac897f49be5744465231ca0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

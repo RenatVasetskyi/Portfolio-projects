@@ -28,6 +28,8 @@ public class FruitBehaviour : MonoBehaviour
 
     private void Slice(Vector3 direction, Vector3 position, float force)
     {
+        AudioManager.Instance.PlaySfx(SfxType.Slice);
+
         Events.SendOnFruitSliced();
 
         _whole.SetActive(false);
