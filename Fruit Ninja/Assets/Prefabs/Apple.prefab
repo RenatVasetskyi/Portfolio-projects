@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Apple
       objectReference: {fileID: 0}
+    - target: {fileID: 4064610855498489677, guid: fa05686d6ac897f49be5744465231ca0, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4064610855498489678, guid: fa05686d6ac897f49be5744465231ca0, type: 3}
       propertyPath: m_RootOrder
       value: 0

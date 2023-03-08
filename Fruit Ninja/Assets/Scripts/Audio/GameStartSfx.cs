@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StartSfx : MonoBehaviour
+public class GameStartSfx : MonoBehaviour
 {
     private void Awake()
     {

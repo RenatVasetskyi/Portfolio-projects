@@ -2,13 +2,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WaterLemonDetector : MonoBehaviour
+public class PlayButtonDetector : MonoBehaviour
 {
-    [SerializeField] private float _delay = 1f;
+    private float _delay = 1f;
 
     private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(LoadGameScene());        
+        StartCoroutine(LoadGameScene());    
+        gameObject.GetComponent<SphereCollider>().enabled = false;
     }
 
     private IEnumerator LoadGameScene()
