@@ -1,9 +1,12 @@
 using UnityEngine;
 
-public class MainMenuMusic : MonoBehaviour
-{  
-    void Start()
+namespace Audio
+{
+    public class MainMenuMusic : MonoBehaviour
     {
-        AudioManager.Instance.PlayMusic(MusicType.MainMenu);
+        void Start()
+        {
+            AudioManager.Instance.PlayMusic(MusicType.MainMenu);
+        }
     }
 }

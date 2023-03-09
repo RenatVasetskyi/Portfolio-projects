@@ -1,10 +1,13 @@
 using UnityEngine;
 
-public class RotateText : MonoBehaviour
+namespace UI
 {
-    void Update()
+    public class RotateText : MonoBehaviour
     {
-        transform.Rotate(new Vector3(0, 0, -30) * Time.deltaTime);
-        transform.Translate(new Vector3(0.6f, 0, 0) * Time.deltaTime);
+        void Update()
+        {
+            transform.Rotate(new Vector3(0, 0, -30) * Time.deltaTime);
+            transform.Translate(new Vector3(0.6f, 0, 0) * Time.deltaTime);
+        }
     }
 }

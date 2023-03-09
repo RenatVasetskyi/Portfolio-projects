@@ -1,62 +1,64 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+namespace Audio
 {
-    public static AudioManager Instance;
-
-    [SerializeField] private AudioSource _sfxSource;
-    [SerializeField] private AudioSource _musicSource;
-
-    [SerializeField] private List<MusicData> _musicDataList = new List<MusicData>();
-    [SerializeField] private List<SfxData> _sfxDataList = new List<SfxData>();
-
-    public void PlayMusic(MusicType musicType)
+    public class AudioManager : MonoBehaviour
     {
-        var musicData = GetMusicData(musicType);
-        _musicSource.clip = musicData.Clip;
-        _musicSource.Play();
-    }
+        public static AudioManager Instance;
 
-    public void PlaySfx(SfxType sfxType)
-    {
-        var sfxData = GetSfxData(sfxType);
-        _sfxSource.PlayOneShot(sfxData.Clip);
-    }
+        [SerializeField] private AudioSource _sfxSource;
+        [SerializeField] private AudioSource _musicSource;
 
-    public void StopMusic()
-    {
-        _musicSource.Stop();
-    }
+        [SerializeField] private List<MusicData> _musicDataList = new List<MusicData>();
+        [SerializeField] private List<SfxData> _sfxDataList = new List<SfxData>();
 
-    public void StopSfx()
-    {
-        _sfxSource.Stop();
-    }
-
-    private void Awake()
-    {
-        if (Instance == null)
+        public void PlayMusic(MusicType musicType)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            var musicData = GetMusicData(musicType);
+            _musicSource.clip = musicData.Clip;
+            _musicSource.Play();
         }
-        else
+
+        public void PlaySfx(SfxType sfxType)
         {
-            Destroy(gameObject);
+            var sfxData = GetSfxData(sfxType);
+            _sfxSource.PlayOneShot(sfxData.Clip);
         }
-    }
 
-    private MusicData GetMusicData(MusicType musicType)
-    {
-        var result = _musicDataList.Find(data => data.Type == musicType);
-        return result;
-    }
+        public void StopMusic()
+        {
+            _musicSource.Stop();
+        }
 
-    private SfxData GetSfxData(SfxType sfxType)
-    {
-        var result = _sfxDataList.Find(data => data.Type == sfxType);
-        return result;
+        public void StopSfx()
+        {
+            _sfxSource.Stop();
+        }
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        private MusicData GetMusicData(MusicType musicType)
+        {
+            var result = _musicDataList.Find(data => data.Type == musicType);
+            return result;
+        }
+
+        private SfxData GetSfxData(SfxType sfxType)
+        {
+            var result = _sfxDataList.Find(data => data.Type == sfxType);
+            return result;
+        }
     }
 }

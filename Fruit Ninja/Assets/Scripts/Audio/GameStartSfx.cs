@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class GameStartSfx : MonoBehaviour
+namespace Audio
 {
-    private void Awake()
+    public class GameStartSfx : MonoBehaviour
     {
-        Events.OnGameStarted.AddListener(PlayStartSfx);
-    }
+        private void Awake()
+        {
+            Events.OnGameStarted.AddListener(PlayStartSfx);
+        }
 
-    private void PlayStartSfx()
-    {
-        AudioManager.Instance.PlaySfx(SfxType.GameStart);
+        private void PlayStartSfx()
+        {
+            AudioManager.Instance.PlaySfx(SfxType.GameStart);
+        }
     }
 }

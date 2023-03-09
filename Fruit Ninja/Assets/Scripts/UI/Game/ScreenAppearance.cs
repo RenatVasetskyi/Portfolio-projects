@@ -1,51 +1,50 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Audio;
 
-public class ScreenAppearance : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private Image _fadeImage;
-   
-    private float _closeScreenDuration = 1.5f;
-    private float _openScreenDuration = 0.7f;
-
-    private void Awake()
+    public class ScreenAppearance : MonoBehaviour
     {
-        Appear();
-        Events.OnBombExploded.AddListener(CloseScreen);
-    }
+        [SerializeField] private Image _fadeImage;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == Constants.PlayerTag)
+        private float _disappearDuration = 1.5f;
+        private float _appearScreenDuration = 1f;
+
+        private void Awake()
         {
-            AudioManager.Instance.PlaySfx(SfxType.Explosion);
-            Events.SendOnBombExploded();
+            Appear();
+            Events.OnBombExploded.AddListener(Disappear);
         }
-    }
 
-    private void Appear()
-    {
-        LeanTween.color(_fadeImage.rectTransform, Color.clear, _closeScreenDuration).setOnComplete(OffFadeImage);             
-    } 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == Constants.PlayerTag)
+            {
+                AudioManager.Instance.PlaySfx(SfxType.Explosion);
+                Events.SendOnBombExploded();
+            }
+        }
 
-    private void OffFadeImage()
-    {
-        _fadeImage.gameObject.SetActive(false);
-    }
+        private void Appear()
+        {
+            LeanTween.color(_fadeImage.rectTransform, Color.clear, _appearScreenDuration).setOnComplete(OffFadeImage);
+        }
 
-    private void OnFadeImage()
-    {
-        _fadeImage.gameObject.SetActive(true);
-    }
+        private void OffFadeImage()
+        {
+            _fadeImage.gameObject.SetActive(false);
+        }
 
-    private void CloseScreen()
-    {
-        OnFadeImage();
-        LeanTween.color(_fadeImage.rectTransform, Color.white, _closeScreenDuration).setOnComplete(OpenScreen);
-    }
+        private void OnFadeImage()
+        {
+            _fadeImage.gameObject.SetActive(true);
+        }
 
-    private void OpenScreen()
-    {
-        LeanTween.color(_fadeImage.rectTransform, Color.clear, _openScreenDuration).setOnComplete(OffFadeImage);
+        private void Disappear()
+        {
+            OnFadeImage();
+            LeanTween.color(_fadeImage.rectTransform, Color.white, _disappearDuration).setOnComplete(Appear);
+        }
     }
 }

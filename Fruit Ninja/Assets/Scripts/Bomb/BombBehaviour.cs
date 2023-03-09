@@ -1,11 +1,9 @@
-using System.Collections;
 using UnityEngine;
+using Audio;
 
 public class BombBehaviour : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _particleSystem;
-
-    private float _destroyDelay = 1.5f;
    
     private void OnTriggerEnter(Collider other)
     {
@@ -13,19 +11,12 @@ public class BombBehaviour : MonoBehaviour
         {
             AudioManager.Instance.PlaySfx(SfxType.Explosion);
             Explosion();
-            Events.SendOnBombExploded();
-            StartCoroutine(DestoyBomb());
+            Events.SendOnBombExploded();        
         }
     }
 
     private void Explosion()
     {       
         _particleSystem.Play();      
-    }
-
-    private IEnumerator DestoyBomb()
-    {
-        yield return new WaitForSeconds(_destroyDelay);
-        Destroy(gameObject);
     }
 }

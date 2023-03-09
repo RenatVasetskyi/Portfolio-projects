@@ -13,9 +13,4 @@ public class CameraAnimation : MonoBehaviour
     {
         _animator.SetTrigger("Shake");
     }
-
-    private void PlayDefault()
-    {
-        _animator.SetBool("Default", true);
-    }
 }

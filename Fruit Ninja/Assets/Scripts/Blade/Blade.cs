@@ -67,7 +67,7 @@ public class Blade : MonoBehaviour
     }
 
     private void ContinueSlicing()
-    {
+    {       
         Vector3 newPosition = _camera.ScreenToWorldPoint(/*Input.GetTouch(0).position*/Input.mousePosition);
         newPosition.z = 0;
 

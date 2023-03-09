@@ -3,66 +3,73 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Audio;
 
-public class GameOverPanel : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private GameObject _gameOverPanel;
-
-    [SerializeField] private TextMeshProUGUI _gameOverText;
-    [SerializeField] private TextMeshProUGUI _scoreText;
-
-    [SerializeField] private Button _backToMenuButton;
-    [SerializeField] private Button _retryButton;
-
-    [SerializeField] private GameObject _score;
-
-    private float _scaleDuration = 0.5f;
-    private float _gameOverTextdelay = 3f;
-    private float _gameOverPanelDelay = 5f;
-
-    private void Awake()
+    public class GameOverPanel : MonoBehaviour
     {
-        _backToMenuButton.onClick.AddListener(OnBackToMenuButtonClickHandler);
-        _retryButton.onClick.AddListener(OnRetryButtonClickHandler);
+        [SerializeField] private GameObject _gameOverPanel;
 
-        Events.OnBombExploded.AddListener(ShowGameOverText);
-        Events.OnBombExploded.AddListener(StartOpenGameOverPanelCoroutine);
-    }
+        [SerializeField] private TextMeshProUGUI _gameOverText;
+        [SerializeField] private TextMeshProUGUI _scoreText;
 
-    private IEnumerator ShowGameOverTextCoroutine()
-    {
-        yield return new WaitForSeconds(_gameOverTextdelay);
-        LeanTween.scale(_gameOverText.gameObject, Vector3.one, _scaleDuration).setIgnoreTimeScale(true);
-    }
+        [SerializeField] private Button _backToMenuButton;
+        [SerializeField] private Button _retryButton;
 
-    private IEnumerator OpenGameOverPanelCoroutine()
-    {
-        yield return new WaitForSeconds(_gameOverPanelDelay);
-        _scoreText.text = _score.GetComponent<Score>().GameScore.ToString();
-        LeanTween.scale(_gameOverPanel, Vector3.one, _scaleDuration).setIgnoreTimeScale(true);
-        _gameOverText.gameObject.SetActive(false);
-        AudioManager.Instance.PlaySfx(SfxType.GameOver);
-    }
+        [SerializeField] private GameObject _score;
 
-    private void ShowGameOverText()
-    {
-        StartCoroutine(ShowGameOverTextCoroutine());
-    }
+        private float _scaleDuration = 0.5f;
+        private float _gameOverTextdelay = 3f;
+        private float _gameOverPanelDelay = 5f;
 
-    private void StartOpenGameOverPanelCoroutine()
-    {
-        StartCoroutine(OpenGameOverPanelCoroutine());
-    }
+        private void Awake()
+        {
+            _backToMenuButton.onClick.AddListener(OnBackToMenuButtonClickHandler);
+            _retryButton.onClick.AddListener(OnRetryButtonClickHandler);
 
-    private void OnRetryButtonClickHandler()
-    {
-        Events.SendOnGameStarted();
-        AudioManager.Instance.StopSfx();
-        SceneManager.LoadScene(Scenes.Game.ToString());
-    }
+            Events.OnBombExploded.AddListener(StartShowGameOverText);
+            Events.OnBombExploded.AddListener(StartOpenGameOverPanel);
+        }
 
-    private void OnBackToMenuButtonClickHandler()
-    {
-        SceneManager.LoadScene(Scenes.MainMenu.ToString());
+        private IEnumerator ShowGameOverTextCoroutine()
+        {
+            yield return new WaitForSeconds(_gameOverTextdelay);
+            LeanTween.scale(_gameOverText.gameObject, Vector3.one, _scaleDuration).setIgnoreTimeScale(true);
+        }
+
+        private IEnumerator OpenGameOverPanelCoroutine()
+        {
+            yield return new WaitForSeconds(_gameOverPanelDelay);
+            _scoreText.text = _score.GetComponent<Score>().GameScore.ToString();
+            LeanTween.scale(_gameOverPanel, Vector3.one, _scaleDuration).setIgnoreTimeScale(true);
+            _gameOverText.gameObject.SetActive(false);
+            AudioManager.Instance.PlaySfx(SfxType.GameOver);
+        }
+
+        private void StartShowGameOverText()
+        {
+            StartCoroutine(ShowGameOverTextCoroutine());
+        }
+
+        private void StartOpenGameOverPanel()
+        {
+            StartCoroutine(OpenGameOverPanelCoroutine());
+        }
+
+        private void OnRetryButtonClickHandler()
+        {
+            Events.SendOnGameStarted();
+            AudioManager.Instance.StopSfx();
+            AudioManager.Instance.PlaySfx(SfxType.Click);
+            SceneManager.LoadScene(Scenes.Game.ToString());
+        }
+
+        private void OnBackToMenuButtonClickHandler()
+        {
+            AudioManager.Instance.PlaySfx(SfxType.Click);
+            SceneManager.LoadScene(Scenes.MainMenu.ToString());
+            Events.SendOnMainMenuOpened();
+        }
     }
 }

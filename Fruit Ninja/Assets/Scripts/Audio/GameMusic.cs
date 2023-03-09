@@ -1,20 +1,23 @@
 using UnityEngine;
 
-public class GameMusic : MonoBehaviour
+namespace Audio
 {
-    private void Awake()
+    public class GameMusic : MonoBehaviour
     {
-        Events.OnGameStarted.AddListener(PlayGameMusic);
-        Events.OnBombExploded.AddListener(StopGameMusic);
-    }
+        private void Awake()
+        {
+            Events.OnGameStarted.AddListener(PlayGameMusic);
+            Events.OnBombExploded.AddListener(StopGameMusic);
+        }
 
-    private void PlayGameMusic()
-    {
-        AudioManager.Instance.PlayMusic(MusicType.Game);
-    }
+        private void PlayGameMusic()
+        {
+            AudioManager.Instance.PlayMusic(MusicType.Game);
+        }
 
-    private void StopGameMusic()
-    {
-        AudioManager.Instance.StopMusic();
+        private void StopGameMusic()
+        {
+            AudioManager.Instance.StopMusic();
+        }
     }
 }

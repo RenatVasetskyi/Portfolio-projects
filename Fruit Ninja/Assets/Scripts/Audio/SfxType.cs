@@ -1,8 +1,13 @@
-public enum SfxType
+namespace Audio
 {
-   Slice,
-   Explosion,
-   TossUp,
-   GameStart,
-   GameOver
+    public enum SfxType
+    {
+        Slice,
+        Explosion,
+        TossUp,
+        GameStart,
+        GameOver,
+        Click,
+        Window
+    }
 }

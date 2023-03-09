@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
+using Audio;
 
 public class FruitBehaviour : MonoBehaviour
 {
