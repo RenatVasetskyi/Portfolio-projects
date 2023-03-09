@@ -10,7 +10,7 @@ namespace Settings
         [SerializeField] private Toggle _sfxToggle;
 
         private string _savePath = "Data/Settings.json";
-        private string _fileName = "Volume.json";
+        private string _fileName = "Sounds.json";
 
         private void Awake()
         {
