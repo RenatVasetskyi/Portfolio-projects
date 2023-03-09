@@ -26,7 +26,7 @@ public class SaveSettings : MonoBehaviour
 
     private void OnApplicationPause(bool pause)
     {
-        if (Application.platform == RuntimePlatform.IPhonePlayer)
+        if (Application.platform == RuntimePlatform.Android)
         {
             Save();
         }
