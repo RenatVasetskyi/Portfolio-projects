@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 650051881}
   - component: {fileID: 650051880}
   - component: {fileID: 650051879}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blade
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -661,7 +661,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SliceForce: 10
-  MinSliceVelocity: 0.01
   _camera: {fileID: 963194227}
 --- !u!135 &650051880
 SphereCollider:
@@ -1241,7 +1240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1208944037}
   - component: {fileID: 1208944038}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1938,7 +1937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d34f583e49f1e4ca9143f590c18cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hightScoreText: {fileID: 2139446708}
+  _recordScoreText: {fileID: 2139446708}
   _score: {fileID: 1601290732}
 --- !u!4 &2006707755
 Transform:
@@ -1967,7 +1966,7 @@ GameObject:
   - component: {fileID: 2139446709}
   - component: {fileID: 2139446708}
   m_Layer: 5
-  m_Name: HightScoreText
+  m_Name: RecordScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

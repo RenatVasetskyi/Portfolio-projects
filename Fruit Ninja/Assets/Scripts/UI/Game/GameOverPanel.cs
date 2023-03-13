@@ -19,9 +19,9 @@ namespace UI
 
         [SerializeField] private GameObject _score;
 
-        private float _scaleDuration = 0.5f;
-        private float _gameOverTextdelay = 3f;
-        private float _gameOverPanelDelay = 5f;
+        private float _scaleDuration = 0.3f;
+        private float _gameOverTextdelay = 2f;
+        private float _gameOverPanelDelay = 4f;
 
         private void Awake()
         {

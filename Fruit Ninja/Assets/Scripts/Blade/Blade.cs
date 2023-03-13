@@ -4,8 +4,7 @@ public class Blade : MonoBehaviour
 {
     public Vector3 Direction { get; private set; }
 
-    public float SliceForce = 7f;
-    public float MinSliceVelocity = 0.01f;
+    public float SliceForce = 15f;
 
     [SerializeField] private Camera _camera;
     
@@ -13,6 +12,10 @@ public class Blade : MonoBehaviour
     private TrailRenderer _trailRenderer;
 
     private bool _slicing;
+
+    private float _minSliceVelocity = 0.01f;
+
+    private bool _slicingStarted = false;
 
     private void Awake()
     {     
@@ -22,11 +25,12 @@ public class Blade : MonoBehaviour
 
     private void Update()
     {
-        if (/*Input.touchCount*/Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0 & _slicingStarted == false)
         {
+            _slicingStarted = true; 
             StartSlicing();
-        }      
-        else if(Input.GetMouseButtonUp(0))
+        }
+        else if (Input.touchCount == 0)
         {
             StopSlicing();
         }
@@ -48,7 +52,7 @@ public class Blade : MonoBehaviour
 
     private void StartSlicing()
     {      
-        Vector3 newPosition = _camera.ScreenToWorldPoint(/*Input.GetTouch(0).position*/Input.mousePosition);
+        Vector3 newPosition = _camera.ScreenToWorldPoint(Input.GetTouch(0).position);
         newPosition.z = 0;
 
         transform.position = newPosition;
@@ -61,20 +65,21 @@ public class Blade : MonoBehaviour
 
     private void StopSlicing()
     {
+        _slicingStarted = false;
         _slicing = false;
         _bladeCollider.enabled = false;
         _trailRenderer.enabled = true;      
     }
 
     private void ContinueSlicing()
-    {       
-        Vector3 newPosition = _camera.ScreenToWorldPoint(/*Input.GetTouch(0).position*/Input.mousePosition);
+    {            
+        Vector3 newPosition = _camera.ScreenToWorldPoint(Input.GetTouch(0).position);
         newPosition.z = 0;
 
         Direction = newPosition - transform.position;
 
         float velocity = Direction.magnitude / Time.deltaTime; 
-        _bladeCollider.enabled = velocity > MinSliceVelocity;
+        _bladeCollider.enabled = velocity > _minSliceVelocity;
 
         transform.position = newPosition;
     }

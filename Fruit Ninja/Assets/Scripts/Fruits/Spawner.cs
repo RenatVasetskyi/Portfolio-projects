@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Audio;
+using Unity.VisualScripting;
 
 public class Spawner : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class Spawner : MonoBehaviour
 
     private List<GameObject> _spawnedObjects = new List<GameObject>();
 
-    private float _destroyDelay = 1.5f;
+    private float _destroyDelay = 1.5f;   
 
     private void Awake()
     {       
@@ -80,9 +81,9 @@ public class Spawner : MonoBehaviour
             GameObject fruit = Instantiate(prefab, position, rotation, _parent);
             _spawnedObjects.Add(fruit);
             AudioManager.Instance.PlaySfx(SfxType.TossUp);
-
-            Destroy(fruit, _maxLifeTime);
-            StartCoroutine(RemoveObject(fruit));
+                        
+            Destroy(fruit, _maxLifeTime);           
+            StartCoroutine(RemoveObject(fruit));           
 
             float force = Random.Range(_minSpeed, _maxSpeed);
             fruit.GetComponent<Rigidbody>().AddForce(fruit.transform.up * force, ForceMode.Impulse);               

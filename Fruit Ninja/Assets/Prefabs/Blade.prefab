@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3252637553215990321}
   - component: {fileID: 3252637553215990320}
   - component: {fileID: 3252637553215990327}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blade
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -60,7 +60,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SliceForce: 10
-  MinSliceVelocity: 0.01
   _camera: {fileID: 0}
 --- !u!1 &3252637554877582437
 GameObject:
@@ -72,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3252637554877582438}
   - component: {fileID: 3252637554877582439}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

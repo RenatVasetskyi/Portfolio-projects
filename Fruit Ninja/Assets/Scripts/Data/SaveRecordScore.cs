@@ -2,15 +2,15 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 
-public class SaveHightScore : MonoBehaviour
+public class SaveRecordScore : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _hightScoreText;
+    [SerializeField] private TextMeshProUGUI _recordScoreText;
     [SerializeField] private Score _score;
 
     private string _savePath = "Data/Score.json";
     private string _fileName = "HightScore.json";
 
-    private int _hightScore;
+    private int _recordScore;
 
     private void Awake()
     {
@@ -25,19 +25,19 @@ public class SaveHightScore : MonoBehaviour
 
     private void Save()
     {
-        HightScoreStruct hightScoreStruct = new HightScoreStruct() 
+        RecordScoreStruct recordScoreStruct = new RecordScoreStruct() 
         {
-            HightScore = _hightScore
+            RecordScore = _recordScore
         };      
 
-        if (_score.GameScore > _hightScore)
+        if (_score.GameScore > _recordScore)
         {
-            hightScoreStruct.HightScore = _score.GameScore;
+            recordScoreStruct.RecordScore = _score.GameScore;
         }
 
         try
         {       
-            string json = JsonUtility.ToJson(hightScoreStruct, true);
+            string json = JsonUtility.ToJson(recordScoreStruct, true);
             File.WriteAllText(_savePath, json);                    
         }
         catch (System.Exception)
@@ -57,9 +57,9 @@ public class SaveHightScore : MonoBehaviour
         {
             string json = File.ReadAllText(_savePath);
 
-            HightScoreStruct hightScoreStruct = JsonUtility.FromJson<HightScoreStruct>(json);
-            _hightScore = hightScoreStruct.HightScore;
-            _hightScoreText.text = $"<color=orange>Hight score: {_hightScore}</color>";
+            RecordScoreStruct recordScoreStruct = JsonUtility.FromJson<RecordScoreStruct>(json);
+            _recordScore = recordScoreStruct.RecordScore;
+            _recordScoreText.text = $"<color=orange>Record: {_recordScore}</color>";
         }
         catch (System.Exception)
         {

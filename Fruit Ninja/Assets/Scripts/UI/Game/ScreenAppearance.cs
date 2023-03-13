@@ -31,20 +31,20 @@ namespace UI
             LeanTween.color(_fadeImage.rectTransform, Color.clear, _appearScreenDuration).setOnComplete(OffFadeImage);
         }
 
-        private void OffFadeImage()
+        private void Disappear()
         {
-            _fadeImage.gameObject.SetActive(false);
-        }
+            OnFadeImage();
+            LeanTween.color(_fadeImage.rectTransform, Color.white, _disappearDuration).setOnComplete(Appear);
+        }     
 
         private void OnFadeImage()
         {
             _fadeImage.gameObject.SetActive(true);
         }
 
-        private void Disappear()
+        private void OffFadeImage()
         {
-            OnFadeImage();
-            LeanTween.color(_fadeImage.rectTransform, Color.white, _disappearDuration).setOnComplete(Appear);
+            _fadeImage.gameObject.SetActive(false);
         }
     }
 }

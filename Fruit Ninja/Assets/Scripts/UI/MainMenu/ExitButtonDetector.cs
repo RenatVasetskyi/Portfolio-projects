@@ -1,10 +1,9 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace UI
 {
-    public class PlayButtonDetector : MonoBehaviour
+    public class ExitButtonDetector : MonoBehaviour
     {
         private float _delay = 1f;
 
@@ -12,16 +11,15 @@ namespace UI
         {
             if (other.tag == Constants.PlayerTag)
             {
-                StartCoroutine(LoadGameScene());
+                StartCoroutine(Exit());
                 gameObject.GetComponent<SphereCollider>().enabled = false;
             }
         }
 
-        private IEnumerator LoadGameScene()
+        private IEnumerator Exit()
         {
             yield return new WaitForSeconds(_delay);
-            Events.SendOnGameStarted();
-            SceneManager.LoadScene(Scenes.Game.ToString());
+            Application.Quit();
         }
     }
 }
