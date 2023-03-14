@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class HealthBarController : MonoBehaviour
 {
-    [SerializeField] private UnityEngine.UI.Slider _slider;
-    [SerializeField] private UnityEngine.UI.Image _fill;
+    [SerializeField] private Slider _slider;
+    [SerializeField] private Image _fill;
     [SerializeField] private Gradient _gradient;
 
     public void SetMaxHealth(float health)

@@ -135,7 +135,6 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  _camera: {fileID: 0}
 --- !u!1 &6361500314801059599
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +501,7 @@ GameObject:
   - component: {fileID: 8272943599214529815}
   - component: {fileID: 1004589279500313226}
   - component: {fileID: 8194140691143499249}
+  - component: {fileID: 9166170185891556275}
   m_Layer: 0
   m_Name: deb_Goblin01
   m_TagString: Untagged
@@ -586,6 +586,19 @@ MonoBehaviour:
   _maxHp: 80
   _currentHp: 80
   _minHp: 0
+--- !u!65 &9166170185891556275
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8272943599224061573}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1.2, z: 0.5}
+  m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!1 &8272943599224061575
 GameObject:
   m_ObjectHideFlags: 0
