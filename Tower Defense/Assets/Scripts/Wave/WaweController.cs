@@ -40,13 +40,14 @@ public class WaweController : MonoBehaviour
 
             foreach (var enemyOnWaveData in waveData.EnemyOnWaveDatas)
             {
-                yield return new WaitForSeconds(enemyOnWaveData.TimeDelay);
+                yield return new WaitForSeconds(enemyOnWaveData.TimeDelayBetweenWaves);
 
                 foreach (var enemySpawnData in enemyOnWaveData.EnemySpawnDatas)
                 {
                     for (int i = 0; i < enemySpawnData.EnemyCount; i++)
                     {
-                        Instantiate(_prefabs[enemySpawnData.Enemy], _startPoint.position, _startPoint.rotation, _parent);                       
+                        Instantiate(_prefabs[enemySpawnData.Enemy], _startPoint.position, _startPoint.rotation, _parent);
+                        yield return new WaitForSeconds(enemyOnWaveData.TimeDelayBetweenSpawns);
                     }
                 }
             }
@@ -56,6 +57,7 @@ public class WaweController : MonoBehaviour
     private void OnWaveButtonClickHandler()
     {       
         StartCoroutine(RunWave());
+        EventManager.SendGameStarted();
         _waveButton.interactable = false;
     }
 }

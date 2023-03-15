@@ -2,10 +2,23 @@ using UnityEngine.Events;
 
 public class EventManager
 {
+    public static UnityEvent GameStarted = new UnityEvent();
+    public static UnityEvent GameOver = new UnityEvent();
     public static UnityEvent<bool> LevelPassed = new UnityEvent<bool>();  
     public static UnityEvent EnemySpawned = new UnityEvent();
     public static UnityEvent EnemyDestroyed = new UnityEvent();
-    public static UnityEvent<float> HpChanged = new UnityEvent<float>();
+    public static UnityEvent<float> EnemyHpChanged = new UnityEvent<float>();
+    public static UnityEvent<int> PlayerHpChanged = new UnityEvent<int>();
+
+    public static void SendGameStarted()
+    {
+        GameStarted.Invoke();
+    }
+
+    public static void SendGameOver()
+    {
+        GameOver.Invoke();
+    }
 
     public static void SendLevelPassed(bool passed)
     {
@@ -22,8 +35,13 @@ public class EventManager
         EnemyDestroyed.Invoke();
     }
 
-    public static void SendHpChanged(float damage)
+    public static void SendEnemyHpChanged(float damage)
     {
-        HpChanged.Invoke(damage);
+        EnemyHpChanged.Invoke(damage);
+    }
+
+    public static void SendPlayerHpChanged(int damage)
+    {
+        PlayerHpChanged.Invoke(damage);
     }
 }

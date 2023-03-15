@@ -2,7 +2,7 @@ public class GoblinHealthController : VitalitySystem
 {
     private void Awake()
     {
-        EventManager.HpChanged.AddListener(TakeDamage);
+        EventManager.EnemyHpChanged.AddListener(TakeDamage);
         _healthBarController.SetMaxHealth(_maxHp);
     }
 

@@ -17,20 +17,25 @@ MonoBehaviour:
     _enemyOnWaveDatas:
     - _enemySpawnDatas:
       - _enemy: 1
-        _enemyCount: 3
-      _timeDelay: 10
+        _enemyCount: 7
+      _timeDelayBetweenWaves: 10
+      _timeDelayBetweenSpawns: 0.7
   - _waveNumber: 2
     _enemyOnWaveDatas:
     - _enemySpawnDatas:
       - _enemy: 0
-        _enemyCount: 4
-      _timeDelay: 20
+        _enemyCount: 10
+      - _enemy: 1
+        _enemyCount: 3
+      _timeDelayBetweenWaves: 15
+      _timeDelayBetweenSpawns: 0.7
   - _waveNumber: 3
     _enemyOnWaveDatas:
     - _enemySpawnDatas:
       - _enemy: 0
-        _enemyCount: 3
+        _enemyCount: 8
       - _enemy: 1
-        _enemyCount: 3
-      _timeDelay: 25
+        _enemyCount: 10
+      _timeDelayBetweenWaves: 20
+      _timeDelayBetweenSpawns: 0.7
   _level: 1
