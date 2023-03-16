@@ -4536,7 +4536,7 @@ RectTransform:
   m_GameObject: {fileID: 146640057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1001713440}
@@ -16544,7 +16544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
   m_sharedMaterial: {fileID: 3034728851940921212, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
@@ -18899,6 +18899,7 @@ Transform:
   m_Children:
   - {fileID: 2097629440}
   - {fileID: 1487242587}
+  - {fileID: 1251150598}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22312,7 +22313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 25
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
   m_sharedMaterial: {fileID: 3034728851940921212, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
@@ -23715,7 +23716,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
   m_sharedMaterial: {fileID: 3034728851940921212, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
@@ -32890,7 +32891,6 @@ MonoBehaviour:
   _cannonTowerImage: {fileID: 234557493}
   _megaTowerImage: {fileID: 1135021482}
   _speedTowerImage: {fileID: 175664753}
-  _checkMark: {fileID: 2088355566}
   _towerDescription: {fileID: 1147132540}
   _towerDescriptionBackground: {fileID: 830910263}
   _towerPlace:
@@ -32902,6 +32902,8 @@ MonoBehaviour:
   _camera: {fileID: 963194227}
   _buildSelection: {fileID: 146640057}
   _buildSelectionAnimationsPlayer: {fileID: 146640062}
+  _towerPrice: {fileID: 1251150600}
+  _createTower: {fileID: 0}
 --- !u!1001 &1033601161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38222,6 +38224,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 412788, guid: 298d1ef1ac6d608419471f51cd58df2f, type: 3}
   m_PrefabInstance: {fileID: 1246213649}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1251150597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1251150598}
+  - component: {fileID: 1251150599}
+  - component: {fileID: 1251150600}
+  m_Layer: 0
+  m_Name: CoinSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1251150598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251150597}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 597772269}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1251150599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251150597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b15431492bec64c9a197526c236ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoinForLvl: 120
+  _coinsText: {fileID: 717776851}
+--- !u!114 &1251150600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251150597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f07afdcbe8a6294cb5e56e9f826ad78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CannonTowerPrice: 50
+  MageTowerPrice: 60
+  MegaTowerPrice: 70
+  SpeedTowerPrice: 80
+  _cannonTowerPriceText: {fileID: 686013849}
+  _mageTowerPriceText: {fileID: 1618663414}
+  _megaTowerPriceText: {fileID: 1871984277}
+  _speedTowerPriceText: {fileID: 557520678}
 --- !u!1001 &1256860988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45446,6 +45515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coinSystem: {fileID: 0}
+  _towerPrice: {fileID: 0}
   _mageTower: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0, type: 3}
   _cannonTower: {fileID: 129420, guid: d3ef549050e9b0542b4f3c3dd47a1085, type: 3}
   _megaTower: {fileID: 1326093064322132, guid: a425124410f363a43adb6788601cc3e0, type: 3}
@@ -48765,7 +48836,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 35
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
   m_sharedMaterial: {fileID: 3034728851940921212, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
@@ -56723,7 +56796,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 40
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
   m_sharedMaterial: {fileID: 3034728851940921212, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
@@ -59083,19 +59156,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3423388300971593625, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3423388300971593625, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3423388300971593625, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3423388300971593625, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3423388300971593625, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -59103,7 +59176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3423388300971593625, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3423388300971593625, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

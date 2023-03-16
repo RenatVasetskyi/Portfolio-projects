@@ -21,9 +21,11 @@ public class WaweController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _waveCountText;
 
     private void Awake()
-    {      
+    {
+        EventManager.GameOver.AddListener(StopCoroutines);
+
         _waveButton.onClick.AddListener(OnWaveButtonClickHandler);       
-        _waveCountText.text = $"Wave {0} / {_waveDescription.WaveDatas.Count}";
+        _waveCountText.text = $"Wave {0} / {_waveDescription.WaveDatas.Count}";       
     }
 
     private IEnumerator RunWave()
@@ -52,6 +54,11 @@ public class WaweController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void StopCoroutines()
+    {
+        StopAllCoroutines();
     }
 
     private void OnWaveButtonClickHandler()

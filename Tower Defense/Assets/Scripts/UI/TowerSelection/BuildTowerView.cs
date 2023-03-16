@@ -17,7 +17,7 @@ public class BuildTowerView : MonoBehaviour
     [SerializeField] private Image _megaTowerImage;
     [SerializeField] private Image _speedTowerImage;
 
-    [SerializeField] private Button _checkMark;
+    //[SerializeField] private Button _checkMark;
 
     [SerializeField] private TextMeshProUGUI _towerDescription;
 
@@ -32,6 +32,10 @@ public class BuildTowerView : MonoBehaviour
 
     [SerializeField] private BuildSelectionAnimationsPlayer _buildSelectionAnimationsPlayer;
 
+    [SerializeField] private TowerPrice _towerPrice;
+
+    [SerializeField] private CreateTower _createTower;
+
     private float _maxRayDistance = 120f; 
 
     private void Start()
@@ -40,7 +44,7 @@ public class BuildTowerView : MonoBehaviour
         _cannonTowerButton.onClick.AddListener(OnCannonTowerButtonClickHandler);
         _megaTowerButton.onClick.AddListener(OnMegaTowerButtonClickHandler);
         _speedTowerButton.onClick.AddListener(OnSpeedTowerButtonClickHandler);
-        _checkMark.onClick.AddListener(OnCheckMarkButtonClickHandler);      
+        //_checkMark.onClick.AddListener(OnCheckMarkButtonClickHandler);      
     }
 
     private void LateUpdate()
@@ -51,7 +55,7 @@ public class BuildTowerView : MonoBehaviour
 
     protected void ResetSelectionView()
     {
-        _checkMark.gameObject.SetActive(false);
+        //_checkMark.gameObject.SetActive(false);
         _mageTowerImage.gameObject.SetActive(true);
         _cannonTowerImage.gameObject.SetActive(true);
         _megaTowerImage.gameObject.SetActive(true);
@@ -95,12 +99,12 @@ public class BuildTowerView : MonoBehaviour
         _megaTowerImage.gameObject.SetActive(true);
     }
 
-    private void OnCheckMarkButtonClickHandler()
-    {
-        ResetSelectionView();
-        _buildSelectionAnimationsPlayer.PlayClose();
-        //Tower creation method
-    }
+    //private void OnCheckMarkButtonClickHandler()
+    //{
+    //    ResetSelectionView();
+    //    _buildSelectionAnimationsPlayer.PlayClose();
+    //    //TowerCreation      
+    //}
 
     private void ViewingTheTower(TowerType towerType)
     {
@@ -108,35 +112,35 @@ public class BuildTowerView : MonoBehaviour
         {
             case TowerType.Mage:
                 _mageTowerImage.gameObject.SetActive(false);
-                _checkMark.gameObject.SetActive(true);               
-                _checkMark.transform.position = _mageTowerImage.transform.position;
+                //_checkMark.gameObject.SetActive(true);               
+                //_checkMark.transform.position = _mageTowerImage.transform.position;
                 _towerDescriptionBackground.gameObject.SetActive(true);             
                 _towerDescription.text = $"<size=22><color=#CDF537>Mage</color></size><size=16><color=#F0E6B9>\nThis tower shoots crystals and deals a lot of damage." +
-                    $"</color></size><color=#94BA47>\nPrice:</color><color=yellow> {100} </color><color=#94BA47>\nDamage:</color><color=red> {12} </color>";
+                    $"</color></size><color=#94BA47>\nPrice:</color><color=yellow> {_towerPrice.MageTowerPrice} </color><color=#94BA47>\nDamage:</color><color=red> {12} </color>";
                 break;
             case TowerType.Cannon:
                 _cannonTowerImage.gameObject.SetActive(false);              
-                _checkMark.gameObject.SetActive(true);                
-                _checkMark.transform.position = _cannonTowerImage.transform.position;
+                //_checkMark.gameObject.SetActive(true);                
+                //_checkMark.transform.position = _cannonTowerImage.transform.position;
                 _towerDescriptionBackground.gameObject.SetActive(true);
                 _towerDescription.text = $"<size=22><color=#CDF537>Cannon</color></size><size=16><color=#F0E6B9>\nThis tower shoots projectiles and has a low speed." +
-                    $"</color></size><color=#94BA47>\nPrice:</color><color=yellow> {80} </color><color=#94BA47>\nDamage:</color><color=red> {10} </color>";
+                    $"</color></size><color=#94BA47>\nPrice:</color><color=yellow> {_towerPrice.CannonTowerPrice} </color><color=#94BA47>\nDamage:</color><color=red> {10} </color>";
                 break;
             case TowerType.Mega:
                 _megaTowerImage.gameObject.SetActive(false);                
-                _checkMark.gameObject.SetActive(true);
-                _checkMark.transform.position = _megaTowerImage.transform.position;
+                //_checkMark.gameObject.SetActive(true);
+                //_checkMark.transform.position = _megaTowerImage.transform.position;
                 _towerDescriptionBackground.gameObject.SetActive(true);
                 _towerDescription.text = $"<size=22><color=#CDF537>Mega</color></size><size=16><color=#F0E6B9>\nThis tower shoots projectiles and deals a lot of damage." +
-                    $"</color></size><color=#94BA47>\nPrice:</color><color=yellow> {120} </color><color=#94BA47>\nDamage:</color><color=red> {14} </color>";
+                    $"</color></size><color=#94BA47>\nPrice:</color><color=yellow> {_towerPrice.MegaTowerPrice} </color><color=#94BA47>\nDamage:</color><color=red> {14} </color>";
                 break;
             case TowerType.Speed:
                 _speedTowerImage.gameObject.SetActive(false);
-                _checkMark.gameObject.SetActive(true);
-                _checkMark.gameObject.transform.position = _speedTowerImage.transform.position;
+                //_checkMark.gameObject.SetActive(true);
+                //_checkMark.gameObject.transform.position = _speedTowerImage.transform.position;
                 _towerDescriptionBackground.gameObject.SetActive(true);
                 _towerDescription.text = $"<size=22><color=#CDF537>Speed</color></size><size=16><color=#F0E6B9>\nThis tower shoots small projectiles but has fast speed." +
-                    $"</color></size><color=#94BA47>\nPrice:</color><color=yellow> {90} </color><color=#94BA47>\nDamage:</color><color=red> {6} </color>";
+                    $"</color></size><color=#94BA47>\nPrice:</color><color=yellow> {_towerPrice.SpeedTowerPrice} </color><color=#94BA47>\nDamage:</color><color=red> {6} </color>";
                 break;
         }
     }
