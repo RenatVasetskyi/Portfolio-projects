@@ -3,12 +3,15 @@ using UnityEngine.Events;
 public class EventManager
 {
     public static UnityEvent GameStarted = new UnityEvent();
-    public static UnityEvent GameOver = new UnityEvent();
-    public static UnityEvent<bool> LevelPassed = new UnityEvent<bool>();  
+    public static UnityEvent GameOver = new UnityEvent();  
     public static UnityEvent EnemySpawned = new UnityEvent();
     public static UnityEvent EnemyDestroyed = new UnityEvent();
     public static UnityEvent<float> EnemyHpChanged = new UnityEvent<float>();
     public static UnityEvent<int> PlayerHpChanged = new UnityEvent<int>();
+    public static UnityEvent TowerSpawned = new UnityEvent();
+    public static UnityEvent<int> BoughtTower = new UnityEvent<int>();
+    public static UnityEvent<float> TowerUpgraded = new UnityEvent<float>();
+    public static UnityEvent UpgradeTowerTextUpdate  = new UnityEvent();
 
     public static void SendGameStarted()
     {
@@ -18,11 +21,6 @@ public class EventManager
     public static void SendGameOver()
     {
         GameOver.Invoke();
-    }
-
-    public static void SendLevelPassed(bool passed)
-    {
-        LevelPassed.Invoke(passed);
     }
 
     public static void SendEnemySpawned()
@@ -43,5 +41,25 @@ public class EventManager
     public static void SendPlayerHpChanged(int damage)
     {
         PlayerHpChanged.Invoke(damage);
+    }
+
+    public static void SendTowerSpawned() 
+    {
+        TowerSpawned.Invoke();
+    }
+
+    public static void SendBoughtTower(int price)
+    {
+        BoughtTower.Invoke(price);
+    }
+
+    public static void SendTowerUpgraded(float price)
+    {
+        TowerUpgraded.Invoke(price);
+    }
+
+    public static void SendUpgradeTowerTextUpdate()
+    {
+        UpgradeTowerTextUpdate.Invoke();
     }
 }

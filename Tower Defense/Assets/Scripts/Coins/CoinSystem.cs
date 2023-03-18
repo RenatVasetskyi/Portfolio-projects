@@ -3,12 +3,26 @@ using UnityEngine;
 
 public class CoinSystem : MonoBehaviour
 {
-    public int CoinForLvl;
+    public float Coins;
 
     [SerializeField] private TextMeshProUGUI _coinsText;
 
     private void Awake()
     {
-        _coinsText.text = CoinForLvl.ToString();
+        _coinsText.text = Coins.ToString();      
+        EventManager.BoughtTower.AddListener(BuyTower);
+        EventManager.TowerUpgraded.AddListener(UpgradeTower);
+    }
+
+    private void BuyTower(int price)
+    {
+        Coins -= price;
+        _coinsText.text = Coins.ToString();
+    }
+
+    private void UpgradeTower(float price)
+    {
+        Mathf.Round(Coins -= price);
+        _coinsText.text = Coins.ToString();
     }
 }
