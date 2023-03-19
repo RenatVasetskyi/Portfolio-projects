@@ -254,8 +254,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 1.2, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 2.5, y: 0}
+  m_SizeDelta: {x: 3, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1692292468745028656
 CanvasRenderer:
@@ -754,7 +754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 1.2, y: 0}
+  m_AnchoredPosition: {x: 2.5, y: 0}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3929836702577788848
@@ -890,7 +890,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 1.7, y: 0}
-  m_SizeDelta: {x: 2, y: 1}
+  m_SizeDelta: {x: 3, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1528769471101698785
 CanvasRenderer:
@@ -1561,7 +1561,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 1.7, y: 0}
-  m_SizeDelta: {x: 2, y: 1}
+  m_SizeDelta: {x: 3, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2944797332382520161
 CanvasRenderer:
@@ -2085,9 +2085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4559839046222755700}
-  - component: {fileID: 698693972541607707}
   - component: {fileID: 2794262072978435425}
-  - component: {fileID: 4348488120787478747}
   - component: {fileID: 7242782100789690062}
   m_Layer: 0
   m_Name: CannonTower
@@ -2118,31 +2116,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &698693972541607707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4559839046223248598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd09a5b7a4185864bb41a4a346e6f784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentDamageText: {fileID: 2978198366848857140}
-  _currentFireSpeedText: {fileID: 2085636787177188838}
-  _currentAttackRangeText: {fileID: 6751817324785809534}
-  _damage: 25
-  _fireSpeed: 1
-  _attackRange: 10
-  _towerCanvas: {fileID: 840059347487692617}
-  _damageText: {fileID: 1356574384577134580}
-  _fireSpeedText: {fileID: 3223174029559182842}
-  _attackRangeText: {fileID: 6149521821026759808}
-  _upgradePriceText: {fileID: 2594193415688521576}
-  _upgradeButton: {fileID: 552981028218519034}
-  _closeCanvasButton: {fileID: 594315335419572207}
 --- !u!65 &2794262072978435425
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2156,24 +2129,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 15, z: 8}
   m_Center: {x: 0, y: 7.5, z: 0}
---- !u!114 &4348488120787478747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4559839046223248598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eafcbefd2175327479dec7d9d7ee84f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentDamageText: {fileID: 2978198366848857140}
-  _currentFireSpeedText: {fileID: 2085636787177188838}
-  _currentAttackRangeText: {fileID: 6751817324785809534}
-  _damage: 25
-  _fireSpeed: 1
-  _attackRange: 10
 --- !u!114 &7242782100789690062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2192,6 +2147,15 @@ MonoBehaviour:
   _damage: 25
   _fireSpeed: 1
   _attackRange: 10
+  _upgradePrice: 40
+  _towerCanvas: {fileID: 840059347487692617}
+  _damageText: {fileID: 1356574384577134580}
+  _fireSpeedText: {fileID: 3223174029559182842}
+  _attackRangeText: {fileID: 6149521821026759808}
+  _upgradePriceText: {fileID: 2594193415688521576}
+  _upgradeButton: {fileID: 552981028218519034}
+  _closeCanvasButton: {fileID: 594315335419572207}
+  _canvasScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4559839046223253704
 GameObject:
   m_ObjectHideFlags: 0
@@ -7664,7 +7628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 1.2, y: 0}
+  m_AnchoredPosition: {x: 2.5, y: 0}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8242468173014154554
@@ -8459,7 +8423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2368486690474480737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8469,7 +8433,7 @@ RectTransform:
   m_GameObject: {fileID: 8847944061720409399}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4078845305305594863}
