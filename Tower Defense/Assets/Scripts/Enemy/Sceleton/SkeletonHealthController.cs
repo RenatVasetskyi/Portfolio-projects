@@ -6,12 +6,6 @@ public class SkeletonHealthController : VitalitySystem
         _healthBarController.SetMaxHealth(_maxHp);
     }
 
-    protected override void TakeDamage(float damage)
-    {
-        _currentHp = _maxHp - damage;
-        _healthBarController.SetHealth(_currentHp);
-    }
-
     public SkeletonHealthController()
     {
         _maxHp = 100;

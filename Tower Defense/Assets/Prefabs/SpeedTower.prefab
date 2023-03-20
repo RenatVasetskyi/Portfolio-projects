@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 6926392523423753082}
   - component: {fileID: 4708883271599129172}
   - component: {fileID: 4823863074483932094}
+  - component: {fileID: 659975489313250206}
   m_Layer: 0
   m_Name: SpeedTower
   m_TagString: Untagged
@@ -249,11 +250,11 @@ Transform:
   m_GameObject: {fileID: 165880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 476426}
-  - {fileID: 450448}
+  - {fileID: 2647795832442676268}
   - {fileID: 1195536591750501315}
   - {fileID: 5082006425307686901}
   m_Father: {fileID: 0}
@@ -297,13 +298,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11331d0d1e182d45af466b1d2ddcfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 25
+  FireSpeed: 2
+  AttackRange: 10
+  UpgradePrice: 40
   _currentDamageText: {fileID: 3970572532270035624}
   _currentFireSpeedText: {fileID: 4528094310543500192}
   _currentAttackRangeText: {fileID: 5641526036400114429}
-  _damage: 50
-  _fireSpeed: 1
-  _attackRange: 10
-  _upgradePrice: 40
   _towerCanvas: {fileID: 169599738879960727}
   _damageText: {fileID: 4030129173524292870}
   _fireSpeedText: {fileID: 6955851019422179150}
@@ -312,6 +313,22 @@ MonoBehaviour:
   _upgradeButton: {fileID: 7468332663960122317}
   _closeCanvasButton: {fileID: 4632907149461366790}
   _canvasScale: {x: 0.6, y: 0.6, z: 0.6}
+--- !u!114 &659975489313250206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b680d3d94c7fea4ba0c8351a067a087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cannonRotator: {fileID: 2647795832442676268}
+  _cannonRotateSpeed: 5
+  _bulletPrefab: {fileID: 429867320233133879, guid: 0e5d54ce34c77a244a0ea8d98ef6e833, type: 3}
+  _bulletStartPoint: {fileID: 1645215372073130373}
 --- !u!1 &171538
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,15 +602,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196596}
-  m_LocalRotation: {x: 0, y: -0.006219854, z: 0, w: 0.9999807}
-  m_LocalPosition: {x: 0.037, y: 6.157, z: 0.14}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 463400}
   - {fileID: 449956}
-  m_Father: {fileID: 471166}
-  m_RootOrder: 1
+  m_Father: {fileID: 2647795832442676268}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9524064
 Animator:
@@ -1370,6 +1387,39 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &2475520028278655783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2647795832442676268}
+  m_Layer: 0
+  m_Name: TowerTop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2647795832442676268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2475520028278655783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 450448}
+  - {fileID: 1645215372073130373}
+  m_Father: {fileID: 471166}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2608562589738885371
 GameObject:
   m_ObjectHideFlags: 0
@@ -3245,6 +3295,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &8456798449645979341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1645215372073130373}
+  m_Layer: 0
+  m_Name: BulletStartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1645215372073130373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8456798449645979341}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5539994, z: 2.794}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2647795832442676268}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8533543107561688138
 GameObject:
   m_ObjectHideFlags: 0

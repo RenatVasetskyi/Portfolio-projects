@@ -6859,6 +6859,7 @@ GameObject:
   - component: {fileID: -4879870289322771848}
   - component: {fileID: 5570149841542141620}
   - component: {fileID: -96649888594440192}
+  - component: {fileID: 5594799634202924265}
   m_Layer: 0
   m_Name: MageTower
   m_TagString: Untagged
@@ -6880,7 +6881,7 @@ Transform:
   m_Children:
   - {fileID: 5794111474321432939}
   - {fileID: 5794111474321416401}
-  - {fileID: 5794111474321401819}
+  - {fileID: 1789107419593904097}
   - {fileID: 5794111474321369827}
   - {fileID: 5794111474321383789}
   - {fileID: 5794111474321408891}
@@ -6934,13 +6935,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11331d0d1e182d45af466b1d2ddcfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 25
+  FireSpeed: 1
+  AttackRange: 10
+  UpgradePrice: 40
   _currentDamageText: {fileID: 2119420245812808295}
   _currentFireSpeedText: {fileID: 8503162925215644286}
   _currentAttackRangeText: {fileID: 369683290370661283}
-  _damage: 30
-  _fireSpeed: 1
-  _attackRange: 10
-  _upgradePrice: 40
   _towerCanvas: {fileID: 589894636029732092}
   _damageText: {fileID: 7961446839340533116}
   _fireSpeedText: {fileID: 3822610143852120220}
@@ -6962,6 +6963,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 1.5, z: 0.7}
   m_Center: {x: 0, y: 0.7, z: 0}
+--- !u!114 &5594799634202924265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794111474321670319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b680d3d94c7fea4ba0c8351a067a087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cannonRotator: {fileID: 1789107419593904097}
+  _cannonRotateSpeed: 5
 --- !u!1 &5794111474321671333
 GameObject:
   m_ObjectHideFlags: 0
@@ -6987,14 +7002,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5794111474321671333}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5.9986496, y: 5.9986496, z: 18.737053}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5794111474321447205}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1789107419593904097}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5794111474318445177
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8543,3 +8558,35 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &9220871885398351736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1789107419593904097}
+  m_Layer: 0
+  m_Name: Crystal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1789107419593904097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9220871885398351736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5794111474321401819}
+  m_Father: {fileID: 5794111474321447205}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

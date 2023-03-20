@@ -3,7 +3,7 @@ using UnityEngine.Events;
 public class EventManager
 {
     public static UnityEvent GameStarted = new UnityEvent();
-    public static UnityEvent GameOver = new UnityEvent();  
+    public static UnityEvent GameOver = new UnityEvent();
     public static UnityEvent EnemySpawned = new UnityEvent();
     public static UnityEvent EnemyDestroyed = new UnityEvent();
     public static UnityEvent<float> EnemyHpChanged = new UnityEvent<float>();

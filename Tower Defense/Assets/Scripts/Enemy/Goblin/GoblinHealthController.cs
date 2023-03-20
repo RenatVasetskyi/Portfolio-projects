@@ -6,11 +6,14 @@ public class GoblinHealthController : VitalitySystem
         _healthBarController.SetMaxHealth(_maxHp);
     }
 
-    protected override void TakeDamage(float damage)
-    {
-        _currentHp = _maxHp - damage;
-        _healthBarController.SetHealth(_currentHp);
-    }
+    //public override void TakeDamage(float damage)
+    //{
+    //    _currentHp -= damage;
+    //    _healthBarController.SetHealth(_currentHp);
+
+    //    if (_currentHp <= _minHp)
+    //        Destroy(gameObject);
+    //}
 
     public GoblinHealthController()
     {

@@ -8,9 +8,12 @@ public class VitalitySystem : MonoBehaviour
     [SerializeField] protected float _currentHp;
     [SerializeField] protected float _minHp;
 
-    protected virtual void TakeDamage(float damage)
-    {
-        _currentHp = _maxHp - damage;
-        _healthBarController.SetHealth(_currentHp);       
+    public void TakeDamage(float damage)
+    {      
+        _currentHp -= damage;
+        _healthBarController.SetHealth(_currentHp);
+
+        if (_currentHp <= _minHp)       
+            Destroy(gameObject);
     }
 }

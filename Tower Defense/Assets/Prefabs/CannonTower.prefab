@@ -2023,6 +2023,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4559839046222811828}
+  - {fileID: 3380881667967940485}
   m_Father: {fileID: 4559839046222755700}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2087,6 +2088,7 @@ GameObject:
   - component: {fileID: 4559839046222755700}
   - component: {fileID: 2794262072978435425}
   - component: {fileID: 7242782100789690062}
+  - component: {fileID: 1129340734636936796}
   m_Layer: 0
   m_Name: CannonTower
   m_TagString: Untagged
@@ -2141,13 +2143,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11331d0d1e182d45af466b1d2ddcfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 25
+  FireSpeed: 1
+  AttackRange: 10
+  UpgradePrice: 40
   _currentDamageText: {fileID: 2978198366848857140}
   _currentFireSpeedText: {fileID: 2085636787177188838}
   _currentAttackRangeText: {fileID: 6751817324785809534}
-  _damage: 25
-  _fireSpeed: 1
-  _attackRange: 10
-  _upgradePrice: 40
   _towerCanvas: {fileID: 840059347487692617}
   _damageText: {fileID: 1356574384577134580}
   _fireSpeedText: {fileID: 3223174029559182842}
@@ -2156,6 +2158,22 @@ MonoBehaviour:
   _upgradeButton: {fileID: 552981028218519034}
   _closeCanvasButton: {fileID: 594315335419572207}
   _canvasScale: {x: 1, y: 1, z: 1}
+--- !u!114 &1129340734636936796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559839046223248598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b680d3d94c7fea4ba0c8351a067a087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cannonRotator: {fileID: 4559839046222818026}
+  _cannonRotateSpeed: 5
+  _bulletPrefab: {fileID: 7440169714611433829, guid: d28eafb62ac63624b93b29883261f1fc, type: 3}
+  _bulletStartPoint: {fileID: 3380881667967940485}
 --- !u!1 &4559839046223253704
 GameObject:
   m_ObjectHideFlags: 0
@@ -7593,6 +7611,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &6440455080580114298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3380881667967940485}
+  m_Layer: 0
+  m_Name: bulletStartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3380881667967940485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440455080580114298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.014, y: 2.07, z: 4.004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4559839046222818026}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6991195846466610987
 GameObject:
   m_ObjectHideFlags: 0
