@@ -454,6 +454,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 4946245}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5666633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5666634}
+  - component: {fileID: 5666637}
+  - component: {fileID: 5666636}
+  - component: {fileID: 5666635}
+  m_Layer: 8
+  m_Name: Zone17
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5666634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666633}
+  m_LocalRotation: {x: -0, y: -0.8829301, z: -0, w: -0.46950448}
+  m_LocalPosition: {x: 72.39, y: 0, z: 12.54}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: -236.004, z: 0}
+--- !u!114 &5666635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &5666636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &5666637
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666633}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 0.1, z: 15}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &18332534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -550,6 +636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 24530275}
   - component: {fileID: 24530276}
+  - component: {fileID: 24530277}
   m_Layer: 5
   m_Name: TowerIcons
   m_TagString: Untagged
@@ -607,6 +694,26 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &24530277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24530274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1632275110631468ccfcc8f1414a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _mageTowerButton: {fileID: 615506064}
+  _cannonTowerButton: {fileID: 987111316}
+  _megaTowerButton: {fileID: 452406164}
+  _speedTowerButton: {fileID: 684832174}
 --- !u!1001 &25627293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2948,6 +3055,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MageTower: {fileID: 0}
+  CannonTower: {fileID: 0}
+  MegaTower: {fileID: 0}
+  SpeedTower: {fileID: 0}
   IsMageTowerButtonPressed: 0
   IsCannonTowerButtonPressed: 0
   IsMegaTowerButtonPressed: 0
@@ -2955,10 +3066,6 @@ MonoBehaviour:
   _towerParent: {fileID: 301422991}
   _coinSystem: {fileID: 1251150599}
   _towerPrice: {fileID: 1251150600}
-  _mageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
-  _cannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
-  _megaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
-  _speedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
 --- !u!114 &105173291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2971,6 +3078,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1632275110631468ccfcc8f1414a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
   _mageTowerButton: {fileID: 615506064}
   _cannonTowerButton: {fileID: 987111316}
   _megaTowerButton: {fileID: 452406164}
@@ -5088,6 +5199,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 413218, guid: 826b6a0b570e8460990010fa615b5a2a, type: 3}
   m_PrefabInstance: {fileID: 161534410}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &162490036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 162490037}
+  - component: {fileID: 162490040}
+  - component: {fileID: 162490039}
+  - component: {fileID: 162490038}
+  m_Layer: 8
+  m_Name: Zone2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &162490037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162490036}
+  m_LocalRotation: {x: -0, y: 0.10224501, z: -0, w: 0.99475926}
+  m_LocalPosition: {x: 76, y: 0, z: 35.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 11.737, z: 0}
+--- !u!114 &162490038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162490036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &162490039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162490036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &162490040
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162490036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 0.1, z: 8.12}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &166640871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5885,6 +6082,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9213206596740143703, guid: 3bd4eb13459efc04fb4e6097b0ca719f, type: 3}
   m_PrefabInstance: {fileID: 188783093}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &191961319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 191961320}
+  - component: {fileID: 191961323}
+  - component: {fileID: 191961322}
+  - component: {fileID: 191961321}
+  m_Layer: 8
+  m_Name: Zone7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &191961320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191961319}
+  m_LocalRotation: {x: -0, y: -0.6976578, z: -0, w: 0.7164311}
+  m_LocalPosition: {x: 111.1, y: 0, z: 33.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: -88.479, z: 0}
+--- !u!114 &191961321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191961319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &191961322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191961319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &191961323
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191961319}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 0.1, z: 15}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &193676916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8403,6 +8686,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 261789655}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &264855710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 264855711}
+  - component: {fileID: 264855714}
+  - component: {fileID: 264855713}
+  - component: {fileID: 264855712}
+  m_Layer: 8
+  m_Name: Zone16
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &264855711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264855710}
+  m_LocalRotation: {x: -0, y: -0.96720046, z: -0, w: -0.25401428}
+  m_LocalPosition: {x: 60.05, y: 0, z: 21.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: -209.43, z: 0}
+--- !u!114 &264855712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264855710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &264855713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264855710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &264855714
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264855710}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 0.1, z: 15}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &268926948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8564,6 +8933,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 1573851452}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &276196836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276196837}
+  - component: {fileID: 276196840}
+  - component: {fileID: 276196839}
+  - component: {fileID: 276196838}
+  m_Layer: 8
+  m_Name: Zone11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &276196837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276196836}
+  m_LocalRotation: {x: -0, y: -0.9307421, z: -0, w: 0.36567634}
+  m_LocalPosition: {x: 135.4, y: 0, z: 50.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: -137.102, z: 0}
+--- !u!114 &276196838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276196836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &276196839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276196836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &276196840
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276196836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 0.1, z: 8}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &277289996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10845,6 +11300,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
   m_PrefabInstance: {fileID: 343394016}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &343455654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343455655}
+  - component: {fileID: 343455658}
+  - component: {fileID: 343455657}
+  - component: {fileID: 343455656}
+  m_Layer: 8
+  m_Name: Zone25
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &343455655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343455654}
+  m_LocalRotation: {x: -0, y: -0.34992713, z: -0, w: -0.93677694}
+  m_LocalPosition: {x: 144.07, y: 0, z: 36.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: -319.034, z: 0}
+--- !u!114 &343455656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343455654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &343455657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343455654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &343455658
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343455654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 0.1, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &345843461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12922,6 +13463,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 1569559716}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &413950542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 413950543}
+  - component: {fileID: 413950546}
+  - component: {fileID: 413950545}
+  - component: {fileID: 413950544}
+  m_Layer: 8
+  m_Name: Zone3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &413950543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413950542}
+  m_LocalRotation: {x: -0, y: -0.093315385, z: -0, w: 0.99563664}
+  m_LocalPosition: {x: 75.5, y: 0, z: 30.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -10.709, z: 0}
+--- !u!114 &413950544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413950542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &413950545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413950542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &413950546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413950542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 0.1, z: 8.12}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &419247424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14316,6 +14943,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 470658, guid: f28b03d0c78691c46b6b38a0b71415b9, type: 3}
   m_PrefabInstance: {fileID: 459123070}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &460946487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 460946488}
+  - component: {fileID: 460946491}
+  - component: {fileID: 460946490}
+  - component: {fileID: 460946489}
+  m_Layer: 8
+  m_Name: Zone10
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &460946488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460946487}
+  m_LocalRotation: {x: -0, y: -0.9778002, z: -0, w: 0.20953959}
+  m_LocalPosition: {x: 131, y: 0, z: 44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: -155.809, z: 0}
+--- !u!114 &460946489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460946487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &460946490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460946487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &460946491
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460946487}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 0.1, z: 8}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &461768948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14402,6 +15115,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 481342, guid: 9654603070f5f9646a5e8ee484592ba4, type: 3}
   m_PrefabInstance: {fileID: 461768948}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &463071226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 463071227}
+  - component: {fileID: 463071230}
+  - component: {fileID: 463071229}
+  - component: {fileID: 463071228}
+  m_Layer: 8
+  m_Name: Zone4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &463071227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463071226}
+  m_LocalRotation: {x: -0, y: -0.3959524, z: -0, w: 0.91827106}
+  m_LocalPosition: {x: 83.2, y: 0, z: 24.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -46.651, z: 0}
+--- !u!114 &463071228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463071226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &463071229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463071226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &463071230
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463071226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 0.1, z: 20}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!4 &467586175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
@@ -15256,92 +16055,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
---- !u!1001 &511453618
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1464732904}
-    m_Modifications:
-    - target: {fileID: 192044, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_Name
-      value: Fir_Tree (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 192044, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 192044, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 77.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.00008463858
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000021855694
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
---- !u!4 &511453619 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-  m_PrefabInstance: {fileID: 511453618}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &513582672 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
@@ -22310,6 +23023,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
   m_PrefabInstance: {fileID: 680702055}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &684415319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 684415320}
+  - component: {fileID: 684415323}
+  - component: {fileID: 684415322}
+  - component: {fileID: 684415321}
+  m_Layer: 8
+  m_Name: Zone8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &684415320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684415319}
+  m_LocalRotation: {x: -0, y: -0.85656816, z: -0, w: 0.51603395}
+  m_LocalPosition: {x: 121.3, y: 0, z: 33.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: -117.867, z: 0}
+--- !u!114 &684415321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684415319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &684415322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684415319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &684415323
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684415319}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 0.1, z: 8}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &684832172
 GameObject:
   m_ObjectHideFlags: 0
@@ -24980,6 +25779,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MageTower: {fileID: 0}
+  CannonTower: {fileID: 0}
+  MegaTower: {fileID: 0}
+  SpeedTower: {fileID: 0}
   IsMageTowerButtonPressed: 0
   IsCannonTowerButtonPressed: 0
   IsMegaTowerButtonPressed: 0
@@ -24987,10 +25790,6 @@ MonoBehaviour:
   _towerParent: {fileID: 301422991}
   _coinSystem: {fileID: 1251150599}
   _towerPrice: {fileID: 1251150600}
-  _mageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
-  _cannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
-  _megaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
-  _speedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
 --- !u!114 &748578373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25003,6 +25802,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1632275110631468ccfcc8f1414a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
   _mageTowerButton: {fileID: 615506064}
   _cannonTowerButton: {fileID: 987111316}
   _megaTowerButton: {fileID: 452406164}
@@ -28040,6 +28843,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MageTower: {fileID: 0}
+  CannonTower: {fileID: 0}
+  MegaTower: {fileID: 0}
+  SpeedTower: {fileID: 0}
   IsMageTowerButtonPressed: 0
   IsCannonTowerButtonPressed: 0
   IsMegaTowerButtonPressed: 0
@@ -28047,10 +28854,6 @@ MonoBehaviour:
   _towerParent: {fileID: 301422991}
   _coinSystem: {fileID: 1251150599}
   _towerPrice: {fileID: 1251150600}
-  _mageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
-  _cannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
-  _megaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
-  _speedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
 --- !u!114 &860834220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28063,6 +28866,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1632275110631468ccfcc8f1414a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
   _mageTowerButton: {fileID: 615506064}
   _cannonTowerButton: {fileID: 987111316}
   _megaTowerButton: {fileID: 452406164}
@@ -28241,6 +29048,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 412788, guid: 298d1ef1ac6d608419471f51cd58df2f, type: 3}
   m_PrefabInstance: {fileID: 862734208}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &865887418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 865887419}
+  - component: {fileID: 865887422}
+  - component: {fileID: 865887421}
+  - component: {fileID: 865887420}
+  m_Layer: 8
+  m_Name: Zone21
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &865887419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865887418}
+  m_LocalRotation: {x: -0, y: -0.3263696, z: -0, w: -0.9452422}
+  m_LocalPosition: {x: 104.8, y: 0, z: 15.29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: -321.903, z: 0}
+--- !u!114 &865887420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865887418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &865887421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865887418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &865887422
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865887418}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 0.1, z: 12}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &868720875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31007,6 +31900,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 2044308454}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &965110787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965110788}
+  - component: {fileID: 965110791}
+  - component: {fileID: 965110790}
+  - component: {fileID: 965110789}
+  m_Layer: 8
+  m_Name: Zone23
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &965110788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965110787}
+  m_LocalRotation: {x: -0, y: -0.6974369, z: -0, w: -0.7166462}
+  m_LocalPosition: {x: 117.98, y: 0, z: 20.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: -271.557, z: 0}
+--- !u!114 &965110789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965110787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &965110790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965110787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &965110791
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965110787}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.1, z: 25}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &968057722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36409,6 +37388,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
   m_PrefabInstance: {fileID: 1164547809}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1168686482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168686483}
+  - component: {fileID: 1168686486}
+  - component: {fileID: 1168686485}
+  - component: {fileID: 1168686484}
+  m_Layer: 8
+  m_Name: Zone14
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1168686483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168686482}
+  m_LocalRotation: {x: -0, y: -0.9995532, z: -0, w: -0.029890722}
+  m_LocalPosition: {x: 61.68, y: 0, z: 40.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: -183.426, z: 0}
+--- !u!114 &1168686484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168686482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &1168686485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168686482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &1168686486
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168686482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 0.1, z: 8}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &1171120718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37384,6 +38449,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
   m_PrefabInstance: {fileID: 1212749763}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1219656941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1219656942}
+  - component: {fileID: 1219656945}
+  - component: {fileID: 1219656944}
+  - component: {fileID: 1219656943}
+  m_Layer: 8
+  m_Name: Zone26
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1219656942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219656941}
+  m_LocalRotation: {x: -0, y: -0.5446897, z: -0, w: -0.8386377}
+  m_LocalPosition: {x: 151, y: 0, z: 41.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: -293.99298, z: 0}
+--- !u!114 &1219656943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219656941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &1219656944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219656941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &1219656945
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219656941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 0.1, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!4 &1223534802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
@@ -39509,6 +40660,92 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
+--- !u!1 &1301278153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1301278154}
+  - component: {fileID: 1301278157}
+  - component: {fileID: 1301278156}
+  - component: {fileID: 1301278155}
+  m_Layer: 8
+  m_Name: Zone9
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1301278154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301278153}
+  m_LocalRotation: {x: -0, y: -0.9778002, z: -0, w: 0.20953959}
+  m_LocalPosition: {x: 127.9, y: 0, z: 36.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: -155.809, z: 0}
+--- !u!114 &1301278155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301278153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &1301278156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301278153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &1301278157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301278153}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.1, z: 8}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &1303521792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40552,6 +41789,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 1343849327}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1346330688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346330689}
+  - component: {fileID: 1346330692}
+  - component: {fileID: 1346330691}
+  - component: {fileID: 1346330690}
+  m_Layer: 8
+  m_Name: Zone18
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1346330689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346330688}
+  m_LocalRotation: {x: -0, y: -0.8829301, z: -0, w: -0.46950448}
+  m_LocalPosition: {x: 82.31, y: 0, z: 5.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: -236.004, z: 0}
+--- !u!114 &1346330690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346330688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &1346330691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346330688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &1346330692
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346330688}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 0.1, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &1352927614
 GameObject:
   m_ObjectHideFlags: 0
@@ -44590,7 +45913,6 @@ Transform:
   - {fileID: 1815651101}
   - {fileID: 607447158}
   - {fileID: 623452599}
-  - {fileID: 511453619}
   m_Father: {fileID: 739169416}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45737,6 +47059,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MageTower: {fileID: 0}
+  CannonTower: {fileID: 0}
+  MegaTower: {fileID: 0}
+  SpeedTower: {fileID: 0}
   IsMageTowerButtonPressed: 0
   IsCannonTowerButtonPressed: 0
   IsMegaTowerButtonPressed: 0
@@ -45744,10 +47070,6 @@ MonoBehaviour:
   _towerParent: {fileID: 301422991}
   _coinSystem: {fileID: 1251150599}
   _towerPrice: {fileID: 1251150600}
-  _mageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
-  _cannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
-  _megaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
-  _speedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
 --- !u!114 &1498699451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45760,6 +47082,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1632275110631468ccfcc8f1414a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
   _mageTowerButton: {fileID: 615506064}
   _cannonTowerButton: {fileID: 987111316}
   _megaTowerButton: {fileID: 452406164}
@@ -46434,6 +47760,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 917993545}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1538868602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1538868603}
+  - component: {fileID: 1538868606}
+  - component: {fileID: 1538868605}
+  - component: {fileID: 1538868604}
+  m_Layer: 8
+  m_Name: Zone6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1538868603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538868602}
+  m_LocalRotation: {x: -0, y: -0.81608105, z: -0, w: 0.5779374}
+  m_LocalPosition: {x: 99.6, y: 0, z: 30.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: -109.389, z: 0}
+--- !u!114 &1538868604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538868602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &1538868605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538868602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &1538868606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538868602}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 0.1, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &1543505070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48301,6 +49713,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 1594616061}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1595063646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1595063647}
+  - component: {fileID: 1595063650}
+  - component: {fileID: 1595063649}
+  - component: {fileID: 1595063648}
+  m_Layer: 8
+  m_Name: Zone24
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1595063647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595063646}
+  m_LocalRotation: {x: -0, y: -0.34992713, z: -0, w: -0.93677694}
+  m_LocalPosition: {x: 141.85, y: 0, z: 27.14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: -319.034, z: 0}
+--- !u!114 &1595063648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595063646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &1595063649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595063646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &1595063650
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595063646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0.1, z: 25}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &1598543202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48974,6 +50472,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 412788, guid: 298d1ef1ac6d608419471f51cd58df2f, type: 3}
   m_PrefabInstance: {fileID: 1635244746}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1635812403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1635812404}
+  - component: {fileID: 1635812407}
+  - component: {fileID: 1635812406}
+  - component: {fileID: 1635812405}
+  m_Layer: 8
+  m_Name: Zone12
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1635812404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635812403}
+  m_LocalRotation: {x: -0, y: -0.8196988, z: -0, w: 0.5727948}
+  m_LocalPosition: {x: 144.48, y: 0, z: 55.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: -110.109, z: 0}
+--- !u!114 &1635812405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635812403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &1635812406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635812403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &1635812407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635812403}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 0.1, z: 15}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!4 &1641001870 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
@@ -49555,6 +51139,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9213206596740143703, guid: 3bd4eb13459efc04fb4e6097b0ca719f, type: 3}
   m_PrefabInstance: {fileID: 1652794577}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1653095114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1653095115}
+  - component: {fileID: 1653095118}
+  - component: {fileID: 1653095117}
+  - component: {fileID: 1653095116}
+  m_Layer: 8
+  m_Name: Zone22
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1653095115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653095114}
+  m_LocalRotation: {x: -0, y: -0.3263696, z: -0, w: -0.9452422}
+  m_LocalPosition: {x: 104.8, y: 0, z: 19.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: -321.903, z: 0}
+--- !u!114 &1653095116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653095114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &1653095117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653095114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &1653095118
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653095114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 0.1, z: 3}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!4 &1656773891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
@@ -49706,6 +51376,92 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
+--- !u!1 &1663143309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1663143310}
+  - component: {fileID: 1663143311}
+  - component: {fileID: 1663143312}
+  - component: {fileID: 1663143313}
+  m_Layer: 8
+  m_Name: Zone1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1663143310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663143309}
+  m_LocalRotation: {x: -0, y: -0.093315385, z: -0, w: 0.99563664}
+  m_LocalPosition: {x: 75.3, y: 0, z: 46.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -10.709, z: 0}
+--- !u!65 &1663143311
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663143309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 0.1, z: 20}
+  m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &1663143312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663143309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!114 &1663143313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663143309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
 --- !u!1001 &1665343255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50460,103 +52216,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 412788, guid: 298d1ef1ac6d608419471f51cd58df2f, type: 3}
   m_PrefabInstance: {fileID: 1673396115}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1677760570
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1677760574}
-  - component: {fileID: 1677760573}
-  - component: {fileID: 1677760572}
-  - component: {fileID: 1677760571}
-  m_Layer: 0
-  m_Name: MegaTowerBullet
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1677760571
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677760570}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1677760572
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677760570}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: ba1e093e3d3db884695e8de383e185c1, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1677760573
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677760570}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1677760574
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677760570}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 72.80673, y: 4.62, z: 39.502453}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1678463149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53741,6 +55400,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 1765463003}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1768557153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1768557154}
+  - component: {fileID: 1768557157}
+  - component: {fileID: 1768557156}
+  - component: {fileID: 1768557155}
+  m_Layer: 8
+  m_Name: Zone5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1768557154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768557153}
+  m_LocalRotation: {x: -0, y: -0.9726566, z: -0, w: 0.23224823}
+  m_LocalPosition: {x: 91.8, y: 0, z: 24.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: -153.141, z: 0}
+--- !u!114 &1768557155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768557153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &1768557156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768557153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &1768557157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768557153}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 0.1, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &1771629427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54403,6 +56148,63 @@ Transform:
   - {fileID: 1072876907}
   m_Father: {fileID: 1310168486}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1793275133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1793275134}
+  m_Layer: 7
+  m_Name: SpawnTowerZones
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1793275134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793275133}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1663143310}
+  - {fileID: 162490037}
+  - {fileID: 413950543}
+  - {fileID: 463071227}
+  - {fileID: 1768557154}
+  - {fileID: 1538868603}
+  - {fileID: 191961320}
+  - {fileID: 684415320}
+  - {fileID: 1301278154}
+  - {fileID: 460946488}
+  - {fileID: 276196837}
+  - {fileID: 1635812404}
+  - {fileID: 1995929170}
+  - {fileID: 1168686483}
+  - {fileID: 1858010470}
+  - {fileID: 264855711}
+  - {fileID: 5666634}
+  - {fileID: 1346330689}
+  - {fileID: 1942117017}
+  - {fileID: 2041501659}
+  - {fileID: 865887419}
+  - {fileID: 1653095115}
+  - {fileID: 965110788}
+  - {fileID: 1595063647}
+  - {fileID: 343455655}
+  - {fileID: 1219656942}
+  m_Father: {fileID: 2069195401}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1800260749
 GameObject:
@@ -55672,7 +57474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1826883712
 Transform:
   m_ObjectHideFlags: 0
@@ -56342,6 +58144,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 2023576638}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1858010469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1858010470}
+  - component: {fileID: 1858010473}
+  - component: {fileID: 1858010472}
+  - component: {fileID: 1858010471}
+  m_Layer: 8
+  m_Name: Zone15
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1858010470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858010469}
+  m_LocalRotation: {x: -0, y: -0.9993258, z: -0, w: 0.03671342}
+  m_LocalPosition: {x: 61.68, y: 0, z: 31.11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: -175.792, z: 0}
+--- !u!114 &1858010471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858010469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &1858010472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858010469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &1858010473
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858010469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.1, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &1867108645
 GameObject:
   m_ObjectHideFlags: 0
@@ -58474,6 +60362,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 504603825}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1942117016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1942117017}
+  - component: {fileID: 1942117020}
+  - component: {fileID: 1942117019}
+  - component: {fileID: 1942117018}
+  m_Layer: 8
+  m_Name: Zone19
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1942117017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942117016}
+  m_LocalRotation: {x: -0, y: -0.71615875, z: -0, w: -0.6979375}
+  m_LocalPosition: {x: 91.05, y: 0, z: 2.71}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: -268.524, z: 0}
+--- !u!114 &1942117018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942117016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &1942117019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942117016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &1942117020
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942117016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 0.1, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &1956254048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59714,6 +61688,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 1995012035}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1995929169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995929170}
+  - component: {fileID: 1995929173}
+  - component: {fileID: 1995929172}
+  - component: {fileID: 1995929171}
+  m_Layer: 8
+  m_Name: Zone13
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1995929170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995929169}
+  m_LocalRotation: {x: -0, y: -0.9995532, z: -0, w: -0.029890722}
+  m_LocalPosition: {x: 60.4, y: 0, z: 48.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: -183.426, z: 0}
+--- !u!114 &1995929171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995929169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &1995929172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995929169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &1995929173
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995929169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.1, z: 15}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &2002325646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61515,6 +63575,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MageTower: {fileID: 0}
+  CannonTower: {fileID: 0}
+  MegaTower: {fileID: 0}
+  SpeedTower: {fileID: 0}
   IsMageTowerButtonPressed: 0
   IsCannonTowerButtonPressed: 0
   IsMegaTowerButtonPressed: 0
@@ -61522,10 +63586,6 @@ MonoBehaviour:
   _towerParent: {fileID: 301422991}
   _coinSystem: {fileID: 1251150599}
   _towerPrice: {fileID: 1251150600}
-  _mageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
-  _cannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
-  _megaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
-  _speedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
 --- !u!114 &2033761452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61538,6 +63598,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1632275110631468ccfcc8f1414a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
   _mageTowerButton: {fileID: 615506064}
   _cannonTowerButton: {fileID: 987111316}
   _megaTowerButton: {fileID: 452406164}
@@ -61768,6 +63832,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 2041325183}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2041501658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2041501659}
+  - component: {fileID: 2041501662}
+  - component: {fileID: 2041501661}
+  - component: {fileID: 2041501660}
+  m_Layer: 8
+  m_Name: Zone20
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2041501659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041501658}
+  m_LocalRotation: {x: -0, y: -0.3263696, z: -0, w: -0.9452422}
+  m_LocalPosition: {x: 99.98, y: 0, z: 6.71}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793275134}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: -321.903, z: 0}
+--- !u!114 &2041501660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041501658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e499fa165ac76f4689fba25b6b04baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
+  CannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
+  MegaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
+  SpeedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+  IsMageTowerButtonPressed: 0
+  IsCannonTowerButtonPressed: 0
+  IsMegaTowerButtonPressed: 0
+  IsSpeedTowerButtonPressed: 0
+  _towerParent: {fileID: 301422991}
+  _coinSystem: {fileID: 1251150599}
+  _towerPrice: {fileID: 1251150600}
+--- !u!114 &2041501661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041501658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53473620f4b2d464c9fc23506d8554d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _towerSelection: {fileID: 24530277}
+--- !u!65 &2041501662
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041501658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 0.1, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &2043755184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62521,6 +64671,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
   m_PrefabInstance: {fileID: 2067167090}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2069195401 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 626248681357570864, guid: 9b116ad303732804999a5f5ba2feb297, type: 3}
+  m_PrefabInstance: {fileID: 626248681599836314}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2069624385
 PrefabInstance:
@@ -65078,6 +67233,103 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 412788, guid: 298d1ef1ac6d608419471f51cd58df2f, type: 3}
   m_PrefabInstance: {fileID: 2140292176}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2142547311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2142547315}
+  - component: {fileID: 2142547314}
+  - component: {fileID: 2142547313}
+  - component: {fileID: 2142547312}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &2142547312
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142547311}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &2142547313
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142547311}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2142547314
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142547311}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2142547315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142547311}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2142796938
 PrefabInstance:
   m_ObjectHideFlags: 0

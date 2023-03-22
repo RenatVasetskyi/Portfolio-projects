@@ -3,13 +3,16 @@ using UnityEngine.UI;
 
 
 public class TowerSelection : MonoBehaviour
-{    
+{
+    public bool IsMageTowerButtonPressed = false;
+    public bool IsCannonTowerButtonPressed = false;
+    public bool IsMegaTowerButtonPressed = false;
+    public bool IsSpeedTowerButtonPressed = false;
+
     [SerializeField] private Button _mageTowerButton;
     [SerializeField] private Button _cannonTowerButton;
     [SerializeField] private Button _megaTowerButton;
     [SerializeField] private Button _speedTowerButton;
-
-    private TowerCreation _towerCreation;
 
     private Vector3 _startButtonSize = new Vector3(0.7f, 0.7f, 0.7f);
     private float _scaleDuration = 0.3f;
@@ -20,8 +23,6 @@ public class TowerSelection : MonoBehaviour
         _cannonTowerButton.onClick.AddListener(OnCannonButtonClickHandler);
         _megaTowerButton.onClick.AddListener(OnMegaButtonClickHandler);
         _speedTowerButton.onClick.AddListener(OnSpeedButtonClickHandler);
-
-        _towerCreation = GetComponent<TowerCreation>();
     }
 
     private void OnMageButtonClickHandler()
@@ -32,11 +33,11 @@ public class TowerSelection : MonoBehaviour
         LeanTween.scale(_speedTowerButton.gameObject, _startButtonSize, _scaleDuration);
         LeanTween.scale(_cannonTowerButton.gameObject, _startButtonSize, _scaleDuration);
 
-        _towerCreation.IsMageTowerButtonPressed = true;
+        IsMageTowerButtonPressed = true;
 
-        _towerCreation.IsCannonTowerButtonPressed = false;
-        _towerCreation.IsMegaTowerButtonPressed = false;
-        _towerCreation.IsSpeedTowerButtonPressed = false;
+        IsCannonTowerButtonPressed = false;
+        IsMegaTowerButtonPressed = false;
+        IsSpeedTowerButtonPressed = false;
     }
 
     private void OnCannonButtonClickHandler()
@@ -47,11 +48,11 @@ public class TowerSelection : MonoBehaviour
         LeanTween.scale(_mageTowerButton.gameObject, _startButtonSize, _scaleDuration);
         LeanTween.scale(_speedTowerButton.gameObject, _startButtonSize, _scaleDuration);
 
-        _towerCreation.IsCannonTowerButtonPressed = true;
+        IsCannonTowerButtonPressed = true;
 
-        _towerCreation.IsMageTowerButtonPressed = false;
-        _towerCreation.IsMegaTowerButtonPressed = false;
-        _towerCreation.IsSpeedTowerButtonPressed = false;
+        IsMageTowerButtonPressed = false;
+        IsMegaTowerButtonPressed = false;
+        IsSpeedTowerButtonPressed = false;
     }
 
     private void OnMegaButtonClickHandler()
@@ -62,11 +63,11 @@ public class TowerSelection : MonoBehaviour
         LeanTween.scale(_mageTowerButton.gameObject, _startButtonSize, _scaleDuration);
         LeanTween.scale(_cannonTowerButton.gameObject, _startButtonSize, _scaleDuration);
 
-        _towerCreation.IsMegaTowerButtonPressed = true;
+       IsMegaTowerButtonPressed = true;
 
-        _towerCreation.IsCannonTowerButtonPressed = false;
-        _towerCreation.IsMageTowerButtonPressed = false;
-        _towerCreation.IsSpeedTowerButtonPressed = false;
+        IsCannonTowerButtonPressed = false;
+        IsMageTowerButtonPressed = false;
+        IsSpeedTowerButtonPressed = false;
     }
 
     private void OnSpeedButtonClickHandler()
@@ -77,10 +78,10 @@ public class TowerSelection : MonoBehaviour
         LeanTween.scale(_mageTowerButton.gameObject, _startButtonSize, _scaleDuration);
         LeanTween.scale(_cannonTowerButton.gameObject, _startButtonSize, _scaleDuration);
 
-        _towerCreation.IsSpeedTowerButtonPressed = true;
+        IsSpeedTowerButtonPressed = true;
 
-        _towerCreation.IsMageTowerButtonPressed = false;
-        _towerCreation.IsCannonTowerButtonPressed = false;
-        _towerCreation.IsMegaTowerButtonPressed = false;
+        IsMageTowerButtonPressed = false;
+        IsCannonTowerButtonPressed = false;
+        IsMegaTowerButtonPressed = false;
     }
 }
