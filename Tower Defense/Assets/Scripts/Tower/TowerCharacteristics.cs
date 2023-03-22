@@ -24,8 +24,6 @@ public class TowerCharacteristics : MonoBehaviour
 
     [SerializeField] private Button _upgradeButton;
 
-    [SerializeField] private Button _closeCanvasButton;
-
     [SerializeField] private Vector3 _canvasScale; 
 
     private float _damageIncreasing = 1.2f;
@@ -36,6 +34,8 @@ public class TowerCharacteristics : MonoBehaviour
     private float _scaleDuration = 0.3f;
 
     private CoinSystem _coinSystem;
+
+    private bool _isUpgrageCanvasOpened = false;
 
     private void Start()
     {
@@ -52,8 +52,7 @@ public class TowerCharacteristics : MonoBehaviour
 
         _towerCanvas.worldCamera = Camera.main;
 
-        _upgradeButton.onClick.AddListener(OnUpgradeButtonClickHandler);
-        _closeCanvasButton.onClick.AddListener(OnCloseCanvasButtonClickHandler);          
+        _upgradeButton.onClick.AddListener(OnUpgradeButtonClickHandler);                 
     }
 
     private void Update()
@@ -63,17 +62,21 @@ public class TowerCharacteristics : MonoBehaviour
 
     private void OnMouseDown()
     {
-        OpenUpgradeCanvas();
+        if (_isUpgrageCanvasOpened == false)
+        {
+            _isUpgrageCanvasOpened = true;
+            OpenUpgradeCanvas();
+        }
+        else
+        {
+            _isUpgrageCanvasOpened = false;
+            CloseUpgradeCanvas();
+        }
     }
 
     private void OnUpgradeButtonClickHandler()
     {
         Upgrade();
-    }
-
-    private void OnCloseCanvasButtonClickHandler()
-    {
-        CloseUpgradeCanvas();
     }
 
     private void OpenUpgradeCanvas()
