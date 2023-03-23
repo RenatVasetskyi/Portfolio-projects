@@ -3,8 +3,8 @@ using UnityEngine;
 public class TowerSpawnZone : MonoBehaviour
 {   
     [SerializeField] private LayerMask _layerMask;
-    [SerializeField] private TowerSelection _towerSelection;   
-
+    [SerializeField] private TowerSelection _towerSelection; 
+    
     private TowerCreation _towerCreation;
 
     private Vector3 _screenPosition;
@@ -12,14 +12,16 @@ public class TowerSpawnZone : MonoBehaviour
 
     private int _maxRaycastDistance = 100;
 
+    public GameObject tower;
+
     private void Update()
     {
-        _screenPosition = Input.mousePosition;       
+        _screenPosition = Input.mousePosition;
     }
 
     private void Start()
     {
-        _towerCreation = GetComponent<TowerCreation>();
+        _towerCreation = GetComponentInParent<TowerCreation>();
     }
 
     private void OnMouseDown()
@@ -29,7 +31,7 @@ public class TowerSpawnZone : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, _maxRaycastDistance, _layerMask))
         {
             _worldPosition = hit.point;
-            
+
             if (_towerSelection.IsMageTowerButtonPressed == true)
             {
                 _towerCreation.CreateTower(_worldPosition, TowerType.Mage);              

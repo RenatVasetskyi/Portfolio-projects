@@ -50,24 +50,4 @@ public class TowerCreation : MonoBehaviour
                 break;
         }
     }
-
-    //private void OnMouseDown()
-    //{
-    //    if (IsMageTowerButtonPressed == true)
-    //    {
-    //        CreateTower(TowerType.Mage);
-    //    }
-    //    else if (IsCannonTowerButtonPressed == true)
-    //    {
-    //        CreateTower(TowerType.Cannon);
-    //    }
-    //    else if (IsMegaTowerButtonPressed == true)
-    //    {
-    //        CreateTower(TowerType.Mega);
-    //    }
-    //    else if (IsSpeedTowerButtonPressed == true)
-    //    {
-    //        CreateTower(TowerType.Speed);
-    //    }
-    //}
 }
