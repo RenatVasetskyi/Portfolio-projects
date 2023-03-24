@@ -8,11 +8,11 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2023
 		Month: 3
-		Day: 23
-		Hour: 12
-		Minute: 18
-		Second: 41
-		Millisecond: 106
+		Day: 24
+		Hour: 13
+		Minute: 29
+		Second: 53
+		Millisecond: 561
 	}
 	Creator: "FBX SDK/FBX Plugins version 2020.3.2"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -28,8 +28,8 @@ FBXHeaderExtension:  {
 			Comment: ""
 		}
 		Properties70:  {
-			P: "DocumentUrl", "KString", "Url", "", "R:\Portfolio-projects\Tower Defense\Assets\ufdc46vi_CannonTower.fbx"
-			P: "SrcDocumentUrl", "KString", "Url", "", "R:\Portfolio-projects\Tower Defense\Assets\ufdc46vi_CannonTower.fbx"
+			P: "DocumentUrl", "KString", "Url", "", "R:\Portfolio-projects\Tower Defense\Assets\p85izom1_CannonTower.fbx"
+			P: "SrcDocumentUrl", "KString", "Url", "", "R:\Portfolio-projects\Tower Defense\Assets\p85izom1_CannonTower.fbx"
 			P: "Original", "Compound", "", ""
 			P: "Original|ApplicationVendor", "KString", "", "", ""
 			P: "Original|ApplicationName", "KString", "", "", "Unity FBX Exporter"
@@ -75,7 +75,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 1876090472608, "Scene", "Scene" {
+	Document: 2599569388528, "Scene", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", ""
@@ -95,12 +95,12 @@ References:  {
 
 Definitions:  {
 	Version: 100
-	Count: 28
+	Count: 55
 	ObjectType: "GlobalSettings" {
 		Count: 1
 	}
 	ObjectType: "Model" {
-		Count: 7
+		Count: 34
 		PropertyTemplate: "FbxNode" {
 			Properties70:  {
 				P: "QuaternionInterpolate", "enum", "", "",0
@@ -270,7 +270,7 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Geometry: 1876075715136, "Geometry::Scene", "Mesh" {
+	Geometry: 2598734034304, "Geometry::Scene", "Mesh" {
 		Vertices: *159 {
 			a: 202.476692199707,25.9645998477936,0,223.318290710449,25.9645998477936,0,223.318290710449,12.9822999238968,22.4859997630119,202.476692199707,12.9822999238968,22.4859997630119,202.476692199707,-12.9822999238968,22.4859997630119,223.318290710449,-12.9822999238968,22.4859997630119,223.318290710449,-25.9645998477936,0,202.476692199707,-25.9645998477936,0,223.318290710449,-12.9822999238968,-22.4859997630119,202.476692199707,-12.9822999238968,-22.4859997630119,202.476692199707,12.9822999238968,-22.4859997630119,223.318290710449,12.9822999238968,-22.4859997630119,-202.476692199707,25.9645998477936,0,-202.476692199707,12.9822999238968,22.4859997630119,-223.318290710449,12.9822999238968,22.4859997630119,-223.318290710449,25.9645998477936,0,-202.476692199707,-12.9822999238968,22.4859997630119,-202.476692199707,-25.9645998477936,0,-223.318290710449,-25.9645998477936,0,-223.318290710449,-12.9822999238968,22.4859997630119,-202.476692199707,-12.9822999238968,-22.4859997630119,-223.318290710449,-12.9822999238968,-22.4859997630119,-202.476692199707,12.9822999238968,-22.4859997630119,-223.318290710449,12.9822999238968,-22.4859997630119,-0,-476.731014251709,0,163.324594497681,-15.6565994024277,0,163.324594497681,-593.358898162842,0,-163.324594497681,-593.358898162842,0,-163.324594497681,-15.6565994024277,0,-193.985998630524,17.815800011158,0,-193.985998630524,8.90790000557899,-15.428900718689,193.985998630524,8.90790000557899,-15.429000556469,193.985998630524,17.815800011158,0,-193.985998630524,-8.90790000557899,-15.428900718689,193.985998630524,-8.90790000557899,-15.429000556469,-193.985998630524,-17.815800011158,0,193.985998630524,-17.815800011158,0,-193.985998630524,-8.90790000557899,15.429000556469,193.985998630524,-8.90790000557899,15.428900718689,-193.985998630524,8.90790000557899,15.429000556469,193.985998630524,8.90790000557899,15.428900718689,236.830401420593,8.51640030741692,14.750899374485,236.830401420593,-8.51640030741692,14.750899374485,236.830401420593,-8.51650014519691,-14.750899374485,236.830401420593,-17.0329004526138,0,
 236.830401420593,8.51640030741692,-14.750899374485,236.830401420593,17.0329004526138,0,-236.830401420593,-8.51640030741692,14.750899374485,-236.830401420593,8.51650014519691,14.750899374485,-236.830401420593,-17.0329004526138,0,-236.830401420593,-8.51640030741692,-14.750899374485,-236.830401420593,8.51650014519691,-14.750899374485,-236.830401420593,17.0329004526138,0
@@ -381,7 +381,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1876075703040, "Geometry::Scene", "Mesh" {
+	Geometry: 2598734046848, "Geometry::Scene", "Mesh" {
 		Vertices: *768 {
 			a: -169.363796710968,-16.0302996635437,174.254596233368,-169.363796710968,-16.0302996635437,129.363703727722,-216.538596153259,-16.0302996635437,129.363703727722,-320.220899581909,-16.0302996635437,129.363703727722,-368.731689453125,-16.0302996635437,129.363703727722,-368.731689453125,-16.0302996635437,328.731608390808,-169.363796710968,-16.0302996635437,283.747005462646,-169.363796710968,-16.0302996635437,328.73170375824,-368.731808662415,103.510999679565,328.731608390808,-341.843509674072,141.30699634552,301.843404769897,-196.252000331879,141.30699634552,301.843500137329,-169.363796710968,103.510999679565,328.73170375824,-169.363796710968,103.510999679565,283.747005462646,-368.731689453125,103.510999679565,129.363703727722,-320.220899581909,103.510999679565,129.363703727722,-331.360793113708,674.236297607422,291.360688209534,-206.734800338745,674.236297607422,291.360807418823,-169.363701343536,103.510999679565,174.254703521729,-196.252000331879,141.30699634552,183.217394351959,-196.252000331879,141.30699634552,156.252002716064,-169.363701343536,103.510999679565,129.363799095154,-341.843509674072,141.30699634552,156.251895427704,-311.258101463318,141.30699634552,156.251895427704,-331.360793113708,674.236297607422,166.734600067139,-338.09540271759,686.196088790894,160.000002384186,-338.095498085022,686.196088790894,298.095297813416,-206.734704971313,674.236297607422,166.73469543457,-196.252000331879,141.30699634552,274.784302711487,-225.501298904419,141.30699634552,156.252002716064,-200,686.196088790894,160.000097751617,-200.000095367432,686.196088790894,298.095393180847,-338.095498085022,779.018020629883,298.095297813416,-332.747006416321,790.18931388855,292.746901512146,-205.348610877991,790.18931388855,292.746901512146,-200.000095367432,779.018020629883,298.095393180847,-338.09540271759,779.018020629883,160.000002384186,-332.747006416321,790.18931388855,165.348494052887,-338.910698890686,1100.45900344849,159.184694290161,-338.910698890686,1100.45900344849,298.910593986511,-205.348491668701,790.18931388855,165.348494052887,
 -200,779.018020629883,160.000097751617,-349.504208564758,1122.37739562988,309.504103660583,-188.591396808624,1122.37739562988,309.504103660583,-199.184799194336,1100.45900344849,298.910689353943,-199.184703826904,1100.45900344849,159.184801578522,-349.504208564758,1188.63954544067,309.504103660583,-188.591396808624,1188.63954544067,309.504103660583,-188.591301441193,1122.37739562988,148.591303825378,-349.504089355469,1122.37739562988,148.591303825378,-188.591301441193,1188.63954544067,148.591303825378,-349.504089355469,1188.63954544067,148.591303825378,-216.538500785828,103.510999679565,129.363799095154,-225.501298904419,141.30699634552,129.363799095154,-311.258101463318,141.30699634552,129.363703727722,-225.501298904419,141.30699634552,-129.363799095154,-311.258101463318,141.30699634552,-129.363703727722,-311.258101463318,141.30699634552,-156.251895427704,-225.501298904419,141.30699634552,-156.252002716064,-216.538500785828,103.510999679565,-129.363799095154,-320.220899581909,103.510999679565,-129.363703727722,-169.363796710968,141.30699634552,274.784302711487,169.363701343536,103.510999679565,283.747005462646,169.363796710968,141.30699634552,274.784302711487,196.252000331879,141.30699634552,274.784302711487,-169.363796710968,141.30699634552,183.217394351959,169.363796710968,141.30699634552,183.217394351959,196.251904964447,141.30699634552,183.217394351959,169.363701343536,103.510999679565,174.254703521729,169.363701343536,-16.0302996635437,283.747005462646,169.363701343536,-16.0302996635437,174.254596233368,-246.031808853149,748.077201843262,160.000002384186,-246.031808853149,748.077201843262,-160.000002384186,-246.031808853149,717.136716842651,-160.000002384186,-246.031808853149,717.136716842651,160.000002384186,-292.063593864441,748.077201843262,160.000002384186,-292.063593864441,748.077201843262,-160.000002384186,-292.063593864441,717.136716842651,160.000002384186,-292.063593864441,717.136716842651,-160.000002384186,368.731594085693,-16.0302996635437,328.731608390808,368.731594085693,-16.0302996635437,129.363703727722,
@@ -565,7 +565,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1876075713344, "Geometry::Scene", "Mesh" {
+	Geometry: 2598734055360, "Geometry::Scene", "Mesh" {
 		Vertices: *96 {
 			a: -396.437811851501,43.3620989322662,-178.178298473358,-412.869691848755,43.3620989322662,-178.178298473358,-412.869691848755,47.6709008216858,-356.356501579285,391.293597221375,47.6709008216858,-356.356501579285,395.282506942749,43.3620989322662,-178.178298473358,-396.437811851501,43.3620989322662,0,395.282506942749,43.3620989322662,0,410.769891738892,43.3620989322662,0,410.769891738892,43.3620989322662,-178.178298473358,-395.282506942749,43.3620989322662,178.178298473358,-418.964195251465,43.3620989322662,0.153500004671514,-408.510684967041,43.3620989322662,178.024804592133,395.282506942749,43.3620989322662,178.178298473358,-387.920308113098,48.1555998325348,356.356501579285,416.454696655273,48.1555998325348,356.118702888489,409.34419631958,43.3620989322662,178.416097164154,-412.869691848755,-20.3231006860733,-356.356501579285,391.293597221375,-20.3231006860733,-356.356501579285,395.282506942749,-12.6855999231339,178.178298473358,409.34419631958,-12.6855999231339,178.416097164154,416.454696655273,-20.3231006860733,356.118702888489,-387.920308113098,-20.3231006860733,356.356501579285,-395.282506942749,-12.6855999231339,178.178298473358,-396.437811851501,-12.6855999231339,0,-408.510684967041,-12.6855999231339,178.024804592133,-418.964195251465,-12.6855999231339,0.153500004671514,395.282506942749,-12.6855999231339,0,-396.437811851501,-12.6855999231339,-178.178298473358,395.282506942749,-12.6855999231339,-178.178298473358,410.769891738892,-12.6855999231339,-178.178298473358,410.769891738892,-12.6855999231339,0,-412.869691848755,-12.6855999231339,-178.178298473358
 		} 
@@ -662,7 +662,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1876075701696, "Geometry::Scene", "Mesh" {
+	Geometry: 2598734044160, "Geometry::Scene", "Mesh" {
 		Vertices: *120 {
 			a: 220.753288269043,24.515600502491,-91.5634989738464,209.197902679443,186.180698871613,-60.4009985923767,153.903996944427,186.180698871613,-61.1338019371033,153.903996944427,24.515600502491,-92.6959991455078,-220.753192901611,24.515600502491,85.0281000137329,-209.197902679443,186.180698871613,53.8654983043671,-153.903901576996,186.180698871613,54.5983016490936,-153.903996944427,24.515600502491,86.1604988574982,-153.903996944427,24.515600502491,-93.8283979892731,-153.903996944427,186.180698871613,-61.8665993213654,-209.197998046875,186.180698871613,-62.5993013381958,-220.753288269043,24.515600502491,-94.9608027935028,-131.545102596283,-24.515600502491,-325.585508346558,137.207305431366,-24.515600502491,-323.240089416504,137.207305431366,34.2361003160477,-323.240089416504,-131.545102596283,34.2361003160477,-325.585508346558,325.585508346558,-24.515600502491,-131.544995307922,323.240089416504,24.515600502491,-131.544995307922,323.240089416504,-24.515600502491,137.207305431366,323.240089416504,24.515600502491,137.207305431366,131.544995307922,-24.515600502491,325.585508346558,131.544995307922,35.3605985641479,325.585508346558,-137.207305431366,-24.515600502491,323.240089416504,-137.207305431366,35.3605985641479,323.240089416504,-325.585508346558,-24.515600502491,131.545102596283,-323.240089416504,24.515600502491,131.545102596283,220.753288269043,24.515600502491,88.4253978729248,153.903996944427,24.515600502491,87.2928977012634,-323.240089416504,24.515600502491,-137.207198143005,-323.240089416504,-24.515600502491,-137.207198143005,-153.903901576996,195.131003856659,40.4365003108978,-153.903901576996,195.131003856659,-47.5253999233246,-197.642600536346,195.131003856659,-48.0787992477417,197.642600536346,195.131003856659,-46.4186012744904,197.642600536346,195.131003856659,41.5434002876282,153.903996944427,195.131003856659,40.9898996353149,153.903996944427,195.131003856659,-46.9720005989075,-197.642505168915,195.131003856659,39.8831009864807,209.197902679443,186.180698871613,56.0638010501862,153.903996944427,186.180698871613,55.3310990333557
 		} 
@@ -768,7 +768,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1876075714240, "Geometry::Scene", "Mesh" {
+	Geometry: 2598734045056, "Geometry::Scene", "Mesh" {
 		Vertices: *1011 {
 			a: 30.4610013961792,143.157601356506,52.8162002563477,83.3697021007538,120.53120136261,52.8162002563477,72.2172021865845,104.245805740356,118.083000183105,26.3895988464355,123.844003677368,118.083000183105,-27.0788997411728,143.814301490784,52.8162002563477,23.8717004656792,111.899399757385,274.176096916199,65.3199017047882,94.1740989685059,274.176096916199,-23.4493002295494,124.412798881531,118.083000183105,-80.4902017116547,122.40149974823,52.8162002563477,25.831601023674,121.196794509888,348.34098815918,70.6885993480682,102.013695240021,348.34098815918,-22.9518994688988,121.753597259521,348.34098815918,-21.204699575901,112.413895130157,274.176096916199,-68.2350993156433,103.599405288696,348.34098815918,-63.0466997623444,95.6393003463745,274.176096916199,-103.123998641968,69.4979012012482,348.34098815918,-69.7122991085052,105.865800380707,118.083000183105,-121.641504764557,82.1789979934692,52.8162002563477,-95.2844023704529,64.1292989253998,274.176096916199,-122.307097911835,24.6408998966217,348.34098815918,-105.356097221375,71.0264980792999,118.083000183105,-144.267797470093,29.2703002691269,52.8162002563477,-113.009703159332,22.6809993386269,274.176096916199,-122.863900661469,-24.1427004337311,348.34098815918,-124.954199790955,25.1989006996155,118.083000183105,-144.924604892731,-28.2696008682251,52.8162002563477,-113.524198532104,-22.3954007029533,274.176096916199,-104.709601402283,-69.4257974624634,348.34098815918,-125.523102283478,-24.6400997042656,118.083000183105,-123.511695861816,-81.6808998584747,52.8162002563477,-96.7495024204254,-64.2374992370605,274.176096916199,-70.6081986427307,-104.314696788788,348.34098815918,-106.975996494293,-70.9030985832214,118.083000183105,-83.2892000675201,-122.832202911377,52.8162002563477,-65.2395009994507,-96.4751005172729,274.176096916199,-25.7510989904404,-123.497700691223,348.34098815918,-72.1367001533508,-106.546795368195,118.083000183105,-30.3806006908417,-145.458495616913,52.8162002563477,-23.7911999225616,-114.200401306152,274.176096916199,23.0324000120163,-124.054503440857,348.34098815918,
 -26.3092011213303,-126.144897937775,118.083000183105,27.1593987941742,-146.115303039551,52.8162002563477,21.2851002812386,-114.714896678925,274.176096916199,68.3155000209808,-105.900299549103,348.34098815918,23.5297992825508,-126.713800430298,118.083000183105,80.5706024169922,-124.702405929565,52.8162002563477,63.127201795578,-97.9402005672455,274.176096916199,103.20440530777,-71.7989027500153,348.34098815918,69.7928011417389,-108.166694641113,118.083000183105,121.72189950943,-84.4799995422363,52.8162002563477,95.3647971153259,-66.4301991462708,274.176096916199,122.387504577637,-26.9419014453888,348.34098815918,105.436503887177,-73.327499628067,118.083000183105,144.348299503326,-31.5712988376617,52.8162002563477,113.090097904205,-24.9818995594978,274.176096916199,122.944295406342,21.8417003750801,348.34098815918,125.034594535828,-27.4998992681503,118.083000183105,145.004999637604,25.9687006473541,52.8162002563477,113.604605197906,20.0944006443024,274.176096916199,104.789996147156,67.1248018741608,348.34098815918,125.603497028351,22.3390996456146,118.083000183105,123.59219789505,79.3799996376038,52.8162002563477,96.8299984931946,61.9364976882935,274.176096916199,107.056498527527,68.6020970344543,118.083000183105,-28.914600610733,153.62720489502,45.3884989023209,-85.9413981437683,130.764901638031,45.3884989023209,-129.878294467926,87.8197014331818,44.5001006126404,-154.036295413971,31.3295990228653,45.3884989023209,-154.737496376038,-30.1054000854492,45.3884989023209,-131.875205039978,-87.1321976184845,45.388400554657,-88.9298975467682,-131.069004535675,45.388400554657,-32.4398010969162,-155.226898193359,45.388400554657,28.9950996637344,-155.928099155426,45.388400554657,86.021900177002,-133.065903186798,45.388400554657,129.958701133728,-90.1206016540527,45.3884989023209,154.116702079773,-33.6304992437363,45.3884989023209,154.81790304184,27.8043985366821,45.3884989023209,131.955599784851,84.8312020301819,45.3884989023209,89.0103995800018,128.76809835434,45.3884989023209,-83.2892000675201,-122.832202911377,-46.0943996906281,
@@ -1024,7 +1024,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 1874295720160, "Model::tower_defence", "Null" {
+	Model: 2600437006512, "Model::CannonTower", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -1032,11 +1032,12 @@ Objects:  {
 			P: "InheritType", "enum", "", "",1
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
 			P: "Lcl Rotation", "Lcl Rotation", "", "A",-0,-45.0000038146973,0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",0.399999976158142,0.400000005960464,0.399999976158142
 		}
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 1874295752160, "Model::flag", "Mesh" {
+	Model: 2600436976512, "Model::flag", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -1049,7 +1050,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 1874295754160, "Model::tower", "Mesh" {
+	Model: 2600437026512, "Model::tower", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -1061,7 +1062,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 1874295756160, "Model::floor", "Mesh" {
+	Model: 2600437014512, "Model::floor", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -1074,7 +1075,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 1874295758160, "Model::rotater", "Mesh" {
+	Model: 2600437032512, "Model::rotater", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -1088,7 +1089,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 1874295730160, "Model::cannon", "Mesh" {
+	Model: 2600437016512, "Model::cannon", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -1102,7 +1103,19 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 1874295740160, "Model::flag_back", "Mesh" {
+	Model: 2600437028512, "Model::bulletStartPoint", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-1.40000004321337,206.99999332428,400.400018692017
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437030512, "Model::flag_back", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -1116,7 +1129,319 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Material: 1869979534416, "Material::flag_and_iron_material", "" {
+	Model: 2600437018512, "Model::SpawnEffect", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-0,45,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437020512, "Model::Canvas", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,2000,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-0,-90,0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",1e-12,1e-12,1e-12
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437022512, "Model::UpgradeIcon", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",2000,1000,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-0,-180,0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",3,3,3
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437024512, "Model::BackGround", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437012512, "Model::DamageText", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",150,250,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437034512, "Model::Damage", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-320.000004768372,0,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437036512, "Model::FireSpeedText", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",150,100,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437038512, "Model::Speed", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-320.000004768372,0,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437008512, "Model::UpgradeButton", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,-220.000004768372,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437040512, "Model::UpdrageButton", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437010512, "Model::UpdradeText", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437042512, "Model::RangeText", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",150,-50,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437062512, "Model::Range", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-320.000004768372,0,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437050512, "Model::Level", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,400,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437054512, "Model::LevelText", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437052512, "Model::Cost", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,-364.999961853027,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437060512, "Model::CurrentCharacteristics", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-2000,1000,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",-0,-180,0
+			P: "Lcl Scaling", "Lcl Scaling", "", "A",3,3,3
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437046512, "Model::BackGround_1", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437058512, "Model::DamageText_1", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",200,200,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437072512, "Model::Damage_1", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-400,0,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437056512, "Model::FireSpeedText_1", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",200,0,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437048512, "Model::Speed_1", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-400,0,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437064512, "Model::RangeText_1", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",200,-200,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437070512, "Model::Range_1", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",-400,0,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437066512, "Model::Title", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,400,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 2600437068512, "Model::Text", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationOrder", "enum", "", "",4
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Material: 2599865982240, "Material::flag_and_iron_material", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -1130,7 +1455,7 @@ Objects:  {
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
-	Material: 1869979534816, "Material::tower_material", "" {
+	Material: 2599865979840, "Material::tower_material", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -1143,7 +1468,7 @@ Objects:  {
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
-	Material: 1869979532816, "Material::floor_material", "" {
+	Material: 2599584318480, "Material::floor_material", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -1156,7 +1481,7 @@ Objects:  {
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
-	Material: 1869979535616, "Material::rotater_material", "" {
+	Material: 2599584320880, "Material::rotater_material", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -1169,7 +1494,7 @@ Objects:  {
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
-	Material: 1876136290800, "Material::cannon_material", "" {
+	Material: 2599584318080, "Material::cannon_material", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -1182,7 +1507,7 @@ Objects:  {
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
-	Video: 1872269947664, "Video::DiffuseColor_Texture", "Clip" {
+	Video: 2594639876304, "Video::DiffuseColor_Texture", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "R:\Portfolio-projects\Tower Defense\Assets\Tower Defence\Textures\flag_and_iron_texture.tga"
@@ -1192,7 +1517,7 @@ Objects:  {
 		Filename: "R:\Portfolio-projects\Tower Defense\Assets\Tower Defence\Textures\flag_and_iron_texture.tga"
 		RelativeFilename: "Tower Defence\Textures\flag_and_iron_texture.tga"
 	}
-	Video: 1872269935184, "Video::DiffuseColor_Texture_1", "Clip" {
+	Video: 2594639881584, "Video::DiffuseColor_Texture_1", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "R:\Portfolio-projects\Tower Defense\Assets\Tower Defence\Textures\uv_tower.tga"
@@ -1202,7 +1527,7 @@ Objects:  {
 		Filename: "R:\Portfolio-projects\Tower Defense\Assets\Tower Defence\Textures\uv_tower.tga"
 		RelativeFilename: "Tower Defence\Textures\uv_tower.tga"
 	}
-	Video: 1872269941904, "Video::DiffuseColor_Texture_2", "Clip" {
+	Video: 2594639830080, "Video::DiffuseColor_Texture_2", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "R:\Portfolio-projects\Tower Defense\Assets\Tower Defence\Textures\floor_texture.tga"
@@ -1212,7 +1537,7 @@ Objects:  {
 		Filename: "R:\Portfolio-projects\Tower Defense\Assets\Tower Defence\Textures\floor_texture.tga"
 		RelativeFilename: "Tower Defence\Textures\floor_texture.tga"
 	}
-	Video: 1861709035488, "Video::DiffuseColor_Texture_3", "Clip" {
+	Video: 2594639826720, "Video::DiffuseColor_Texture_3", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "R:\Portfolio-projects\Tower Defense\Assets\Tower Defence\Textures\rotater_texture.tga"
@@ -1222,7 +1547,7 @@ Objects:  {
 		Filename: "R:\Portfolio-projects\Tower Defense\Assets\Tower Defence\Textures\rotater_texture.tga"
 		RelativeFilename: "Tower Defence\Textures\rotater_texture.tga"
 	}
-	Video: 1861709033088, "Video::DiffuseColor_Texture_4", "Clip" {
+	Video: 2594639816512, "Video::DiffuseColor_Texture_4", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "R:\Portfolio-projects\Tower Defense\Assets\Tower Defence\Textures\cannon_texture.tga"
@@ -1232,7 +1557,7 @@ Objects:  {
 		Filename: "R:\Portfolio-projects\Tower Defense\Assets\Tower Defence\Textures\cannon_texture.tga"
 		RelativeFilename: "Tower Defence\Textures\cannon_texture.tga"
 	}
-	Texture: 1872269949584, "Texture::DiffuseColor_Texture", "" {
+	Texture: 2594639886384, "Texture::DiffuseColor_Texture", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::DiffuseColor_Texture"
@@ -1244,7 +1569,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1875162344288, "Texture::DiffuseColor_Texture_1", "" {
+	Texture: 2598694715936, "Texture::DiffuseColor_Texture_1", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::DiffuseColor_Texture_1"
@@ -1256,7 +1581,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1875162353408, "Texture::DiffuseColor_Texture_2", "" {
+	Texture: 2598694716896, "Texture::DiffuseColor_Texture_2", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::DiffuseColor_Texture_2"
@@ -1268,7 +1593,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1875162344768, "Texture::DiffuseColor_Texture_3", "" {
+	Texture: 2598694717856, "Texture::DiffuseColor_Texture_3", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::DiffuseColor_Texture_3"
@@ -1280,7 +1605,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1875162345248, "Texture::DiffuseColor_Texture_4", "" {
+	Texture: 2594639880624, "Texture::DiffuseColor_Texture_4", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::DiffuseColor_Texture_4"
@@ -1299,107 +1624,188 @@ Objects:  {
 
 Connections:  {
 	
-	;Model::tower_defence, Model::RootNode
-	C: "OO",1874295720160,0
+	;Model::CannonTower, Model::RootNode
+	C: "OO",2600437006512,0
 	
-	;Model::flag, Model::tower_defence
-	C: "OO",1874295752160,1874295720160
+	;Model::flag, Model::CannonTower
+	C: "OO",2600436976512,2600437006512
 	
-	;Model::tower, Model::tower_defence
-	C: "OO",1874295754160,1874295720160
+	;Model::tower, Model::CannonTower
+	C: "OO",2600437026512,2600437006512
 	
-	;Model::floor, Model::tower_defence
-	C: "OO",1874295756160,1874295720160
+	;Model::floor, Model::CannonTower
+	C: "OO",2600437014512,2600437006512
 	
-	;Model::rotater, Model::tower_defence
-	C: "OO",1874295758160,1874295720160
+	;Model::rotater, Model::CannonTower
+	C: "OO",2600437032512,2600437006512
 	
-	;Model::flag_back, Model::tower_defence
-	C: "OO",1874295740160,1874295720160
+	;Model::flag_back, Model::CannonTower
+	C: "OO",2600437030512,2600437006512
+	
+	;Model::SpawnEffect, Model::CannonTower
+	C: "OO",2600437018512,2600437006512
+	
+	;Model::Canvas, Model::CannonTower
+	C: "OO",2600437020512,2600437006512
 	
 	;Material::flag_and_iron_material, Model::flag
-	C: "OO",1869979534416,1874295752160
+	C: "OO",2599865982240,2600436976512
 	
 	;Geometry::Scene, Model::flag
-	C: "OO",1876075715136,1874295752160
+	C: "OO",2598734034304,2600436976512
 	
 	;Material::tower_material, Model::tower
-	C: "OO",1869979534816,1874295754160
+	C: "OO",2599865979840,2600437026512
 	
 	;Geometry::Scene, Model::tower
-	C: "OO",1876075703040,1874295754160
+	C: "OO",2598734046848,2600437026512
 	
 	;Material::floor_material, Model::floor
-	C: "OO",1869979532816,1874295756160
+	C: "OO",2599584318480,2600437014512
 	
 	;Geometry::Scene, Model::floor
-	C: "OO",1876075713344,1874295756160
+	C: "OO",2598734055360,2600437014512
 	
 	;Model::cannon, Model::rotater
-	C: "OO",1874295730160,1874295758160
+	C: "OO",2600437016512,2600437032512
+	
+	;Model::bulletStartPoint, Model::rotater
+	C: "OO",2600437028512,2600437032512
 	
 	;Material::rotater_material, Model::rotater
-	C: "OO",1869979535616,1874295758160
+	C: "OO",2599584320880,2600437032512
 	
 	;Geometry::Scene, Model::rotater
-	C: "OO",1876075701696,1874295758160
+	C: "OO",2598734044160,2600437032512
 	
 	;Material::cannon_material, Model::cannon
-	C: "OO",1876136290800,1874295730160
+	C: "OO",2599584318080,2600437016512
 	
 	;Geometry::Scene, Model::cannon
-	C: "OO",1876075714240,1874295730160
+	C: "OO",2598734045056,2600437016512
 	
 	;Material::flag_and_iron_material, Model::flag_back
-	C: "OO",1869979534416,1874295740160
+	C: "OO",2599865982240,2600437030512
 	
 	;Geometry::Scene, Model::flag_back
-	C: "OO",1876075715136,1874295740160
+	C: "OO",2598734034304,2600437030512
+	
+	;Model::UpgradeIcon, Model::Canvas
+	C: "OO",2600437022512,2600437020512
+	
+	;Model::CurrentCharacteristics, Model::Canvas
+	C: "OO",2600437060512,2600437020512
+	
+	;Model::BackGround, Model::UpgradeIcon
+	C: "OO",2600437024512,2600437022512
+	
+	;Model::DamageText, Model::UpgradeIcon
+	C: "OO",2600437012512,2600437022512
+	
+	;Model::FireSpeedText, Model::UpgradeIcon
+	C: "OO",2600437036512,2600437022512
+	
+	;Model::UpgradeButton, Model::UpgradeIcon
+	C: "OO",2600437008512,2600437022512
+	
+	;Model::RangeText, Model::UpgradeIcon
+	C: "OO",2600437042512,2600437022512
+	
+	;Model::Level, Model::UpgradeIcon
+	C: "OO",2600437050512,2600437022512
+	
+	;Model::Cost, Model::UpgradeIcon
+	C: "OO",2600437052512,2600437022512
+	
+	;Model::Damage, Model::DamageText
+	C: "OO",2600437034512,2600437012512
+	
+	;Model::Speed, Model::FireSpeedText
+	C: "OO",2600437038512,2600437036512
+	
+	;Model::UpdrageButton, Model::UpgradeButton
+	C: "OO",2600437040512,2600437008512
+	
+	;Model::UpdradeText, Model::UpdrageButton
+	C: "OO",2600437010512,2600437040512
+	
+	;Model::Range, Model::RangeText
+	C: "OO",2600437062512,2600437042512
+	
+	;Model::LevelText, Model::Level
+	C: "OO",2600437054512,2600437050512
+	
+	;Model::BackGround_1, Model::CurrentCharacteristics
+	C: "OO",2600437046512,2600437060512
+	
+	;Model::DamageText_1, Model::CurrentCharacteristics
+	C: "OO",2600437058512,2600437060512
+	
+	;Model::FireSpeedText_1, Model::CurrentCharacteristics
+	C: "OO",2600437056512,2600437060512
+	
+	;Model::RangeText_1, Model::CurrentCharacteristics
+	C: "OO",2600437064512,2600437060512
+	
+	;Model::Title, Model::CurrentCharacteristics
+	C: "OO",2600437066512,2600437060512
+	
+	;Model::Damage_1, Model::DamageText_1
+	C: "OO",2600437072512,2600437058512
+	
+	;Model::Speed_1, Model::FireSpeedText_1
+	C: "OO",2600437048512,2600437056512
+	
+	;Model::Range_1, Model::RangeText_1
+	C: "OO",2600437070512,2600437064512
+	
+	;Model::Text, Model::Title
+	C: "OO",2600437068512,2600437066512
 	
 	;Texture::DiffuseColor_Texture, Material::flag_and_iron_material
-	C: "OO",1872269949584,1869979534416
+	C: "OO",2594639886384,2599865982240
 	
 	;Texture::DiffuseColor_Texture, Material::flag_and_iron_material
-	C: "OP",1872269949584,1869979534416, "DiffuseColor"
+	C: "OP",2594639886384,2599865982240, "DiffuseColor"
 	
 	;Video::DiffuseColor_Texture, Texture::DiffuseColor_Texture
-	C: "OO",1872269947664,1872269949584
+	C: "OO",2594639876304,2594639886384
 	
 	;Texture::DiffuseColor_Texture_1, Material::tower_material
-	C: "OO",1875162344288,1869979534816
+	C: "OO",2598694715936,2599865979840
 	
 	;Texture::DiffuseColor_Texture_1, Material::tower_material
-	C: "OP",1875162344288,1869979534816, "DiffuseColor"
+	C: "OP",2598694715936,2599865979840, "DiffuseColor"
 	
 	;Video::DiffuseColor_Texture_1, Texture::DiffuseColor_Texture_1
-	C: "OO",1872269935184,1875162344288
+	C: "OO",2594639881584,2598694715936
 	
 	;Texture::DiffuseColor_Texture_2, Material::floor_material
-	C: "OO",1875162353408,1869979532816
+	C: "OO",2598694716896,2599584318480
 	
 	;Texture::DiffuseColor_Texture_2, Material::floor_material
-	C: "OP",1875162353408,1869979532816, "DiffuseColor"
+	C: "OP",2598694716896,2599584318480, "DiffuseColor"
 	
 	;Video::DiffuseColor_Texture_2, Texture::DiffuseColor_Texture_2
-	C: "OO",1872269941904,1875162353408
+	C: "OO",2594639830080,2598694716896
 	
 	;Texture::DiffuseColor_Texture_3, Material::rotater_material
-	C: "OO",1875162344768,1869979535616
+	C: "OO",2598694717856,2599584320880
 	
 	;Texture::DiffuseColor_Texture_3, Material::rotater_material
-	C: "OP",1875162344768,1869979535616, "DiffuseColor"
+	C: "OP",2598694717856,2599584320880, "DiffuseColor"
 	
 	;Video::DiffuseColor_Texture_3, Texture::DiffuseColor_Texture_3
-	C: "OO",1861709035488,1875162344768
+	C: "OO",2594639826720,2598694717856
 	
 	;Texture::DiffuseColor_Texture_4, Material::cannon_material
-	C: "OO",1875162345248,1876136290800
+	C: "OO",2594639880624,2599584318080
 	
 	;Texture::DiffuseColor_Texture_4, Material::cannon_material
-	C: "OP",1875162345248,1876136290800, "DiffuseColor"
+	C: "OP",2594639880624,2599584318080, "DiffuseColor"
 	
 	;Video::DiffuseColor_Texture_4, Texture::DiffuseColor_Texture_4
-	C: "OO",1861709033088,1875162345248
+	C: "OO",2594639816512,2594639880624
 }
 ;Takes section
 ;----------------------------------------------------

@@ -26,14 +26,22 @@ public class TowerSelection : MonoBehaviour
     }
 
     private void OnMageButtonClickHandler()
-    {
-        LeanTween.scale(_mageTowerButton.gameObject, Vector3.one, _scaleDuration);
+    {         
+        if (IsMageTowerButtonPressed == false)
+        {
+            IsMageTowerButtonPressed = true;
 
-        LeanTween.scale(_megaTowerButton.gameObject, _startButtonSize, _scaleDuration);
-        LeanTween.scale(_speedTowerButton.gameObject, _startButtonSize, _scaleDuration);
-        LeanTween.scale(_cannonTowerButton.gameObject, _startButtonSize, _scaleDuration);
+            LeanTween.scale(_mageTowerButton.gameObject, Vector3.one, _scaleDuration);
 
-        IsMageTowerButtonPressed = true;
+            LeanTween.scale(_megaTowerButton.gameObject, _startButtonSize, _scaleDuration);
+            LeanTween.scale(_speedTowerButton.gameObject, _startButtonSize, _scaleDuration);
+            LeanTween.scale(_cannonTowerButton.gameObject, _startButtonSize, _scaleDuration);
+        }
+        else
+        {
+            IsMageTowerButtonPressed = false;
+            LeanTween.scale(_mageTowerButton.gameObject, _startButtonSize, _scaleDuration);          
+        }
 
         IsCannonTowerButtonPressed = false;
         IsMegaTowerButtonPressed = false;
@@ -42,28 +50,44 @@ public class TowerSelection : MonoBehaviour
 
     private void OnCannonButtonClickHandler()
     {
-        LeanTween.scale(_cannonTowerButton.gameObject, Vector3.one, _scaleDuration);
+        if (IsCannonTowerButtonPressed == false)
+        {
+            IsCannonTowerButtonPressed = true;
 
-        LeanTween.scale(_megaTowerButton.gameObject, _startButtonSize, _scaleDuration);
-        LeanTween.scale(_mageTowerButton.gameObject, _startButtonSize, _scaleDuration);
-        LeanTween.scale(_speedTowerButton.gameObject, _startButtonSize, _scaleDuration);
+            LeanTween.scale(_cannonTowerButton.gameObject, Vector3.one, _scaleDuration);
 
-        IsCannonTowerButtonPressed = true;
-
+            LeanTween.scale(_mageTowerButton.gameObject, _startButtonSize, _scaleDuration);
+            LeanTween.scale(_megaTowerButton.gameObject, _startButtonSize, _scaleDuration);          
+            LeanTween.scale(_speedTowerButton.gameObject, _startButtonSize, _scaleDuration);
+        }
+        else
+        {
+            IsCannonTowerButtonPressed = false;
+            LeanTween.scale(_cannonTowerButton.gameObject, _startButtonSize, _scaleDuration);
+        }
+             
         IsMageTowerButtonPressed = false;
         IsMegaTowerButtonPressed = false;
         IsSpeedTowerButtonPressed = false;
     }
 
     private void OnMegaButtonClickHandler()
-    {
-        LeanTween.scale(_megaTowerButton.gameObject, Vector3.one, _scaleDuration);
+    {       
+        if (IsMegaTowerButtonPressed == false)
+        {
+            IsMegaTowerButtonPressed = true;
 
-        LeanTween.scale(_speedTowerButton.gameObject, _startButtonSize, _scaleDuration);
-        LeanTween.scale(_mageTowerButton.gameObject, _startButtonSize, _scaleDuration);
-        LeanTween.scale(_cannonTowerButton.gameObject, _startButtonSize, _scaleDuration);
+            LeanTween.scale(_megaTowerButton.gameObject, Vector3.one, _scaleDuration);
 
-       IsMegaTowerButtonPressed = true;
+            LeanTween.scale(_mageTowerButton.gameObject, _startButtonSize, _scaleDuration);
+            LeanTween.scale(_cannonTowerButton.gameObject, _startButtonSize, _scaleDuration);
+            LeanTween.scale(_speedTowerButton.gameObject, _startButtonSize, _scaleDuration);          
+        }
+        else
+        {
+            IsMegaTowerButtonPressed = false;
+            LeanTween.scale(_megaTowerButton.gameObject, _startButtonSize, _scaleDuration);
+        }
 
         IsCannonTowerButtonPressed = false;
         IsMageTowerButtonPressed = false;
@@ -71,15 +95,23 @@ public class TowerSelection : MonoBehaviour
     }
 
     private void OnSpeedButtonClickHandler()
-    {
-        LeanTween.scale(_speedTowerButton.gameObject, Vector3.one, _scaleDuration);
+    {       
+        if (IsSpeedTowerButtonPressed == false)
+        {
+            IsSpeedTowerButtonPressed = true;
 
-        LeanTween.scale(_megaTowerButton.gameObject, _startButtonSize, _scaleDuration);
-        LeanTween.scale(_mageTowerButton.gameObject, _startButtonSize, _scaleDuration);
-        LeanTween.scale(_cannonTowerButton.gameObject, _startButtonSize, _scaleDuration);
+            LeanTween.scale(_speedTowerButton.gameObject, Vector3.one, _scaleDuration);
 
-        IsSpeedTowerButtonPressed = true;
-
+            LeanTween.scale(_mageTowerButton.gameObject, _startButtonSize, _scaleDuration);
+            LeanTween.scale(_cannonTowerButton.gameObject, _startButtonSize, _scaleDuration);
+            LeanTween.scale(_megaTowerButton.gameObject, _startButtonSize, _scaleDuration);                   
+        }
+        else
+        {
+            IsSpeedTowerButtonPressed = false;
+            LeanTween.scale(_speedTowerButton.gameObject, _startButtonSize, _scaleDuration);
+        }
+        
         IsMageTowerButtonPressed = false;
         IsCannonTowerButtonPressed = false;
         IsMegaTowerButtonPressed = false;

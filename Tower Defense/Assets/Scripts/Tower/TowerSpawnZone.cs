@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class TowerSpawnZone : MonoBehaviour
 {   
-    [SerializeField] private LayerMask _layerMask;
-    [SerializeField] private TowerSelection _towerSelection; 
+    [SerializeField] private LayerMask _spawnZoneLayer;
+    [SerializeField] private TowerSelection _towerSelection;
+
+    [SerializeField] private Material _towerMaterial;
+
+    private Ray _ray;
     
     private TowerCreation _towerCreation;
 
@@ -12,29 +16,32 @@ public class TowerSpawnZone : MonoBehaviour
 
     private int _maxRaycastDistance = 100;
 
-    public GameObject tower;
-
-    private void Update()
-    {
-        _screenPosition = Input.mousePosition;
-    }
-
     private void Start()
     {
-        _towerCreation = GetComponentInParent<TowerCreation>();
+        _towerCreation = GetComponentInParent<TowerCreation>();       
+    }
+
+    private void LateUpdate()
+    {
+        _screenPosition = Input.mousePosition;
+
+        _ray = Camera.main.ScreenPointToRay(_screenPosition);
+
+        if (Physics.Raycast(_ray, out RaycastHit hit, _maxRaycastDistance, _spawnZoneLayer))
+        {
+            _towerMaterial.color = Color.green;
+        }
     }
 
     private void OnMouseDown()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(_screenPosition);
-
-        if (Physics.Raycast(ray, out RaycastHit hit, _maxRaycastDistance, _layerMask))
+    {      
+        if (Physics.Raycast(_ray, out RaycastHit hit, _maxRaycastDistance, _spawnZoneLayer))
         {
             _worldPosition = hit.point;
 
             if (_towerSelection.IsMageTowerButtonPressed == true)
             {
-                _towerCreation.CreateTower(_worldPosition, TowerType.Mage);              
+                _towerCreation.CreateTower(_worldPosition, TowerType.Mage);
             }
             else if (_towerSelection.IsCannonTowerButtonPressed == true)
             {
