@@ -12,6 +12,7 @@ public class EventManager
     public static UnityEvent<int> BoughtTower = new UnityEvent<int>();
     public static UnityEvent<float> TowerUpgraded = new UnityEvent<float>();
     public static UnityEvent UpgradeTowerTextUpdate  = new UnityEvent();
+    public static UnityEvent NotEnoughMoney = new UnityEvent();
 
     public static void SendGameStarted()
     {
@@ -61,5 +62,10 @@ public class EventManager
     public static void SendUpgradeTowerTextUpdate()
     {
         UpgradeTowerTextUpdate.Invoke();
+    }
+
+    public static void SendNotEnoughMoney()
+    {
+        NotEnoughMoney.Invoke();    
     }
 }

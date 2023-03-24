@@ -31,7 +31,7 @@ public class TowerCharacteristics : MonoBehaviour
     private float _attackRangeIncreasing = 1.05f;
     private float _priceIncreasing = 1.2f;
 
-    private float _scaleDuration = 0.3f;
+    private float _canvasScaleDuration = 0.3f;
 
     private CoinSystem _coinSystem;
 
@@ -82,12 +82,12 @@ public class TowerCharacteristics : MonoBehaviour
     private void OpenUpgradeCanvas()
     {
         _towerCanvas.gameObject.SetActive(true);
-        LeanTween.scale(_towerCanvas.gameObject, _canvasScale, _scaleDuration);
+        LeanTween.scale(_towerCanvas.gameObject, _canvasScale, _canvasScaleDuration);
     }
 
     private void CloseUpgradeCanvas()
     {
-        LeanTween.scale(_towerCanvas.gameObject, Vector3.zero, _scaleDuration).setOnComplete(OffUpgradeCanvas);      
+        LeanTween.scale(_towerCanvas.gameObject, Vector3.zero, _canvasScaleDuration).setOnComplete(OffUpgradeCanvas);      
     }
     
     private void OffUpgradeCanvas()

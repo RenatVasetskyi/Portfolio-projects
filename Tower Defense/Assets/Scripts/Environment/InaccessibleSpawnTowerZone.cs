@@ -33,9 +33,7 @@ public class InaccessibleSpawnTowerZone : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, _maxRaycastDistance, _environmentLayer))
         {
             _worldPosition = hit.point;
-
-            _towerMaterial.color = Color.red;
-
+           
             if (_towerSelection.IsMageTowerButtonPressed == true)
             {
                 if (_isMageTowerActive == false)

@@ -6,7 +6,7 @@ public class TowerBehaviour : MonoBehaviour
     [SerializeField] private float _cannonRotateSpeed = 5f;
 
     [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private Transform _bulletStartPoint;
+    [SerializeField] private Transform _bulletStartPoint;   
 
     private TowerCharacteristics _towerCharacteristics;
 

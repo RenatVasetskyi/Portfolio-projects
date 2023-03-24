@@ -7,10 +7,17 @@ public class TowerCreation : MonoBehaviour
     public GameObject MegaTower;
     public GameObject SpeedTower;
 
+    public Material TowerMaterial;
+
     [SerializeField] private Transform _towerParent;
 
     [SerializeField] private CoinSystem _coinSystem;
     [SerializeField] private TowerPrice _towerPrice;
+
+    private void Start()
+    {
+        TowerMaterial.color = Color.gray;
+    }
 
     public void CreateTower(Vector3 position, TowerType towerType)
     {
@@ -23,6 +30,10 @@ public class TowerCreation : MonoBehaviour
                     EventManager.SendTowerSpawned();
                     EventManager.SendBoughtTower(_towerPrice.MageTowerPrice);
                 }
+                else
+                {
+                    EventManager.SendNotEnoughMoney();
+                }
                 break;
             case TowerType.Cannon:
                 if (_coinSystem.Coins >= _towerPrice.CannonTowerPrice)
@@ -30,6 +41,10 @@ public class TowerCreation : MonoBehaviour
                     Instantiate(CannonTower, position, Quaternion.identity, _towerParent);
                     EventManager.SendTowerSpawned();
                     EventManager.SendBoughtTower(_towerPrice.CannonTowerPrice);
+                }
+                else
+                {
+                    EventManager.SendNotEnoughMoney();
                 }
                 break;
             case TowerType.Mega:
@@ -39,6 +54,10 @@ public class TowerCreation : MonoBehaviour
                     EventManager.SendTowerSpawned();
                     EventManager.SendBoughtTower(_towerPrice.MegaTowerPrice);
                 }
+                else
+                {
+                    EventManager.SendNotEnoughMoney();
+                }
                 break;
             case TowerType.Speed:
                 if (_coinSystem.Coins >= _towerPrice.SpeedTowerPrice)
@@ -46,6 +65,10 @@ public class TowerCreation : MonoBehaviour
                     Instantiate(SpeedTower, position, Quaternion.identity, _towerParent);                  
                     EventManager.SendTowerSpawned();
                     EventManager.SendBoughtTower(_towerPrice.SpeedTowerPrice);
+                }
+                else
+                {
+                    EventManager.SendNotEnoughMoney();
                 }
                 break;
         }

@@ -5,8 +5,6 @@ public class TowerSpawnZone : MonoBehaviour
     [SerializeField] private LayerMask _spawnZoneLayer;
     [SerializeField] private TowerSelection _towerSelection;
 
-    [SerializeField] private Material _towerMaterial;
-
     private Ray _ray;
     
     private TowerCreation _towerCreation;
@@ -16,9 +14,12 @@ public class TowerSpawnZone : MonoBehaviour
 
     private int _maxRaycastDistance = 100;
 
+    private Material _towerMaterial;
+
     private void Start()
     {
-        _towerCreation = GetComponentInParent<TowerCreation>();       
+        _towerCreation = GetComponentInParent<TowerCreation>();
+        _towerMaterial = _towerCreation.TowerMaterial;
     }
 
     private void LateUpdate()
@@ -27,10 +28,10 @@ public class TowerSpawnZone : MonoBehaviour
 
         _ray = Camera.main.ScreenPointToRay(_screenPosition);
 
-        if (Physics.Raycast(_ray, out RaycastHit hit, _maxRaycastDistance, _spawnZoneLayer))
-        {
-            _towerMaterial.color = Color.green;
-        }
+        if (Physics.Raycast(_ray, _maxRaycastDistance, _spawnZoneLayer))       
+            _towerMaterial.color = Color.green;      
+        else       
+            _towerMaterial.color = Color.red;       
     }
 
     private void OnMouseDown()
