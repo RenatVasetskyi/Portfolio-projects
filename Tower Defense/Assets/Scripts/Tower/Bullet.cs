@@ -36,7 +36,10 @@ public class Bullet : MonoBehaviour
 
     private void HitTarget()
     {
+        EventManager.SendTowerShot();
+
         Destroy(gameObject);
+
         GameObject effect = Instantiate(_destroyBulletEffect, transform.position, transform.rotation);
         Destroy(effect, _destroyEffectDelay);
         

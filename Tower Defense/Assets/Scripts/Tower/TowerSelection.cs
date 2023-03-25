@@ -26,7 +26,9 @@ public class TowerSelection : MonoBehaviour
     }
 
     private void OnMageButtonClickHandler()
-    {         
+    {
+        AudioManager.Instance.PlaySfx(SfxType.UIClick);
+
         if (IsMageTowerButtonPressed == false)
         {
             IsMageTowerButtonPressed = true;
@@ -50,6 +52,8 @@ public class TowerSelection : MonoBehaviour
 
     private void OnCannonButtonClickHandler()
     {
+        AudioManager.Instance.PlaySfx(SfxType.UIClick);
+
         if (IsCannonTowerButtonPressed == false)
         {
             IsCannonTowerButtonPressed = true;
@@ -72,7 +76,9 @@ public class TowerSelection : MonoBehaviour
     }
 
     private void OnMegaButtonClickHandler()
-    {       
+    {
+        AudioManager.Instance.PlaySfx(SfxType.UIClick);
+
         if (IsMegaTowerButtonPressed == false)
         {
             IsMegaTowerButtonPressed = true;
@@ -95,7 +101,9 @@ public class TowerSelection : MonoBehaviour
     }
 
     private void OnSpeedButtonClickHandler()
-    {       
+    {
+        AudioManager.Instance.PlaySfx(SfxType.UIClick);
+
         if (IsSpeedTowerButtonPressed == false)
         {
             IsSpeedTowerButtonPressed = true;

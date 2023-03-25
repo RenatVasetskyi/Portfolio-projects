@@ -4,5 +4,9 @@ public enum SfxType
     GameOver,
     EnemyKilled,
     TowerSpawned,
-    CannonTowerShot
+    TowerShot,
+    NotEnoughMoney,
+    UIClick,
+    GetCoins,
+    TextAppearance
 }

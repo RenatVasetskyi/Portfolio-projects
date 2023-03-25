@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class StartGameText : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _gameStartText;
-    [SerializeField] private float _moveDuration = 0.75f;
-    [SerializeField] private LeanTweenType _showEaseType;   
+    [SerializeField] private TextMeshProUGUI _gameStartText;   
 
-    private float _delay = 1f;
+    [SerializeField] private LeanTweenType _showEaseType;
+
+    private float _openDuration = 0.5f;
+    private float _closeDuration = 1f;
+
+    private float _delay = 2f;
 
     private void Awake()
     {
@@ -18,13 +21,14 @@ public class StartGameText : MonoBehaviour
     private IEnumerator ShowGameStartedTextCoroutine()
     {
         yield return new WaitForSeconds(_delay);
-        LeanTween.scale(_gameStartText.gameObject, Vector3.one, _moveDuration).setEase(_showEaseType).setOnComplete(HideGameStartedText);
+        AudioManager.Instance.PlaySfx(SfxType.TextAppearance);
+        LeanTween.scale(_gameStartText.gameObject, Vector3.one, _openDuration).setEase(_showEaseType).setOnComplete(HideGameStartedText);
     }
 
     private IEnumerator HideGameStartedTextCoroutine()
     {
         yield return new WaitForSeconds(_delay);
-        LeanTween.scale(_gameStartText.gameObject, Vector3.zero, _moveDuration);
+        LeanTween.scale(_gameStartText.gameObject, Vector3.zero, _closeDuration);
     }
 
     private void ShowGameStartedText()

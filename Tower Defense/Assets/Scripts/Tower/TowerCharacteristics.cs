@@ -76,6 +76,7 @@ public class TowerCharacteristics : MonoBehaviour
 
     private void OnUpgradeButtonClickHandler()
     {
+        AudioManager.Instance.PlaySfx(SfxType.UIClick);
         Upgrade();
     }
 
