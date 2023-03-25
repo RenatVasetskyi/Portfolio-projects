@@ -13,7 +13,10 @@ public class VitalitySystem : MonoBehaviour
         _currentHp -= damage;
         _healthBarController.SetHealth(_currentHp);
 
-        if (_currentHp <= _minHp)       
+        if (_currentHp <= _minHp)
+        {
             Destroy(gameObject);
+            EventManager.SendEnemyDestroyed();
+        }               
     }
 }

@@ -12,6 +12,7 @@ public class CoinSystem : MonoBehaviour
         _coinsText.text = Coins.ToString();      
         EventManager.BoughtTower.AddListener(BuyTower);
         EventManager.TowerUpgraded.AddListener(UpgradeTower);
+        EventManager.EnemyDestroyed.AddListener(GetBonus);
     }
 
     private void BuyTower(int price)
@@ -23,6 +24,12 @@ public class CoinSystem : MonoBehaviour
     private void UpgradeTower(float price)
     {
         Mathf.Round(Coins -= price);
+        _coinsText.text = Coins.ToString();
+    }
+
+    private void GetBonus()
+    {
+        Coins += 15;
         _coinsText.text = Coins.ToString();
     }
 }

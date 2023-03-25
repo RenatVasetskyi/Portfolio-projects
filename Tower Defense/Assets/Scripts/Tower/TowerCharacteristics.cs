@@ -8,7 +8,7 @@ public class TowerCharacteristics : MonoBehaviour
     public float Damage = 25f;
     public float FireSpeed = 1f;
     public float AttackRange = 10f;
-    public float UpgradePrice = 40;
+    public float UpgradePrice = 40f;
 
     [SerializeField] private TextMeshProUGUI _currentDamageText;
     [SerializeField] private TextMeshProUGUI _currentFireSpeedText;
@@ -116,12 +116,13 @@ public class TowerCharacteristics : MonoBehaviour
         {
             if (_coinSystem.Coins >= UpgradePrice)
             {
+                EventManager.SendTowerUpgraded(UpgradePrice);              
+
                 Damage = (float)Math.Round(Damage *= _damageIncreasing, 1);
-                FireSpeed = FireSpeed += _fireSpeedIncreasing;
+                FireSpeed += _fireSpeedIncreasing;
                 AttackRange = (float)Math.Round(AttackRange *= _attackRangeIncreasing, 1);
                 UpgradePrice = (float)Math.Round(UpgradePrice *= _priceIncreasing, 1);
 
-                EventManager.SendTowerUpgraded(UpgradePrice);
                 EventManager.SendUpgradeTowerTextUpdate();
             }
         }

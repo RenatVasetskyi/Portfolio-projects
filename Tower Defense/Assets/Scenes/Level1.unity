@@ -30909,7 +30909,7 @@ GameObject:
   - component: {fileID: 955301891}
   - component: {fileID: 955301892}
   m_Layer: 0
-  m_Name: GameMusic
+  m_Name: GameSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30939,7 +30939,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 955301890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0cba143243c38f4c8db0019bb872a72, type: 3}
+  m_Script: {fileID: 11500000, guid: 647d217eb2861eb4e8da180420133708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &955745762
@@ -48680,6 +48680,8 @@ MonoBehaviour:
   _sfxDataList:
   - _type: 4
     _clip: {fileID: 8300000, guid: f72f03d3e6b0f6244b3a543ed88eaa63, type: 3}
+  - _type: 2
+    _clip: {fileID: 8300000, guid: d865f4e650d2fe240984a438bfa98b29, type: 3}
 --- !u!1001 &1594616061
 PrefabInstance:
   m_ObjectHideFlags: 0
