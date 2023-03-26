@@ -48690,8 +48690,6 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: bdaf88d551563b64bb08ee73b1a476c5, type: 3}
   - _type: 2
     _clip: {fileID: 8300000, guid: 2ffdd095ac3d051488b7db6078b71397, type: 3}
-  - _type: 8
-    _clip: {fileID: 8300000, guid: c475d68f4fc5406438b791a84aa769b3, type: 3}
 --- !u!1001 &1594616061
 PrefabInstance:
   m_ObjectHideFlags: 0

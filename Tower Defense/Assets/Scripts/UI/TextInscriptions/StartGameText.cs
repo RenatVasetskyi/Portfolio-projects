@@ -21,7 +21,6 @@ public class StartGameText : MonoBehaviour
     private IEnumerator ShowGameStartedTextCoroutine()
     {
         yield return new WaitForSeconds(_delay);
-        AudioManager.Instance.PlaySfx(SfxType.TextAppearance);
         LeanTween.scale(_gameStartText.gameObject, Vector3.one, _openDuration).setEase(_showEaseType).setOnComplete(HideGameStartedText);
     }
 

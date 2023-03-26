@@ -2029,7 +2029,6 @@ MonoBehaviour:
   _currentDamageText: {fileID: 2978198366848857140}
   _currentFireSpeedText: {fileID: 2085636787177188838}
   _currentAttackRangeText: {fileID: 6751817324785809534}
-  _notEnoughMoneyText: {fileID: 0}
   _towerCanvas: {fileID: 840059347487692617}
   _damageText: {fileID: 1356574384577134580}
   _fireSpeedText: {fileID: 3223174029559182842}

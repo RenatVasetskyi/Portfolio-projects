@@ -39,7 +39,7 @@ public class InaccessibleSpawnTowerZone : MonoBehaviour
                 if (_isMageTowerActive == false)
                 {
                     _mageTowerModel = Instantiate(_mageTowerModel);
-                    _isMageTowerActive = true;                  
+                    _isMageTowerActive = true;                              
                 }
                 else
                 {

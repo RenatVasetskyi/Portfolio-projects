@@ -35,11 +35,11 @@ public class TowerCharacteristics : MonoBehaviour
 
     private CoinSystem _coinSystem;
 
-    private bool _isUpgrageCanvasOpened = false;
+    private bool _isUpgrageCanvasOpen = false;
 
     private void Start()
     {
-        _coinSystem = GameObject.FindGameObjectWithTag(Constants.CoinSystemTag.ToString()).GetComponent<CoinSystem>();
+        _coinSystem = GameObject.FindGameObjectWithTag(Constants.CoinSystemTag.ToString()).GetComponent<CoinSystem>();      
     }
 
     private void Awake()
@@ -62,28 +62,28 @@ public class TowerCharacteristics : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (_isUpgrageCanvasOpened == false)
+        if (_isUpgrageCanvasOpen == false)
         {
-            _isUpgrageCanvasOpened = true;
+            _isUpgrageCanvasOpen = true;
             OpenUpgradeCanvas();
         }
         else
         {
-            _isUpgrageCanvasOpened = false;
+            _isUpgrageCanvasOpen = false;
             CloseUpgradeCanvas();
         }
     }
 
     private void OnUpgradeButtonClickHandler()
     {
-        AudioManager.Instance.PlaySfx(SfxType.UIClick);
+        AudioManager.Instance.PlaySfx(SfxType.UIClick);       
         Upgrade();
     }
 
     private void OpenUpgradeCanvas()
     {
         _towerCanvas.gameObject.SetActive(true);
-        LeanTween.scale(_towerCanvas.gameObject, _canvasScale, _canvasScaleDuration);
+        LeanTween.scale(_towerCanvas.gameObject, _canvasScale, _canvasScaleDuration);      
     }
 
     private void CloseUpgradeCanvas()

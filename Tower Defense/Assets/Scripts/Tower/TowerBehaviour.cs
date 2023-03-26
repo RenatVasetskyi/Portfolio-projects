@@ -41,6 +41,8 @@ public class TowerBehaviour : MonoBehaviour
 
     private void Shoot()
     {
+        EventManager.SendTowerShot();
+
         GameObject bulletObj = Instantiate(_bulletPrefab, _bulletStartPoint.position, _bulletStartPoint.rotation);
         Bullet bullet = bulletObj.GetComponent<Bullet>();
 
