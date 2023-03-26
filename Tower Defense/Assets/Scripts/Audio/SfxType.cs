@@ -8,4 +8,5 @@ public enum SfxType
     NotEnoughMoney,
     UIClick,
     GetCoins,
+    PlayerGetsDamage
 }

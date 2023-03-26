@@ -12,7 +12,8 @@ public class FinishDetector : MonoBehaviour
         {
             if (_playerHealth.Hp > 0)
             {
-                EventManager.SendPlayerHpChanged(_damage);
+                AudioManager.Instance.PlaySfx(SfxType.PlayerGetsDamage);
+                EventManager.SendPlayerHpChanged(_damage);                
                 Destroy(other.gameObject);
             }
             else
