@@ -12264,7 +12264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ee5873a80e949498eb62502063c52a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 10
+  Hp: 5
   _playerHpText: {fileID: 330585810}
 --- !u!1001 &380157328
 PrefabInstance:
@@ -38595,7 +38595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b15431492bec64c9a197526c236ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Coins: 200
+  Coins: 250
   _coinsText: {fileID: 717776851}
 --- !u!114 &1251150600
 MonoBehaviour:

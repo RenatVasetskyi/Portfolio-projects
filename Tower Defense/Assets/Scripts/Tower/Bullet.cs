@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float Damage;
+
     [SerializeField] private float _bulletSpeed;
     [SerializeField] private GameObject _destroyBulletEffect;
 
@@ -41,6 +43,6 @@ public class Bullet : MonoBehaviour
         GameObject effect = Instantiate(_destroyBulletEffect, transform.position, transform.rotation);
         Destroy(effect, _destroyEffectDelay);
         
-        _target.GetComponent<VitalitySystem>().TakeDamage(15);
+        _target.GetComponent<VitalitySystem>().TakeDamage(Damage);
     }
 }
