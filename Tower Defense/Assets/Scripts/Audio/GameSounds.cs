@@ -15,6 +15,7 @@ public class GameSounds : MonoBehaviour
         EventManager.TowerSpawned.AddListener(PlayTowerSpawnedSound);
         EventManager.NotEnoughMoney.AddListener(PlayNotEnoughMoneySound);
         EventManager.GetCoins.AddListener(PlayGetCoinsSound);
+        EventManager.GameOver.AddListener(PlayGameOverSound);
     }
 
     private void PlayDestroyEnemySound()
@@ -45,5 +46,10 @@ public class GameSounds : MonoBehaviour
     private void PlayGetCoinsSound()
     {
         AudioManager.Instance.PlaySfx(SfxType.GetCoins);
+    }
+
+    private void PlayGameOverSound()
+    {
+        AudioManager.Instance.PlaySfx(SfxType.GameOver);
     }
 }

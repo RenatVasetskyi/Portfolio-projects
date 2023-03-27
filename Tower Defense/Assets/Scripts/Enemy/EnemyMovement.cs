@@ -1,15 +1,13 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour, IEnemyMovement
 {
-    private NavMeshAgent _agent;
-    private GameObject _finish;
+    private GameObject _finish;   
 
-    void Start()
-    {       
+    public void Move(NavMeshAgent navMeshAgent)
+    {
         _finish = GameObject.FindGameObjectWithTag(Constants.FinishTag);
-        _agent = GetComponent<NavMeshAgent>();
-        _agent.SetDestination(_finish.transform.position);
+        navMeshAgent.SetDestination(_finish.transform.position);
     }
 }
