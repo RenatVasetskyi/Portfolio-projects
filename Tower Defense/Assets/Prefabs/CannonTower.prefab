@@ -1968,6 +1968,7 @@ GameObject:
   - component: {fileID: 2794262072978435425}
   - component: {fileID: 7242782100789690062}
   - component: {fileID: 1129340734636936796}
+  - component: {fileID: 569044442866559763}
   m_Layer: 0
   m_Name: CannonTower
   m_TagString: Untagged
@@ -2052,6 +2053,18 @@ MonoBehaviour:
   _cannonRotateSpeed: 5
   _bulletPrefab: {fileID: 7440169714611433829, guid: d28eafb62ac63624b93b29883261f1fc, type: 3}
   _bulletStartPoint: {fileID: 3380881667967940485}
+--- !u!114 &569044442866559763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559839046223248598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3b99e14a17c74e9d8c215ad08e322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4559839046223253704
 GameObject:
   m_ObjectHideFlags: 0

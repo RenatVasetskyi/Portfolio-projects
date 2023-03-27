@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7440169714611433831}
   - component: {fileID: 7440169714611433828}
   - component: {fileID: -7330316085772635746}
+  - component: {fileID: -2862811136452675143}
   m_Layer: 0
   m_Name: CannonTowerBullet
   m_TagString: Untagged
@@ -110,5 +111,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c046dfbaefeab02439d0a6cfc3377812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 0
   _bulletSpeed: 40
   _destroyBulletEffect: {fileID: 9095153614082709596, guid: 96ce852cd544a5d44accbd6d10fc3c64, type: 3}
+--- !u!114 &-2862811136452675143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7440169714611433829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ee3ee3b835f0d4f9386abb368264d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
