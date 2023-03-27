@@ -1,23 +1,23 @@
 using UnityEngine;
 
-public class FinishDetector : MonoBehaviour
+public class FinishDetector : MonoBehaviour, IFinishDetector
 {
     [SerializeField] private PlayerHealth _playerHealth;
 
-    private int _damage = 1;
+    private int _damageToPlayer = 1;  
 
-    private void OnTriggerEnter(Collider other)
-    {      
-        if (other.tag == Constants.EnemyTag)
+    public void Detect(Collider collider)
+    {
+        if (collider.tag == Constants.EnemyTag)
         {
             if (_playerHealth.Hp > 0)
             {
                 AudioManager.Instance.PlaySfx(SfxType.PlayerGetsDamage);
-                EventManager.SendPlayerHpChanged(_damage);                
-                Destroy(other.gameObject);
+                EventManager.SendPlayerHpChanged(_damageToPlayer);
+                Destroy(collider.gameObject);
             }
             else
-                EventManager.SendGameOver();         
+                EventManager.SendGameOver();
         }
     }
 }
