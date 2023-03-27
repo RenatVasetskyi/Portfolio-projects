@@ -6815,10 +6815,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11331d0d1e182d45af466b1d2ddcfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 25
-  FireSpeed: 1
-  AttackRange: 10
-  UpgradePrice: 40
+  Damage: 30
+  FireSpeed: 1.2
+  AttackRange: 15
+  UpgradePrice: 50
   _currentDamageText: {fileID: 2119420245812808295}
   _currentFireSpeedText: {fileID: 8503162925215644286}
   _currentAttackRangeText: {fileID: 369683290370661283}

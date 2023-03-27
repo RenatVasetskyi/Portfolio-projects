@@ -2025,8 +2025,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 25
   FireSpeed: 1
-  AttackRange: 10
-  UpgradePrice: 40
+  AttackRange: 12
+  UpgradePrice: 35
   _currentDamageText: {fileID: 2978198366848857140}
   _currentFireSpeedText: {fileID: 2085636787177188838}
   _currentAttackRangeText: {fileID: 6751817324785809534}

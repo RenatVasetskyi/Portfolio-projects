@@ -299,10 +299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11331d0d1e182d45af466b1d2ddcfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 25
+  Damage: 20
   FireSpeed: 2
-  AttackRange: 10
-  UpgradePrice: 40
+  AttackRange: 12
+  UpgradePrice: 70
   _currentDamageText: {fileID: 3970572532270035624}
   _currentFireSpeedText: {fileID: 4528094310543500192}
   _currentAttackRangeText: {fileID: 5641526036400114429}
