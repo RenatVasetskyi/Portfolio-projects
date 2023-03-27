@@ -7,23 +7,16 @@ public class BulletShot : MonoBehaviour, IBulletShot
     [SerializeField] private float _bulletSpeed;
     [SerializeField] private GameObject _destroyBulletEffect;
 
-    private IBulletShot _bulletShot;
-
     private Transform _target;
 
     private float _destroyEffectDelay = 1f;
-
-    private void Awake()
-    {
-        _bulletShot = GetComponent<IBulletShot>();
-    }
-
-    void IBulletShot.Seek(Transform target)
+ 
+    public void Seek(Transform target)
     {
         _target = target;
     }
 
-    void IBulletShot.Move()
+    public void Move()
     {
         if (_target == null)
             return;
@@ -33,14 +26,14 @@ public class BulletShot : MonoBehaviour, IBulletShot
 
         if (direction.magnitude <= distanceThisFrame)
         {
-            _bulletShot.HitTarget();
+            HitTarget();
             return;
         }
 
         transform.Translate(direction.normalized * distanceThisFrame, Space.World);
     }
 
-    void IBulletShot.CheckTarget()
+    public void CheckTarget()
     {
         if (_target == null)
         {
@@ -49,7 +42,7 @@ public class BulletShot : MonoBehaviour, IBulletShot
         }
     }
 
-    void IBulletShot.HitTarget()
+    public void HitTarget()
     {
         Destroy(gameObject);
 

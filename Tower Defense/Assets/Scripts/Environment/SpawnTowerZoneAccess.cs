@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InaccessibleSpawnTowerZone : MonoBehaviour
+public class SpawnTowerZoneAccess : MonoBehaviour, ISpawnZone
 {
     [SerializeField] private TowerSelection _towerSelection;
     [SerializeField] private TowerCreation _towerCreation;
@@ -13,33 +13,28 @@ public class InaccessibleSpawnTowerZone : MonoBehaviour
     [SerializeField] private GameObject _speedTowerModel;
 
     [SerializeField] private Material _towerMaterial;
-
-    private Vector3 _screenPosition;
+   
     private Vector3 _worldPosition;
 
-    private int _maxRaycastDistance = 100;
+    private int _maxRaycastDistance = 200;
 
     private bool _isMageTowerActive = false;
     private bool _isCannonTowerActive = false;
     private bool _isMegaTowerActive = false;
     private bool _isSpeedTowerActive = false;
 
-    private void LateUpdate()
+    public void CheckAccess(Ray ray)
     {
-        _screenPosition = Input.mousePosition;
-
-        Ray ray = Camera.main.ScreenPointToRay(_screenPosition);        
-
         if (Physics.Raycast(ray, out RaycastHit hit, _maxRaycastDistance, _environmentLayer))
         {
             _worldPosition = hit.point;
-           
+
             if (_towerSelection.IsMageTowerButtonPressed == true)
             {
                 if (_isMageTowerActive == false)
                 {
                     _mageTowerModel = Instantiate(_mageTowerModel);
-                    _isMageTowerActive = true;                              
+                    _isMageTowerActive = true;
                 }
                 else
                 {
@@ -82,6 +77,6 @@ public class InaccessibleSpawnTowerZone : MonoBehaviour
                     _speedTowerModel.transform.position = _worldPosition;
                 }
             }
-        }             
+        }
     }
 }

@@ -12185,6 +12185,7 @@ GameObject:
   - component: {fileID: 378708177}
   - component: {fileID: 378708176}
   - component: {fileID: 378708178}
+  - component: {fileID: 378708179}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -12266,6 +12267,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 5
   _playerHpText: {fileID: 330585810}
+--- !u!114 &378708179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378708174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835d1046460e69341920907f9f5ddd6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &380157328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38607,7 +38620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b15431492bec64c9a197526c236ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Coins: 250
+  Coins: 5000
   _coinsText: {fileID: 717776851}
 --- !u!114 &1251150600
 MonoBehaviour:
@@ -63625,7 +63638,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
   m_PrefabInstance: {fileID: 2067167090}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2069195404
+--- !u!4 &2069195407 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 626248681357570864, guid: 9b116ad303732804999a5f5ba2feb297, type: 3}
+  m_PrefabInstance: {fileID: 626248681599836314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2069195410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933045265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2406e7a951702c04eabedfec88ec95c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2069195411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63647,11 +63677,6 @@ MonoBehaviour:
   _megaTowerModel: {fileID: 919132149155446097, guid: b3db2de629e07f54fbb9ddd75ce62f91, type: 3}
   _speedTowerModel: {fileID: 919132149155446097, guid: b303f1d9007094c46a821bc46808615a, type: 3}
   _towerMaterial: {fileID: 2100000, guid: a37e1fdc417de3f44a345dcf438bd789, type: 2}
---- !u!4 &2069195407 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 626248681357570864, guid: 9b116ad303732804999a5f5ba2feb297, type: 3}
-  m_PrefabInstance: {fileID: 626248681599836314}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2069624385
 PrefabInstance:
   m_ObjectHideFlags: 0
