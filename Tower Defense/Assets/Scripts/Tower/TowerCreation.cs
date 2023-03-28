@@ -14,19 +14,14 @@ public class TowerCreation : MonoBehaviour
     [SerializeField] private CoinSystem _coinSystem;
     [SerializeField] private TowerPrice _towerPrice;
 
-    private void Start()
-    {
-        TowerMaterial.color = Color.gray;
-    }
-
     public void CreateTower(Vector3 position, TowerType towerType)
     {
         switch (towerType)
         {
             case TowerType.Mage:
                 if (_coinSystem.Coins >= _towerPrice.MageTowerPrice)
-                {                                                        
-                    Instantiate(MageTower, position, Quaternion.identity, _towerParent);                                       
+                {
+                    Instantiate(MageTower, position, Quaternion.identity, _towerParent);
                     EventManager.SendTowerSpawned();
                     EventManager.SendBoughtTower(_towerPrice.MageTowerPrice);
                 }
@@ -37,7 +32,7 @@ public class TowerCreation : MonoBehaviour
                 break;
             case TowerType.Cannon:
                 if (_coinSystem.Coins >= _towerPrice.CannonTowerPrice)
-                {                                      
+                {
                     Instantiate(CannonTower, position, Quaternion.identity, _towerParent);
                     EventManager.SendTowerSpawned();
                     EventManager.SendBoughtTower(_towerPrice.CannonTowerPrice);
@@ -49,7 +44,7 @@ public class TowerCreation : MonoBehaviour
                 break;
             case TowerType.Mega:
                 if (_coinSystem.Coins >= _towerPrice.MegaTowerPrice)
-                {                                    
+                {
                     Instantiate(MegaTower, position, Quaternion.identity, _towerParent);
                     EventManager.SendTowerSpawned();
                     EventManager.SendBoughtTower(_towerPrice.MegaTowerPrice);
@@ -61,8 +56,8 @@ public class TowerCreation : MonoBehaviour
                 break;
             case TowerType.Speed:
                 if (_coinSystem.Coins >= _towerPrice.SpeedTowerPrice)
-                {                                                         
-                    Instantiate(SpeedTower, position, Quaternion.identity, _towerParent);                  
+                {
+                    Instantiate(SpeedTower, position, Quaternion.identity, _towerParent);
                     EventManager.SendTowerSpawned();
                     EventManager.SendBoughtTower(_towerPrice.SpeedTowerPrice);
                 }
