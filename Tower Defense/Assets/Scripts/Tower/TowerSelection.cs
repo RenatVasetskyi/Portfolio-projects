@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class TowerSelection : MonoBehaviour
 {
     public bool IsMageTowerButtonPressed = false;

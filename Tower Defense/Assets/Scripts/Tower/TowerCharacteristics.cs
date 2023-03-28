@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public class TowerCharacteristics : MonoBehaviour
+public class TowerCharacteristics : MonoBehaviour, IUpgaradeTower, IUpgradeCanvas
 {
     public float Damage = 25f;
     public float FireSpeed = 1f;
@@ -37,6 +37,55 @@ public class TowerCharacteristics : MonoBehaviour
 
     private bool _isUpgrageCanvasOpen = false;
 
+    public void Upgrade()
+    {
+        if (_coinSystem != null)
+        {
+            if (_coinSystem.Coins >= UpgradePrice)
+            {
+                EventManager.SendTowerUpgraded(UpgradePrice);
+
+                Damage = (float)Math.Round(Damage *= _damageIncreasing, 1);
+                FireSpeed += _fireSpeedIncreasing;
+                AttackRange = (float)Math.Round(AttackRange *= _attackRangeIncreasing, 1);
+                UpgradePrice = (float)Math.Round(UpgradePrice *= _priceIncreasing, 1);
+
+                EventManager.SendUpgradeTowerTextUpdate();
+            }
+        }
+    }
+
+    public void UpdateUpgradeText()
+    {
+        _damageText.text = Damage.ToString() + $"<color=green> + {Math.Round(Damage * (_damageIncreasing - 1), 1)} </color>";
+        _fireSpeedText.text = FireSpeed.ToString() + $"<color=green> + {_fireSpeedIncreasing} </color>";
+        _attackRangeText.text = AttackRange.ToString() + $"<color=green> + {Math.Round(AttackRange * (_attackRangeIncreasing - 1), 1)} </color>";
+        _upgradePriceText.text = $"Cost {Math.Round(UpgradePrice, 1)}";
+    }
+
+    public void UpdateCurrentCharacteristicsText()
+    {
+        _currentDamageText.text = Damage.ToString();
+        _currentFireSpeedText.text = FireSpeed.ToString();
+        _currentAttackRangeText.text = AttackRange.ToString();
+    }
+
+    public void OpenUpgradeCanvas()
+    {
+        _towerCanvas.gameObject.SetActive(true);
+        LeanTween.scale(_towerCanvas.gameObject, _canvasScale, _canvasScaleDuration);
+    }
+
+    public void CloseUpgradeCanvas()
+    {
+        LeanTween.scale(_towerCanvas.gameObject, Vector3.zero, _canvasScaleDuration).setOnComplete(OffUpgradeCanvas);
+    }
+
+    public void OffUpgradeCanvas()
+    {
+        _towerCanvas.gameObject.SetActive(false);
+    }
+
     private void Start()
     {
         _coinSystem = GameObject.FindGameObjectWithTag(Constants.CoinSystemTag.ToString()).GetComponent<CoinSystem>();      
@@ -45,10 +94,7 @@ public class TowerCharacteristics : MonoBehaviour
     private void Awake()
     {
         UpdateCurrentCharacteristicsText();
-        UpdateUpgradeText();
-
-        EventManager.UpgradeTowerTextUpdate.AddListener(UpdateCurrentCharacteristicsText);
-        EventManager.UpgradeTowerTextUpdate.AddListener(UpdateUpgradeText);
+        UpdateUpgradeText();        
 
         _towerCanvas.worldCamera = Camera.main;
 
@@ -78,54 +124,5 @@ public class TowerCharacteristics : MonoBehaviour
     {
         AudioManager.Instance.PlaySfx(SfxType.UIClick);       
         Upgrade();
-    }
-
-    private void OpenUpgradeCanvas()
-    {
-        _towerCanvas.gameObject.SetActive(true);
-        LeanTween.scale(_towerCanvas.gameObject, _canvasScale, _canvasScaleDuration);      
-    }
-
-    private void CloseUpgradeCanvas()
-    {
-        LeanTween.scale(_towerCanvas.gameObject, Vector3.zero, _canvasScaleDuration).setOnComplete(OffUpgradeCanvas);      
-    }
-    
-    private void OffUpgradeCanvas()
-    {
-        _towerCanvas.gameObject.SetActive(false);
-    }
-
-    private void UpdateUpgradeText()
-    {
-        _damageText.text = Damage.ToString() + $"<color=green> + {Math.Round(Damage * (_damageIncreasing - 1), 1)} </color>";
-        _fireSpeedText.text = FireSpeed.ToString() + $"<color=green> + {_fireSpeedIncreasing} </color>";
-        _attackRangeText.text = AttackRange.ToString() + $"<color=green> + {Math.Round(AttackRange * (_attackRangeIncreasing - 1), 1)} </color>";
-        _upgradePriceText.text = $"Cost {Math.Round(UpgradePrice, 1)}";
-    }
-
-    private void UpdateCurrentCharacteristicsText()
-    {
-        _currentDamageText.text = Damage.ToString();
-        _currentFireSpeedText.text = FireSpeed.ToString();
-        _currentAttackRangeText.text = AttackRange.ToString();
-    }
-
-    private void Upgrade()
-    {
-        if (_coinSystem != null)
-        {
-            if (_coinSystem.Coins >= UpgradePrice)
-            {
-                EventManager.SendTowerUpgraded(UpgradePrice);              
-
-                Damage = (float)Math.Round(Damage *= _damageIncreasing, 1);
-                FireSpeed += _fireSpeedIncreasing;
-                AttackRange = (float)Math.Round(AttackRange *= _attackRangeIncreasing, 1);
-                UpgradePrice = (float)Math.Round(UpgradePrice *= _priceIncreasing, 1);
-
-                EventManager.SendUpgradeTowerTextUpdate();
-            }
-        }
-    }
+    } 
 }

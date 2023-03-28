@@ -10,19 +10,16 @@ public class TowerTracking : MonoBehaviour, ITowerTrack
 
     private TowerCharacteristics _towerCharacteristics;
 
-    private ITowerTrack _towerTrack;
-
     private Transform _target;
 
     private float _fireCountDown = 0f;
 
     private void Awake()
-    {
-        _towerTrack = GetComponent<ITowerTrack>();
+    {       
         _towerCharacteristics = GetComponent<TowerCharacteristics>();
     }
 
-    void ITowerTrack.Shoot()
+    public void Shoot()
     {
         EventManager.SendTowerShot();
 
@@ -35,7 +32,7 @@ public class TowerTracking : MonoBehaviour, ITowerTrack
             bulletShot.Seek(_target);
     }
 
-    void ITowerTrack.UpdateTarget()
+    public void UpdateTarget()
     {            
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(Constants.EnemyTag.ToString());
         float shortestDistance = Mathf.Infinity;
@@ -57,7 +54,7 @@ public class TowerTracking : MonoBehaviour, ITowerTrack
             _target = null;       
     }
 
-    void ITowerTrack.Track()
+    public void Track()
     {
         if (_target == null)
             return;
@@ -69,7 +66,7 @@ public class TowerTracking : MonoBehaviour, ITowerTrack
 
         if (_fireCountDown <= 0)
         {
-            _towerTrack.Shoot();
+            Shoot();
             _fireCountDown = 1f / _towerCharacteristics.FireSpeed;
         }
 

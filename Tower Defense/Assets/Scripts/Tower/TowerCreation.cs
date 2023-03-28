@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class TowerCreation : MonoBehaviour
+public class TowerCreation : MonoBehaviour, ICreateTower
 {
-    public GameObject MageTower;
-    public GameObject CannonTower;
-    public GameObject MegaTower;
-    public GameObject SpeedTower;
-
     public Material TowerMaterial;
+
+    [SerializeField] private GameObject _mageTower;
+    [SerializeField] private GameObject _cannonTower;
+    [SerializeField] private GameObject _megaTower;
+    [SerializeField] private GameObject _speedTower;   
 
     [SerializeField] private Transform _towerParent;
 
@@ -21,7 +21,7 @@ public class TowerCreation : MonoBehaviour
             case TowerType.Mage:
                 if (_coinSystem.Coins >= _towerPrice.MageTowerPrice)
                 {
-                    Instantiate(MageTower, position, Quaternion.identity, _towerParent);
+                    Instantiate(_mageTower, position, Quaternion.identity, _towerParent);
                     EventManager.SendTowerSpawned();
                     EventManager.SendBoughtTower(_towerPrice.MageTowerPrice);
                 }
@@ -33,7 +33,7 @@ public class TowerCreation : MonoBehaviour
             case TowerType.Cannon:
                 if (_coinSystem.Coins >= _towerPrice.CannonTowerPrice)
                 {
-                    Instantiate(CannonTower, position, Quaternion.identity, _towerParent);
+                    Instantiate(_cannonTower, position, Quaternion.identity, _towerParent);
                     EventManager.SendTowerSpawned();
                     EventManager.SendBoughtTower(_towerPrice.CannonTowerPrice);
                 }
@@ -45,7 +45,7 @@ public class TowerCreation : MonoBehaviour
             case TowerType.Mega:
                 if (_coinSystem.Coins >= _towerPrice.MegaTowerPrice)
                 {
-                    Instantiate(MegaTower, position, Quaternion.identity, _towerParent);
+                    Instantiate(_megaTower, position, Quaternion.identity, _towerParent);
                     EventManager.SendTowerSpawned();
                     EventManager.SendBoughtTower(_towerPrice.MegaTowerPrice);
                 }
@@ -57,7 +57,7 @@ public class TowerCreation : MonoBehaviour
             case TowerType.Speed:
                 if (_coinSystem.Coins >= _towerPrice.SpeedTowerPrice)
                 {
-                    Instantiate(SpeedTower, position, Quaternion.identity, _towerParent);
+                    Instantiate(_speedTower, position, Quaternion.identity, _towerParent);
                     EventManager.SendTowerSpawned();
                     EventManager.SendBoughtTower(_towerPrice.SpeedTowerPrice);
                 }
