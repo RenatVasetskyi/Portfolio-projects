@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class TowerCreation : MonoBehaviour, ICreateTower
 {
+    public ButtonCreator ButtonCreator;
+
     public Material TowerMaterial;
 
     [SerializeField] private GameObject _mageTower;
@@ -15,57 +17,16 @@ public class TowerCreation : MonoBehaviour, ICreateTower
     [SerializeField] private TowerPrice _towerPrice;
 
     public void CreateTower(Vector3 position, TowerType towerType)
-    {
-        switch (towerType)
+    {       
+        if (_coinSystem.Coins >= ButtonCreator.SelectedButton.GetComponent<ButtonHolder>().Price)
         {
-            case TowerType.Mage:
-                if (_coinSystem.Coins >= _towerPrice.MageTowerPrice)
-                {
-                    Instantiate(_mageTower, position, Quaternion.identity, _towerParent);
-                    EventManager.SendTowerSpawned();
-                    EventManager.SendBoughtTower(_towerPrice.MageTowerPrice);
-                }
-                else
-                {
-                    EventManager.SendNotEnoughMoney();
-                }
-                break;
-            case TowerType.Cannon:
-                if (_coinSystem.Coins >= _towerPrice.CannonTowerPrice)
-                {
-                    Instantiate(_cannonTower, position, Quaternion.identity, _towerParent);
-                    EventManager.SendTowerSpawned();
-                    EventManager.SendBoughtTower(_towerPrice.CannonTowerPrice);
-                }
-                else
-                {
-                    EventManager.SendNotEnoughMoney();
-                }
-                break;
-            case TowerType.Mega:
-                if (_coinSystem.Coins >= _towerPrice.MegaTowerPrice)
-                {
-                    Instantiate(_megaTower, position, Quaternion.identity, _towerParent);
-                    EventManager.SendTowerSpawned();
-                    EventManager.SendBoughtTower(_towerPrice.MegaTowerPrice);
-                }
-                else
-                {
-                    EventManager.SendNotEnoughMoney();
-                }
-                break;
-            case TowerType.Speed:
-                if (_coinSystem.Coins >= _towerPrice.SpeedTowerPrice)
-                {
-                    Instantiate(_speedTower, position, Quaternion.identity, _towerParent);
-                    EventManager.SendTowerSpawned();
-                    EventManager.SendBoughtTower(_towerPrice.SpeedTowerPrice);
-                }
-                else
-                {
-                    EventManager.SendNotEnoughMoney();
-                }
-                break;
+            Instantiate(ButtonCreator.SelectedButton.GetComponent<ButtonHolder>().TowerPrefab, position, Quaternion.identity, _towerParent);
+            EventManager.SendTowerSpawned();
+            EventManager.SendBoughtTower(ButtonCreator.SelectedButton.GetComponent<ButtonHolder>().Price);
+        }
+        else
+        {
+            EventManager.SendNotEnoughMoney();
         }
     }
 }

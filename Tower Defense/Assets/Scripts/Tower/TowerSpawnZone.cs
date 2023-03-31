@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class TowerSpawnZone : MonoBehaviour, ICheckSpawnZone
 {
-    [SerializeField] private LayerMask _spawnZoneLayer;
-    [SerializeField] private TowerSelection _towerSelection;
+    [SerializeField] private LayerMask _spawnZoneLayer;   
 
     private Ray _ray;
 
@@ -15,28 +14,6 @@ public class TowerSpawnZone : MonoBehaviour, ICheckSpawnZone
     private int _maxRaycastDistance = 100;
 
     private Material _towerMaterial;
-
-    public void ShowTower(RaycastHit hit)
-    {
-        _worldPosition = hit.point;
-
-        if (_towerSelection.IsMageTowerButtonPressed == true)
-        {
-            _towerCreation.CreateTower(_worldPosition, TowerType.Mage);
-        }
-        else if (_towerSelection.IsCannonTowerButtonPressed == true)
-        {
-            _towerCreation.CreateTower(_worldPosition, TowerType.Cannon);
-        }
-        else if (_towerSelection.IsMegaTowerButtonPressed == true)
-        {
-            _towerCreation.CreateTower(_worldPosition, TowerType.Mega);
-        }
-        else if (_towerSelection.IsSpeedTowerButtonPressed == true)
-        {
-            _towerCreation.CreateTower(_worldPosition, TowerType.Speed);
-        }
-    }
 
     public RaycastHit CheckZone()
     {
@@ -60,8 +37,8 @@ public class TowerSpawnZone : MonoBehaviour, ICheckSpawnZone
 
     private void Start()
     {
-        _towerCreation = GetComponentInParent<TowerCreation>();
-        _towerMaterial = _towerCreation.TowerMaterial;
+        _towerCreation = GetComponentInParent<TowerCreation>();      
+        _towerMaterial = _towerCreation.TowerMaterial;       
     }
 
     private void LateUpdate()
@@ -73,9 +50,19 @@ public class TowerSpawnZone : MonoBehaviour, ICheckSpawnZone
         ChangeTowerColor();
     }
 
+    private void TryToCreateTower(RaycastHit hit)
+    {
+        _worldPosition = hit.point;
+
+        if (_towerCreation.ButtonCreator.SelectedButton != null)
+        {
+            _towerCreation.CreateTower(_worldPosition, _towerCreation.ButtonCreator.SelectedButton.GetComponent<ButtonHolder>().TowerType);
+        }                   
+    }
+
     private void OnMouseDown()
     {
         RaycastHit hit = CheckZone();
-        ShowTower(hit);      
+        TryToCreateTower(hit);      
     }
 }
