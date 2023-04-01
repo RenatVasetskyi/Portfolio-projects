@@ -3,12 +3,14 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public class TowerCharacteristics : MonoBehaviour, IUpgaradeTower, IUpgradeCanvas
+public class ShowTowerCharacteristics : MonoBehaviour, IUpgaradeTower, IUpgradeCanvas, IInitialize
 {
-    public float Damage = 25f;
-    public float FireSpeed = 1f;
-    public float AttackRange = 10f;
-    public float UpgradePrice = 40f;
+    public float Damage { get; private set; }
+    public float FireSpeed { get; private set; }
+    public float AttackRange { get; private set; }
+    public float UpgradePrice { get; private set; }
+
+    [SerializeField] private TowerSelectionButton _towerSelectionButton;
 
     [SerializeField] private TextMeshProUGUI _currentDamageText;
     [SerializeField] private TextMeshProUGUI _currentFireSpeedText;
@@ -24,7 +26,7 @@ public class TowerCharacteristics : MonoBehaviour, IUpgaradeTower, IUpgradeCanva
 
     [SerializeField] private Button _upgradeButton;
 
-    [SerializeField] private Vector3 _canvasScale; 
+    [SerializeField] private Vector3 _canvasScale;
 
     private float _damageIncreasing = 1.2f;
     private float _fireSpeedIncreasing = 0.05f;
@@ -36,6 +38,14 @@ public class TowerCharacteristics : MonoBehaviour, IUpgaradeTower, IUpgradeCanva
     private CoinSystem _coinSystem;
 
     private bool _isUpgrageCanvasOpen = false;
+
+    public void Initialize()
+    {
+        Damage = _towerSelectionButton.Damage;
+        FireSpeed = _towerSelectionButton.FireSpeed;
+        AttackRange = _towerSelectionButton.AttackRange;
+        UpgradePrice = _towerSelectionButton.UpgradePrice;
+    }
 
     public void Upgrade()
     {
@@ -86,19 +96,21 @@ public class TowerCharacteristics : MonoBehaviour, IUpgaradeTower, IUpgradeCanva
         _towerCanvas.gameObject.SetActive(false);
     }
 
-    private void Start()
-    {
-        _coinSystem = GameObject.FindGameObjectWithTag(Constants.CoinSystemTag.ToString()).GetComponent<CoinSystem>();      
-    }
-
     private void Awake()
     {
+        Initialize();
+
         UpdateCurrentCharacteristicsText();
-        UpdateUpgradeText();        
+        UpdateUpgradeText();
 
         _towerCanvas.worldCamera = Camera.main;
 
-        _upgradeButton.onClick.AddListener(OnUpgradeButtonClickHandler);                 
+        _upgradeButton.onClick.AddListener(OnUpgradeButtonClickHandler);
+    }
+
+    private void Start()
+    {
+        _coinSystem = GameObject.FindGameObjectWithTag(Constants.CoinSystemTag.ToString()).GetComponent<CoinSystem>();      
     }
 
     private void Update()
@@ -124,5 +136,5 @@ public class TowerCharacteristics : MonoBehaviour, IUpgaradeTower, IUpgradeCanva
     {
         AudioManager.Instance.PlaySfx(SfxType.UIClick);       
         Upgrade();
-    } 
+    }
 }

@@ -303,6 +303,7 @@ MonoBehaviour:
   FireSpeed: 2
   AttackRange: 12
   UpgradePrice: 70
+  _towerSelectionButton: {fileID: 11400000, guid: f3415fbeebc6da14695a8f2e8fe4b508, type: 2}
   _currentDamageText: {fileID: 3970572532270035624}
   _currentFireSpeedText: {fileID: 4528094310543500192}
   _currentAttackRangeText: {fileID: 5641526036400114429}

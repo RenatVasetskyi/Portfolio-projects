@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonCreator : MonoBehaviour, ICreateButton
+public class ButtonCreator : MonoBehaviour, ICreateButton, IInitialize
 {
     public List<TowerSelectionButton> TowerSelectionButtons;
     public GameObject SelectedButton;
