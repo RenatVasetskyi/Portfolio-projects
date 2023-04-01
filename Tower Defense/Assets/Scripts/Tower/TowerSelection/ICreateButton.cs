@@ -1,4 +1,7 @@
-public interface ICreateButton
+namespace Tower
 {
-    public void Create();
+    public interface ICreateButton
+    {
+        public void Create();
+    }
 }

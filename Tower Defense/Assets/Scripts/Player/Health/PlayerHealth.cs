@@ -1,20 +1,23 @@
 using TMPro;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour, IPlayerHealth
+namespace Vitality
 {
-    public int Hp;
-
-    [SerializeField] private TextMeshProUGUI _playerHpText;
-
-    public void ReducePlayerHp(int damage)
+    public class PlayerHealth : MonoBehaviour, IPlayerHealth
     {
-        Hp -= damage;
-        _playerHpText.text = Hp.ToString();
-    }
+        public int Hp;
 
-    private void Awake()
-    {        
-        _playerHpText.text = Hp.ToString();
+        [SerializeField] private TextMeshProUGUI _playerHpText;
+
+        public void ReducePlayerHp(int damage)
+        {
+            Hp -= damage;
+            _playerHpText.text = Hp.ToString();
+        }
+
+        private void Awake()
+        {
+            _playerHpText.text = Hp.ToString();
+        }
     }
 }

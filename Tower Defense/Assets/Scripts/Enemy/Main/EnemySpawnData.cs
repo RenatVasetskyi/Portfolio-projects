@@ -1,11 +1,14 @@
 using UnityEngine;
 
-[System.Serializable]
-public class EnemySpawnData
+namespace Enemy
 {
-    [SerializeField] private EnemyType _enemy;
-    [SerializeField] private int _enemyCount;
+    [System.Serializable]
+    public class EnemySpawnData
+    {
+        [SerializeField] private EnemyType _enemy;
+        [SerializeField] private int _enemyCount;
 
-    public EnemyType Enemy => _enemy;  
-    public int EnemyCount => _enemyCount;
+        public EnemyType Enemy => _enemy;
+        public int EnemyCount => _enemyCount;
+    }
 }

@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class TowerSpawnEffect : MonoBehaviour
+namespace Tower
 {
-    [SerializeField] private ParticleSystem _spawnEffect;   
-
-    private void Start()
+    public class TowerSpawnEffect : MonoBehaviour
     {
-        _spawnEffect.Play();
-    } 
+        [SerializeField] private ParticleSystem _spawnEffect;
+
+        private void Start()
+        {
+            _spawnEffect.Play();
+        }
+    }
 }

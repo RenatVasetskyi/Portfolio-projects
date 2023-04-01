@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public interface ICheckSpawnZone
+namespace Tower
 {
-    public RaycastHit CheckZone();
-    public void ChangeTowerColor();
+    public interface ICheckSpawnZone
+    {
+        public RaycastHit CheckZone();
+        public void ChangeTowerColor();
+    }
 }

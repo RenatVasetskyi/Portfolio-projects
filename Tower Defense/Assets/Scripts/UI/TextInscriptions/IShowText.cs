@@ -1,5 +1,8 @@
-public interface IShowText
+namespace UI
 {
-    public void Show();
-    public void Hide();
+    public interface IShowText
+    {
+        public void Show();
+        public void Hide();
+    }
 }

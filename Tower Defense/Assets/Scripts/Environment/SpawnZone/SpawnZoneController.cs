@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class SpawnZoneController : MonoBehaviour
+namespace Environment
 {
-    private ISpawnZone _spawnZone;
-
-    private void Awake()
+    public class SpawnZoneController : MonoBehaviour
     {
-        _spawnZone = GetComponent<ISpawnZone>();
-    }
+        private ISpawnZone _spawnZone;
 
-    private void LateUpdate()
-    {      
-        _spawnZone.CheckAccess();
+        private void Awake()
+        {
+            _spawnZone = GetComponent<ISpawnZone>();
+        }
+
+        private void LateUpdate()
+        {
+            _spawnZone.CheckAccess();
+        }
     }
 }

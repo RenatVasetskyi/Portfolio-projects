@@ -1,14 +1,18 @@
 using UnityEngine;
+using Events;
 
-public class DestroyEnemy : MonoBehaviour
+namespace Enemy
 {
-    private void Awake()
+    public class DestroyEnemy : MonoBehaviour
     {
-        EventManager.GameOver.AddListener(Destroy);
-    }
+        private void Awake()
+        {
+            EventManager.GameOver.AddListener(Destroy);
+        }
 
-    private void Destroy()
-    {
-        Destroy(gameObject);
+        private void Destroy()
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -1,5 +1,8 @@
-public enum EnemyType
+namespace Enemy
 {
-    Goblin,
-    Skeleton
+    public enum EnemyType
+    {
+        Goblin,
+        Skeleton
+    }
 }

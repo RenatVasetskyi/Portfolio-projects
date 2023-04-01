@@ -1,12 +1,15 @@
-public enum SfxType
+namespace Audio
 {
-    GameStart,
-    GameOver,
-    EnemyKilled,
-    TowerSpawned,
-    TowerShot,
-    NotEnoughMoney,
-    UIClick,
-    GetCoins,
-    PlayerGetsDamage
+    public enum SfxType
+    {
+        GameStart,
+        GameOver,
+        EnemyKilled,
+        TowerSpawned,
+        TowerShot,
+        NotEnoughMoney,
+        UIClick,
+        GetCoins,
+        PlayerGetsDamage
+    }
 }

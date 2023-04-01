@@ -1,8 +1,9 @@
-using Unity.VisualScripting;
-
-public interface ITowerTrack
+namespace Tower
 {
-    public void Shoot();
-    public void UpdateTarget();
-    public void Track();
+    public interface ITowerTrack
+    {
+        public void Shoot();
+        public void UpdateTarget();
+        public void Track();
+    }
 }

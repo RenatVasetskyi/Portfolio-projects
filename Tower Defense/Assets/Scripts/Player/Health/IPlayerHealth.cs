@@ -1,4 +1,7 @@
-public interface IPlayerHealth
+namespace Vitality
 {
-    public void ReducePlayerHp(int damage);
+    public interface IPlayerHealth
+    {
+        public void ReducePlayerHp(int damage);
+    }
 }

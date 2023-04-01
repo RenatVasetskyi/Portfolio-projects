@@ -1,12 +1,16 @@
 using UnityEngine;
+using Events;
 
-public class PlayerController : MonoBehaviour
+namespace Vitality
 {
-    private IPlayerHealth _playerHealth;
-
-    private void Awake()
+    public class PlayerController : MonoBehaviour
     {
-        _playerHealth = GetComponent<IPlayerHealth>();
-        EventManager.PlayerHpChanged.AddListener(_playerHealth.ReducePlayerHp);
+        private IPlayerHealth _playerHealth;
+
+        private void Awake()
+        {
+            _playerHealth = GetComponent<IPlayerHealth>();
+            EventManager.PlayerHpChanged.AddListener(_playerHealth.ReducePlayerHp);
+        }
     }
 }

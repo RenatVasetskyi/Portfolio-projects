@@ -1,6 +1,9 @@
-public interface IUpgradeCanvas
+namespace Tower
 {
-    public void OpenUpgradeCanvas();
-    public void CloseUpgradeCanvas();
-    public void OffUpgradeCanvas();
+    public interface IUpgradeCanvas
+    {
+        public void OpenUpgradeCanvas();
+        public void CloseUpgradeCanvas();
+        public void OffUpgradeCanvas();
+    }
 }

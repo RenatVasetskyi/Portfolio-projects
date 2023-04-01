@@ -1,6 +1,9 @@
 using UnityEngine.AI;
 
-public interface IEnemyMovement
+namespace Enemy
 {
-    public void Move(NavMeshAgent navMeshAgent);
+    public interface IEnemyMovement
+    {
+        public void Move(NavMeshAgent navMeshAgent);
+    }
 }

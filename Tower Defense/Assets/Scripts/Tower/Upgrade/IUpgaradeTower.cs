@@ -1,4 +1,7 @@
-public interface IUpgaradeTower
+namespace Tower
 {
-    public void Upgrade();
+    public interface IUpgaradeTower
+    {
+        public void Upgrade();
+    }
 }

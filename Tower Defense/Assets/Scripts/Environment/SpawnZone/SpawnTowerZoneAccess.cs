@@ -1,52 +1,56 @@
 using UnityEngine;
+using Tower;
 
-public class SpawnTowerZoneAccess : MonoBehaviour, ISpawnZone
+namespace Environment
 {
-    [SerializeField] private ButtonCreator _buttonCreator;
-
-    [SerializeField] private LayerMask _environmentLayer;
-
-    [SerializeField] private GameObject _mageTowerModel;
-    [SerializeField] private GameObject _cannonTowerModel;
-    [SerializeField] private GameObject _megaTowerModel;
-    [SerializeField] private GameObject _speedTowerModel;
-
-    [SerializeField] private Material _towerMaterial;
-
-    private Vector3 _screenPosition;
-    private Vector3 _worldPosition;
-
-    private int _maxRaycastDistance = 200;
-
-    private GameObject _spawnedModel;
-    private bool _isTowerModelSpawned = false;
-
-    public void CheckAccess()
+    public class SpawnTowerZoneAccess : MonoBehaviour, ISpawnZone
     {
-        _screenPosition = Input.mousePosition;
-        Ray ray = Camera.main.ScreenPointToRay(_screenPosition);
+        [SerializeField] private ButtonCreator _buttonCreator;
 
-        if (Physics.Raycast(ray, out RaycastHit hit, _maxRaycastDistance, _environmentLayer))
+        [SerializeField] private LayerMask _environmentLayer;
+
+        [SerializeField] private GameObject _mageTowerModel;
+        [SerializeField] private GameObject _cannonTowerModel;
+        [SerializeField] private GameObject _megaTowerModel;
+        [SerializeField] private GameObject _speedTowerModel;
+
+        [SerializeField] private Material _towerMaterial;
+
+        private Vector3 _screenPosition;
+        private Vector3 _worldPosition;
+
+        private int _maxRaycastDistance = 200;
+
+        private GameObject _spawnedModel;
+        private bool _isTowerModelSpawned = false;
+
+        public void CheckAccess()
         {
-            _worldPosition = hit.point;
+            _screenPosition = Input.mousePosition;
+            Ray ray = Camera.main.ScreenPointToRay(_screenPosition);
 
-            if (_buttonCreator.SelectedButton != null)
+            if (Physics.Raycast(ray, out RaycastHit hit, _maxRaycastDistance, _environmentLayer))
             {
-                if (_isTowerModelSpawned == false)
+                _worldPosition = hit.point;
+
+                if (_buttonCreator.SelectedButton != null)
                 {
-                    _isTowerModelSpawned = true;                  
-                    _spawnedModel = Instantiate(_buttonCreator.SelectedButton.GetComponent<ButtonHolder>().TowerModel);
+                    if (_isTowerModelSpawned == false)
+                    {
+                        _isTowerModelSpawned = true;
+                        _spawnedModel = Instantiate(_buttonCreator.SelectedButton.GetComponent<ButtonHolder>().TowerModel);
+                    }
+                    else
+                    {
+                        _spawnedModel.transform.position = _worldPosition;
+                    }
                 }
                 else
                 {
-                    _spawnedModel.transform.position = _worldPosition;                   
+                    _isTowerModelSpawned = false;
+                    Destroy(_spawnedModel);
                 }
-            }           
-            else
-            {
-                _isTowerModelSpawned = false;               
-                Destroy(_spawnedModel);                            
-            }          
+            }
         }
     }
 }

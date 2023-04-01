@@ -1,17 +1,20 @@
 using UnityEngine;
 
-public class BulletController : MonoBehaviour
+namespace Bullet
 {
-    private IBulletShot _bulletShot;
-
-    private void Awake()
+    public class BulletController : MonoBehaviour
     {
-        _bulletShot = GetComponent<IBulletShot>();
-    }
+        private IBulletShot _bulletShot;
 
-    private void Update()
-    {
-        _bulletShot.CheckTarget();
-        _bulletShot.Move();
+        private void Awake()
+        {
+            _bulletShot = GetComponent<IBulletShot>();
+        }
+
+        private void Update()
+        {
+            _bulletShot.CheckTarget();
+            _bulletShot.Move();
+        }
     }
 }

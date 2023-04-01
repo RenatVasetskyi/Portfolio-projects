@@ -1,9 +1,12 @@
 using UnityEngine;
 
-public interface IBulletShot
+namespace Bullet
 {
-    public void Seek(Transform target);
-    public void HitTarget();
-    public void CheckTarget();
-    public void Move();
+    public interface IBulletShot
+    {
+        public void Seek(Transform target);
+        public void HitTarget();
+        public void CheckTarget();
+        public void Move();
+    }
 }

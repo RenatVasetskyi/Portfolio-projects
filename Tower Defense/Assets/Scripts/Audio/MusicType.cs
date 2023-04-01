@@ -1,5 +1,8 @@
-public enum MusicType
+namespace Audio
 {
-    Game,
-    MainMenu
+    public enum MusicType
+    {
+        Game,
+        MainMenu
+    }
 }

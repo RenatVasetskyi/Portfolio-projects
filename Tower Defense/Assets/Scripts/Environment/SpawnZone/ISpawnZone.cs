@@ -1,6 +1,7 @@
-using UnityEngine;
-
-public interface ISpawnZone
+namespace Environment
 {
-    public void CheckAccess();
+    public interface ISpawnZone
+    {
+        public void CheckAccess();
+    }
 }

@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public interface ICreateTower
+namespace Tower
 {
-    public void CreateTower(Vector3 position, TowerType towerType);
+    public interface ICreateTower
+    {
+        public void CreateTower(Vector3 position, TowerType towerType);
+    }
 }

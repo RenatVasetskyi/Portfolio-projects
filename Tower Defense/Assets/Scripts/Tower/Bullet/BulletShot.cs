@@ -1,54 +1,58 @@
 using UnityEngine;
+using Vitality;
 
-public class BulletShot : MonoBehaviour, IBulletShot
+namespace Bullet
 {
-    public float Damage;
-
-    [SerializeField] private float _bulletSpeed;
-    [SerializeField] private GameObject _destroyBulletEffect;
-
-    private Transform _target;
-
-    private float _destroyEffectDelay = 1f;
- 
-    public void Seek(Transform target)
+    public class BulletShot : MonoBehaviour, IBulletShot
     {
-        _target = target;
-    }
+        public float Damage;
 
-    public void Move()
-    {
-        if (_target == null)
-            return;
+        [SerializeField] private float _bulletSpeed;
+        [SerializeField] private GameObject _destroyBulletEffect;
 
-        Vector3 direction = _target.position - transform.position;
-        float distanceThisFrame = _bulletSpeed * Time.deltaTime;
+        private Transform _target;
 
-        if (direction.magnitude <= distanceThisFrame)
+        private float _destroyEffectDelay = 1f;
+
+        public void Seek(Transform target)
         {
-            HitTarget();
-            return;
+            _target = target;
         }
 
-        transform.Translate(direction.normalized * distanceThisFrame, Space.World);
-    }
+        public void Move()
+        {
+            if (_target == null)
+                return;
 
-    public void CheckTarget()
-    {
-        if (_target == null)
+            Vector3 direction = _target.position - transform.position;
+            float distanceThisFrame = _bulletSpeed * Time.deltaTime;
+
+            if (direction.magnitude <= distanceThisFrame)
+            {
+                HitTarget();
+                return;
+            }
+
+            transform.Translate(direction.normalized * distanceThisFrame, Space.World);
+        }
+
+        public void CheckTarget()
+        {
+            if (_target == null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+        }
+
+        public void HitTarget()
         {
             Destroy(gameObject);
-            return;
+
+            GameObject effect = Instantiate(_destroyBulletEffect, transform.position, transform.rotation);
+            Destroy(effect, _destroyEffectDelay);
+
+            _target.GetComponent<VitalitySystem>().TakeDamage(Damage);
         }
-    }
-
-    public void HitTarget()
-    {
-        Destroy(gameObject);
-
-        GameObject effect = Instantiate(_destroyBulletEffect, transform.position, transform.rotation);
-        Destroy(effect, _destroyEffectDelay);
-
-        _target.GetComponent<VitalitySystem>().TakeDamage(Damage);
     }
 }

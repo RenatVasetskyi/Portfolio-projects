@@ -1,15 +1,20 @@
-public class GoblinHealthController : VitalitySystem
-{
-    public GoblinHealthController()
-    {
-        _maxHp = 80;
-        _minHp = 0;
-        _currentHp = _maxHp;
-    }
+using Events;
 
-    private void Awake()
+namespace Vitality
+{
+    public class GoblinHealthController : VitalitySystem
     {
-        EventManager.EnemyHpChanged.AddListener(TakeDamage);
-        _healthBarController.SetMaxHealth(_maxHp);
+        public GoblinHealthController()
+        {
+            _maxHp = 80;
+            _minHp = 0;
+            _currentHp = _maxHp;
+        }
+
+        private void Awake()
+        {
+            EventManager.EnemyHpChanged.AddListener(TakeDamage);
+            _healthBarController.SetMaxHealth(_maxHp);
+        }
     }
 }

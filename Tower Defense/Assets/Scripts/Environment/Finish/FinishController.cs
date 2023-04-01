@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class FinishController : MonoBehaviour
+namespace Environment
 {
-    private IFinishDetector _finishDetector;
-
-    private void Awake()
+    public class FinishController : MonoBehaviour
     {
-        _finishDetector = GetComponent<IFinishDetector>();
-    }
+        private IFinishDetector _finishDetector;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        _finishDetector.Detect(other);
+        private void Awake()
+        {
+            _finishDetector = GetComponent<IFinishDetector>();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            _finishDetector.Detect(other);
+        }
     }
 }

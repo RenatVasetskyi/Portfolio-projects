@@ -1,5 +1,8 @@
-public interface IUpdateUpgradeText
+namespace Tower
 {
-    public void UpdateUpgradeText();
-    public void UpdateCurrentCharacteristicsText();
+    public interface IUpdateUpgradeText
+    {
+        public void UpdateUpgradeText();
+        public void UpdateCurrentCharacteristicsText();
+    }
 }

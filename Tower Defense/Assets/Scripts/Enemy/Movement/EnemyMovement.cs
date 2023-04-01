@@ -1,13 +1,17 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Data;
 
-public class EnemyMovement : MonoBehaviour, IEnemyMovement
+namespace Enemy
 {
-    private GameObject _finish;   
-
-    public void Move(NavMeshAgent navMeshAgent)
+    public class EnemyMovement : MonoBehaviour, IEnemyMovement
     {
-        _finish = GameObject.FindGameObjectWithTag(Constants.FinishTag);
-        navMeshAgent.SetDestination(_finish.transform.position);
+        private GameObject _finish;
+
+        public void Move(NavMeshAgent navMeshAgent)
+        {
+            _finish = GameObject.FindGameObjectWithTag(Constants.FinishTag);
+            navMeshAgent.SetDestination(_finish.transform.position);
+        }
     }
 }

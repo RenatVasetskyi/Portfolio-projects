@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public interface IFinishDetector
+namespace Environment
 {
-    public void Detect(Collider collider);
+    public interface IFinishDetector
+    {
+        public void Detect(Collider collider);
+    }
 }

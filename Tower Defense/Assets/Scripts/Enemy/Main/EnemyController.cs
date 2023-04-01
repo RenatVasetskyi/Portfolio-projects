@@ -1,20 +1,23 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+namespace Enemy
 {
-    private NavMeshAgent _agent;
-
-    private IEnemyMovement _enemyMovement;
-
-    private void Awake()
+    public class EnemyController : MonoBehaviour
     {
-        _enemyMovement = GetComponent<IEnemyMovement>();
-        _agent = GetComponent<NavMeshAgent>();
-    }
+        private NavMeshAgent _agent;
 
-    private void Start()
-    {
-        _enemyMovement.Move(_agent);
+        private IEnemyMovement _enemyMovement;
+
+        private void Awake()
+        {
+            _enemyMovement = GetComponent<IEnemyMovement>();
+            _agent = GetComponent<NavMeshAgent>();
+        }
+
+        private void Start()
+        {
+            _enemyMovement.Move(_agent);
+        }
     }
 }

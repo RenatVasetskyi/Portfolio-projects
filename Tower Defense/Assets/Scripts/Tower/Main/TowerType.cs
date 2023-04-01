@@ -1,7 +1,10 @@
-public enum TowerType
+namespace Tower
 {
-    Mage,
-    Cannon,
-    Mega,
-    Speed
+    public enum TowerType
+    {
+        Mage,
+        Cannon,
+        Mega,
+        Speed
+    }
 }

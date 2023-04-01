@@ -1,15 +1,20 @@
-public class SkeletonHealthController : VitalitySystem
-{
-    public SkeletonHealthController()
-    {
-        _maxHp = 100;
-        _minHp = 0;
-        _currentHp = _maxHp;
-    }
+using Events;
 
-    private void Awake()
+namespace Vitality
+{
+    public class SkeletonHealthController : VitalitySystem
     {
-        EventManager.EnemyHpChanged.AddListener(TakeDamage);
-        _healthBarController.SetMaxHealth(_maxHp);
+        public SkeletonHealthController()
+        {
+            _maxHp = 100;
+            _minHp = 0;
+            _currentHp = _maxHp;
+        }
+
+        private void Awake()
+        {
+            EventManager.EnemyHpChanged.AddListener(TakeDamage);
+            _healthBarController.SetMaxHealth(_maxHp);
+        }
     }
 }

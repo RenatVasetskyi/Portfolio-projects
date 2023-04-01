@@ -1,22 +1,26 @@
 using UnityEngine;
+using Events;
 
-public class TowerController : MonoBehaviour
+namespace Tower
 {
-    private ITowerTrack _towerTrack;
-    private IUpdateUpgradeText _upgaradeTowerText;
-    
-    private void Awake()
+    public class TowerController : MonoBehaviour
     {
-        _towerTrack = GetComponent<ITowerTrack>();
-        _upgaradeTowerText = GetComponent<IUpdateUpgradeText>();
+        private ITowerTrack _towerTrack;
+        private IUpdateUpgradeText _upgaradeTowerText;
 
-        EventManager.UpgradeTowerTextUpdate.AddListener(_upgaradeTowerText.UpdateCurrentCharacteristicsText);
-        EventManager.UpgradeTowerTextUpdate.AddListener(_upgaradeTowerText.UpdateUpgradeText);
-    }
+        private void Awake()
+        {
+            _towerTrack = GetComponent<ITowerTrack>();
+            _upgaradeTowerText = GetComponent<IUpdateUpgradeText>();
 
-    private void Update()
-    {
-        _towerTrack.Track(); 
-        _towerTrack.UpdateTarget();
+            EventManager.UpgradeTowerTextUpdate.AddListener(_upgaradeTowerText.UpdateCurrentCharacteristicsText);
+            EventManager.UpgradeTowerTextUpdate.AddListener(_upgaradeTowerText.UpdateUpgradeText);
+        }
+
+        private void Update()
+        {
+            _towerTrack.Track();
+            _towerTrack.UpdateTarget();
+        }
     }
 }

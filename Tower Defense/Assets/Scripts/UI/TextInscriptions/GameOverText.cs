@@ -1,24 +1,28 @@
 using TMPro;
 using UnityEngine;
+using Events;
 
-public class GameOverText : MonoBehaviour, IShowText
+namespace UI
 {
-    [SerializeField] private TextMeshProUGUI _gameOverText;
-    [SerializeField] private float _moveDuration = 0.75f;
-    [SerializeField] private LeanTweenType _showEaseType;
-
-    public void Show()
+    public class GameOverText : MonoBehaviour, IShowText
     {
-        LeanTween.scale(_gameOverText.gameObject, Vector3.one, _moveDuration).setEase(_showEaseType).setOnComplete(Hide);
-    }
+        [SerializeField] private TextMeshProUGUI _gameOverText;
+        [SerializeField] private float _moveDuration = 0.75f;
+        [SerializeField] private LeanTweenType _showEaseType;
 
-    public void Hide()
-    {
-        LeanTween.scale(_gameOverText.gameObject, Vector3.zero, _moveDuration);
-    }
+        public void Show()
+        {
+            LeanTween.scale(_gameOverText.gameObject, Vector3.one, _moveDuration).setEase(_showEaseType).setOnComplete(Hide);
+        }
 
-    private void Awake()
-    {
-        EventManager.GameOver.AddListener(Show);
+        public void Hide()
+        {
+            LeanTween.scale(_gameOverText.gameObject, Vector3.zero, _moveDuration);
+        }
+
+        private void Awake()
+        {
+            EventManager.GameOver.AddListener(Show);
+        }
     }
 }
