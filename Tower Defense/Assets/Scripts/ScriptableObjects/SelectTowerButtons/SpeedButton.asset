@@ -17,3 +17,7 @@ MonoBehaviour:
   TowerModel: {fileID: 919132149155446097, guid: b303f1d9007094c46a821bc46808615a, type: 3}
   TowerType: 3
   Price: 80
+  Damage: 25
+  FireSpeed: 2
+  AttackRange: 15
+  UpgradePrice: 70

@@ -29,8 +29,8 @@ public class ShowTowerCharacteristics : MonoBehaviour, IUpgaradeTower, IUpgradeC
     [SerializeField] private Vector3 _canvasScale;
 
     private float _damageIncreasing = 1.2f;
-    private float _fireSpeedIncreasing = 0.05f;
-    private float _attackRangeIncreasing = 1.05f;
+    private float _fireSpeedIncreasing = 0.2f;
+    private float _attackRangeIncreasing = 1.1f;
     private float _priceIncreasing = 1.2f;
 
     private float _canvasScaleDuration = 0.3f;
