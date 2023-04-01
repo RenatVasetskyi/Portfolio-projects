@@ -41,63 +41,12 @@ public class SpawnTowerZoneAccess : MonoBehaviour, ISpawnZone
                 {
                     _spawnedModel.transform.position = _worldPosition;                   
                 }
-            }
+            }           
             else
             {
                 _isTowerModelSpawned = false;               
                 Destroy(_spawnedModel);                            
-            }
-
-
-
-            //if (_towerSelection.IsMageTowerButtonPressed == true)
-            //{
-            //    if (_isMageTowerActive == false)
-            //    {
-            //        _mageTowerModel = Instantiate(_mageTowerModel);
-            //        _isMageTowerActive = true;
-            //    }
-            //    else
-            //    {
-            //        _mageTowerModel.transform.position = _worldPosition;
-            //    }
-            //}
-            //else if (_towerSelection.IsCannonTowerButtonPressed == true)
-            //{
-            //    if (_isCannonTowerActive == false)
-            //    {
-            //        _cannonTowerModel = Instantiate(_cannonTowerModel);
-            //        _isCannonTowerActive = true;
-            //    }
-            //    else
-            //    {
-            //        _cannonTowerModel.transform.position = _worldPosition;
-            //    }
-            //}
-            //else if (_towerSelection.IsMegaTowerButtonPressed == true)
-            //{
-            //    if (_isMegaTowerActive == false)
-            //    {
-            //        _megaTowerModel = Instantiate(_megaTowerModel);
-            //        _isMegaTowerActive = true;
-            //    }
-            //    else
-            //    {
-            //        _megaTowerModel.transform.position = _worldPosition;
-            //    }
-            //}
-            //else if (_towerSelection.IsSpeedTowerButtonPressed == true)
-            //{
-            //    if (_isSpeedTowerActive == false)
-            //    {
-            //        _speedTowerModel = Instantiate(_speedTowerModel);
-            //        _isSpeedTowerActive = true;
-            //    }
-            //    else
-            //    {
-            //        _speedTowerModel.transform.position = _worldPosition;
-            //    }
-            //}
+            }          
         }
     }
 }

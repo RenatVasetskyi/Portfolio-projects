@@ -10,15 +10,15 @@ public class ScaleButton : MonoBehaviour, IButtonScaling
     private ButtonCreator _buttonCreator;
 
     public void OnSelect()
-    {      
-        LeanTween.scale(gameObject, _scaledSize, _scaleDuration);
-        _buttonCreator.ChangeSelection(gameObject);              
+    {
+        _buttonCreator.ChangeSelection(gameObject);
+        LeanTween.scale(gameObject, _scaledSize, _scaleDuration);                     
     }
 
     public void OnDeselect(GameObject button)
     {
-        LeanTween.scale(button, _startSize, _scaleDuration);
         _buttonCreator.ChangeSelection(null);
+        LeanTween.scale(button, _startSize, _scaleDuration);       
     }
 
     private void Start()
