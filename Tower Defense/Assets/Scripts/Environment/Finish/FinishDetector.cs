@@ -10,14 +10,17 @@ public class FinishDetector : MonoBehaviour, IFinishDetector
     {
         if (collider.tag == Constants.EnemyTag)
         {
-            if (_playerHealth.Hp > 0)
+            if (_playerHealth.Hp > 1)
             {
                 AudioManager.Instance.PlaySfx(SfxType.PlayerGetsDamage);
                 EventManager.SendPlayerHpChanged(_damageToPlayer);
                 Destroy(collider.gameObject);
             }
             else
+            {
+                EventManager.SendPlayerHpChanged(_damageToPlayer);
                 EventManager.SendGameOver();
+            }                
         }
     }
 }

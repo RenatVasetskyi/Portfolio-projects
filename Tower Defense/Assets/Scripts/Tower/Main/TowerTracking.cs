@@ -3,7 +3,7 @@ using UnityEngine;
 public class TowerTracking : MonoBehaviour, ITowerTrack
 {
     [SerializeField] private Transform _cannonRotator;
-    [SerializeField] private float _cannonRotateSpeed = 5f;
+    [SerializeField] private float _cannonRotateSpeed;
 
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _bulletStartPoint;
@@ -13,11 +13,6 @@ public class TowerTracking : MonoBehaviour, ITowerTrack
     private Transform _target;
 
     private float _fireCountDown = 0f;
-
-    private void Awake()
-    {       
-        _towerCharacteristics = GetComponent<UpgradeTowerCharacteristics>();
-    }
 
     public void Shoot()
     {
@@ -71,5 +66,10 @@ public class TowerTracking : MonoBehaviour, ITowerTrack
         }
 
         _fireCountDown -= Time.deltaTime;
+    }
+
+    private void Awake()
+    {
+        _towerCharacteristics = GetComponent<UpgradeTowerCharacteristics>();
     }
 }

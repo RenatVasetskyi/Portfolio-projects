@@ -7,14 +7,14 @@ public class PlayerHealth : MonoBehaviour, IPlayerHealth
 
     [SerializeField] private TextMeshProUGUI _playerHpText;
 
-    private void Awake()
-    {        
+    public void ReducePlayerHp(int damage)
+    {
+        Hp -= damage;
         _playerHpText.text = Hp.ToString();
     }
 
-    void IPlayerHealth.ReducePlayerHp(int damage)
-    {
-        Hp -= damage;
+    private void Awake()
+    {        
         _playerHpText.text = Hp.ToString();
     }
 }

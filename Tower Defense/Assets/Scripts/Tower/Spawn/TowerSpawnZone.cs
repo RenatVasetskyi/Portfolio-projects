@@ -50,6 +50,12 @@ public class TowerSpawnZone : MonoBehaviour, ICheckSpawnZone
         ChangeTowerColor();
     }
 
+    private void OnMouseDown()
+    {
+        RaycastHit hit = CheckZone();
+        TryToCreateTower(hit);
+    }
+
     private void TryToCreateTower(RaycastHit hit)
     {
         _worldPosition = hit.point;
@@ -58,11 +64,5 @@ public class TowerSpawnZone : MonoBehaviour, ICheckSpawnZone
         {
             _towerCreation.CreateTower(_worldPosition, _towerCreation.ButtonCreator.SelectedButton.GetComponent<ButtonHolder>().TowerType);
         }                   
-    }
-
-    private void OnMouseDown()
-    {
-        RaycastHit hit = CheckZone();
-        TryToCreateTower(hit);      
     }
 }

@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class NotEnoughMoney : MonoBehaviour
+public class NotEnoughMoney : MonoBehaviour, IShowText
 {
     [SerializeField] private TextMeshProUGUI _notEnoughMoneyText;
 
@@ -13,20 +13,20 @@ public class NotEnoughMoney : MonoBehaviour
 
     private Vector3 _startPosition = new Vector3(0, 0, 0);
 
-    private void Awake()
+    public void Show()
     {
-        EventManager.NotEnoughMoney.AddListener(Show);
-    }
-
-    private void Show()
-    {       
         LeanTween.scale(_notEnoughMoneyText.gameObject, Vector3.one, _showTextScaleDuration);
         LeanTween.moveLocalY(_notEnoughMoneyText.gameObject, _displacementY, _textDisplacementDuration).setOnComplete(Hide);
     }
 
-    private void Hide()
+    public void Hide()
     {
         LeanTween.scale(_notEnoughMoneyText.gameObject, Vector3.zero, _hideTextScaleDuration);
         _notEnoughMoneyText.gameObject.transform.localPosition = _startPosition;
-    }   
+    }
+
+    private void Awake()
+    {
+        EventManager.NotEnoughMoney.AddListener(Show);
+    }
 }

@@ -18,18 +18,23 @@ public class CoinSystem : MonoBehaviour
     private void BuyTower(int price)
     {
         Coins -= price;
-        _coinsText.text = Coins.ToString();
+        UpdateCoinsText();
     }
 
     private void UpgradeTower(float price)
     {
         Mathf.Round(Coins -= price);
-        _coinsText.text = Coins.ToString();
+        UpdateCoinsText();
     }
 
     private void GetBonus()
     {
         Coins += 15;
+        UpdateCoinsText();
+    }
+
+    private void UpdateCoinsText()
+    {
         _coinsText.text = Coins.ToString();
     }
 }

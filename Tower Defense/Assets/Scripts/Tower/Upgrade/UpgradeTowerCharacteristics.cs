@@ -4,6 +4,12 @@ using UnityEngine.UI;
 
 public class UpgradeTowerCharacteristics : MonoBehaviour, IUpgaradeTower, IInitialize
 {
+    [SerializeField] private TowerSelectionButton _towerSelectionButton;
+
+    [SerializeField] private Button _upgradeButton;
+
+    private CoinSystem _coinSystem;
+
     public float Damage { get; private set; }
     public float FireSpeed { get; private set; }
     public float AttackRange { get; private set; }
@@ -13,12 +19,6 @@ public class UpgradeTowerCharacteristics : MonoBehaviour, IUpgaradeTower, IIniti
     public float FireSpeedIncreasing { get; private set; } = 0.2f;
     public float AttackRangeIncreasing { get; private set; } = 1.1f;
     public float PriceIncreasing { get; private set; } = 1.2f;
-
-    [SerializeField] private TowerSelectionButton _towerSelectionButton;
-
-    [SerializeField] private Button _upgradeButton;
-
-    private CoinSystem _coinSystem;
 
     public void Initialize()
     {

@@ -1,12 +1,7 @@
 using UnityEngine;
 
 public class GameSounds : MonoBehaviour
-{
-    void Start()
-    {
-        AudioManager.Instance.PlayMusic(MusicType.Game);
-    }
-
+{  
     private void Awake()
     {
         EventManager.EnemyDestroyed.AddListener(PlayDestroyEnemySound);
@@ -16,6 +11,11 @@ public class GameSounds : MonoBehaviour
         EventManager.NotEnoughMoney.AddListener(PlayNotEnoughMoneySound);
         EventManager.GetCoins.AddListener(PlayGetCoinsSound);
         EventManager.GameOver.AddListener(PlayGameOverSound);
+    }
+
+    void Start()
+    {
+        AudioManager.Instance.PlayMusic(MusicType.Game);
     }
 
     private void PlayDestroyEnemySound()
