@@ -39,19 +39,13 @@ public class SpawnTowerZoneAccess : MonoBehaviour, ISpawnZone
                 }
                 else
                 {
-                    if (_spawnedModel != null)
-                    {
-                        _spawnedModel.transform.position = _worldPosition;
-                    }
+                    _spawnedModel.transform.position = _worldPosition;                   
                 }
             }
             else
             {
-                _isTowerModelSpawned = false;
-                if (_spawnedModel != null)
-                {
-                    Destroy(_spawnedModel);
-                }               
+                _isTowerModelSpawned = false;               
+                Destroy(_spawnedModel);                            
             }
 
 

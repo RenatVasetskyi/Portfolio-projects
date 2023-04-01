@@ -15,10 +15,10 @@ public class ScaleButton : MonoBehaviour, IButtonScaling
         _buttonCreator.ChangeSelection(gameObject);              
     }
 
-    public void OnDeselect()
+    public void OnDeselect(GameObject button)
     {
-        LeanTween.scale(gameObject, _startSize, _scaleDuration);
-        _buttonCreator.SelectedButton = null;
+        LeanTween.scale(button, _startSize, _scaleDuration);
+        _buttonCreator.ChangeSelection(null);
     }
 
     private void Start()
@@ -32,10 +32,15 @@ public class ScaleButton : MonoBehaviour, IButtonScaling
         if (_buttonCreator.SelectedButton == null)
         {
             OnSelect();
-        }          
-        else
+        }
+        else if (_buttonCreator.SelectedButton != null & _buttonCreator.SelectedButton != gameObject)
         {
-            OnDeselect();
-        }            
+            OnDeselect(_buttonCreator.SelectedButton);
+            OnSelect();
+        }
+        else if (_buttonCreator.SelectedButton != null & _buttonCreator.SelectedButton == gameObject)
+        {
+            OnDeselect(gameObject);
+        }        
     }
 }
