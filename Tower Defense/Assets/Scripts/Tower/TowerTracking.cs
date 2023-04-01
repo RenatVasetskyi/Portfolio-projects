@@ -8,7 +8,7 @@ public class TowerTracking : MonoBehaviour, ITowerTrack
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _bulletStartPoint;
 
-    private ShowTowerCharacteristics _towerCharacteristics;
+    private UpgradeTowerCharacteristics _towerCharacteristics;
 
     private Transform _target;
 
@@ -16,7 +16,7 @@ public class TowerTracking : MonoBehaviour, ITowerTrack
 
     private void Awake()
     {       
-        _towerCharacteristics = GetComponent<ShowTowerCharacteristics>();
+        _towerCharacteristics = GetComponent<UpgradeTowerCharacteristics>();
     }
 
     public void Shoot()

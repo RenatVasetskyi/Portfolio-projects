@@ -7137,6 +7137,7 @@ GameObject:
   - component: {fileID: 5351485459832426925}
   - component: {fileID: 3563019664911326057}
   - component: {fileID: -5636920868844756503}
+  - component: {fileID: 8966294701314152707}
   m_Layer: 0
   m_Name: MegaTower
   m_TagString: Untagged
@@ -7201,10 +7202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11331d0d1e182d45af466b1d2ddcfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 55
-  FireSpeed: 0.5
-  AttackRange: 18
-  UpgradePrice: 60
   _towerSelectionButton: {fileID: 11400000, guid: 2da3df4ea7815ae4b813b5eaa0e47304, type: 2}
   _currentDamageText: {fileID: 4212237195569031222}
   _currentFireSpeedText: {fileID: 8433664765773498894}
@@ -7214,7 +7211,6 @@ MonoBehaviour:
   _fireSpeedText: {fileID: 5344653037762060508}
   _attackRangeText: {fileID: 2570873445225443120}
   _upgradePriceText: {fileID: 6375608800868449974}
-  _upgradeButton: {fileID: 6032907370236561529}
   _canvasScale: {x: 0.3, y: 0.3, z: 0.3}
 --- !u!114 &3563019664911326057
 MonoBehaviour:
@@ -7244,6 +7240,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b3b99e14a17c74e9d8c215ad08e322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8966294701314152707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165199250987377014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c5fc5d73ad0b94429d9d6ec733adc50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerSelectionButton: {fileID: 11400000, guid: 2da3df4ea7815ae4b813b5eaa0e47304, type: 2}
+  _upgradeButton: {fileID: 6032907370236561529}
 --- !u!1 &6165362699024952372
 GameObject:
   m_ObjectHideFlags: 0

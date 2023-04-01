@@ -1969,6 +1969,7 @@ GameObject:
   - component: {fileID: 7242782100789690062}
   - component: {fileID: 1129340734636936796}
   - component: {fileID: 569044442866559763}
+  - component: {fileID: 466823371956007283}
   m_Layer: 0
   m_Name: CannonTower
   m_TagString: Untagged
@@ -2023,10 +2024,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11331d0d1e182d45af466b1d2ddcfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 0
-  FireSpeed: 1
-  AttackRange: 12
-  UpgradePrice: 35
   _towerSelectionButton: {fileID: 11400000, guid: 88d89f9b3cb5660488ce8874cbd2c3fa, type: 2}
   _currentDamageText: {fileID: 2978198366848857140}
   _currentFireSpeedText: {fileID: 2085636787177188838}
@@ -2036,7 +2033,6 @@ MonoBehaviour:
   _fireSpeedText: {fileID: 3223174029559182842}
   _attackRangeText: {fileID: 6149521821026759808}
   _upgradePriceText: {fileID: 2594193415688521576}
-  _upgradeButton: {fileID: 552981028218519034}
   _canvasScale: {x: 1, y: 1, z: 1}
 --- !u!114 &1129340734636936796
 MonoBehaviour:
@@ -2066,6 +2062,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b3b99e14a17c74e9d8c215ad08e322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &466823371956007283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559839046223248598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c5fc5d73ad0b94429d9d6ec733adc50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerSelectionButton: {fileID: 11400000, guid: 88d89f9b3cb5660488ce8874cbd2c3fa, type: 2}
+  _upgradeButton: {fileID: 552981028218519034}
 --- !u!1 &4559839046223253704
 GameObject:
   m_ObjectHideFlags: 0
