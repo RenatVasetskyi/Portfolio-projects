@@ -50,7 +50,7 @@ namespace Environment
                     _isTowerModelSpawned = false;
                     Destroy(_spawnedModel);
                 }
-            }
+            }           
         }
     }
 }

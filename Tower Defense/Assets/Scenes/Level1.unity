@@ -1161,7 +1161,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: -500
+  m_Spacing: -350
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -1182,8 +1182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerSelectionButtons:
-  - {fileID: 11400000, guid: 7af644e1bf82db04fbc5d6384001321b, type: 2}
   - {fileID: 11400000, guid: 88d89f9b3cb5660488ce8874cbd2c3fa, type: 2}
+  - {fileID: 11400000, guid: 7af644e1bf82db04fbc5d6384001321b, type: 2}
   - {fileID: 11400000, guid: 2da3df4ea7815ae4b813b5eaa0e47304, type: 2}
   - {fileID: 11400000, guid: f3415fbeebc6da14695a8f2e8fe4b508, type: 2}
   SelectedButton: {fileID: 0}
