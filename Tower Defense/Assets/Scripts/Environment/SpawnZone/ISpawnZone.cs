@@ -1,6 +1,6 @@
 namespace Environment
 {
-    public interface ISpawnZone
+    public interface ICheckSpawnAccess
     {
         public void CheckAccess();
     }

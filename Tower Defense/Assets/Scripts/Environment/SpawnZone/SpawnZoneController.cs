@@ -4,16 +4,16 @@ namespace Environment
 {
     public class SpawnZoneController : MonoBehaviour
     {
-        private ISpawnZone _spawnZone;
+        private ICheckSpawnAccess _spawnAccess;
 
         private void Awake()
         {
-            _spawnZone = GetComponent<ISpawnZone>();
+            _spawnAccess = GetComponent<ICheckSpawnAccess>();
         }
 
         private void LateUpdate()
         {
-            _spawnZone.CheckAccess();
+            _spawnAccess.CheckAccess();
         }
     }
 }

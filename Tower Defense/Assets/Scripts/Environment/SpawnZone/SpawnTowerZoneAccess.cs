@@ -3,7 +3,7 @@ using Tower;
 
 namespace Environment
 {
-    public class SpawnTowerZoneAccess : MonoBehaviour, ISpawnZone
+    public class SpawnTowerZoneAccess : MonoBehaviour, ICheckSpawnAccess
     {
         [SerializeField] private ButtonCreator _buttonCreator;
 
