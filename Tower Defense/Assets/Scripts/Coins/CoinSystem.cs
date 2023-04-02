@@ -1,44 +1,23 @@
-using TMPro;
-using UnityEngine;
 using Events;
+using UnityEngine;
 
 namespace Coins
 {
     public class CoinSystem : MonoBehaviour
     {
-        public float Coins;
-
-        [SerializeField] private TextMeshProUGUI _coinsText;
+        private ICoinOperations _coinOperations;
+        private IUpdateText _updateText;
 
         private void Awake()
         {
-            _coinsText.text = Coins.ToString();
-            EventManager.BoughtTower.AddListener(BuyTower);
-            EventManager.TowerUpgraded.AddListener(UpgradeTower);
-            EventManager.EnemyDestroyed.AddListener(GetBonus);
-        }
+            _coinOperations = GetComponent<ICoinOperations>();
+            _updateText = GetComponent<IUpdateText>();
 
-        private void BuyTower(int price)
-        {
-            Coins -= price;
-            UpdateCoinsText();
-        }
+            _updateText.UpdateText();
 
-        private void UpgradeTower(float price)
-        {
-            Mathf.Round(Coins -= price);
-            UpdateCoinsText();
-        }
-
-        private void GetBonus()
-        {
-            Coins += 15;
-            UpdateCoinsText();
-        }
-
-        private void UpdateCoinsText()
-        {
-            _coinsText.text = Coins.ToString();
+            EventManager.BoughtTower.AddListener(_coinOperations.BuyTower);
+            EventManager.TowerUpgraded.AddListener(_coinOperations.UpgradeTower);
+            EventManager.EnemyDestroyed.AddListener(_coinOperations.GetBonus);
         }
     }
 }

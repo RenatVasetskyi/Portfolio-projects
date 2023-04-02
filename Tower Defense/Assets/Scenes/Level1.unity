@@ -37478,6 +37478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1251150598}
   - component: {fileID: 1251150599}
+  - component: {fileID: 1251150600}
   m_Layer: 0
   m_Name: CoinSystem
   m_TagString: CoinSystem
@@ -37514,6 +37515,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Coins: 250
   _coinsText: {fileID: 717776851}
+--- !u!114 &1251150600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251150597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb4c28f6c1acc4438e4c12b03faa2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1256860988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53978,13 +53991,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonCreator: {fileID: 34791965}
   TowerMaterial: {fileID: 2100000, guid: a37e1fdc417de3f44a345dcf438bd789, type: 2}
-  _mageTower: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
-  _cannonTower: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
-  _megaTower: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
-  _speedTower: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
   _towerParent: {fileID: 301422991}
-  _coinSystem: {fileID: 1251150599}
-  _towerPrice: {fileID: 0}
+  _coinOperations: {fileID: 1251150599}
 --- !u!1 &1800260749
 GameObject:
   m_ObjectHideFlags: 0

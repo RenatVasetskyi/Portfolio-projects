@@ -14,7 +14,7 @@ namespace Tower
 
         [SerializeField] private Button _upgradeButton;
 
-        private CoinSystem _coinSystem;
+        private CoinOperations _coinOperations;
 
         public float Damage { get; private set; }
         public float FireSpeed { get; private set; }
@@ -36,9 +36,9 @@ namespace Tower
 
         public void Upgrade()
         {
-            if (_coinSystem != null)
+            if (_coinOperations != null)
             {
-                if (_coinSystem.Coins >= UpgradePrice)
+                if (_coinOperations.Coins >= UpgradePrice)
                 {
                     EventManager.SendTowerUpgraded(UpgradePrice);
 
@@ -61,7 +61,7 @@ namespace Tower
 
         private void Start()
         {
-            _coinSystem = GameObject.FindGameObjectWithTag(Constants.CoinSystemTag.ToString()).GetComponent<CoinSystem>();
+            _coinOperations = GameObject.FindGameObjectWithTag(Constants.CoinSystemTag.ToString()).GetComponent<CoinOperations>();
         }
 
         private void OnUpgradeButtonClickHandler()

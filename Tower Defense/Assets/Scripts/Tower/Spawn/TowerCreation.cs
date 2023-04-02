@@ -12,11 +12,11 @@ namespace Tower
 
         [SerializeField] private Transform _towerParent;
 
-        [SerializeField] private CoinSystem _coinSystem;
+        [SerializeField] private CoinOperations _coinOperations;
 
         public void CreateTower(Vector3 position, TowerType towerType)
         {
-            if (_coinSystem.Coins >= ButtonCreator.SelectedButton.GetComponent<ButtonHolder>().Price)
+            if (_coinOperations.Coins >= ButtonCreator.SelectedButton.GetComponent<ButtonHolder>().Price)
             {
                 Instantiate(ButtonCreator.SelectedButton.GetComponent<ButtonHolder>().TowerPrefab, position, Quaternion.identity, _towerParent);
                 EventManager.SendTowerSpawned();

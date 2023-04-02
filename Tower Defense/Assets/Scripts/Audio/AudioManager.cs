@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Audio
 {
-    public class AudioManager : MonoBehaviour
+    public class AudioManager : MonoBehaviour, IAudioPlayer
     {
         public static AudioManager Instance;
 
@@ -24,7 +24,7 @@ namespace Audio
         {
             var sfxData = GetSfxData(sfxType);
             _sfxSource.PlayOneShot(sfxData.Clip);
-        }
+        }      
 
         private void Awake()
         {
