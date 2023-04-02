@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Tower
 {
-    public interface IButtonScaling
+    public interface IButtonSelection
     {
         public void OnSelect();
         public void OnDeselect(GameObject button);

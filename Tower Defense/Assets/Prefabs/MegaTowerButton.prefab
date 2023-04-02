@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 2380786749369892165}
   - component: {fileID: -3924284831378002212}
   - component: {fileID: 8455051887645588824}
+  - component: {fileID: 6616192605855191967}
   m_Layer: 0
   m_Name: MegaTowerButton
   m_TagString: Untagged
@@ -301,3 +302,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _priceText: {fileID: 5023666413798561638}
+--- !u!114 &6616192605855191967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3746676197711117078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d745723d7acad4245811e3e908d3944e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

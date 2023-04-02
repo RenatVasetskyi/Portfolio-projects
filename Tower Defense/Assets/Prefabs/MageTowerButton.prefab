@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7244763597071153731}
   - component: {fileID: -2491641490556662023}
   - component: {fileID: 6473511931316764625}
+  - component: {fileID: 5560192441140815531}
   m_Layer: 0
   m_Name: MageTowerButton
   m_TagString: Untagged
@@ -166,6 +167,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _priceText: {fileID: 8379713094712351150}
+--- !u!114 &5560192441140815531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2526848213511214065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d745723d7acad4245811e3e908d3944e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5541975582803008284
 GameObject:
   m_ObjectHideFlags: 0
