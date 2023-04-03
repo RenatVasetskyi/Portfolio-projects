@@ -1,15 +1,18 @@
 using Audio;
 using UnityEngine;
 
-public class EnemySounds : MonoBehaviour, IDestroyEnemySound
+namespace Enemy
 {
-    public void PlayDestroySound()
+    public class EnemySounds : MonoBehaviour, IDestroyEnemySound
     {
-        AudioManager.Instance.PlaySfx(SfxType.EnemyKilled);
-    }   
+        public void PlayDestroySound()
+        {
+            AudioManager.Instance.PlaySfx(SfxType.EnemyKilled);
+        }
 
-    private void OnDestroy()
-    {
-        PlayDestroySound();
+        private void OnDestroy()
+        {
+            PlayDestroySound();
+        }
     }
 }

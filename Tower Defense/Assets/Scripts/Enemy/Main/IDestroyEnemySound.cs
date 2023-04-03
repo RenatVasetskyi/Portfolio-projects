@@ -1,4 +1,7 @@
-public interface IDestroyEnemySound
+namespace Enemy
 {
-    public void PlayDestroySound();
+    public interface IDestroyEnemySound
+    {
+        public void PlayDestroySound();
+    }
 }

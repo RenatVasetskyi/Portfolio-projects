@@ -1,7 +1,8 @@
 using UnityEngine;
 using Events;
+using Vitality;
 
-namespace Vitality
+namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
