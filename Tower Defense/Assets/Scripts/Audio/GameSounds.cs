@@ -28,7 +28,7 @@ namespace Audio
 
         private void PlayShotSound()
         {
-            AudioManager.Instance.PlaySfx(SfxType.TowerShot);
+            AudioManager.Instance.PlaySfx(SfxType.CannonTowerShot);
         }
 
         private void PlayGameStartedSound()

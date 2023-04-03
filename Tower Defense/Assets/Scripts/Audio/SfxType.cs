@@ -5,11 +5,14 @@ namespace Audio
         GameStart,
         GameOver,
         EnemyKilled,
-        TowerSpawned,
-        TowerShot,
+        TowerSpawned,        
         NotEnoughMoney,
         UIClick,
         GetCoins,
-        PlayerGetsDamage
+        PlayerGetsDamage,
+        CannonTowerShot,
+        MageTowerShot,
+        MegaTowerShot,
+        SpeedTowerShot
     }
 }
