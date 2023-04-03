@@ -1,4 +1,4 @@
-using Events;
+using MyEvents;
 using UnityEngine;
 
 namespace Coins
@@ -15,9 +15,9 @@ namespace Coins
 
             _updateText.UpdateText();
 
-            EventManager.BoughtTower.AddListener(_coinOperations.BuyTower);
-            EventManager.TowerUpgraded.AddListener(_coinOperations.UpgradeTower);
-            EventManager.EnemyKilled.AddListener(_coinOperations.GetBonus);
+            Events.OnBoughtTower.AddListener(_coinOperations.BuyTower);
+            Events.OnTowerUpgraded.AddListener(_coinOperations.UpgradeTower);
+            Events.OnEnemyKilled.AddListener(_coinOperations.GetBonus);
         }
     }
 }

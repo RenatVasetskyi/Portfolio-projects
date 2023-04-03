@@ -1,4 +1,4 @@
-using Events;
+using MyEvents;
 
 namespace Vitality
 {
@@ -13,7 +13,7 @@ namespace Vitality
 
         private void Awake()
         {
-            EventManager.EnemyHpChanged.AddListener(TakeDamage);
+            Events.OnEnemyHpChanged.AddListener(TakeDamage);
             _healthBarController.SetMaxHealth(_maxHp);
         }
     }

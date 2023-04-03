@@ -1,5 +1,5 @@
 using UnityEngine;
-using Events;
+using MyEvents;
 
 namespace Tower
 {
@@ -13,8 +13,8 @@ namespace Tower
             _towerTrack = GetComponent<ITowerTrack>();
             _upgaradeTowerText = GetComponent<IUpdateUpgradeText>();
 
-            EventManager.UpgradeTowerTextUpdate.AddListener(_upgaradeTowerText.UpdateCurrentCharacteristicsText);
-            EventManager.UpgradeTowerTextUpdate.AddListener(_upgaradeTowerText.UpdateUpgradeText);
+            Events.OnUpgradeTowerTextUpdated.AddListener(_upgaradeTowerText.UpdateCurrentCharacteristicsText);
+            Events.OnUpgradeTowerTextUpdated.AddListener(_upgaradeTowerText.UpdateUpgradeText);
         }
 
         private void Update()

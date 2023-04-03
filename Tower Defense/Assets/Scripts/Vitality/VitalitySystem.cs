@@ -1,5 +1,5 @@
 using UnityEngine;
-using Events;
+using MyEvents;
 
 namespace Vitality
 {
@@ -19,7 +19,7 @@ namespace Vitality
             if (_currentHp <= _minHp)
             {
                 Destroy(gameObject);
-                EventManager.SendEnemyKilled();
+                Events.SendEnemyKilled();
             }
         }
     }

@@ -1,17 +1,17 @@
 using UnityEngine;
-using Events;
+using MyEvents;
 
 namespace Audio
 {
     public class GameSounds : MonoBehaviour
     {
         private void Awake()
-        {          
-            EventManager.TowerShot.AddListener(PlayShotSound);
-            EventManager.GameStarted.AddListener(PlayGameStartedSound);          
-            EventManager.NotEnoughMoney.AddListener(PlayNotEnoughMoneySound);
-            EventManager.GetCoins.AddListener(PlayGetCoinsSound);
-            EventManager.GameOver.AddListener(PlayGameOverSound);
+        {
+            Events.OnTowerShot.AddListener(PlayShotSound);
+            Events.OnGameStarted.AddListener(PlayGameStartedSound);
+            Events.OnNotEnoughMoney.AddListener(PlayNotEnoughMoneySound);
+            Events.OnGotCoins.AddListener(PlayGetCoinsSound);
+            Events.OnGameOver.AddListener(PlayGameOverSound);
         }
 
         void Start()

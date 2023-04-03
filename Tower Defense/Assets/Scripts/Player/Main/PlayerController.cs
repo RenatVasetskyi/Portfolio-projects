@@ -1,5 +1,5 @@
 using UnityEngine;
-using Events;
+using MyEvents;
 using Vitality;
 
 namespace Player
@@ -11,7 +11,7 @@ namespace Player
         private void Awake()
         {
             _playerHealth = GetComponent<IPlayerHealth>();
-            EventManager.PlayerHpChanged.AddListener(_playerHealth.ReducePlayerHp);
+            Events.OnPlayerHpChanged.AddListener(_playerHealth.ReducePlayerHp);
         }
     }
 }

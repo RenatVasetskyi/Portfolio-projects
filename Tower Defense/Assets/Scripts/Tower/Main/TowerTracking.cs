@@ -1,6 +1,6 @@
 using UnityEngine;
 using Data;
-using Events;
+using MyEvents;
 using Bullet;
 
 namespace Tower
@@ -21,7 +21,7 @@ namespace Tower
 
         public void Shoot()
         {
-            EventManager.SendTowerShot();
+            Events.SendTowerShot();
 
             GameObject bulletObj = Instantiate(_bulletPrefab, _bulletStartPoint.position, _bulletStartPoint.rotation);
             BulletShot bullet = bulletObj.GetComponent<BulletShot>();

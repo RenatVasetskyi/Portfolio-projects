@@ -1,7 +1,7 @@
 using UnityEngine;
 using Audio;
 using Data;
-using Events;
+using MyEvents;
 using Vitality;
 
 namespace Environment
@@ -19,13 +19,13 @@ namespace Environment
                 if (_playerHealth.Hp > 1)
                 {
                     AudioManager.Instance.PlaySfx(SfxType.PlayerGetsDamage);
-                    EventManager.SendPlayerHpChanged(_damageToPlayer);
+                    Events.SendPlayerHpChanged(_damageToPlayer);
                     Destroy(collider.gameObject);
                 }
                 else
                 {
-                    EventManager.SendPlayerHpChanged(_damageToPlayer);
-                    EventManager.SendGameOver();
+                    Events.SendPlayerHpChanged(_damageToPlayer);
+                    Events.SendGameOver();
                 }
             }
         }

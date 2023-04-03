@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Enemy;
-using Events;
+using MyEvents;
 
 namespace Wave
 {
@@ -26,7 +26,7 @@ namespace Wave
 
         private void Awake()
         {
-            EventManager.GameOver.AddListener(StopCoroutines);
+            Events.OnGameOver.AddListener(StopCoroutines);
 
             _waveButton.onClick.AddListener(OnWaveButtonClickHandler);
             _waveCountText.text = $"Wave {0} / {_waveDescription.WaveDatas.Count}";
@@ -68,7 +68,7 @@ namespace Wave
         private void OnWaveButtonClickHandler()
         {
             StartCoroutine(RunWave());
-            EventManager.SendGameStarted();
+            Events.SendGameStarted();
             _waveButton.interactable = false;
         }
     }

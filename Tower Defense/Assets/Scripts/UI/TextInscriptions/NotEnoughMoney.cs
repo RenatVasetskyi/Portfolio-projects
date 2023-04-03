@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using Events;
+using MyEvents;
 
 namespace UI
 {
@@ -30,7 +30,7 @@ namespace UI
 
         private void Awake()
         {
-            EventManager.NotEnoughMoney.AddListener(Show);
+            Events.OnNotEnoughMoney.AddListener(Show);
         }
     }
 }

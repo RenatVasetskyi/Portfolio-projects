@@ -1,7 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using Events;
+using MyEvents;
 
 namespace UI
 {
@@ -28,7 +28,7 @@ namespace UI
 
         private void Awake()
         {
-            EventManager.GameStarted.AddListener(Show);
+            Events.OnGameStarted.AddListener(Show);
         }
 
         private IEnumerator ShowGameStartedTextCoroutine()

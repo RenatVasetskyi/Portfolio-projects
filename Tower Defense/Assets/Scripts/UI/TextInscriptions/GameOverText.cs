@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using Events;
+using MyEvents;
 
 namespace UI
 {
@@ -22,7 +22,7 @@ namespace UI
 
         private void Awake()
         {
-            EventManager.GameOver.AddListener(Show);
+            Events.OnGameOver.AddListener(Show);
         }
     }
 }

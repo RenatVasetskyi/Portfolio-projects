@@ -1,5 +1,5 @@
 using UnityEngine;
-using Events;
+using MyEvents;
 
 namespace Enemy
 {
@@ -7,7 +7,7 @@ namespace Enemy
     {
         private void Awake()
         {
-            EventManager.GameOver.AddListener(Destroy);
+            Events.OnGameOver.AddListener(Destroy);
         }
 
         private void Destroy()

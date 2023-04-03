@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using Coins;
 using Audio;
 using Data;
-using Events;
+using MyEvents;
 
 namespace Tower
 {
@@ -40,14 +40,14 @@ namespace Tower
             {
                 if (_coinOperations.Coins >= UpgradePrice)
                 {
-                    EventManager.SendTowerUpgraded(UpgradePrice);
+                    Events.SendTowerUpgraded(UpgradePrice);
 
                     Damage = (float)Math.Round(Damage *= DamageIncreasing, 1);
                     FireSpeed += FireSpeedIncreasing;
                     AttackRange = (float)Math.Round(AttackRange *= AttackRangeIncreasing, 1);
                     UpgradePrice = (float)Math.Round(UpgradePrice *= PriceIncreasing, 1);
 
-                    EventManager.SendUpgradeTowerTextUpdate();
+                    Events.SendUpgradeTowerTextUpdate();
                 }
             }
         }
