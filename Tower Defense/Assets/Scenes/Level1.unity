@@ -47450,23 +47450,29 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 388b73697a958694297e806cadbb2119, type: 3}
   _sfxDataList:
   - _type: 4
-    _clip: {fileID: 8300000, guid: f72f03d3e6b0f6244b3a543ed88eaa63, type: 3}
+    _clip: {fileID: 8300000, guid: 87454759b0cb15a4eb58d6714fe605b6, type: 3}
   - _type: 7
-    _clip: {fileID: 8300000, guid: d865f4e650d2fe240984a438bfa98b29, type: 3}
+    _clip: {fileID: 8300000, guid: f8222240bed03fc46b0d17c294d9ebee, type: 3}
   - _type: 0
     _clip: {fileID: 8300000, guid: 8e573065f2c4f434bb894a62f462bdac, type: 3}
   - _type: 3
     _clip: {fileID: 8300000, guid: 497fa8aed8021144aa331aea2c7c425c, type: 3}
   - _type: 5
-    _clip: {fileID: 8300000, guid: 87454759b0cb15a4eb58d6714fe605b6, type: 3}
-  - _type: 6
     _clip: {fileID: 8300000, guid: bdaf88d551563b64bb08ee73b1a476c5, type: 3}
+  - _type: 6
+    _clip: {fileID: 8300000, guid: d865f4e650d2fe240984a438bfa98b29, type: 3}
   - _type: 2
     _clip: {fileID: 8300000, guid: 2ffdd095ac3d051488b7db6078b71397, type: 3}
-  - _type: 8
-    _clip: {fileID: 8300000, guid: f8222240bed03fc46b0d17c294d9ebee, type: 3}
   - _type: 1
     _clip: {fileID: 8300000, guid: 2e5e9ef53e6f76c4480fb1d891dd8f7d, type: 3}
+  - _type: 8
+    _clip: {fileID: 8300000, guid: f72f03d3e6b0f6244b3a543ed88eaa63, type: 3}
+  - _type: 9
+    _clip: {fileID: 8300000, guid: 1ffc08be635d7be458357a012da3a340, type: 3}
+  - _type: 10
+    _clip: {fileID: 8300000, guid: d9ec5b0fd7c4195498a3c57e7d6612e3, type: 3}
+  - _type: 11
+    _clip: {fileID: 8300000, guid: 4e814e74a34160342bd1ac2759a320fe, type: 3}
 --- !u!1001 &1594616061
 PrefabInstance:
   m_ObjectHideFlags: 0

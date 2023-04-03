@@ -17,7 +17,7 @@ namespace Coins
 
             EventManager.BoughtTower.AddListener(_coinOperations.BuyTower);
             EventManager.TowerUpgraded.AddListener(_coinOperations.UpgradeTower);
-            EventManager.EnemyDestroyed.AddListener(_coinOperations.GetBonus);
+            EventManager.EnemyKilled.AddListener(_coinOperations.GetBonus);
         }
     }
 }

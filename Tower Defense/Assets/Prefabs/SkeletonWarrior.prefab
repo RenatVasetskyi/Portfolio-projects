@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 4407975628281985324}
   - component: {fileID: 1353029849562912518}
   - component: {fileID: -4528577218075511545}
+  - component: {fileID: 8986928882752800958}
   m_Layer: 0
   m_Name: SkeletonWarrior
   m_TagString: Enemy
@@ -185,6 +186,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8986928882752800958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209798540425749090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afa33f6cab9cdf43a2792771790f672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &458102702119710189
 GameObject:
   m_ObjectHideFlags: 0

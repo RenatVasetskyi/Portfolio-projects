@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 659975489313250206}
   - component: {fileID: -6891535457572428565}
   - component: {fileID: 4630641061359672872}
+  - component: {fileID: -1065311674908519249}
   m_Layer: 0
   m_Name: SpeedTower
   m_TagString: Untagged
@@ -300,7 +301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11331d0d1e182d45af466b1d2ddcfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerSelectionButton: {fileID: 11400000, guid: f3415fbeebc6da14695a8f2e8fe4b508, type: 2}
   _currentDamageText: {fileID: 3970572532270035624}
   _currentFireSpeedText: {fileID: 4528094310543500192}
   _currentAttackRangeText: {fileID: 5641526036400114429}
@@ -352,6 +352,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerSelectionButton: {fileID: 11400000, guid: f3415fbeebc6da14695a8f2e8fe4b508, type: 2}
   _upgradeButton: {fileID: 7468332663960122317}
+--- !u!114 &-1065311674908519249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b27d9b3e4b5f4c4e8080339918620a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &171538
 GameObject:
   m_ObjectHideFlags: 0

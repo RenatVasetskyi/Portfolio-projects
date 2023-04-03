@@ -19,7 +19,7 @@ namespace Vitality
             if (_currentHp <= _minHp)
             {
                 Destroy(gameObject);
-                EventManager.SendEnemyDestroyed();
+                EventManager.SendEnemyKilled();
             }
         }
     }

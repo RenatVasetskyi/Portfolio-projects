@@ -7,10 +7,9 @@ namespace Events
         public static UnityEvent GameStarted = new UnityEvent();
         public static UnityEvent GameOver = new UnityEvent();
         public static UnityEvent EnemySpawned = new UnityEvent();
-        public static UnityEvent EnemyDestroyed = new UnityEvent();
+        public static UnityEvent EnemyKilled = new UnityEvent();
         public static UnityEvent<float> EnemyHpChanged = new UnityEvent<float>();
         public static UnityEvent<int> PlayerHpChanged = new UnityEvent<int>();
-        public static UnityEvent TowerSpawned = new UnityEvent();
         public static UnityEvent<int> BoughtTower = new UnityEvent<int>();
         public static UnityEvent<float> TowerUpgraded = new UnityEvent<float>();
         public static UnityEvent UpgradeTowerTextUpdate = new UnityEvent();
@@ -33,9 +32,9 @@ namespace Events
             EnemySpawned.Invoke();
         }
 
-        public static void SendEnemyDestroyed()
+        public static void SendEnemyKilled()
         {
-            EnemyDestroyed.Invoke();
+            EnemyKilled.Invoke();
         }
 
         public static void SendEnemyHpChanged(float damage)
@@ -46,12 +45,7 @@ namespace Events
         public static void SendPlayerHpChanged(int damage)
         {
             PlayerHpChanged.Invoke(damage);
-        }
-
-        public static void SendTowerSpawned()
-        {
-            TowerSpawned.Invoke();
-        }
+        }    
 
         public static void SendBoughtTower(int price)
         {

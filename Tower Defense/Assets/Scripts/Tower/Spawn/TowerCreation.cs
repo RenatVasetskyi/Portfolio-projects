@@ -19,7 +19,6 @@ namespace Tower
             if (_coinOperations.Coins >= ButtonCreator.SelectedButton.GetComponent<ButtonHolder>().Price)
             {
                 Instantiate(ButtonCreator.SelectedButton.GetComponent<ButtonHolder>().TowerPrefab, position, Quaternion.identity, _towerParent);
-                EventManager.SendTowerSpawned();
                 EventManager.SendBoughtTower(ButtonCreator.SelectedButton.GetComponent<ButtonHolder>().Price);
             }
             else

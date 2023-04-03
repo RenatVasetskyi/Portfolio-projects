@@ -6,11 +6,9 @@ namespace Audio
     public class GameSounds : MonoBehaviour
     {
         private void Awake()
-        {
-            EventManager.EnemyDestroyed.AddListener(PlayDestroyEnemySound);
+        {          
             EventManager.TowerShot.AddListener(PlayShotSound);
-            EventManager.GameStarted.AddListener(PlayGameStartedSound);
-            EventManager.TowerSpawned.AddListener(PlayTowerSpawnedSound);
+            EventManager.GameStarted.AddListener(PlayGameStartedSound);          
             EventManager.NotEnoughMoney.AddListener(PlayNotEnoughMoneySound);
             EventManager.GetCoins.AddListener(PlayGetCoinsSound);
             EventManager.GameOver.AddListener(PlayGameOverSound);
@@ -19,12 +17,7 @@ namespace Audio
         void Start()
         {
             AudioManager.Instance.PlayMusic(MusicType.Game);
-        }
-
-        private void PlayDestroyEnemySound()
-        {
-            AudioManager.Instance.PlaySfx(SfxType.EnemyKilled);
-        }
+        }     
 
         private void PlayShotSound()
         {
@@ -34,12 +27,7 @@ namespace Audio
         private void PlayGameStartedSound()
         {
             AudioManager.Instance.PlaySfx(SfxType.GameStart);
-        }
-
-        private void PlayTowerSpawnedSound()
-        {
-            AudioManager.Instance.PlaySfx(SfxType.TowerSpawned);
-        }
+        }     
 
         private void PlayNotEnoughMoneySound()
         {

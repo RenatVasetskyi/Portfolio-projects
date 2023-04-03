@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 9071637201321042075}
   - component: {fileID: 2668179708320165671}
   - component: {fileID: 1356163199940338311}
+  - component: {fileID: 6844573252613853923}
   m_Layer: 0
   m_Name: Skeleton@Skin
   m_TagString: Enemy
@@ -281,6 +282,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b84904b41faee0645a55c3c5d1944e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6844573252613853923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5155928980280571524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afa33f6cab9cdf43a2792771790f672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5155928980280571526

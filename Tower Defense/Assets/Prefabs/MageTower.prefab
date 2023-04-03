@@ -6741,6 +6741,7 @@ GameObject:
   - component: {fileID: 5594799634202924265}
   - component: {fileID: -4849493775112726577}
   - component: {fileID: 6660134978665175170}
+  - component: {fileID: 3200609285666019579}
   m_Layer: 0
   m_Name: MageTower
   m_TagString: Untagged
@@ -6816,7 +6817,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11331d0d1e182d45af466b1d2ddcfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerSelectionButton: {fileID: 11400000, guid: 7af644e1bf82db04fbc5d6384001321b, type: 2}
   _currentDamageText: {fileID: 2119420245812808295}
   _currentFireSpeedText: {fileID: 8503162925215644286}
   _currentAttackRangeText: {fileID: 369683290370661283}
@@ -6881,6 +6881,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerSelectionButton: {fileID: 11400000, guid: 7af644e1bf82db04fbc5d6384001321b, type: 2}
   _upgradeButton: {fileID: 4320345903856242304}
+--- !u!114 &3200609285666019579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794111474321670319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b27d9b3e4b5f4c4e8080339918620a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5794111474321671333
 GameObject:
   m_ObjectHideFlags: 0
