@@ -13,11 +13,4 @@ MonoBehaviour:
   m_Name: MageButton
   m_EditorClassIdentifier: 
   Button: {fileID: 2526848213511214065, guid: c67cf05e5b0a7a14b9c71b836b5936cc, type: 3}
-  TowerPrefab: {fileID: 5794111474321670319, guid: 8900e5c6a5211bf42af469ef1469b6a2, type: 3}
-  TowerModel: {fileID: 919132149155446097, guid: 160883f9ab9709942953aca59596504d, type: 3}
-  TowerType: 0
-  Price: 60
-  Damage: 35
-  FireSpeed: 1
-  AttackRange: 15
-  UpgradePrice: 55
+  Tower: {fileID: 11400000, guid: 8cbf87d3069d04943a9af882c1e6a352, type: 2}

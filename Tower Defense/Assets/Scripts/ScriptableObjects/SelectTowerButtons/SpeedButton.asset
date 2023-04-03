@@ -13,11 +13,4 @@ MonoBehaviour:
   m_Name: SpeedButton
   m_EditorClassIdentifier: 
   Button: {fileID: 1752862851940134697, guid: 11097b6f7837b054b98915760bc9df3e, type: 3}
-  TowerPrefab: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
-  TowerModel: {fileID: 919132149155446097, guid: b303f1d9007094c46a821bc46808615a, type: 3}
-  TowerType: 3
-  Price: 80
-  Damage: 25
-  FireSpeed: 2
-  AttackRange: 15
-  UpgradePrice: 70
+  Tower: {fileID: 11400000, guid: 3c08ecf8035cadc45a0ed9542189af27, type: 2}

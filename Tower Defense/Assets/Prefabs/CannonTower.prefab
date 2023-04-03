@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 4336185638185708315}
   - component: {fileID: 567555079145221930}
   m_Layer: 0
-  m_Name: LevelText
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -573,7 +573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level
+  m_text: NEXT LEVEL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
   m_sharedMaterial: {fileID: 3034728851940921212, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
@@ -600,12 +600,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
+  m_fontSize: 0.7
   m_fontSizeBase: 1
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 0.5
-  m_fontSizeMax: 1
+  m_fontSizeMin: 0.4
+  m_fontSizeMax: 0.8
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 8383290974913233430}
   - component: {fileID: 9114719339257662136}
   m_Layer: 0
-  m_Name: Level
+  m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2074,7 +2074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5fc5d73ad0b94429d9d6ec733adc50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerSelectionButton: {fileID: 11400000, guid: 88d89f9b3cb5660488ce8874cbd2c3fa, type: 2}
+  _tower: {fileID: 11400000, guid: a5bb6b1e604a4864d90409e2ad2045d5, type: 2}
   _upgradeButton: {fileID: 552981028218519034}
 --- !u!114 &-3398200840585361495
 MonoBehaviour:

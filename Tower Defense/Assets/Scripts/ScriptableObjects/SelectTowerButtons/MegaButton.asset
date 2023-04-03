@@ -13,11 +13,4 @@ MonoBehaviour:
   m_Name: MegaButton
   m_EditorClassIdentifier: 
   Button: {fileID: 3746676197711117078, guid: e13609308fb215047b72a91c0be6e02b, type: 3}
-  TowerPrefab: {fileID: 6165199250987377014, guid: 0033dfe9d3e4ba749a00e495d25c77b5, type: 3}
-  TowerModel: {fileID: 919132149155446097, guid: b3db2de629e07f54fbb9ddd75ce62f91, type: 3}
-  TowerType: 2
-  Price: 70
-  Damage: 50
-  FireSpeed: 0.6
-  AttackRange: 17
-  UpgradePrice: 80
+  Tower: {fileID: 11400000, guid: caa1abc311688ea4b9f499b2b61600e9, type: 2}

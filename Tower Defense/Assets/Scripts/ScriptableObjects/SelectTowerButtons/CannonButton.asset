@@ -13,11 +13,4 @@ MonoBehaviour:
   m_Name: CannonButton
   m_EditorClassIdentifier: 
   Button: {fileID: 6953256987614738810, guid: b2990c6c46886764687de6aa7132e5c9, type: 3}
-  TowerPrefab: {fileID: 4559839046223248598, guid: e34c640bcbe3daa469f0e1844b9d03da, type: 3}
-  TowerModel: {fileID: 919132149155446097, guid: 179ce9726bc5aa44bb444ce8fa99811f, type: 3}
-  TowerType: 1
-  Price: 50
-  Damage: 25
-  FireSpeed: 0.9
-  AttackRange: 13
-  UpgradePrice: 40
+  Tower: {fileID: 11400000, guid: a5bb6b1e604a4864d90409e2ad2045d5, type: 2}

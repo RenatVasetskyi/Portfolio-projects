@@ -23,10 +23,10 @@ namespace Tower
         {
             for (int i = 0; i < SpawnedButtons.Count; i++)
             {
-                SpawnedButtons[i].GetComponent<ButtonHolder>().TowerType = TowerSelectionButtons[i].TowerType;
-                SpawnedButtons[i].GetComponent<ButtonHolder>().TowerPrefab = TowerSelectionButtons[i].TowerPrefab;              
-                SpawnedButtons[i].GetComponent<ButtonHolder>().TowerModel = TowerSelectionButtons[i].TowerModel;
-                SpawnedButtons[i].GetComponent<ButtonHolder>().Price = TowerSelectionButtons[i].Price;
+                SpawnedButtons[i].GetComponent<ButtonHolder>().TowerType = TowerSelectionButtons[i].Tower.TowerType;
+                SpawnedButtons[i].GetComponent<ButtonHolder>().TowerPrefab = TowerSelectionButtons[i].Tower.TowerPrefab;              
+                SpawnedButtons[i].GetComponent<ButtonHolder>().TowerModel = TowerSelectionButtons[i].Tower.TowerModel;
+                SpawnedButtons[i].GetComponent<ButtonHolder>().Price = TowerSelectionButtons[i].Tower.Price;
             }
         }
 

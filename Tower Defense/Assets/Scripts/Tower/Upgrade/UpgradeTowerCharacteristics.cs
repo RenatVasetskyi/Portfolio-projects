@@ -10,7 +10,7 @@ namespace Tower
 {
     public class UpgradeTowerCharacteristics : MonoBehaviour, IUpgaradeTower, IInitialize
     {
-        [SerializeField] private TowerSelectionButton _towerSelectionButton;
+        [SerializeField] private Tower _tower;
 
         [SerializeField] private Button _upgradeButton;
 
@@ -28,10 +28,10 @@ namespace Tower
 
         public void Initialize()
         {
-            Damage = _towerSelectionButton.Damage;
-            FireSpeed = _towerSelectionButton.FireSpeed;
-            AttackRange = _towerSelectionButton.AttackRange;
-            UpgradePrice = _towerSelectionButton.UpgradePrice;
+            Damage = _tower.Damage;
+            FireSpeed = _tower.FireSpeed;
+            AttackRange = _tower.AttackRange;
+            UpgradePrice = _tower.UpgradePrice;
         }
 
         public void Upgrade()

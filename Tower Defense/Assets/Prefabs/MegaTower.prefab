@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4175996748347289169}
   - component: {fileID: 3153178103352561704}
   m_Layer: 0
-  m_Name: LevelText
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level
+  m_text: NEXT LEVEL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
   m_sharedMaterial: {fileID: 3034728851940921212, guid: 2805a77700147f44d9eeaa2f047cd340, type: 2}
@@ -7252,7 +7252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5fc5d73ad0b94429d9d6ec733adc50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerSelectionButton: {fileID: 11400000, guid: 2da3df4ea7815ae4b813b5eaa0e47304, type: 2}
+  _tower: {fileID: 11400000, guid: caa1abc311688ea4b9f499b2b61600e9, type: 2}
   _upgradeButton: {fileID: 6032907370236561529}
 --- !u!114 &3334549031169074668
 MonoBehaviour:
@@ -7362,7 +7362,7 @@ GameObject:
   - component: {fileID: 163110965948560851}
   - component: {fileID: 2998543210065047952}
   m_Layer: 0
-  m_Name: Level
+  m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
