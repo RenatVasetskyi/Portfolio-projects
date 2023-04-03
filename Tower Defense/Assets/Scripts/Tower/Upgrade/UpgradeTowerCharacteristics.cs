@@ -10,7 +10,7 @@ namespace Tower
 {
     public class UpgradeTowerCharacteristics : MonoBehaviour, IUpgaradeTower, IInitialize
     {
-        [SerializeField] private Tower _tower;
+        [SerializeField] private TowerInfo _tower;
 
         [SerializeField] private Button _upgradeButton;
 

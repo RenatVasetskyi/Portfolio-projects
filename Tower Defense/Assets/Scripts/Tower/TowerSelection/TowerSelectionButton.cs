@@ -6,6 +6,6 @@ namespace Tower
     public class TowerSelectionButton : ScriptableObject
     {
         public GameObject Button;
-        public Tower Tower;     
+        public TowerInfo Tower;     
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Tower
 {
     [CreateAssetMenu(fileName = "Tower", menuName = "Tower/DefaultTower")]
-    public class Tower : ScriptableObject
+    public class TowerInfo : ScriptableObject
     {
         public TowerType TowerType;
 
