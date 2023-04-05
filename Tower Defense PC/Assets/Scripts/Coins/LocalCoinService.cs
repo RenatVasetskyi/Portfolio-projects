@@ -1,12 +1,13 @@
+using UnityEngine;
 using Zenject;
 
-public class LocalCoinService
+public class LocalCoinService : MonoBehaviour
 {
     public int Coins { get; set; }
 
     [Inject]
-    public LocalCoinService(LevelSettinsHolder levelSettinsHolder)
-    {       
+    private void Construct(LevelSettinsHolder levelSettinsHolder)
+    {
         Coins = levelSettinsHolder.Coins;
     }
 }

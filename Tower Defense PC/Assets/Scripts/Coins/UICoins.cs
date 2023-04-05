@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -15,10 +14,5 @@ public class UICoins : MonoBehaviour
         _localCoinService = localCoinService;
         _coinsText = GetComponent<TextMeshProUGUI>();
         _coinsText.text = _localCoinService.Coins.ToString();    
-    }
-
-    private void UpdateText()
-    {
-        _coinsText.text = _localCoinService.Coins.ToString();
     }
 }

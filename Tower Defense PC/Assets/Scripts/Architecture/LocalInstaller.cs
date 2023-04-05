@@ -1,3 +1,4 @@
+using UnityEngine;
 using Zenject;
 
 public class LocalInstaller : MonoInstaller
@@ -21,11 +22,12 @@ public class LocalInstaller : MonoInstaller
 
     private void BindLocalCoinService()
     {
-        LocalCoinService = new LocalCoinService(LevelSettinsHolder);
+        LocalCoinService localCoinService = Container
+            .InstantiatePrefabForComponent<LocalCoinService>(LocalCoinService, transform.position, Quaternion.identity, null);
 
         Container
             .Bind<LocalCoinService>()
-            .FromInstance(LocalCoinService)
+            .FromInstance(localCoinService)
             .AsSingle();
     }
 }

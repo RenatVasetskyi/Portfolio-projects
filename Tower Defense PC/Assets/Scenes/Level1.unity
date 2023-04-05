@@ -727,6 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelSettinsHolder: {fileID: 11400000, guid: aec0b5c102db7c64092487c3c5315099, type: 2}
+  LocalCoinService: {fileID: 1578071393967827429, guid: c63df419d6560094c959abf83d6181ea, type: 3}
 --- !u!114 &1544447888
 MonoBehaviour:
   m_ObjectHideFlags: 0
