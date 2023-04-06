@@ -219,6 +219,7 @@ RectTransform:
   - {fileID: 1290026283}
   - {fileID: 1741179207}
   - {fileID: 1166873964}
+  - {fileID: 554444334}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -697,6 +698,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &554444333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554444334}
+  - component: {fileID: 554444335}
+  - component: {fileID: 554444336}
+  m_Layer: 5
+  m_Name: TowerSelectionButtonsCreator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &554444334
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554444333}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 218771789}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 125}
+  m_SizeDelta: {x: 1000, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &554444335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554444333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: -500
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &554444336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554444333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e629a4d9176384fac8c598162860e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TowerSelectionButtons:
+  - {fileID: 11400000, guid: f932c1366d827a4448ad5b8fb8ce1f9c, type: 2}
+  - {fileID: 11400000, guid: b2b83f0d03ada9247a5b0aad188c22cc, type: 2}
+  - {fileID: 11400000, guid: d3846d19634606843b9580f0861da906, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,8 +1267,8 @@ MonoBehaviour:
   _waveDescription: {fileID: 11400000, guid: 87a3d9cb768233f4eb4139b6b4122fb7, type: 2}
   _startPoint: {fileID: 430698150}
   _parent: {fileID: 524510101}
-  _skeletonPrefab: {fileID: 3150459454619610098, guid: f14d05a7f0324f34ea2c968dbac720dd, type: 3}
-  _goblinPrefab: {fileID: 8272943599224061573, guid: 47b41978aba272c47ae5f4a2f7179c61, type: 3}
+  _skeletonPrefab: {fileID: 1105569645089216382, guid: 7aaf423270f58f2468fd2e13013ca7b6, type: 3}
+  _goblinPrefab: {fileID: 2645640929389310095, guid: c468de9744645f6429927f449a90cdbd, type: 3}
   _waveUI: {fileID: 1166873968}
 --- !u!4 &1059845947
 Transform:
@@ -1610,7 +1691,6 @@ MonoBehaviour:
   LevelSettinsHolder: {fileID: 11400000, guid: aec0b5c102db7c64092487c3c5315099, type: 2}
   LocalCoinService: {fileID: 1578071393967827429, guid: c63df419d6560094c959abf83d6181ea, type: 3}
   PlayerHealth: {fileID: 8130467860731323877, guid: 7d0c967c6c6a14542860530ae7c99ea1, type: 3}
-  Finish: {fileID: 721376935}
 --- !u!114 &1544447888
 MonoBehaviour:
   m_ObjectHideFlags: 0

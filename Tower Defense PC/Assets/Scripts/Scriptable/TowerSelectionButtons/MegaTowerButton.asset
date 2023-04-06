@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edac23a6740cf724598000a09e2d273d, type: 3}
+  m_Name: MegaTowerButton
+  m_EditorClassIdentifier: 
+  Button: {fileID: 8604397196665533124, guid: 2683b66f7192945479c54c6e1d96b877, type: 3}
+  Tower: {fileID: 11400000, guid: f99b944b6bac42249ae30047b733faf1, type: 2}

@@ -7,14 +7,11 @@ public class LocalInstaller : MonoInstaller
     public LocalCoinService LocalCoinService;
     public PlayerHealth PlayerHealth;
 
-    public GameObject Finish;   
-
     public override void InstallBindings()
     {
         BindLevelSettinsHolder();
         BindLocalCoinService();
         BindPlayerHealth();
-        BindFinish();
     }
 
     private void BindLevelSettinsHolder()
@@ -44,14 +41,6 @@ public class LocalInstaller : MonoInstaller
         Container
             .Bind<PlayerHealth>()
             .FromInstance(playerHealth)
-            .AsSingle();
-    }
-
-    private void BindFinish()
-    {     
-        Container
-            .Bind<GameObject>()
-            .FromInstance(Finish)
             .AsSingle();
     }
 }
