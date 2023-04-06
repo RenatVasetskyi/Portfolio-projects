@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ac48dec258ca14f9350eadccfc66a1, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  Coins: 100
+  Coins: 250
+  PlayerHealthPoints: 5

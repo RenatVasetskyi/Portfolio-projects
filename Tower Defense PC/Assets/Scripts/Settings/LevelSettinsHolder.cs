@@ -4,4 +4,5 @@ using UnityEngine;
 public class LevelSettinsHolder : ScriptableObject
 {
     public int Coins;
+    public int PlayerHealthPoints;
 }

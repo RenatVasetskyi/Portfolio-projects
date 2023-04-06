@@ -13,10 +13,31 @@ MonoBehaviour:
   m_Name: Level1Wave
   m_EditorClassIdentifier: 
   _waveDatas:
-  - _waveNumber: 0
-    _enemyOnWaveDatas: []
-  - _waveNumber: 0
-    _enemyOnWaveDatas: []
-  - _waveNumber: 0
-    _enemyOnWaveDatas: []
+  - _waveNumber: 1
+    _enemyOnWaveDatas:
+    - _enemySpawnDatas:
+      - _enemy: 0
+        _enemyCount: 5
+      - _enemy: 1
+        _enemyCount: 5
+      _timeDelayBetweenWaves: 3
+      _timeDelayBetweenSpawns: 0.5
+  - _waveNumber: 2
+    _enemyOnWaveDatas:
+    - _enemySpawnDatas:
+      - _enemy: 1
+        _enemyCount: 8
+      - _enemy: 0
+        _enemyCount: 7
+      _timeDelayBetweenWaves: 10
+      _timeDelayBetweenSpawns: 0.5
+  - _waveNumber: 2
+    _enemyOnWaveDatas:
+    - _enemySpawnDatas:
+      - _enemy: 0
+        _enemyCount: 8
+      - _enemy: 1
+        _enemyCount: 12
+      _timeDelayBetweenWaves: 10
+      _timeDelayBetweenSpawns: 0.5
   _level: 1

@@ -2,46 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Enemy;
+using System;
 
 namespace Wave
 {
     public class WaveSystem : MonoBehaviour
-    {
-        [SerializeField] private WaveDescription _waveDescription;
+    {     
+        public WaveDescription _waveDescription;
+
+        public event Action<int> OnWaveNumberChange;
 
         [SerializeField] private Transform _startPoint;
         [SerializeField] private Transform _parent;
 
-        [SerializeField] private GameObject _skeleton;
-        [SerializeField] private GameObject _goblin;
+        [SerializeField] private GameObject _skeletonPrefab;
+        [SerializeField] private GameObject _goblinPrefab;
 
         [SerializeField] private Dictionary<EnemyType, GameObject> _prefabs;
 
-        //[SerializeField] private Button _waveButton;
+        [SerializeField] private UIWave _waveUI;
 
-        //[SerializeField] private TextMeshProUGUI _waveCountText;
+        private void Awake()
+        {
+            _waveUI.OnStartWave += StartWaveCoroutine;
+        }
 
-        //private void Awake()
-        //{           
-        //    _waveButton.onClick.AddListener(OnWaveButtonClickHandler);
-        //    _waveCountText.text = $"Wave {0} / {_waveDescription.WaveDatas.Count}";
-        //}
+        private void OnDestroy()
+        {
+            _waveUI.OnStartWave -= StartWaveCoroutine;
+        }
 
         private IEnumerator RunWave()
         {
             _prefabs = new Dictionary<EnemyType, GameObject>()
-        {
-            {EnemyType.Skeleton, _skeleton},
-            {EnemyType.Goblin, _goblin}
-        };
+            {
+                {EnemyType.Skeleton, _skeletonPrefab},
+                {EnemyType.Goblin, _goblinPrefab}
+            };
 
             foreach (var waveData in _waveDescription.WaveDatas)
-            {
-                //_waveCountText.text = $"Wave {waveData.WaveNumber} / {_waveDescription.WaveDatas.Count}";
-
+            {               
                 foreach (var enemyOnWaveData in waveData.EnemyOnWaveDatas)
-                {
+                {                 
                     yield return new WaitForSeconds(enemyOnWaveData.TimeDelayBetweenWaves);
+
+                    OnWaveNumberChange?.Invoke(waveData.WaveNumber);
 
                     foreach (var enemySpawnData in enemyOnWaveData.EnemySpawnDatas)
                     {
@@ -55,15 +60,9 @@ namespace Wave
             }
         }
 
-        //private void StopCoroutines()
-        //{
-        //    StopAllCoroutines();
-        //}
-
-        //private void OnWaveButtonClickHandler()
-        //{
-        //    StartCoroutine(RunWave());          
-        //    _waveButton.interactable = false;
-        //}
+        private void StartWaveCoroutine()
+        {
+            StartCoroutine(RunWave());
+        }
     }
 }

@@ -1,15 +1,17 @@
-using UnityEngine;
 using Zenject;
+using UnityEngine;
 
 public class LocalInstaller : MonoInstaller
-{  
+{
     public LevelSettinsHolder LevelSettinsHolder;
     public LocalCoinService LocalCoinService;
-    
+    public PlayerHealth PlayerHealth;
+
     public override void InstallBindings()
     {
         BindLevelSettinsHolder();
         BindLocalCoinService();
+        BindPlayerHealth();
     }
 
     private void BindLevelSettinsHolder()
@@ -27,7 +29,16 @@ public class LocalInstaller : MonoInstaller
 
         Container
             .Bind<LocalCoinService>()
-            .FromInstance(localCoinService)
-            .AsSingle();
+            .FromInstance(localCoinService);
+    }
+
+    private void BindPlayerHealth()
+    {
+        PlayerHealth playerHealth = Container
+            .InstantiatePrefabForComponent<PlayerHealth>(PlayerHealth, transform.position, Quaternion.identity, null);
+
+        Container
+            .Bind<PlayerHealth>()
+            .FromInstance(playerHealth);
     }
 }
