@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class DisplayTowerPrice : SelectTower
+public class DisplayTowerPrice : SelectButton
 {
     [SerializeField] private TextMeshProUGUI _priceText;
 

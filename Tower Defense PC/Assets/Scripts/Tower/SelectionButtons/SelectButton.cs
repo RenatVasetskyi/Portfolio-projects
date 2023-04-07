@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SelectTower : MonoBehaviour, ISelectable
+public class SelectButton : MonoBehaviour, ISelectable
 {
     protected ButtonCreator _buttonCreator;
     protected ButtonHolder _buttonHolder;

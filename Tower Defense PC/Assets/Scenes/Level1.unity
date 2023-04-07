@@ -778,6 +778,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f932c1366d827a4448ad5b8fb8ce1f9c, type: 2}
   - {fileID: 11400000, guid: b2b83f0d03ada9247a5b0aad188c22cc, type: 2}
   - {fileID: 11400000, guid: d3846d19634606843b9580f0861da906, type: 2}
+  SelectedButton: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

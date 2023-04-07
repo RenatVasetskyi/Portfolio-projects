@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonScaling : SelectTower
+public class ButtonScaling : SelectButton
 {
     private Vector3 _startSize = new Vector3(0.7f, 0.7f, 0.7f);
     private Vector3 _scaledSize = new Vector3(0.85f, 0.85f, 0.85f);
