@@ -10,7 +10,8 @@ public class ButtonCreator : MonoBehaviour
     {
         for (int i = 0; i < TowerSelectionButtons.Count; i++)
         {
-            Instantiate(TowerSelectionButtons[i].Button, transform);
+            GameObject button = Instantiate(TowerSelectionButtons[i].Button, transform);
+            button.GetComponent<ButtonHolder>().Tower = TowerSelectionButtons[i].Tower;
         }
     }
 
