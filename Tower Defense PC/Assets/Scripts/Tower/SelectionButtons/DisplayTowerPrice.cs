@@ -1,20 +1,17 @@
 using TMPro;
 using UnityEngine;
 
-public class DisplayTowerPrice : MonoBehaviour
+public class DisplayTowerPrice : SelectTower
 {
     [SerializeField] private TextMeshProUGUI _priceText;
 
-    private ButtonHolder _holder;
-
     private void Start()
-    {
-        _holder = GetComponent<ButtonHolder>();
-        DisplayText();
+    {      
+        DisplayPrice();
     }
 
-    private void DisplayText()
+    private void DisplayPrice()
     {
-        _priceText.text = _holder.Tower.Price.ToString();
+        _priceText.text = _buttonHolder.Tower.Price.ToString();
     }
 }

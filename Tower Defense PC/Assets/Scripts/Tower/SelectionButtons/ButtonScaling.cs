@@ -12,9 +12,9 @@ public class ButtonScaling : SelectTower
         LeanTween.scale(gameObject, _scaledSize, _scaleDuration);
     }
 
-    public override void OnDeselect(GameObject button)
+    public override void OnDeselect(ButtonHolder button)
     {
-        LeanTween.scale(button, _startSize, _scaleDuration);
+        LeanTween.scale(button.gameObject, _startSize, _scaleDuration);
     }
 
     private void Start()
@@ -25,9 +25,9 @@ public class ButtonScaling : SelectTower
 
     private void SetStartSize()
     {
-        for (int i = 0; i < _buttonCreator.SpawnedButtons.Count; i++)
+        for (int i = 0; i < _buttonCreator.TowerSelectionButtons.Count; i++)
         {
-            _buttonCreator.SpawnedButtons[i].gameObject.transform.localScale = _startSize;
+            _buttonCreator.TowerSelectionButtons[i].Button.gameObject.transform.localScale = _startSize;
         }
     }
 }

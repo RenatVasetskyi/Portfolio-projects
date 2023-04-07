@@ -1,6 +1,6 @@
 using UnityEngine;
 
 public class ButtonHolder : MonoBehaviour
-{   
-    public TowerInfo Tower;
+{
+    public TowerInfo Tower { get; set; }
 }

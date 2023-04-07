@@ -1,31 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Zenject;
 
-public class ButtonCreator : MonoBehaviour, IInitializable
+public class ButtonCreator : MonoBehaviour
 {
-    public List<TowerSelectionButton> TowerSelectionButtons; 
-    public List<GameObject> SpawnedButtons { get; private set; } = new List<GameObject>();
-    public GameObject SelectedButton { get; private set; }
+    public List<TowerSelectionButton> TowerSelectionButtons;
+    public ButtonHolder SelectedButton;/* { get; private set; }*/
 
     public void Create()
     {
         for (int i = 0; i < TowerSelectionButtons.Count; i++)
         {
-            GameObject button = Instantiate(TowerSelectionButtons[i].Button, transform);
-            SpawnedButtons.Add(button);
+            Instantiate(TowerSelectionButtons[i].Button, transform);
         }
     }
 
-    public void Initialize()
-    {
-        for (int i = 0; i < SpawnedButtons.Count; i++)
-        {
-            SpawnedButtons[i].GetComponent<ButtonHolder>().Tower = TowerSelectionButtons[i].Tower;          
-        }
-    }
-
-    public void ChangeSelection(GameObject button)
+    public void ChangeSelection(ButtonHolder button)
     {
         SelectedButton = button;
     }
@@ -33,6 +22,5 @@ public class ButtonCreator : MonoBehaviour, IInitializable
     private void Awake()
     {
         Create();
-        Initialize();
     }
 }

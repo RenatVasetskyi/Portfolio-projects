@@ -4,13 +4,14 @@ using UnityEngine.UI;
 public class SelectTower : MonoBehaviour, ISelectable
 {
     protected ButtonCreator _buttonCreator;
+    protected ButtonHolder _buttonHolder;
 
     public virtual void OnSelect()
     {
-        _buttonCreator.ChangeSelection(gameObject);
+        _buttonCreator.ChangeSelection(_buttonHolder);
     }
 
-    public virtual void OnDeselect(GameObject button)
+    public virtual void OnDeselect(ButtonHolder button)
     {
         _buttonCreator.ChangeSelection(null);
     }
@@ -21,20 +22,22 @@ public class SelectTower : MonoBehaviour, ISelectable
         {
             OnSelect();
         }
-        else if (_buttonCreator.SelectedButton != null & _buttonCreator.SelectedButton != gameObject)
+        else if (_buttonCreator.SelectedButton != null & _buttonCreator.SelectedButton.Tower.TowerType != _buttonHolder.Tower.TowerType)
         {
-            OnDeselect(_buttonCreator.SelectedButton);
+            OnDeselect(_buttonHolder);
             OnSelect();
         }
-        else if (_buttonCreator.SelectedButton != null & _buttonCreator.SelectedButton == gameObject)
+        else if (_buttonCreator.SelectedButton != null & _buttonCreator.SelectedButton.Tower.TowerType == _buttonHolder.Tower.TowerType)
         {
-            OnDeselect(gameObject);
+            OnDeselect(_buttonHolder);
         }
     }
 
     private void Awake()
     {
         _buttonCreator = GetComponentInParent<ButtonCreator>();
+        _buttonHolder = gameObject.GetComponent<ButtonHolder>();
         GetComponent<Button>().onClick.AddListener(OnButtonClickHandler);
     }
 }
+
