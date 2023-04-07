@@ -30,7 +30,7 @@ public class ButtonCreator : MonoBehaviour, IInitializable
         SelectedButton = button;
     }
 
-    private void Start()
+    private void Awake()
     {
         Create();
         Initialize();

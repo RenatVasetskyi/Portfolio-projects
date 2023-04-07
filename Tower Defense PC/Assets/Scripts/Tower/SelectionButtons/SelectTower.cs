@@ -35,10 +35,6 @@ public class SelectTower : MonoBehaviour, ISelectable
     private void Awake()
     {
         _buttonCreator = GetComponentInParent<ButtonCreator>();
-    }
-
-    private void Start()
-    {       
         GetComponent<Button>().onClick.AddListener(OnButtonClickHandler);
     }
 }
