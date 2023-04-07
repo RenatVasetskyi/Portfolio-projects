@@ -1270,7 +1270,7 @@ MonoBehaviour:
   _parent: {fileID: 524510101}
   _skeletonPrefab: {fileID: 1105569645089216382, guid: 7aaf423270f58f2468fd2e13013ca7b6, type: 3}
   _goblinPrefab: {fileID: 2645640929389310095, guid: c468de9744645f6429927f449a90cdbd, type: 3}
-  _waveUI: {fileID: 1166873968}
+  _startWaveButton: {fileID: 1166873968}
 --- !u!4 &1059845947
 Transform:
   m_ObjectHideFlags: 0

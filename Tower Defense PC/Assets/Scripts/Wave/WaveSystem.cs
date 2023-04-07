@@ -20,16 +20,16 @@ namespace Wave
 
         [SerializeField] private Dictionary<EnemyType, GameObject> _prefabs;
 
-        [SerializeField] private UIWave _waveUI;
+        [SerializeField] private UIWave _startWaveButton;
 
         private void Awake()
         {
-            _waveUI.OnStartWave += StartWaveCoroutine;
+            _startWaveButton.OnStartWave += StartWaveCoroutine;
         }
 
         private void OnDestroy()
         {
-            _waveUI.OnStartWave -= StartWaveCoroutine;
+            _startWaveButton.OnStartWave -= StartWaveCoroutine;
         }
 
         private IEnumerator RunWave()
