@@ -7,15 +7,16 @@ public class CreateTower : MonoBehaviour
     [SerializeField] private CheckSpawnAccess _spawnAccess;
     [SerializeField] private UICoins _coinsUI;
 
-    private LocalCoinService _localCoinService;  
+    private LocalCoinService _localCoinService;    
 
     Vector3 _worlPosition;
 
     [Inject]
-    private void Construct(LocalCoinService localCoinService)
+    private void Construct(LocalCoinService localCoinService, PlayerInput input)
     {
-        _localCoinService = localCoinService;     
-    }  
+        _localCoinService = localCoinService;       
+        input.Player.CreateTower.performed += context => Create();
+    }
 
     private void Create()
     {
@@ -24,7 +25,7 @@ public class CreateTower : MonoBehaviour
         if (_spawnAccess.CheckAccess().point == default)
         {
             return;
-        }       
+        }
 
         if (_localCoinService.Coins >= _buttonCreator.SelectedButton?.Tower.Price)
         {          

@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using Zenject;
 
 public class CheckSpawnAccess : MonoBehaviour
 {
@@ -7,7 +9,15 @@ public class CheckSpawnAccess : MonoBehaviour
     private Ray _ray;
     private float _maxRaycastDistance = 200f;
 
-    private Vector3 _screenPosition;
+    private Vector2 _screenPosition;
+
+    private PlayerInput _playerInput;
+
+    [Inject]
+    private void Construct(PlayerInput input)
+    {
+        _playerInput = input;
+    }
 
     public RaycastHit CheckAccess()
     {
@@ -25,6 +35,6 @@ public class CheckSpawnAccess : MonoBehaviour
 
     private void LateUpdate()
     {
-        _screenPosition = Input.mousePosition;       
+        _screenPosition = Mouse.current.position.ReadValue();
     }
 }

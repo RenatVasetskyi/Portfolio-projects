@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,13 +9,13 @@ public class ButtonScaling : SelectButton
     //private float _scaleDuration = 0.3f;
 
     //public override void Select()
-    //{
-    //    LeanTween.scale(gameObject, _scaledSize, _scaleDuration);
+    //{      
+    //    gameObject.transform.DOScale(_scaledSize, _scaleDuration);
     //}
 
     //public override void Deselect(ButtonHolder button)
-    //{
-    //    LeanTween.scale(button.gameObject, _startSize, _scaleDuration);
+    //{      
+    //    button.gameObject.transform.DOScale(_startSize, _scaleDuration);
     //}
 
     //private void Start()
