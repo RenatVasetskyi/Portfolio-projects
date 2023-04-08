@@ -2,7 +2,7 @@ using UnityEngine;
 
 public interface ISelectable
 {
-    public void OnSelect();
-    public void OnDeselect(ButtonHolder button);
+    public void Select();
+    public void Deselect(ButtonHolder button);
 }
 

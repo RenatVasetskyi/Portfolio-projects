@@ -6,12 +6,12 @@ public class SelectButton : MonoBehaviour, ISelectable
     protected ButtonCreator _buttonCreator;
     protected ButtonHolder _buttonHolder;
 
-    public virtual void OnSelect()
+    public virtual void Select()
     {
         _buttonCreator.ChangeSelection(_buttonHolder);
     }
 
-    public virtual void OnDeselect(ButtonHolder button)
+    public virtual void Deselect(ButtonHolder button)
     {
         _buttonCreator.ChangeSelection(null);
     }
@@ -20,16 +20,16 @@ public class SelectButton : MonoBehaviour, ISelectable
     {
         if (_buttonCreator.SelectedButton == null)
         {
-            OnSelect();
+            Select();
         }
         else if (_buttonCreator.SelectedButton != null & _buttonCreator.SelectedButton.Tower.TowerType != _buttonHolder.Tower.TowerType)
         {
-            OnDeselect(_buttonHolder);
-            OnSelect();
+            Deselect(_buttonHolder);
+            Select();
         }
         else if (_buttonCreator.SelectedButton != null & _buttonCreator.SelectedButton.Tower.TowerType == _buttonHolder.Tower.TowerType)
         {
-            OnDeselect(_buttonHolder);
+            Deselect(_buttonHolder);
         }
     }
 
