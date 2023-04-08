@@ -9,5 +9,5 @@ public class LocalCoinService : MonoBehaviour
     private void Construct(LevelSettinsHolder levelSettinsHolder)
     {
         Coins = levelSettinsHolder.Coins;
-    }   
+    }  
 }
