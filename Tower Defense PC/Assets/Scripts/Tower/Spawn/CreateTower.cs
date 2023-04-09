@@ -10,7 +10,7 @@ public class CreateTower : MonoBehaviour
 
     private LocalCoinService _localCoinService;   
 
-    Vector3 _worlPosition;
+    private Vector3 _worlPosition;
 
     [Inject]
     private void Construct(LocalCoinService localCoinService, PlayerInput input)

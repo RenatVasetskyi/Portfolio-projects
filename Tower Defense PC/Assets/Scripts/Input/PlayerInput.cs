@@ -35,6 +35,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GetPreesLeftMouseButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""4abbc2ed-a12e-475f-85c8-1a395820ee24"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -46,6 +55,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Mouse"",
                     ""action"": ""CreateTower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9c71d88c-afc5-47a7-b366-6e059dc0f08a"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse"",
+                    ""action"": ""GetPreesLeftMouseButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -69,6 +89,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_CreateTower = m_Player.FindAction("CreateTower", throwIfNotFound: true);
+        m_Player_GetPreesLeftMouseButton = m_Player.FindAction("GetPreesLeftMouseButton", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -129,11 +150,13 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_CreateTower;
+    private readonly InputAction m_Player_GetPreesLeftMouseButton;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
         public PlayerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @CreateTower => m_Wrapper.m_Player_CreateTower;
+        public InputAction @GetPreesLeftMouseButton => m_Wrapper.m_Player_GetPreesLeftMouseButton;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -146,6 +169,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @CreateTower.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCreateTower;
                 @CreateTower.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCreateTower;
                 @CreateTower.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCreateTower;
+                @GetPreesLeftMouseButton.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGetPreesLeftMouseButton;
+                @GetPreesLeftMouseButton.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGetPreesLeftMouseButton;
+                @GetPreesLeftMouseButton.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGetPreesLeftMouseButton;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -153,6 +179,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @CreateTower.started += instance.OnCreateTower;
                 @CreateTower.performed += instance.OnCreateTower;
                 @CreateTower.canceled += instance.OnCreateTower;
+                @GetPreesLeftMouseButton.started += instance.OnGetPreesLeftMouseButton;
+                @GetPreesLeftMouseButton.performed += instance.OnGetPreesLeftMouseButton;
+                @GetPreesLeftMouseButton.canceled += instance.OnGetPreesLeftMouseButton;
             }
         }
     }
@@ -169,5 +198,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnCreateTower(InputAction.CallbackContext context);
+        void OnGetPreesLeftMouseButton(InputAction.CallbackContext context);
     }
 }

@@ -6,12 +6,14 @@ public class LocalInstaller : MonoInstaller
     public LevelSettinsHolder LevelSettinsHolder;
     public LocalCoinService LocalCoinService;
     public PlayerHealth PlayerHealth;
+    public UIInteraction UIInteraction;
 
     public override void InstallBindings()
     {
         BindLevelSettinsHolder();
         BindLocalCoinService();
         BindPlayerHealth();
+        BindUIInteraction();
     }
 
     private void BindLevelSettinsHolder()
@@ -41,6 +43,14 @@ public class LocalInstaller : MonoInstaller
         Container
             .Bind<PlayerHealth>()
             .FromInstance(playerHealth)
+            .AsSingle();
+    }
+
+    private void BindUIInteraction()
+    {
+        Container
+            .Bind<UIInteraction>()
+            .FromInstance(UIInteraction)
             .AsSingle();
     }
 }

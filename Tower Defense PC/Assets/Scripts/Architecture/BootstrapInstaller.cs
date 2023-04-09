@@ -2,7 +2,7 @@ using Zenject;
 
 public class BootstrapInstaller : MonoInstaller
 {
-    public PlayerInput Input;
+    public PlayerInput Input;  
 
     public override void InstallBindings()
     {

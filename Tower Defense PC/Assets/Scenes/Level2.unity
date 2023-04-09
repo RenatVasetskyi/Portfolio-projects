@@ -4580,6 +4580,7 @@ MonoBehaviour:
   LevelSettinsHolder: {fileID: 11400000, guid: 60e118e77c284184ea4e654af6d07186, type: 2}
   LocalCoinService: {fileID: 1578071393967827429, guid: c63df419d6560094c959abf83d6181ea, type: 3}
   PlayerHealth: {fileID: 8130467860731323877, guid: 7d0c967c6c6a14542860530ae7c99ea1, type: 3}
+  UIInteraction: {fileID: 1365515659}
 --- !u!114 &416865052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6270,7 +6271,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f932c1366d827a4448ad5b8fb8ce1f9c, type: 2}
   - {fileID: 11400000, guid: b2b83f0d03ada9247a5b0aad188c22cc, type: 2}
   - {fileID: 11400000, guid: d3846d19634606843b9580f0861da906, type: 2}
-  SelectedButton: {fileID: 0}
 --- !u!114 &555175070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15548,6 +15548,7 @@ GameObject:
   - component: {fileID: 1365515657}
   - component: {fileID: 1365515656}
   - component: {fileID: 1365515655}
+  - component: {fileID: 1365515659}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -15641,6 +15642,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1365515659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365515654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a0c893c8c7268478fe56fd55115e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1384342596 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: da1981c3ee8ea7e4186a753e15495628, type: 3}
