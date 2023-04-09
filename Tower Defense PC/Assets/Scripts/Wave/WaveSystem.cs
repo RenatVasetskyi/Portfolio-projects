@@ -20,7 +20,7 @@ namespace Wave
 
         [SerializeField] private Dictionary<EnemyType, GameObject> _prefabs;
 
-        [SerializeField] private UIWave _startWaveButton;
+        [SerializeField] private UIWave _startWaveButton;   
 
         private void Awake()
         {

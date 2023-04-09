@@ -7,6 +7,7 @@ public class LocalInstaller : MonoInstaller
     public LocalCoinService LocalCoinService;
     public PlayerHealth PlayerHealth;
     public UIInteraction UIInteraction;
+    public Finish Finish;
 
     public override void InstallBindings()
     {
@@ -14,6 +15,7 @@ public class LocalInstaller : MonoInstaller
         BindLocalCoinService();
         BindPlayerHealth();
         BindUIInteraction();
+        BindFinish();    
     }
 
     private void BindLevelSettinsHolder()
@@ -51,6 +53,14 @@ public class LocalInstaller : MonoInstaller
         Container
             .Bind<UIInteraction>()
             .FromInstance(UIInteraction)
+            .AsSingle();
+    }
+
+    private void BindFinish()
+    {      
+        Container
+            .Bind<Finish>()
+            .FromInstance(Finish)
             .AsSingle();
     }
 }

@@ -2,7 +2,7 @@ namespace Enemy
 {
     public enum EnemyType
     {
-        Goblin,
-        Skeleton
+        Goblin = 0,
+        Skeleton = 1
     }
 }
