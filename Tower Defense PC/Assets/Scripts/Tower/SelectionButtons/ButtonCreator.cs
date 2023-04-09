@@ -4,7 +4,7 @@ using UnityEngine;
 public class ButtonCreator : MonoBehaviour
 {
     public List<TowerSelectionButton> TowerSelectionButtons;
-    public ButtonHolder SelectedButton;/* { get; private set; }*/
+    public ButtonHolder SelectedButton { get; private set; }
 
     public void Create()
     {

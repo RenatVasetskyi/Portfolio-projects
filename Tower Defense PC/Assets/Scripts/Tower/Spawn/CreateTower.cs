@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Zenject;
 
 public class CreateTower : MonoBehaviour
@@ -7,14 +8,14 @@ public class CreateTower : MonoBehaviour
     [SerializeField] private CheckSpawnAccess _spawnAccess;
     [SerializeField] private UICoins _coinsUI;
 
-    private LocalCoinService _localCoinService;    
+    private LocalCoinService _localCoinService;   
 
     Vector3 _worlPosition;
 
     [Inject]
     private void Construct(LocalCoinService localCoinService, PlayerInput input)
     {
-        _localCoinService = localCoinService;       
+        _localCoinService = localCoinService;
         input.Player.CreateTower.performed += context => Create();
     }
 
