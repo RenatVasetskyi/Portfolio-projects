@@ -1947,7 +1947,7 @@ GameObject:
   - component: {fileID: 1059845947}
   - component: {fileID: 1059845948}
   m_Layer: 0
-  m_Name: WaveSystem
+  m_Name: EnemyFactory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1977,10 +1977,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1059845945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c576ea1d3d18ff4385606db50cdb3c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 93adafe6e919dcd478197ff62d2bf990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waveDescription: {fileID: 11400000, guid: 87a3d9cb768233f4eb4139b6b4122fb7, type: 2}
+  WaveDescription: {fileID: 11400000, guid: 87a3d9cb768233f4eb4139b6b4122fb7, type: 2}
   _startPoint: {fileID: 3423388300810395964}
   _parent: {fileID: 524510101}
   _skeletonPrefab: {fileID: 1105569645089216382, guid: 7aaf423270f58f2468fd2e13013ca7b6, type: 3}
@@ -2167,7 +2167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 1166873965}
   _waveCountText: {fileID: 276304647}
-  _waveSystem: {fileID: 1059845948}
+  _enemyFactory: {fileID: 1059845948}
 --- !u!1 &1289413506
 GameObject:
   m_ObjectHideFlags: 0

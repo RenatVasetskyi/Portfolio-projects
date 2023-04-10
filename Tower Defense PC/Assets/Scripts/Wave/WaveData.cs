@@ -8,9 +8,9 @@ namespace Wave
     public class WaveData
     {
         [SerializeField] private int _waveNumber;
-        [SerializeField] private List<EnemyOnWaveData> _enemyOnWaveDatas = new List<EnemyOnWaveData>();
+        [SerializeField] private List<EnemyData> _enemyDatas = new List<EnemyData>();
 
         public int WaveNumber => _waveNumber;
-        public List<EnemyOnWaveData> EnemyOnWaveDatas => _enemyOnWaveDatas;
+        public List<EnemyData> EnemyDatas => _enemyDatas;
     }
 }

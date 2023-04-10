@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Enemy
 {
     [System.Serializable]
-    public class EnemyOnWaveData
+    public class EnemyData
     {
         [SerializeField] private List<EnemySpawnData> _enemySpawnDatas = new List<EnemySpawnData>();
         [SerializeField] private float _timeDelayBetweenWaves;

@@ -11,7 +11,7 @@ public class UIWave : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private TextMeshProUGUI _waveCountText;
 
-    [SerializeField] private WaveSystem _waveSystem;
+    [SerializeField] private EnemyFactory _enemyFactory;
 
     private WaveDescription _waveDescription;
 
@@ -19,9 +19,9 @@ public class UIWave : MonoBehaviour
     {
         _button.onClick.AddListener(OnButtonCLickHandler);
 
-        _waveDescription = _waveSystem._waveDescription;
+        _waveDescription = _enemyFactory.WaveDescription;
         _waveCountText.text = $"{0} / {_waveDescription.WaveDatas.Count}";
-        _waveSystem.OnWaveNumberChange += UpdateWaveCountText;     
+        _enemyFactory.OnWaveNumberChange += UpdateWaveCountText;     
     }
 
     private void UpdateWaveCountText(int waveNumber)

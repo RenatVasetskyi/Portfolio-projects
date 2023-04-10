@@ -15,7 +15,8 @@ public class LocalInstaller : MonoInstaller
         BindLocalCoinService();
         BindPlayerHealth();
         BindUIInteraction();
-        BindFinish();    
+        BindFinish();
+        BindEnemyFactory();
     }
 
     private void BindLevelSettinsHolder()
@@ -61,6 +62,14 @@ public class LocalInstaller : MonoInstaller
         Container
             .Bind<Finish>()
             .FromInstance(Finish)
+            .AsSingle();
+    }
+
+    private void BindEnemyFactory()
+    {
+        Container
+            .Bind<IEnemyFactory>()
+            .To<EnemyFactory>()
             .AsSingle();
     }
 }

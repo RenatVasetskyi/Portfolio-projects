@@ -38,11 +38,6 @@ public class UIInteraction : MonoBehaviour
         _clickData.position = Mouse.current.position.ReadValue();
         ClickResult.Clear();
 
-        ui_raycaster.Raycast(_clickData, ClickResult);
-
-        foreach (RaycastResult result in ClickResult)
-        {
-            GameObject ui_element = result.gameObject;
-        }
+        ui_raycaster.Raycast(_clickData, ClickResult);     
     }
 }
