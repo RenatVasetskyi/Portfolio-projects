@@ -1,6 +1,6 @@
 public enum TowerType
 {
-    Simple, 
-    Mega, 
-    Speed
+    Simple = 0, 
+    Mega = 1, 
+    Speed = 2
 }

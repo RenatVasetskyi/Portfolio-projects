@@ -4,12 +4,18 @@ public class Bullet : MonoBehaviour, IBullet
 {
     public int Damage { get; set; }
 
-    [SerializeField] private float _bulletSpeed;
+    [SerializeField] private TowerInfo _towerInfo;   
     [SerializeField] private GameObject _destroyBulletEffect;
 
     private Transform _target;
 
     private float _destroyEffectDelay = 1f;
+    private int _bulletSpeed;
+
+    public void Initialize()
+    {
+        _bulletSpeed = _towerInfo.Bullet.Speed;
+    }
 
     public void Seek(Transform target)
     {
@@ -52,9 +58,14 @@ public class Bullet : MonoBehaviour, IBullet
         _target.GetComponent<VitalitySystem>().TakeDamage(Damage);
     }
 
-    private void Update()
+    private void Awake()
     {
+        Initialize();
+    }
+
+    private void Update()
+    {      
         CheckTarget();
         Move();
-    }
+    }  
 }

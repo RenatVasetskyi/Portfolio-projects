@@ -15,9 +15,9 @@ MonoBehaviour:
   TowerType: 2
   TowerPrefab: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
   TowerModel: {fileID: 919132149155446097, guid: a940d0a0d7c867e4696c7c49b53bdf4c, type: 3}
+  Bullet: {fileID: 11400000, guid: 42c4d0485461b984f95ff855eb4346d5, type: 2}
   RotateSpeed: 5
   Price: 90
-  Damage: 20
   FireSpeed: 2.7
-  AttackRange: 22
+  AttackRange: 25
   UpgradePrice: 70

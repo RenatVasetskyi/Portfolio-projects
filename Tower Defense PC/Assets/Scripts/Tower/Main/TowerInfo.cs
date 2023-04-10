@@ -8,9 +8,10 @@ public class TowerInfo : ScriptableObject
     public GameObject TowerPrefab;   
     public GameObject TowerModel;
 
-    public int RotateSpeed;
-    public int Price;
-    public int Damage;
+    public BulletInfo Bullet;
+
+    public int RotateSpeed;    
+    public int Price;  
     public float FireSpeed;
     public int AttackRange;
     public int UpgradePrice;

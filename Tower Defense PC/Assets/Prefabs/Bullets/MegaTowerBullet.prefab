@@ -96,5 +96,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44995f2113039f2459d00b037a30d5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletSpeed: 40
+  _towerInfo: {fileID: 11400000, guid: f99b944b6bac42249ae30047b733faf1, type: 2}
   _destroyBulletEffect: {fileID: 9095153614082709596, guid: 04a63804afc88ba48aa00152e6c897f9, type: 3}

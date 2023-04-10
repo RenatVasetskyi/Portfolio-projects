@@ -27,7 +27,7 @@ public class TowerCharacteristics : MonoBehaviour, IUpgradeTower
     public void Initialize()
     {
         CannonRotateSpeed = _tower.RotateSpeed;
-        Damage = _tower.Damage;
+        Damage = _tower.Bullet.Damage;
         FireSpeed = _tower.FireSpeed;
         AttackRange = _tower.AttackRange;
         UpgradePrice = _tower.UpgradePrice;
