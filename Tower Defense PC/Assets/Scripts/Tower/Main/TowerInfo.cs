@@ -5,12 +5,13 @@ public class TowerInfo : ScriptableObject
 {
     public TowerType TowerType;
 
-    public GameObject TowerPrefab;
+    public GameObject TowerPrefab;   
     public GameObject TowerModel;
 
+    public int RotateSpeed;
     public int Price;
-    public float Damage;
+    public int Damage;
     public float FireSpeed;
-    public float AttackRange;
-    public float UpgradePrice;
+    public int AttackRange;
+    public int UpgradePrice;
 }

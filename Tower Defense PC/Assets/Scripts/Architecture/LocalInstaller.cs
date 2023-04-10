@@ -8,15 +8,14 @@ public class LocalInstaller : MonoInstaller
     public PlayerHealth PlayerHealth;
     public UIInteraction UIInteraction;
     public Finish Finish;
-
+    
     public override void InstallBindings()
     {
         BindLevelSettinsHolder();
         BindLocalCoinService();
         BindPlayerHealth();
         BindUIInteraction();
-        BindFinish();
-        BindEnemyFactory();
+        BindFinish();    
     }
 
     private void BindLevelSettinsHolder()
@@ -62,14 +61,6 @@ public class LocalInstaller : MonoInstaller
         Container
             .Bind<Finish>()
             .FromInstance(Finish)
-            .AsSingle();
-    }
-
-    private void BindEnemyFactory()
-    {
-        Container
-            .Bind<IEnemyFactory>()
-            .To<EnemyFactory>()
             .AsSingle();
     }
 }

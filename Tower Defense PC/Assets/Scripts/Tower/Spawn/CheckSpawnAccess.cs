@@ -7,7 +7,7 @@ public class CheckSpawnAccess : MonoBehaviour
 {
     [SerializeField] private LayerMask _spawnZoneLayer;
   
-    private UIInteraction ui_interaction;
+    private UIInteraction _uiInteraction;
 
     private Ray _ray;
     private float _maxRaycastDistance = 200f;
@@ -15,9 +15,9 @@ public class CheckSpawnAccess : MonoBehaviour
     private Vector2 _screenPosition;   
 
     [Inject]
-    private void Construct(UIInteraction ui_interaction)
+    private void Construct(UIInteraction _uiInteraction)
     {
-        this.ui_interaction = ui_interaction;
+        this._uiInteraction = _uiInteraction;
     }  
 
     public RaycastHit CheckAccess()
@@ -25,7 +25,7 @@ public class CheckSpawnAccess : MonoBehaviour
         _screenPosition = Mouse.current.position.ReadValue();
         _ray = Camera.main.ScreenPointToRay(_screenPosition);
 
-        if (Physics.Raycast(_ray, out RaycastHit hit, _maxRaycastDistance, _spawnZoneLayer) & ui_interaction.ClickResult.IsEmpty())                  
+        if (Physics.Raycast(_ray, out RaycastHit hit, _maxRaycastDistance, _spawnZoneLayer) & _uiInteraction.ClickResult.IsEmpty())                  
             return hit;       
         else       
             return default;        

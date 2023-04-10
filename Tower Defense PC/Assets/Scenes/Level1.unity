@@ -2927,6 +2927,9 @@ MonoBehaviour:
   PlayerHealth: {fileID: 8130467860731323877, guid: 7d0c967c6c6a14542860530ae7c99ea1, type: 3}
   UIInteraction: {fileID: 218771790}
   Finish: {fileID: 5574110146592659637}
+  SimpleTower: {fileID: 11400000, guid: 829b450bf86ec584bbe21fbbdffe3cdb, type: 2}
+  MegaTower: {fileID: 11400000, guid: f99b944b6bac42249ae30047b733faf1, type: 2}
+  SpeedTower: {fileID: 11400000, guid: d1c51157640336b4a83b0d8f14d07f04, type: 2}
 --- !u!114 &1544447888
 MonoBehaviour:
   m_ObjectHideFlags: 0
