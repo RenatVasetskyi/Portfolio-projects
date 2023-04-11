@@ -12,8 +12,7 @@ public class EnemyFactory : MonoBehaviour, IEnemyFactory
 
     public event Action<int> OnWaveNumberChange;
 
-    [SerializeField] private Transform _startPoint;
-    [SerializeField] private Transform _parent;
+    [SerializeField] private Transform _startPoint; 
 
     [SerializeField] private GameObject _skeletonPrefab;
     [SerializeField] private GameObject _goblinPrefab;
@@ -55,7 +54,7 @@ public class EnemyFactory : MonoBehaviour, IEnemyFactory
                 {
                     for (int i = 0; i < enemySpawnData.EnemyCount; i++)
                     {
-                        _diContainer.InstantiatePrefab(_prefabs[enemySpawnData.Enemy], _startPoint.position, _startPoint.rotation, _parent);
+                        _diContainer.InstantiatePrefab(_prefabs[enemySpawnData.Enemy], _startPoint.position, _startPoint.rotation, transform);
                         yield return new WaitForSeconds(enemyOnWaveData.TimeDelayBetweenSpawns);
                     }
                 }

@@ -778,37 +778,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &524510100
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 524510101}
-  m_Layer: 0
-  m_Name: EnemyParent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &524510101
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524510100}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &533877152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,7 +1888,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1023740914
 MonoBehaviour:
@@ -1966,7 +1935,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1059845948
 MonoBehaviour:
@@ -1982,7 +1951,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveDescription: {fileID: 11400000, guid: 87a3d9cb768233f4eb4139b6b4122fb7, type: 2}
   _startPoint: {fileID: 3423388300810395964}
-  _parent: {fileID: 524510101}
   _skeletonPrefab: {fileID: 1105569645089216382, guid: 7aaf423270f58f2468fd2e13013ca7b6, type: 3}
   _goblinPrefab: {fileID: 2645640929389310095, guid: c468de9744645f6429927f449a90cdbd, type: 3}
   _startWaveButton: {fileID: 1166873968}
@@ -2214,7 +2182,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1289413510
 MonoBehaviour:
@@ -2418,7 +2386,7 @@ Transform:
   - {fileID: 981232896}
   - {fileID: 2016667113}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1360799123
 GameObject:
@@ -2459,7 +2427,7 @@ Transform:
   - {fileID: 1146697900}
   - {fileID: 1975568047}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1367688708
 PrefabInstance:
@@ -2927,9 +2895,6 @@ MonoBehaviour:
   PlayerHealth: {fileID: 8130467860731323877, guid: 7d0c967c6c6a14542860530ae7c99ea1, type: 3}
   UIInteraction: {fileID: 218771790}
   Finish: {fileID: 5574110146592659637}
-  SimpleTower: {fileID: 11400000, guid: 829b450bf86ec584bbe21fbbdffe3cdb, type: 2}
-  MegaTower: {fileID: 11400000, guid: f99b944b6bac42249ae30047b733faf1, type: 2}
-  SpeedTower: {fileID: 11400000, guid: d1c51157640336b4a83b0d8f14d07f04, type: 2}
 --- !u!114 &1544447888
 MonoBehaviour:
   m_ObjectHideFlags: 0
