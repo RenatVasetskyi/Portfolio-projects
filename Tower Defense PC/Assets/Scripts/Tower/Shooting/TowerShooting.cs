@@ -14,7 +14,7 @@ public class TowerShooting : MonoBehaviour, IShoot
         bullet.Damage = _towerCharacteristics.Damage;
 
         if (bullet != null)
-            bullet.Seek(_enemyTracking.Target);
+            bullet.GetComponent<BulletCheckTarget>().Seek(_enemyTracking.Target);
     }
 
     private void Awake()

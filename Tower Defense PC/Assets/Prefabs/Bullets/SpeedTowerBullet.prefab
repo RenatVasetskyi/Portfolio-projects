@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 5180334387422381599}
   - component: {fileID: 5180334387422381592}
   - component: {fileID: -6974448885339030931}
+  - component: {fileID: 3194585049302027011}
+  - component: {fileID: 7622276331942637091}
+  - component: {fileID: 2207236904899139457}
+  - component: {fileID: -5597864227537001812}
   m_Layer: 0
   m_Name: SpeedTowerBullet
   m_TagString: Untagged
@@ -97,4 +101,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _towerInfo: {fileID: 11400000, guid: d1c51157640336b4a83b0d8f14d07f04, type: 2}
+--- !u!114 &3194585049302027011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180334387422381593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c0b0b661c4f1047a5739881b63959a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7622276331942637091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180334387422381593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ed39295d79e1c4398b96e01902b4bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _destroyBulletEffect: {fileID: 9095153614082709596, guid: 04a63804afc88ba48aa00152e6c897f9, type: 3}
+--- !u!114 &2207236904899139457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180334387422381593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb4124cb9dc51548aa32f0258db9f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5597864227537001812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180334387422381593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508463bc1d8c67140b6ef17acf6766ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
