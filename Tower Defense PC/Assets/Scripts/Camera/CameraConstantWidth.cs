@@ -24,7 +24,7 @@ public class CameraConstantWidth : MonoBehaviour
         _horizontalFov = CalculateVerticalFov(_initialFov, 1 / _targetAspect);
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         CameraProjection();
     }
