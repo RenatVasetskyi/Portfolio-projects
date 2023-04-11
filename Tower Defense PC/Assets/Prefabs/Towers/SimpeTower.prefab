@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 422446}
   - component: {fileID: 8179968807648956582}
   - component: {fileID: -1440207067910790119}
+  - component: {fileID: -4152065741351787037}
   m_Layer: 0
   m_Name: SimpeTower
   m_TagString: Untagged
@@ -134,8 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7065056ba88524d419238dce1682114a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tower: {fileID: 11400000, guid: 829b450bf86ec584bbe21fbbdffe3cdb, type: 2}
-  _upgradeButton: {fileID: 0}
+  Tower: {fileID: 11400000, guid: 829b450bf86ec584bbe21fbbdffe3cdb, type: 2}
 --- !u!114 &-1440207067910790119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +149,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cannonRotator: {fileID: 487344}
-  _bulletPrefab: {fileID: 8943938515332123315, guid: 2ac94ed2d5b743f4dac4f9e957624719, type: 3}
+--- !u!114 &-4152065741351787037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea28ba1843552f479302b93e1c62e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _bulletStartPoint: {fileID: 2719042134056884947}
 --- !u!1 &135976
 GameObject:

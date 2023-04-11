@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 4939996705135754}
   - component: {fileID: -6727797877674516066}
   - component: {fileID: 4743602040460931356}
+  - component: {fileID: -6776475279856868647}
   m_Layer: 0
   m_Name: MegaTower
   m_TagString: Untagged
@@ -132,8 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7065056ba88524d419238dce1682114a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tower: {fileID: 11400000, guid: f99b944b6bac42249ae30047b733faf1, type: 2}
-  _upgradeButton: {fileID: 0}
+  Tower: {fileID: 11400000, guid: f99b944b6bac42249ae30047b733faf1, type: 2}
 --- !u!114 &4743602040460931356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +147,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cannonRotator: {fileID: 4519941387849242}
-  _bulletPrefab: {fileID: 339029724570663836, guid: f761d988f0445ca47b9e5bfd9aed7a0a, type: 3}
+--- !u!114 &-6776475279856868647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326093064322132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea28ba1843552f479302b93e1c62e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _bulletStartPoint: {fileID: 5300377457760801772}
 --- !u!1 &1414511323558576
 GameObject:

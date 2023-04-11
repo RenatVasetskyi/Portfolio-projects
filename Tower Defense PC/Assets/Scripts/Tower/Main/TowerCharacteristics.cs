@@ -3,7 +3,7 @@ using Zenject;
 
 public class TowerCharacteristics : MonoBehaviour, IUpgradeTower
 {
-    [SerializeField] private TowerInfo _tower;   
+    public TowerInfo Tower;   
 
     private LocalCoinService _localCoinService;
 
@@ -26,11 +26,11 @@ public class TowerCharacteristics : MonoBehaviour, IUpgradeTower
 
     public void Initialize()
     {
-        CannonRotateSpeed = _tower.RotateSpeed;
-        Damage = _tower.Bullet.Damage;
-        FireSpeed = _tower.FireSpeed;
-        AttackRange = _tower.AttackRange;
-        UpgradePrice = _tower.UpgradePrice;
+        CannonRotateSpeed = Tower.RotateSpeed;
+        Damage = Tower.Bullet.Damage;
+        FireSpeed = Tower.FireSpeed;
+        AttackRange = Tower.AttackRange;
+        UpgradePrice = Tower.UpgradePrice;
 
         DamageIncreasing = Damage / 3;
         FireSpeedIncreasing = FireSpeed / 4f;

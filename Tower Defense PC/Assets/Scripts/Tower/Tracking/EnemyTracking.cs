@@ -1,27 +1,16 @@
 using UnityEngine;
 
 public class EnemyTracking : MonoBehaviour, IEnemyTracking
-{
-    [SerializeField] private Transform _cannonRotator;   
+{   
+    [SerializeField] private Transform _cannonRotator;    
 
-    [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private Transform _bulletStartPoint;
-
-    private TowerCharacteristics _towerCharacteristics;
-
-    private Transform _target;
+    private TowerCharacteristics _towerCharacteristics;  
 
     private float _fireCountDown = 0f;
 
-    public void Shoot()
-    {       
-        GameObject bulletObj = Instantiate(_bulletPrefab, _bulletStartPoint.position, _bulletStartPoint.rotation);
-        Bullet bullet = bulletObj.GetComponent<Bullet>();            
-        bullet.Damage = _towerCharacteristics.Damage;
+    private TowerShooting _towerShooting;
 
-        if (bullet != null)
-            bullet.Seek(_target);
-    }
+    public Transform Target { get; private set; }
 
     public void UpdateTarget()
     {
@@ -40,24 +29,24 @@ public class EnemyTracking : MonoBehaviour, IEnemyTracking
         }
 
         if (nearestEnemy != null && shortestDistance <= _towerCharacteristics.AttackRange)
-            _target = nearestEnemy.transform;
+            Target = nearestEnemy.transform;
         else
-            _target = null;
+            Target = null;
     }
 
     public void Track()
     {
-        if (_target == null)
+        if (Target == null)
             return;
 
-        Vector3 direction = _target.position - transform.position;
+        Vector3 direction = Target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(_cannonRotator.rotation, lookRotation, Time.deltaTime * _towerCharacteristics.CannonRotateSpeed).eulerAngles;
         _cannonRotator.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
         if (_fireCountDown <= 0)
         {
-            Shoot();
+            _towerShooting.Shoot();
             _fireCountDown = 1f / _towerCharacteristics.FireSpeed;
         }
 
@@ -66,6 +55,7 @@ public class EnemyTracking : MonoBehaviour, IEnemyTracking
 
     private void Awake()
     {
+        _towerShooting = GetComponent<TowerShooting>();
         _towerCharacteristics = GetComponent<TowerCharacteristics>();
     }
 

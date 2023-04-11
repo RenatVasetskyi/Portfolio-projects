@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 471166}
   - component: {fileID: 1247085578907604783}
   - component: {fileID: 4373286985561511133}
+  - component: {fileID: 6718815755333449272}
   m_Layer: 0
   m_Name: SpeedTower
   m_TagString: Untagged
@@ -268,8 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7065056ba88524d419238dce1682114a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tower: {fileID: 11400000, guid: d1c51157640336b4a83b0d8f14d07f04, type: 2}
-  _upgradeButton: {fileID: 0}
+  Tower: {fileID: 11400000, guid: d1c51157640336b4a83b0d8f14d07f04, type: 2}
 --- !u!114 &4373286985561511133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +283,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cannonRotator: {fileID: 450448}
-  _bulletPrefab: {fileID: 5180334387422381593, guid: ca7d035f9d337e74a83364fb5b916ec3, type: 3}
+--- !u!114 &6718815755333449272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea28ba1843552f479302b93e1c62e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _bulletStartPoint: {fileID: 6069448310642799564}
 --- !u!1 &171538
 GameObject:
