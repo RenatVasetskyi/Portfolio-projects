@@ -1,5 +1,4 @@
 using ModestTree;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,8 +6,6 @@ using Zenject;
 
 public class ShowTowerModel : MonoBehaviour
 {
-    public event Action<Color> OnTowerZoneChanged;
-  
     [SerializeField] private LayerMask _spawnZoneLayer;
       
     private Ray _ray;
@@ -33,16 +30,7 @@ public class ShowTowerModel : MonoBehaviour
     private void Show()
     {
         if (_buttonCreator.SelectedButton != null)
-        {         
-            //if (Physics.Raycast(_ray, _maxRayDistance, _spawnZoneLayer))
-            //{
-            //    OnTowerZoneChanged.Invoke(Color.green);
-            //}
-            //else
-            //{
-            //    OnTowerZoneChanged.Invoke(Color.red);               
-            //}
-
+        {                  
             if (_isModelCreated == false)
             {
                 GameObject model = Instantiate(_buttonCreator.SelectedButton.Tower.TowerModel);

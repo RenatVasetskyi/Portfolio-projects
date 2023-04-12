@@ -4,21 +4,18 @@ public class ChangeTowerModelColor : MonoBehaviour
 {   
     [SerializeField] private Material _modelMaterial;
 
-    private ShowTowerModel _showTowerModel;
-
-    private void Awake()
+    private void OnMouseEnter()
     {
-        _showTowerModel = GetComponent<ShowTowerModel>();
-        _showTowerModel.OnTowerZoneChanged += ChangeColor;       
+        ChangeColor(Color.red);
     }
 
-    private void OnDestroy()
+    private void OnMouseExit()
     {
-        _showTowerModel.OnTowerZoneChanged -= ChangeColor;
+        ChangeColor(Color.green);
     }
 
     private void ChangeColor(Color color)
     {
-        _modelMaterial.color = color;     
-    }  
+        _modelMaterial.color = color;
+    }
 }
