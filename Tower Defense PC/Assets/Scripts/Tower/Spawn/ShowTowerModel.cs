@@ -5,12 +5,9 @@ using UnityEngine;
 using Zenject;
 
 public class ShowTowerModel : MonoBehaviour
-{
-    [SerializeField] private LayerMask _spawnZoneLayer;
-
+{   
     private Ray _ray;
-    private int _maxRayDistance = 200;
-
+   
     private Vector2 _screenPosition;
     private Vector3 _worldPosition;
 

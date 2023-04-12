@@ -346,6 +346,9 @@ MonoBehaviour:
   _spawnZoneLayer:
     serializedVersion: 2
     m_Bits: 64
+  _towerLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &191099535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,9 +374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2f2bdfd27eabd4db2f17f589fb182c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnZoneLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &218771785
 GameObject:
   m_ObjectHideFlags: 0
