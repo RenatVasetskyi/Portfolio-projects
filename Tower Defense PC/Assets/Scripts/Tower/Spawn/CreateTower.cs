@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Zenject;
 
 public class CreateTower : MonoBehaviour
@@ -29,12 +28,9 @@ public class CreateTower : MonoBehaviour
         }
 
         if (_localCoinService.Coins >= _buttonCreator.SelectedButton?.Tower.Price)
-        {          
-
-            Instantiate(_buttonCreator.SelectedButton.Tower.TowerPrefab, _worlPosition, Quaternion.identity, transform);
-
-            _localCoinService.Coins -= _buttonCreator.SelectedButton.Tower.Price;
-            _coinsUI.OnCoinsChanged.Invoke();
+        {
+            _localCoinService.Buy(_buttonCreator.SelectedButton.Tower.Price);
+            Instantiate(_buttonCreator.SelectedButton.Tower.TowerPrefab, _worlPosition, Quaternion.identity, transform);                     
         }
     }
 }

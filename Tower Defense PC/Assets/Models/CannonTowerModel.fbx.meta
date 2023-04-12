@@ -3,7 +3,32 @@ guid: 5c48f6ae46b08d64a97056a9875b8620
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cannon_material
+    second: {fileID: 2100000, guid: a88973e8ca3457e42a103c03ab078212, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flag_and_iron_material
+    second: {fileID: 2100000, guid: a88973e8ca3457e42a103c03ab078212, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_material
+    second: {fileID: 2100000, guid: a88973e8ca3457e42a103c03ab078212, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rotater_material
+    second: {fileID: 2100000, guid: a88973e8ca3457e42a103c03ab078212, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tower_material
+    second: {fileID: 2100000, guid: a88973e8ca3457e42a103c03ab078212, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

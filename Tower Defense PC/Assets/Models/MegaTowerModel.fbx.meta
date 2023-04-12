@@ -3,7 +3,12 @@ guid: 7e0687e18ba31bc468fc713856395f1a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Turret_Tower_01
+    second: {fileID: 2100000, guid: a88973e8ca3457e42a103c03ab078212, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

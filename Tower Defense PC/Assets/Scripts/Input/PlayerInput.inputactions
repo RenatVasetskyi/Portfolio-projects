@@ -15,13 +15,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "GetPreesLeftMouseButton",
+                    "name": "GetPressLeftMouseButton",
                     "type": "Button",
                     "id": "4abbc2ed-a12e-475f-85c8-1a395820ee24",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "GetMousePosition",
+                    "type": "Value",
+                    "id": "692aa3d3-6d75-4034-9708-0cabd9b67cfa",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -43,7 +52,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse",
-                    "action": "GetPreesLeftMouseButton",
+                    "action": "GetPressLeftMouseButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d0bdc23c-ce33-4ef7-a1a3-877323b60fed",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse",
+                    "action": "GetMousePosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

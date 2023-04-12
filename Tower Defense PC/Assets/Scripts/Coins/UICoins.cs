@@ -1,12 +1,9 @@
-using System;
 using TMPro;
 using UnityEngine;
 using Zenject;
 
 public class UICoins : MonoBehaviour
-{
-    public Action OnCoinsChanged;
-
+{   
     private TextMeshProUGUI _coinsText;
     private LocalCoinService _localCoinService;
 
@@ -20,12 +17,12 @@ public class UICoins : MonoBehaviour
 
     private void Start()
     {
-        OnCoinsChanged += UpdateText;
+        _localCoinService.OnCoinsChanged += UpdateText;
     }
 
     private void OnDestroy()
     {
-        OnCoinsChanged -= UpdateText;
+        _localCoinService.OnCoinsChanged -= UpdateText;
     }
 
     private void UpdateText()

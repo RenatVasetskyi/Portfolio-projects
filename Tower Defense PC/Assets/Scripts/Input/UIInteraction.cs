@@ -25,12 +25,12 @@ public class UIInteraction : MonoBehaviour
         _uiRaycaster = GetComponent<Canvas>().GetComponent<GraphicRaycaster>();
         _clickData = new PointerEventData(EventSystem.current);
         ClickResult = new List<RaycastResult>();
-        _input.Player.GetPreesLeftMouseButton.performed += context => GetUIElements();
+        _input.Player.GetPressLeftMouseButton.performed += context => GetUIElements();
     }
 
     private void OnDestroy()
     {
-        _input.Player.GetPreesLeftMouseButton.performed -= context => GetUIElements();
+        _input.Player.GetPressLeftMouseButton.performed -= context => GetUIElements();
     }
 
     private void GetUIElements()

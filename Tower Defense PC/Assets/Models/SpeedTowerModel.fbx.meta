@@ -3,7 +3,32 @@ guid: a940d0a0d7c867e4696c7c49b53bdf4c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shield_Big_mat
+    second: {fileID: 2100000, guid: a88973e8ca3457e42a103c03ab078212, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower_Base_Deco_mat
+    second: {fileID: 2100000, guid: a88973e8ca3457e42a103c03ab078212, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower_Base_mat
+    second: {fileID: 2100000, guid: a88973e8ca3457e42a103c03ab078212, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower_Top_Deco_mat
+    second: {fileID: 2100000, guid: a88973e8ca3457e42a103c03ab078212, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower_Top_mat
+    second: {fileID: 2100000, guid: a88973e8ca3457e42a103c03ab078212, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
