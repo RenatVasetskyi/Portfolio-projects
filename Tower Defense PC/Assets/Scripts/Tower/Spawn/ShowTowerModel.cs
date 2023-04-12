@@ -7,7 +7,7 @@ using Zenject;
 public class ShowTowerModel : MonoBehaviour
 {
     [SerializeField] private LayerMask _spawnZoneLayer;
-      
+
     private Ray _ray;
     private int _maxRayDistance = 200;
 
@@ -15,7 +15,7 @@ public class ShowTowerModel : MonoBehaviour
     private Vector3 _worldPosition;
 
     private Dictionary<TowerType, GameObject> _createdModel = new Dictionary<TowerType, GameObject>();
-    private bool _isModelCreated = false;   
+    private bool _isModelCreated = false;
 
     private PlayerInput _input;
     private ButtonCreator _buttonCreator;
@@ -30,7 +30,7 @@ public class ShowTowerModel : MonoBehaviour
     private void Show()
     {
         if (_buttonCreator.SelectedButton != null)
-        {                  
+        {
             if (_isModelCreated == false)
             {
                 GameObject model = Instantiate(_buttonCreator.SelectedButton.Tower.TowerModel);
@@ -40,8 +40,8 @@ public class ShowTowerModel : MonoBehaviour
             }
             else
             {
-               GameObject model = _createdModel.First().Value;
-               model.gameObject.transform.position = _worldPosition;
+                GameObject model = _createdModel.First().Value;
+                model.gameObject.transform.position = _worldPosition;
             }
 
             if (_createdModel.First().Key != _buttonCreator.SelectedButton.Tower.TowerType)
@@ -59,7 +59,7 @@ public class ShowTowerModel : MonoBehaviour
                 Destroy(_createdModel.First().Value);
                 _createdModel.Clear();
                 _isModelCreated = false;
-            }           
+            }
         }
     }
 
@@ -71,7 +71,7 @@ public class ShowTowerModel : MonoBehaviour
         if (Physics.Raycast(_ray, out RaycastHit hit))
         {
             _worldPosition = hit.point;
-        }      
+        }
 
         Show();
     }

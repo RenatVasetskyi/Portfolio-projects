@@ -5,8 +5,7 @@ public class LocalInstaller : MonoInstaller
 {
     public LevelSettinsHolder LevelSettinsHolder;
     public LocalCoinService LocalCoinService;
-    public PlayerHealth PlayerHealth;
-    public UIInteraction UIInteraction;
+    public PlayerHealth PlayerHealth;  
     public Finish Finish;
     public ButtonCreator ButtonCreator;
     
@@ -14,8 +13,7 @@ public class LocalInstaller : MonoInstaller
     {
         BindLevelSettinsHolder();
         BindLocalCoinService();
-        BindPlayerHealth();
-        BindUIInteraction();
+        BindPlayerHealth();       
         BindFinish();
         BindButtonCreator();
     }
@@ -47,14 +45,6 @@ public class LocalInstaller : MonoInstaller
         Container
             .Bind<PlayerHealth>()
             .FromInstance(playerHealth)
-            .AsSingle();
-    }
-
-    private void BindUIInteraction()
-    {
-        Container
-            .Bind<UIInteraction>()
-            .FromInstance(UIInteraction)
             .AsSingle();
     }
 
