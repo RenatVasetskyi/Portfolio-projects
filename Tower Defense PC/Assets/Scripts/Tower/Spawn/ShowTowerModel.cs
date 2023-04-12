@@ -6,12 +6,13 @@ using Zenject;
 
 public class ShowTowerModel : MonoBehaviour
 {   
+    private readonly Dictionary<TowerType, GameObject> _createdModel = new Dictionary<TowerType, GameObject>();
+    
     private Ray _ray;
    
     private Vector2 _screenPosition;
     private Vector3 _worldPosition;
 
-    private Dictionary<TowerType, GameObject> _createdModel = new Dictionary<TowerType, GameObject>();
     private bool _isModelCreated = false;
 
     private PlayerInput _input;
@@ -23,6 +24,12 @@ public class ShowTowerModel : MonoBehaviour
         _input = input;
         _buttonCreator = buttonCreator;
     }
+    
+    private void LateUpdate()
+    {
+        GetWorldPosition();
+        Show();
+    }
 
     private void Show()
     {
@@ -30,37 +37,62 @@ public class ShowTowerModel : MonoBehaviour
         {
             if (_isModelCreated == false)
             {
-                GameObject model = Instantiate(_buttonCreator.SelectedButton.Tower.TowerModel);
-                _createdModel.Clear();
-                _createdModel.Add(_buttonCreator.SelectedButton.Tower.TowerType, model);
-                _isModelCreated = true;
+                CreateModel();
+                AddToSpawned();
             }
             else
             {
-                GameObject model = _createdModel.First().Value;
-                model.gameObject.transform.position = _worldPosition;
+                MoveModel();
             }
 
             if (_createdModel.First().Key != _buttonCreator.SelectedButton.Tower.TowerType)
             {
-                Destroy(_createdModel.First().Value);
-                _createdModel.Clear();
-                GameObject towerModel = Instantiate(_buttonCreator.SelectedButton.Tower.TowerModel);
-                _createdModel.Add(_buttonCreator.SelectedButton.Tower.TowerType, towerModel);
+                ChangeModel();
             }
         }
         else
         {
             if (!_createdModel.IsEmpty())
             {
-                Destroy(_createdModel.First().Value);
-                _createdModel.Clear();
-                _isModelCreated = false;
+                DestroyModel();
             }
         }
     }
 
-    private void LateUpdate()
+    private void DestroyModel()
+    {
+        Destroy(_createdModel.First().Value);
+        _createdModel.Clear();
+        _isModelCreated = false;
+    }
+
+    private void ChangeModel()
+    {
+        Destroy(_createdModel.First().Value);
+        _createdModel.Clear();
+        GameObject towerModel = Instantiate(_buttonCreator.SelectedButton.Tower.TowerModel);
+        _createdModel.Add(_buttonCreator.SelectedButton.Tower.TowerType, towerModel);
+    }
+
+    private void MoveModel()
+    {
+        GameObject model = _createdModel.First().Value;
+        model.gameObject.transform.position = _worldPosition;
+    }
+
+    private void AddToSpawned()
+    {
+        _createdModel.Clear();
+        _createdModel.Add(_buttonCreator.SelectedButton.Tower.TowerType, CreateModel());
+    }
+
+    private GameObject CreateModel()
+    {
+        _isModelCreated = true;
+        return Instantiate(_buttonCreator.SelectedButton.Tower.TowerModel);
+    }
+    
+    private void GetWorldPosition()
     {
         _screenPosition = _input.Player.GetMousePosition.ReadValue<Vector2>();
         _ray = Camera.main.ScreenPointToRay(_screenPosition);
@@ -69,7 +101,5 @@ public class ShowTowerModel : MonoBehaviour
         {
             _worldPosition = hit.point;
         }
-
-        Show();
     }
 }

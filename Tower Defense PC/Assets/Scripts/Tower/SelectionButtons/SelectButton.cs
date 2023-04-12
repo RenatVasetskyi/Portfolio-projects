@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class SelectButton : MonoBehaviour, ISelectable
 {
-    protected ButtonCreator _buttonCreator;
     protected ButtonHolder _buttonHolder;
+    private ButtonCreator _buttonCreator;
 
     public virtual void Select()
     {
@@ -16,7 +16,7 @@ public class SelectButton : MonoBehaviour, ISelectable
         _buttonCreator.ChangeSelection(null);
     }
 
-    protected void OnButtonClickHandler()
+    private void OnButtonClickHandler()
     {
         if (_buttonCreator.SelectedButton == null)
         {

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraConstantWidth : MonoBehaviour
 {
-    public Vector2 DefaultResolution = new Vector2(720, 1280);
+    public Vector2 DefaultResolution = new Vector2(1920, 1080);
     [Range(0f, 1f)] public float WidthOrHeight = 0;
 
     private Camera _camera;
@@ -43,12 +43,12 @@ public class CameraConstantWidth : MonoBehaviour
         }
     }
 
-    private float CalculateVerticalFov(float hFovInDeg, float aspectRatio)
+    private float CalculateVerticalFov(float horizontalFovInDegrees, float aspectRatio)
     {
-        float hFovInRads = hFovInDeg * Mathf.Deg2Rad;
+        float horizontalFovInRadians = horizontalFovInDegrees * Mathf.Deg2Rad;
 
-        float vFovInRads = 2 * Mathf.Atan(Mathf.Tan(hFovInRads / 2) / aspectRatio);
+        float verticalFovInRadians = 2 * Mathf.Atan(Mathf.Tan(horizontalFovInRadians / 2) / aspectRatio);
 
-        return vFovInRads * Mathf.Rad2Deg;
+        return verticalFovInRadians * Mathf.Rad2Deg;
     }
 }

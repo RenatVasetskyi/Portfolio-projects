@@ -17,7 +17,7 @@ public class EnemyFactory : MonoBehaviour, IEnemyFactory
     [SerializeField] private GameObject _skeletonPrefab;
     [SerializeField] private GameObject _goblinPrefab;
 
-    [SerializeField] private Dictionary<EnemyType, GameObject> _prefabs;
+    private Dictionary<EnemyType, GameObject> _prefabs;
 
     [SerializeField] private UIWave _startWaveButton;
 

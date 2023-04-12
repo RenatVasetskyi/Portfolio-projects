@@ -39,10 +39,7 @@ public class EnemyTracking : MonoBehaviour, IEnemyTracking
         if (Target == null)
             return;
 
-        Vector3 direction = Target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(direction);
-        Vector3 rotation = Quaternion.Lerp(_cannonRotator.rotation, lookRotation, Time.deltaTime * _towerCharacteristics.CannonRotateSpeed).eulerAngles;
-        _cannonRotator.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        RotateTower();
 
         if (_fireCountDown <= 0)
         {
@@ -52,7 +49,7 @@ public class EnemyTracking : MonoBehaviour, IEnemyTracking
 
         _fireCountDown -= Time.deltaTime;
     }
-
+    
     private void Awake()
     {
         _towerShooting = GetComponent<TowerShooting>();
@@ -64,6 +61,17 @@ public class EnemyTracking : MonoBehaviour, IEnemyTracking
         Track();
         UpdateTarget();
     }
+
+    private void RotateTower()
+    {
+        Vector3 direction = Target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        Vector3 rotation = Quaternion
+            .Lerp(_cannonRotator.rotation, lookRotation, Time.deltaTime * _towerCharacteristics.CannonRotateSpeed)
+            .eulerAngles;
+        _cannonRotator.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    }
+
 }
 
 
