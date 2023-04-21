@@ -7,10 +7,10 @@ namespace Assets.Scripts.Architecture.States
     {
         private const string InitialScene = "Initial";
 
-        private readonly StateMachine _stateMachine;
-        private  readonly SceneLoader _sceneLoader;
+        private readonly IStateMachine _stateMachine;
+        private  readonly ISceneLoader _sceneLoader;
 
-        public BootstrapState(StateMachine stateMachine, SceneLoader sceneLoader)
+        public BootstrapState(IStateMachine stateMachine, ISceneLoader sceneLoader)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;

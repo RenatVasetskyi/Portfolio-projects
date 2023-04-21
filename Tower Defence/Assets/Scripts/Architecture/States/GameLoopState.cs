@@ -1,10 +1,11 @@
+using Assets.Scripts.Architecture.Main;
 using Assets.Scripts.Architecture.States.Interfaces;
 
-namespace Assets.Scripts.Architecture.Main
+namespace Assets.Scripts.Architecture.States
 {
     public class GameLoopState : IState
     {
-        public GameLoopState(StateMachine stateMachine)
+        public GameLoopState(IStateMachine stateMachine)
         {
         }
 

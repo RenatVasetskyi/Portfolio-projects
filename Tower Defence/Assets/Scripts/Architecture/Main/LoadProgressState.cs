@@ -5,9 +5,9 @@ namespace Assets.Scripts.Architecture.Main
 {
     public class LoadProgressState : IState
     {
-        private readonly StateMachine _stateMachine;
+        private readonly IStateMachine _stateMachine;
 
-        public LoadProgressState(StateMachine stateMachine)
+        public LoadProgressState(IStateMachine stateMachine)
         {
             _stateMachine = stateMachine;
         }

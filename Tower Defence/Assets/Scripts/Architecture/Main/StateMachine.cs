@@ -5,12 +5,12 @@ using Assets.Scripts.Architecture.States.Interfaces;
 
 namespace Assets.Scripts.Architecture.Main
 {
-    public class StateMachine
+    public class StateMachine : IStateMachine
     {
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public StateMachine(SceneLoader sceneLoader)
+        public StateMachine(ISceneLoader sceneLoader)
         {
             _states = new Dictionary<Type, IExitableState>
             {
