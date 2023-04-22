@@ -11,6 +11,7 @@ namespace Assets.Scripts.Architecture.Services
         private readonly IStaticDataService _staticData;
 
         private Transform _mainMenuCanvas;
+        private GameObject _menuParent;
 
         public UIFactory(IAssetProvider assetProvider, IStaticDataService staticData, DiContainer container)
         {
@@ -21,7 +22,7 @@ namespace Assets.Scripts.Architecture.Services
 
         public void CreateMainMenu()
         {
-            _mainMenuCanvas = _container.InstantiatePrefab(_assetProvider.Initialize<GameObject>(AssetPath.MainMenuCanvas)).transform;
+            _mainMenuCanvas = Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.MainMenuCanvas)).transform;
             CreateMainWindow();
         }
 
@@ -31,7 +32,6 @@ namespace Assets.Scripts.Architecture.Services
         public GameObject CreateLevelSelectionWindow()
         {
             WindowConfig config = _staticData.ForWindow(WindowId.LevelSelection);
-
             return _container.InstantiatePrefab(config?.Prefab, _mainMenuCanvas);
         }
     }

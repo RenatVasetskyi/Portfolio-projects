@@ -1,19 +1,28 @@
 using Assets.Scripts.Architecture.Main;
+using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.UI;
 using Zenject;
 
-namespace Assets.Scripts.Architecture.Services
+namespace Assets.Scripts.Architecture.Installers
 {
     public class ServiceInstaller : MonoInstaller
     {
         public override void InstallBindings()
         {
+            BindUIFactory();
             BindWindowService();
             BindAssetProvider();
             BindStaticDataService();
             BindSceneLoader();
             BindStateMachine();
-            BindUIFactory();
+        }
+
+        private void BindUIFactory()
+        {
+            Container
+                .Bind<IUIFactory>()
+                .To<UIFactory>()
+                .AsSingle();
         }
 
         private void BindStaticDataService()
@@ -29,14 +38,6 @@ namespace Assets.Scripts.Architecture.Services
             Container
                 .Bind<IAssetProvider>()
                 .To<AssetProvider>()
-                .AsSingle();
-        }
-
-        private void BindUIFactory()
-        {
-            Container
-                .Bind<IUIFactory>()
-                .To<UIFactory>()
                 .AsSingle();
         }
 
