@@ -13,13 +13,20 @@ namespace Assets.Scripts.UI
         private IWindowService _windowService;
 
         [Inject]
-        public void Construct(IWindowService windowService) => 
+        public void Construct(IWindowService windowService) =>
             _windowService = windowService;
 
         private void Awake() =>
             _button.onClick.AddListener(Open);
 
-        private void Open() => 
+        private void Open()
+        {
+            if (_windowService == null)
+            {
+                Debug.Log("A");
+            }
+
             _windowService.Open(_windowId);
+        }
     }
 }

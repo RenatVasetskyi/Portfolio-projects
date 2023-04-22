@@ -1,5 +1,7 @@
+using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.States;
 using UnityEngine;
+using Zenject;
 
 namespace Assets.Scripts.Architecture.Main
 {
@@ -7,9 +9,17 @@ namespace Assets.Scripts.Architecture.Main
     {
         private Game _game;
 
+        private IUIFactory _uiFactory;
+
+        [Inject]
+        public void Construct(IUIFactory uiFactory)
+        {
+            _uiFactory = uiFactory;
+        }
+
         private void Awake()
         {
-            _game = new Game(this);
+            _game = new Game(this, _uiFactory);
             _game.StateMachine.Enter<BootstrapState>();
 
             DontDestroyOnLoad(this);

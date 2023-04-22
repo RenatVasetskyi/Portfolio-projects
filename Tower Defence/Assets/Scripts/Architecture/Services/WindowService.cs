@@ -18,7 +18,7 @@ namespace Assets.Scripts.UI
                 case WindowId.Known:
                     break;
                 case WindowId.LevelSelection:
-                    _uiFactory.CreateWindow();
+                    _uiFactory.CreateLevelSelectionWindow();
                     break;
             }
         }

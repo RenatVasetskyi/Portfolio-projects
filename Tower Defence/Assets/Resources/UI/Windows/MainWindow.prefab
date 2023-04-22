@@ -777,6 +777,7 @@ GameObject:
   - component: {fileID: 4968953731004887671}
   - component: {fileID: 4968953731004887670}
   - component: {fileID: 4968953731004887669}
+  - component: {fileID: 5598173722142334040}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -887,3 +888,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5598173722142334040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4968953731004887667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b63e1934177cf264f83d7f2daee6ec90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 4968953731004887669}
+  _windowId: 1

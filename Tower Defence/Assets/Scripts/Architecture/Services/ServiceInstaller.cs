@@ -8,12 +8,12 @@ namespace Assets.Scripts.Architecture.Services
     {
         public override void InstallBindings()
         {
+            BindWindowService();
+            BindAssetProvider();
             BindStaticDataService();
             BindSceneLoader();
             BindStateMachine();
-            BindWindowService();
             BindUIFactory();
-            BindAssetProvider();
         }
 
         private void BindStaticDataService()

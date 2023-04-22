@@ -1,4 +1,5 @@
 using Assets.Scripts.Architecture.Main;
+using Assets.Scripts.Architecture.Services;
 
 namespace Assets.Scripts.Architecture.States
 {
@@ -6,11 +7,13 @@ namespace Assets.Scripts.Architecture.States
     {
         private readonly IStateMachine _stateMachine;
         private readonly ISceneLoader _sceneLoader;
+        private readonly IUIFactory _uiFactory;
 
-        public LoadLevelState(IStateMachine stateMachine, ISceneLoader sceneLoader)
+        public LoadLevelState(IStateMachine stateMachine, ISceneLoader sceneLoader, IUIFactory uiFactory)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
+            _uiFactory = uiFactory;
         }
 
         public void Exit()
@@ -22,7 +25,7 @@ namespace Assets.Scripts.Architecture.States
 
         private void InitGameWorld()
         {
-
+            _uiFactory.CreateMainMenu();
         }
 
         private void OnLoaded()
