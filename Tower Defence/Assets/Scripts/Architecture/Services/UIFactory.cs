@@ -11,7 +11,6 @@ namespace Assets.Scripts.Architecture.Services
         private readonly IStaticDataService _staticData;
 
         private Transform _mainMenuCanvas;
-        private GameObject _menuParent;
 
         public UIFactory(IAssetProvider assetProvider, IStaticDataService staticData, DiContainer container)
         {
