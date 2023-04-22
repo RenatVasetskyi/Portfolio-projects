@@ -8,7 +8,7 @@ namespace Assets.Scripts.Architecture.States
         private const string InitialScene = "Initial";
 
         private readonly IStateMachine _stateMachine;
-        private  readonly ISceneLoader _sceneLoader;
+        private readonly ISceneLoader _sceneLoader;
 
         public BootstrapState(IStateMachine stateMachine, ISceneLoader sceneLoader)
         {

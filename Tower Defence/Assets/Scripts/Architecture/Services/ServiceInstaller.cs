@@ -1,4 +1,5 @@
 using Assets.Scripts.Architecture.Main;
+using Assets.Scripts.UI;
 using Zenject;
 
 namespace Assets.Scripts.Architecture.Services
@@ -9,6 +10,33 @@ namespace Assets.Scripts.Architecture.Services
         {
             BindSceneLoader();
             BindStateMachine();
+            BindWindowService();
+            BindUIFactory();
+            BindAssetProvider();
+        }
+
+        private void BindAssetProvider()
+        {
+            Container
+                .Bind<IAssetProvider>()
+                .To<AssetProvider>()
+                .AsSingle();
+        }
+
+        private void BindUIFactory()
+        {
+            Container
+                .Bind<IUIFactory>()
+                .To<UIFactory>()
+                .AsSingle();
+        }
+
+        private void BindWindowService()
+        {
+            Container
+                .Bind<IWindowService>()
+                .To<WindowService>()
+                .AsSingle();
         }
 
         private void BindStateMachine()
