@@ -8,11 +8,20 @@ namespace Assets.Scripts.Architecture.Services
     {
         public override void InstallBindings()
         {
+            BindStaticDataService();
             BindSceneLoader();
             BindStateMachine();
             BindWindowService();
             BindUIFactory();
             BindAssetProvider();
+        }
+
+        private void BindStaticDataService()
+        {
+            Container
+                .Bind<IStaticDataService>()
+                .To<StaticDataService>()
+                .AsSingle();
         }
 
         private void BindAssetProvider()
