@@ -1,5 +1,6 @@
 using Assets.Scripts.Architecture.Main;
 using Assets.Scripts.Architecture.Services;
+using Assets.Scripts.Architecture.States;
 using Assets.Scripts.UI;
 using Zenject;
 

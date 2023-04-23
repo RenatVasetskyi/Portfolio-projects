@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Assets.Scripts.Architecture.Main;
 using Assets.Scripts.Architecture.Services;
-using Assets.Scripts.Architecture.States;
 using Assets.Scripts.Architecture.States.Interfaces;
 
-namespace Assets.Scripts.Architecture.Main
+namespace Assets.Scripts.Architecture.States
 {
     public class StateMachine : IStateMachine
     {
