@@ -50,8 +50,8 @@ namespace Assets.Scripts.Architecture.Factories
         public void CreateLevelTransferButton()
         {
             ButtonConfig buttonConfig = _staticData.ForButton(_markers.Select(x => x.Id).FirstOrDefault());
-            GameObject button = _container.InstantiatePrefab(buttonConfig.Prefab, _levelSelectionWindow.transform);
-            button.AddComponent<LevelTransferButton>().LevelId = buttonConfig.Id;
+            LevelTransferButton button = _container.InstantiatePrefabForComponent<LevelTransferButton>(buttonConfig.Prefab, _levelSelectionWindow.transform);
+            button.LevelId = buttonConfig.Id;
         }
 
         public void InitTransferButtonMarkers() => 

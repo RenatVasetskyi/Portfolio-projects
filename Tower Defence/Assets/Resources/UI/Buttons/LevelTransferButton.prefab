@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4323943483036074182}
   - component: {fileID: 4323943483036074183}
   - component: {fileID: 4323943483036074177}
+  - component: {fileID: -6909831253127889002}
   m_Layer: 5
   m_Name: LevelTransferButton
   m_TagString: Untagged
@@ -121,3 +122,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-6909831253127889002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4323943483036074187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a51924195eb354688f6047fda7c4fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelId: 1
