@@ -8,13 +8,11 @@ namespace Assets.Scripts.Architecture.States
     {
         private readonly IStateMachine _stateMachine;
         private readonly ISceneLoader _sceneLoader;
-        private readonly IUIFactory _uiFactory;
 
-        public LoadLevelState(IStateMachine stateMachine, ISceneLoader sceneLoader, IUIFactory uiFactory)
+        public LoadLevelState(IStateMachine stateMachine, ISceneLoader sceneLoader)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
-            _uiFactory = uiFactory;
         }
 
         public void Exit()
@@ -24,8 +22,9 @@ namespace Assets.Scripts.Architecture.States
         public void Enter(string nextScene) =>
             _sceneLoader.Load(nextScene, OnLoaded);
 
-        private void InitGameWorld() =>
-            _uiFactory.CreateMainMenu();
+        private void InitGameWorld()
+        {
+        }
 
         private void OnLoaded()
         {

@@ -24,6 +24,6 @@ namespace Assets.Scripts.Architecture.States
             _sceneLoader.Load(InitialScene, EnterLoadLevel);
 
         public void EnterLoadLevel() => 
-            _stateMachine.Enter<LoadProgressState>();
+            _stateMachine.Enter<LoadMainMenuState>();
     }
 }

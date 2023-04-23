@@ -8,19 +8,17 @@ namespace Assets.Scripts.Architecture.States
 {
     public class StateMachine : IStateMachine
     {
-        private readonly IUIFactory _uiFactory;
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
         public StateMachine(ISceneLoader sceneLoader, IUIFactory uiFactory)
         {
-            _uiFactory = uiFactory;
-
             _states = new Dictionary<Type, IExitableState>
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
+                [typeof(LoadMainMenuState)] = new LoadMainMenuState(sceneLoader, uiFactory),
                 [typeof(LoadProgressState)] = new LoadProgressState(this),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, _uiFactory),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader),
                 [typeof(GameLoopState)] = new GameLoopState(this),
             };
         }
