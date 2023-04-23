@@ -1,7 +1,4 @@
-using Assets.Scripts.Architecture.States;
-using Assets.Scripts.Architecture.States.Interfaces;
-
-namespace Assets.Scripts.Architecture.Main
+namespace Assets.Scripts.Architecture.States.Interfaces
 {
     public interface IStateMachine
     {

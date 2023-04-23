@@ -1,6 +1,8 @@
+using Assets.Scripts.Architecture.Factories;
 using Assets.Scripts.Architecture.Main;
 using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.States;
+using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.UI;
 using Zenject;
 
@@ -10,12 +12,12 @@ namespace Assets.Scripts.Architecture.Installers
     {
         public override void InstallBindings()
         {
+            BindSceneLoader();
             BindUIFactory();
+            BindStateMachine();
             BindWindowService();
             BindAssetProvider();
             BindStaticDataService();
-            BindSceneLoader();
-            BindStateMachine();
         }
 
         private void BindUIFactory()

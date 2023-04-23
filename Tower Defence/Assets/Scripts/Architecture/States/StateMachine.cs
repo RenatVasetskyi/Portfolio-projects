@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Assets.Scripts.Architecture.Factories;
 using Assets.Scripts.Architecture.Main;
-using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.States.Interfaces;
 
 namespace Assets.Scripts.Architecture.States
@@ -15,6 +15,7 @@ namespace Assets.Scripts.Architecture.States
         public StateMachine(ISceneLoader sceneLoader, IUIFactory uiFactory)
         {
             _uiFactory = uiFactory;
+
             _states = new Dictionary<Type, IExitableState>
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),

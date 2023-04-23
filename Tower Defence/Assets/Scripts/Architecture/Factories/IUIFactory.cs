@@ -1,10 +1,11 @@
-using UnityEngine;
-
-namespace Assets.Scripts.Architecture.Services
+namespace Assets.Scripts.Architecture.Factories
 {
     public interface IUIFactory
     {
-        GameObject CreateLevelSelectionWindow();
         void CreateMainMenu();
+        void CreateMainWindow();
+        void CreateLevelSelectionWindow();
+        void InitTransferButtonMarkers();
+        void CreateLevelTransferButton();
     }
 }

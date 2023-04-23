@@ -1,5 +1,6 @@
+using Assets.Scripts.Architecture.Factories;
 using Assets.Scripts.Architecture.Main;
-using Assets.Scripts.Architecture.Services;
+using Assets.Scripts.Architecture.States.Interfaces;
 
 namespace Assets.Scripts.Architecture.States
 {
@@ -23,10 +24,8 @@ namespace Assets.Scripts.Architecture.States
         public void Enter(string nextScene) =>
             _sceneLoader.Load(nextScene, OnLoaded);
 
-        private void InitGameWorld()
-        {
+        private void InitGameWorld() =>
             _uiFactory.CreateMainMenu();
-        }
 
         private void OnLoaded()
         {

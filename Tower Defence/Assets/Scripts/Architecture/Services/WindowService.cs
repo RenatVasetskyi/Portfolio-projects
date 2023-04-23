@@ -1,6 +1,7 @@
-using Assets.Scripts.Architecture.Services;
+using Assets.Scripts.Architecture.Factories;
+using Assets.Scripts.UI;
 
-namespace Assets.Scripts.UI
+namespace Assets.Scripts.Architecture.Services
 {
     public class WindowService : IWindowService
     {
