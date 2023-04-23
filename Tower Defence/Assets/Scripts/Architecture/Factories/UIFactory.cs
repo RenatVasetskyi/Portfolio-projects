@@ -1,5 +1,4 @@
 using System.Linq;
-using Assets.Scripts.Architecture.Main;
 using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data;
