@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.Architecture.Factories;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Zenject;
 
 namespace Assets.Scripts.UI
 {

@@ -1,6 +1,5 @@
 using System.Linq;
 using Assets.Scripts.Architecture.Services;
-using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data;
 using Assets.Scripts.UI;
 using UnityEngine;
@@ -12,11 +11,10 @@ namespace Assets.Scripts.Architecture.Factories
     public class UIFactory : IUIFactory
     {
         private readonly DiContainer _container;
-        private readonly IStateMachine _stateMachine;
         private readonly IAssetProvider _assetProvider;
         private readonly IStaticDataService _staticData;
 
-        private Transform _mainMenuCanvas;
+        private Transform _rootCanvas;
         private GameObject _levelSelectionWindow;
 
         private LevelTransferButtonMarker[] _markers;
@@ -30,30 +28,31 @@ namespace Assets.Scripts.Architecture.Factories
 
         public void CreateMainMenu()
         {
-            _mainMenuCanvas = Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.MainMenuCanvas)).transform;
-            CreateMainWindow();
+            CreateRootCanvas();
+            MainMenu mainMenu = _assetProvider.Initialize<MainMenu>(AssetPath.MainWindow);
+            Object.Instantiate(mainMenu, _rootCanvas);
         }
-
-        public void CreateMainWindow() =>
-            _container.InstantiatePrefab(_assetProvider.Initialize<GameObject>(AssetPath.MainWindow), _mainMenuCanvas);
 
         public void CreateLevelSelectionWindow()
         {
-            WindowConfig config = _staticData.ForWindow(WindowId.LevelSelection); 
-            _levelSelectionWindow = _container.InstantiatePrefab(config?.Prefab, _mainMenuCanvas);
+            WindowConfig config = _staticData.ForWindow(WindowId.LevelSelection);
+            _levelSelectionWindow = _container.InstantiatePrefab(config?.Prefab, _rootCanvas);
 
             InitTransferButtonMarkers();
             CreateLevelTransferButton();
         }
 
-        public void CreateLevelTransferButton()
+        private void CreateRootCanvas() =>
+            Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.MainMenuCanvas));
+
+        private void CreateLevelTransferButton()
         {
             ButtonConfig buttonConfig = _staticData.ForButton(_markers.Select(x => x.Id).FirstOrDefault());
             LevelTransferButton button = _container.InstantiatePrefabForComponent<LevelTransferButton>(buttonConfig.Prefab, _levelSelectionWindow.transform);
             button.LevelId = buttonConfig.Id;
         }
 
-        public void InitTransferButtonMarkers() => 
+        private void InitTransferButtonMarkers() => 
             _markers = _levelSelectionWindow.GetComponentsInChildren<LevelTransferButtonMarker>();
     }
 }
