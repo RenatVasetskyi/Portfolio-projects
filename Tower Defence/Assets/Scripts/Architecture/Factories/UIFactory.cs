@@ -42,15 +42,15 @@ namespace Assets.Scripts.Architecture.Factories
             CreateLevelTransferButton();
         }
 
-        private void CreateRootCanvas() =>
-            Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.MainMenuCanvas));
-
         private void CreateLevelTransferButton()
         {
             ButtonConfig buttonConfig = _staticData.ForButton(_markers.Select(x => x.Id).FirstOrDefault());
             LevelTransferButton button = _container.InstantiatePrefabForComponent<LevelTransferButton>(buttonConfig.Prefab, _levelSelectionWindow.transform);
             button.LevelId = buttonConfig.Id;
         }
+
+        private void CreateRootCanvas() =>
+            Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.MainMenuCanvas));
 
         private void InitTransferButtonMarkers() => 
             _markers = _levelSelectionWindow.GetComponentsInChildren<LevelTransferButtonMarker>();
