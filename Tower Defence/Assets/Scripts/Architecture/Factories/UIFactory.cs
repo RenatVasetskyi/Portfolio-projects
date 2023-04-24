@@ -14,7 +14,6 @@ namespace Assets.Scripts.Architecture.Factories
         private readonly IAssetProvider _assetProvider;
         private readonly IStaticDataService _staticData;
 
-        private Transform _rootCanvas;
         private GameObject _levelSelectionWindow;
 
         private LevelTransferButtonMarker[] _markers;
@@ -28,15 +27,16 @@ namespace Assets.Scripts.Architecture.Factories
 
         public void CreateMainMenu()
         {
-            CreateRootCanvas();
             MainMenu mainMenu = _assetProvider.Initialize<MainMenu>(AssetPath.MainWindow);
-            Object.Instantiate(mainMenu, _rootCanvas);
+            Object.Instantiate(mainMenu);
         }
 
         public void CreateLevelSelectionWindow()
         {
+            GameObject root = CreateRootCanvas();
+
             WindowConfig config = _staticData.ForWindow(WindowId.LevelSelection);
-            _levelSelectionWindow = _container.InstantiatePrefab(config?.Prefab, _rootCanvas);
+            _levelSelectionWindow = _container.InstantiatePrefab(config?.Prefab, root.transform);
 
             InitTransferButtonMarkers();
             CreateLevelTransferButton();
@@ -49,7 +49,7 @@ namespace Assets.Scripts.Architecture.Factories
             button.LevelId = buttonConfig.Id;
         }
 
-        private void CreateRootCanvas() =>
+        private GameObject CreateRootCanvas() =>
             Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.MainMenuCanvas));
 
         private void InitTransferButtonMarkers() => 

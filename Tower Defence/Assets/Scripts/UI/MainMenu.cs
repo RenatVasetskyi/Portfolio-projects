@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Assets.Scripts.Architecture.Factories;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Zenject;
 
 namespace Assets.Scripts.UI
 {
@@ -38,6 +36,8 @@ namespace Assets.Scripts.UI
 
             foreach (MainMenuItem item in _menuItems)
             {
+                yield return new WaitForSeconds(_itemAppearanceDelay);
+
                 VisualElement newElement = GetVisualElement();
                 Button button = GetButton(newElement);
 
@@ -50,7 +50,6 @@ namespace Assets.Scripts.UI
                 yield return null;
                 SetMargin(newElement, 0);
 
-                yield return new WaitForSeconds(_itemAppearanceDelay);
             }
         }
 
