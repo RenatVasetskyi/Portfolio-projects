@@ -61,7 +61,7 @@ namespace Assets.Scripts.UI
         private void ConstructButton(Button button, MainMenuItem item)
         {
             button.Q<Label>(LabelName).text = item.Name;
-            button.clicked += () => OnClick(item);
+            button.clicked += OnClick;
         }
 
         private TemplateContainer GetVisualElement() =>
@@ -73,7 +73,8 @@ namespace Assets.Scripts.UI
         private void SetMargin(VisualElement element, float moveDistance) =>
             element.style.marginRight = moveDistance;
 
-        private void OnClick(MainMenuItem item) =>
-            item.OnClick.Invoke();
+        private void OnClick()
+        {
+        }
     }
 }
