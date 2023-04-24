@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.Architecture.Factories;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Zenject;
 
 namespace Assets.Scripts.UI
 {
@@ -12,7 +14,7 @@ namespace Assets.Scripts.UI
         private const string MenuButtonName = "menu-button";
         private const string LabelName = "label";
 
-        [SerializeField] private List<MainMenuItem> _menuItems;
+        [SerializeField] private List<ButtonType> _menuItems;
 
         [Header("Settings")]
 
@@ -27,6 +29,14 @@ namespace Assets.Scripts.UI
 
         private VisualElement _container;
 
+        private IUIFactory _uiFactory;
+
+        [Inject]
+        public void Construct(IUIFactory uiFactory)
+        {
+            _uiFactory = uiFactory;
+        }
+
         private void Start() =>
             StartCoroutine(CreateMainMenu());
 
@@ -34,7 +44,7 @@ namespace Assets.Scripts.UI
         {
             _container = GetComponent<UIDocument>().rootVisualElement.Q<VisualElement>(MenuContainerName);
 
-            foreach (MainMenuItem item in _menuItems)
+            foreach (ButtonType type in _menuItems)
             {
                 yield return new WaitForSeconds(_itemAppearanceDelay);
 
@@ -42,7 +52,7 @@ namespace Assets.Scripts.UI
                 Button button = GetButton(newElement);
 
                 ConstructItem(newElement);
-                ConstructButton(button, item);
+                ConstructButton(button, type);
 
                 _container.Add(newElement);
 
@@ -59,10 +69,22 @@ namespace Assets.Scripts.UI
             item.style.transitionTimingFunction = new StyleList<EasingFunction>(new List<EasingFunction>() { new EasingFunction(_easing) });
         }
 
-        private void ConstructButton(Button button, MainMenuItem item)
+        private void ConstructButton(Button button, ButtonType type)
         {
-            button.Q<Label>(LabelName).text = item.Name;
-            button.clicked += OnClick;
+            button.Q<Label>(LabelName).text = type.ToString();
+
+            switch (type)
+            {
+                case ButtonType.Play:
+                    button.clicked += () => _uiFactory.CreateLevelSelectionWindow();
+                    break;
+                case ButtonType.Settings:
+                    button.clicked += () => Debug.Log("Settings")/*_uiFactory.CreateSettingsWindow()*/;
+                    break;
+                case ButtonType.Exit:
+                    button.clicked += () => Application.Quit();
+                    break;
+            }
         }
 
         private TemplateContainer GetVisualElement() =>
@@ -73,9 +95,5 @@ namespace Assets.Scripts.UI
 
         private void SetMargin(VisualElement element, float moveDistance) =>
             element.style.marginRight = moveDistance;
-
-        private void OnClick()
-        {
-        }
     }
 }

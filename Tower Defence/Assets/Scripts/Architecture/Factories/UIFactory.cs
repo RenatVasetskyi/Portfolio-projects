@@ -27,16 +27,18 @@ namespace Assets.Scripts.Architecture.Factories
 
         public void CreateMainMenu()
         {
+            Transform uiRoot = CreateUIRoot();
+
             MainMenu mainMenu = _assetProvider.Initialize<MainMenu>(AssetPath.MainWindow);
-            Object.Instantiate(mainMenu);
+            _container.InstantiatePrefabForComponent<MainMenu>(mainMenu, uiRoot);
         }
 
         public void CreateLevelSelectionWindow()
         {
-            GameObject root = CreateRootCanvas();
+            Transform uiRootCanvas = CreateUIRootCanvas();
 
             WindowConfig config = _staticData.ForWindow(WindowId.LevelSelection);
-            _levelSelectionWindow = _container.InstantiatePrefab(config?.Prefab, root.transform);
+            _levelSelectionWindow = _container.InstantiatePrefab(config?.Prefab, uiRootCanvas);
 
             InitTransferButtonMarkers();
             CreateLevelTransferButton();
@@ -49,8 +51,11 @@ namespace Assets.Scripts.Architecture.Factories
             button.LevelId = buttonConfig.Id;
         }
 
-        private GameObject CreateRootCanvas() =>
-            Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.MainMenuCanvas));
+        private Transform CreateUIRoot() => 
+            Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.UIRoot));
+
+        private Transform CreateUIRootCanvas() => 
+            Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.MainMenuCanvas));
 
         private void InitTransferButtonMarkers() => 
             _markers = _levelSelectionWindow.GetComponentsInChildren<LevelTransferButtonMarker>();

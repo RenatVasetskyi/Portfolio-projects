@@ -61,19 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db6ab2d0001e90419596f95366f58ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuItems:
-  - OnClick:
-      m_PersistentCalls:
-        m_Calls: []
-    Name: PLAY
-  - OnClick:
-      m_PersistentCalls:
-        m_Calls: []
-    Name: SETTINGS
-  - OnClick:
-      m_PersistentCalls:
-        m_Calls: []
-    Name: EXIT
+  _menuItems: 000000000100000002000000
   _itemTemplate: {fileID: 9197481963319205126, guid: 25e7f3b182999344ea92ec8ecfcb2b60, type: 3}
   _transitionDuration: 1.5
   _itemAppearanceDelay: 0.5
