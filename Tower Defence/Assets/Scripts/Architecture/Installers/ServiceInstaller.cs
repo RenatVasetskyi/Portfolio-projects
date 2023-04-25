@@ -1,6 +1,8 @@
 using Assets.Scripts.Architecture.Factories;
 using Assets.Scripts.Architecture.Main;
 using Assets.Scripts.Architecture.Services;
+using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Scenes;
 using Assets.Scripts.UI;
 using UnityEngine;
 using Zenject;

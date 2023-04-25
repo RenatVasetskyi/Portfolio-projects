@@ -1,11 +1,8 @@
-using Assets.Scripts.Data;
-
-namespace Assets.Scripts.Architecture.Services
+namespace Assets.Scripts.Architecture.Services.Interfaces
 {
     public interface IStaticDataService
     {
         void Load();
         WindowConfig ForWindow(WindowId id);
-        ButtonConfig ForButton(LevelId id);
     }
 }

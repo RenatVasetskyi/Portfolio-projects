@@ -1,5 +1,5 @@
-using System.Linq;
 using Assets.Scripts.Architecture.Services;
+using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
 using Assets.Scripts.UI;
 using UnityEngine;
@@ -46,9 +46,17 @@ namespace Assets.Scripts.Architecture.Factories
 
         private void CreateLevelTransferButton()
         {
-            ButtonConfig buttonConfig = _staticData.ForButton(_markers.Select(x => x.Id).FirstOrDefault());
-            LevelTransferButton button = _container.InstantiatePrefabForComponent<LevelTransferButton>(buttonConfig.Prefab, _levelSelectionWindow.transform);
-            button.LevelId = buttonConfig.Id;
+            foreach (LevelTransferButtonMarker marker in _markers)
+            {
+                if (marker.IsOpened)
+                {
+                    LevelTransferButton button =
+                        _container.InstantiatePrefabForComponent<LevelTransferButton>(_assetProvider.Initialize<LevelTransferButton>(AssetPath.LevelTransferButton),
+                            marker.transform.position, Quaternion.identity, marker.transform);
+                    button.LevelId = marker.Id;
+                }
+            }
+
         }
 
         private Transform CreateUIRoot() => 

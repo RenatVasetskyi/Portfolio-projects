@@ -3,6 +3,7 @@ namespace Assets.Scripts.Data
     public enum LevelId
     {
         None = 0,
-        FirstLevel = 1,
+        Level1 = 1,
+        Level2 = 2,
     }
 }

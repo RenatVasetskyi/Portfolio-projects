@@ -1,7 +1,6 @@
-using Assets.Scripts.Architecture.States;
 using Assets.Scripts.Architecture.States.Interfaces;
 
-namespace Assets.Scripts.Architecture.Main
+namespace Assets.Scripts.Architecture.States
 {
     public class LoadProgressState : IState
     {
@@ -20,7 +19,7 @@ namespace Assets.Scripts.Architecture.Main
         {
             LoadProgressOrInitNew();
 
-            _stateMachine.Enter<LoadLevelState, string>(Scenes.Main);
+            _stateMachine.Enter<LoadLevelState, string>(Main.Scenes.Main);
         }
 
         private void LoadProgressOrInitNew()
