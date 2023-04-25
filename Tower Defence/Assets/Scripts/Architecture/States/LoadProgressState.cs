@@ -19,7 +19,7 @@ namespace Assets.Scripts.Architecture.States
         {
             LoadProgressOrInitNew();
 
-            _stateMachine.Enter<LoadLevelState, string>(Main.Scenes.Main);
+            _stateMachine.Enter<LoadMainMenuState>();
         }
 
         private void LoadProgressOrInitNew()

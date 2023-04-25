@@ -56,7 +56,6 @@ namespace Assets.Scripts.Architecture.Factories
                     button.LevelId = marker.Id;
                 }
             }
-
         }
 
         private Transform CreateUIRoot() => 
