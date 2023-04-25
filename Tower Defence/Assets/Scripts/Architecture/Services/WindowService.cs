@@ -1,5 +1,5 @@
 using Assets.Scripts.Architecture.Factories;
-using Assets.Scripts.UI;
+using Assets.Scripts.Architecture.Services.Interfaces;
 
 namespace Assets.Scripts.Architecture.Services
 {
@@ -7,10 +7,8 @@ namespace Assets.Scripts.Architecture.Services
     {
         private readonly IUIFactory _uiFactory;
 
-        public WindowService(IUIFactory uiFactory)
-        {
+        public WindowService(IUIFactory uiFactory) =>
             _uiFactory = uiFactory;
-        }
 
         public void Open(WindowId windowId)
         {

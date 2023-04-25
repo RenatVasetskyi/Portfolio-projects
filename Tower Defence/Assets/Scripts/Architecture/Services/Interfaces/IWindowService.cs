@@ -1,6 +1,4 @@
-using Assets.Scripts.Architecture.Services;
-
-namespace Assets.Scripts.UI
+namespace Assets.Scripts.Architecture.Services.Interfaces
 {
     public interface IWindowService
     {

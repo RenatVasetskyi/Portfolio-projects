@@ -25,7 +25,7 @@ namespace Assets.Scripts.Camera
             _targetAspect = DefaultResolution.x / DefaultResolution.y;
 
             _initialFov = _camera.fieldOfView;
-            _horizontalFov = CalculateVerticalFov(_initialFov, 1 / _targetAspect);
+            _horizontalFov = CalculateCameraFov(_initialFov, 1 / _targetAspect);
         }
 
         private void LateUpdate()
@@ -37,23 +37,25 @@ namespace Assets.Scripts.Camera
         {
             if (_camera.orthographic)
             {
-                float constantWidthSize = _initialSize * (_targetAspect / _camera.aspect);
+                float constantWidthSize = CalculateConstantWidthSize();
                 _camera.orthographicSize = Mathf.Lerp(constantWidthSize, _initialSize, WidthOrHeight);
             }
             else
             {
-                float constantWidthFov = CalculateVerticalFov(_horizontalFov, _camera.aspect);
+                float constantWidthFov = CalculateCameraFov(_horizontalFov, _camera.aspect);
                 _camera.fieldOfView = Mathf.Lerp(constantWidthFov, _initialFov, WidthOrHeight);
             }
         }
 
-        private float CalculateVerticalFov(float horizontalFovInDegrees, float aspectRatio)
+        private float CalculateCameraFov(float horizontalFovInDegrees, float aspectRatio)
         {
             float horizontalFovInRadians = horizontalFovInDegrees * Mathf.Deg2Rad;
-
             float verticalFovInRadians = 2 * Mathf.Atan(Mathf.Tan(horizontalFovInRadians / 2) / aspectRatio);
 
             return verticalFovInRadians * Mathf.Rad2Deg;
         }
+
+        private float CalculateConstantWidthSize() =>
+            _initialSize * (_targetAspect / _camera.aspect);
     }
 }

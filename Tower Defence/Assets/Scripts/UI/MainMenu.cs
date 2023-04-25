@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Assets.Scripts.Architecture.Factories;
+using Assets.Scripts.Architecture.Services.Interfaces;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
@@ -14,7 +14,7 @@ namespace Assets.Scripts.UI
         private const string MenuButtonName = "menu-button";
         private const string LabelName = "label";
 
-        [SerializeField] private List<ButtonType> _menuItems;
+        [SerializeField] private List<ButtonItem> _menuItems;
 
         [Header("Settings")]
 
@@ -29,13 +29,11 @@ namespace Assets.Scripts.UI
 
         private VisualElement _container;
 
-        private IUIFactory _uiFactory;
+        private IWindowService _windowService;
 
         [Inject]
-        public void Construct(IUIFactory uiFactory)
-        {
-            _uiFactory = uiFactory;
-        }
+        public void Construct(IWindowService windowService) =>
+            _windowService = windowService;
 
         private void Start() =>
             StartCoroutine(CreateMainMenu());
@@ -44,7 +42,7 @@ namespace Assets.Scripts.UI
         {
             _container = GetComponent<UIDocument>().rootVisualElement.Q<VisualElement>(MenuContainerName);
 
-            foreach (ButtonType type in _menuItems)
+            foreach (ButtonItem item in _menuItems)
             {
                 yield return new WaitForSeconds(_itemAppearanceDelay);
 
@@ -52,7 +50,7 @@ namespace Assets.Scripts.UI
                 Button button = GetButton(newElement);
 
                 ConstructItem(newElement);
-                ConstructButton(button, type);
+                ConstructButton(button, item);
 
                 _container.Add(newElement);
 
@@ -69,17 +67,17 @@ namespace Assets.Scripts.UI
             item.style.transitionTimingFunction = new StyleList<EasingFunction>(new List<EasingFunction>() { new EasingFunction(_easing) });
         }
 
-        private void ConstructButton(Button button, ButtonType type)
+        private void ConstructButton(Button button, ButtonItem item)
         {
-            button.Q<Label>(LabelName).text = type.ToString();
+            button.Q<Label>(LabelName).text = item.Type.ToString();
 
-            switch (type)
+            switch (item.Type)
             {
                 case ButtonType.Play:
-                    button.clicked += () => _uiFactory.CreateLevelSelectionWindow();
+                    button.clicked += () => _windowService.Open(item.WindowId);
                     break;
                 case ButtonType.Settings:
-                    button.clicked += () => Debug.Log("Settings")/*_uiFactory.CreateSettingsWindow()*/;
+                    button.clicked += () => Debug.Log("Settings")/*_windowService.Open(item.WindowId)*/;
                     break;
                 case ButtonType.Exit:
                     button.clicked += () => Application.Quit();

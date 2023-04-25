@@ -61,7 +61,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db6ab2d0001e90419596f95366f58ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuItems: 000000000100000002000000
+  _menuItems:
+  - Type: 0
+    WindowId: 1
+  - Type: 1
+    WindowId: 0
+  - Type: 2
+    WindowId: 0
   _itemTemplate: {fileID: 9197481963319205126, guid: 25e7f3b182999344ea92ec8ecfcb2b60, type: 3}
   _transitionDuration: 1.5
   _itemAppearanceDelay: 0.5
