@@ -7,9 +7,14 @@ namespace Assets.Scripts.Data.Levels
     public class LevelSettings
     {
         public LevelId Id;
+
+        [Header("Prefabs")]
         public GameObject StartWavesButton;
         public GameObject CoinsCounter;
         public GameObject WaveCounter;
         public GameObject PlayersHp;
+
+        [Header("Settings")] 
+        public int Coins;
     }
 }

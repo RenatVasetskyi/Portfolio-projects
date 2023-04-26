@@ -15,18 +15,18 @@ namespace Assets.Scripts.Architecture.Factories
         private readonly DiContainer _container;
         private readonly IAssetProvider _assetProvider;
         private readonly IStaticDataService _staticData;
+        private readonly AllLevelsSettings _levels;
 
         private GameObject _levelSelectionWindow;
 
         private LevelTransferButtonMarker[] _markers;
 
-        private AllLevelsSettings _levels;
-
-        public UIFactory(IAssetProvider assetProvider, IStaticDataService staticData, DiContainer container)
+        public UIFactory(IAssetProvider assetProvider, IStaticDataService staticData, DiContainer container, AllLevelsSettings levels)
         {
             _container = container;
             _assetProvider = assetProvider;
             _staticData = staticData;
+            _levels = levels;
         }
 
         public void CreateMainMenu()
@@ -73,11 +73,8 @@ namespace Assets.Scripts.Architecture.Factories
             }
         }
 
-        private LevelSettings GetCurrentLevel()
-        {
-            AllLevelsSettings allLevels = _assetProvider.Initialize<AllLevelsSettings>(AssetPath.AllLevelSettings);
-            return allLevels.Levels.Find(x => x.Id.ToString() == SceneManager.GetActiveScene().name);
-        }
+        private LevelSettings GetCurrentLevel() =>
+            _levels.Levels.Find(x => x.Id.ToString() == SceneManager.GetActiveScene().name);
 
         private void CreateLevelButton(Transform parent, GameObject button)
         {

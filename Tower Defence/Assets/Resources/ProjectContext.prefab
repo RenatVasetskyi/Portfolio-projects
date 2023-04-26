@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coroutineRunner: {fileID: -1288143628028287822, guid: 32f2737ebd765d14ebb224afde43ea1d, type: 3}
+  _allLevelsSettings: {fileID: 11400000, guid: 446cbff9546467e48a9d196d0f67fe32, type: 2}
 --- !u!114 &2464466324727237247
 MonoBehaviour:
   m_ObjectHideFlags: 0

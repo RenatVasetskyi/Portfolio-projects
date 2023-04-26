@@ -2,6 +2,7 @@ using Assets.Scripts.Architecture.Factories;
 using Assets.Scripts.Architecture.Main;
 using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Data.Levels;
 using Assets.Scripts.Scenes;
 using UnityEngine;
 using Zenject;
@@ -11,6 +12,7 @@ namespace Assets.Scripts.Architecture.Installers
     public class ServiceInstaller : MonoInstaller
     {
         [SerializeField] private MyCoroutineRunner _coroutineRunner;
+        [SerializeField] private AllLevelsSettings _allLevelsSettings;
 
         public override void InstallBindings()
         {
@@ -20,6 +22,7 @@ namespace Assets.Scripts.Architecture.Installers
             BindAssetProvider();
             BindStaticDataService();
             BindCoroutineRunner();
+            BindAllLevels();
         }
         
         private void BindUIFactory()
@@ -66,6 +69,14 @@ namespace Assets.Scripts.Architecture.Installers
         {
             MyCoroutineRunner runner = Container.InstantiatePrefabForComponent<MyCoroutineRunner>(_coroutineRunner);
             Container.Bind<ICoroutineRunner>().To<MyCoroutineRunner>().FromInstance(runner);
+        }
+
+        private void BindAllLevels()
+        {
+            Container
+                .Bind<AllLevelsSettings>()
+                .FromScriptableObject(_allLevelsSettings)
+                .AsSingle();
         }
     }
 }
