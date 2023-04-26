@@ -3,6 +3,7 @@ using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
 using Assets.Scripts.Data.Levels;
 using Assets.Scripts.UI;
+using Assets.Scripts.UI.OnLevel.Coins;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
@@ -53,10 +54,10 @@ namespace Assets.Scripts.Architecture.Factories
             LevelSettings currentLevel = GetCurrentLevel();
             Transform parent = CreateUIRootCanvas();
 
-            CreateLevelButton(parent, currentLevel.CoinsCounter);
-            CreateLevelButton(parent, currentLevel.StartWavesButton);
-            CreateLevelButton(parent, currentLevel.WaveCounter);
-            CreateLevelButton(parent, currentLevel.PlayersHp);
+            CreateLevelButtonForComponent<ShowCoinsCount>(currentLevel.CoinsCounter, parent);
+            CreateLevelButton(currentLevel.StartWavesButton, parent);
+            CreateLevelButton(currentLevel.WaveCounter, parent);
+            CreateLevelButton(currentLevel.PlayersHp, parent);
         }
 
         private void CreateLevelTransferButton()
@@ -73,13 +74,16 @@ namespace Assets.Scripts.Architecture.Factories
             }
         }
 
-        private LevelSettings GetCurrentLevel() =>
-            _levels.Levels.Find(x => x.Id.ToString() == SceneManager.GetActiveScene().name);
-
-        private void CreateLevelButton(Transform parent, GameObject button)
+        private void CreateLevelButtonForComponent<T>(GameObject button, Transform parent)
         {
             if (button != null)
-                _container.InstantiatePrefab(button.gameObject, parent);
+                _container.InstantiatePrefabForComponent<T>(button, parent);
+        }
+
+        private void CreateLevelButton(GameObject button, Transform parent)
+        {
+            if (button != null)
+                _container.InstantiatePrefab(button, parent);
         }
 
         private Transform CreateUIRoot() => 
@@ -90,5 +94,8 @@ namespace Assets.Scripts.Architecture.Factories
 
         private void InitTransferButtonMarkers() => 
             _markers = _levelSelectionWindow.GetComponentsInChildren<LevelTransferButtonMarker>();
+
+        private LevelSettings GetCurrentLevel() =>
+            _levels.Levels.Find(x => x.Id.ToString() == SceneManager.GetActiveScene().name);
     }
 }
