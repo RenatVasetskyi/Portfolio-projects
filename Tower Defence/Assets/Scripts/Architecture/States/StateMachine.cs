@@ -18,7 +18,7 @@ namespace Assets.Scripts.Architecture.States
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
                 [typeof(LoadMainMenuState)] = new LoadMainMenuState(sceneLoader, uiFactory),
                 [typeof(LoadProgressState)] = new LoadProgressState(this),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, uiFactory),
                 [typeof(GameLoopState)] = new GameLoopState(),
             };
         }

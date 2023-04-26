@@ -1,8 +1,10 @@
 using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
+using Assets.Scripts.Data.Levels;
 using Assets.Scripts.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 using Object = UnityEngine.Object;
 
@@ -18,6 +20,8 @@ namespace Assets.Scripts.Architecture.Factories
 
         private LevelTransferButtonMarker[] _markers;
 
+        private AllLevelsSettings _levels;
+
         public UIFactory(IAssetProvider assetProvider, IStaticDataService staticData, DiContainer container)
         {
             _container = container;
@@ -29,7 +33,7 @@ namespace Assets.Scripts.Architecture.Factories
         {
             Transform uiRoot = CreateUIRoot();
 
-            MainMenu mainMenu = _assetProvider.Initialize<MainMenu>(AssetPath.MainWindow);
+            MainMenu mainMenu = _assetProvider.Initialize<MainMenu>(AssetPath.MainMenuWindow);
             _container.InstantiatePrefabForComponent<MainMenu>(mainMenu, uiRoot);
         }
 
@@ -42,6 +46,17 @@ namespace Assets.Scripts.Architecture.Factories
 
             InitTransferButtonMarkers();
             CreateLevelTransferButton();
+        }
+
+        public void CreateLevelUI()
+        {
+            LevelSettings currentLevel = GetCurrentLevel();
+            Transform parent = CreateUIRootCanvas();
+
+            CreateLevelButton(parent, currentLevel.CoinsCounter);
+            CreateLevelButton(parent, currentLevel.StartWavesButton);
+            CreateLevelButton(parent, currentLevel.WaveCounter);
+            CreateLevelButton(parent, currentLevel.PlayersHp);
         }
 
         private void CreateLevelTransferButton()
@@ -58,11 +73,23 @@ namespace Assets.Scripts.Architecture.Factories
             }
         }
 
+        private LevelSettings GetCurrentLevel()
+        {
+            AllLevelsSettings allLevels = _assetProvider.Initialize<AllLevelsSettings>(AssetPath.AllLevelSettings);
+            return allLevels.Levels.Find(x => x.Id.ToString() == SceneManager.GetActiveScene().name);
+        }
+
+        private void CreateLevelButton(Transform parent, GameObject button)
+        {
+            if (button != null)
+                _container.InstantiatePrefab(button.gameObject, parent);
+        }
+
         private Transform CreateUIRoot() => 
             Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.UIRoot));
 
         private Transform CreateUIRootCanvas() => 
-            Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.MainMenuCanvas));
+            Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
 
         private void InitTransferButtonMarkers() => 
             _markers = _levelSelectionWindow.GetComponentsInChildren<LevelTransferButtonMarker>();

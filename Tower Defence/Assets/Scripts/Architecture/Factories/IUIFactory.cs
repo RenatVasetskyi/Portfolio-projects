@@ -4,5 +4,6 @@ namespace Assets.Scripts.Architecture.Factories
     {
         void CreateMainMenu();
         void CreateLevelSelectionWindow();
+        void CreateLevelUI();
     }
 }
