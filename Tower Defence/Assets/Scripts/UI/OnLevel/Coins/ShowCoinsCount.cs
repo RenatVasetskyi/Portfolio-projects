@@ -12,7 +12,7 @@ namespace Assets.Scripts.UI.OnLevel.Coins
         private ILocalCoinService _localCoinService;
 
         [Inject]
-        public void Construct(ILocalCoinService localCoinService) => 
+        public void Construct(ILocalCoinService localCoinService) =>
             _localCoinService = localCoinService;
 
         private void Start()
