@@ -7,5 +7,6 @@ namespace Assets.Scripts.Architecture.Services.Interfaces
         event Action OnCoinsChanged;
         int Coins { get; set; }
         void Buy(int price);
+        void SetCoins();
     }
 }

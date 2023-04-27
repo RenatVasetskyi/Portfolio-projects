@@ -1,7 +1,5 @@
 using System;
 using Assets.Scripts.Architecture.Services.Interfaces;
-using Assets.Scripts.Data.Levels;
-using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Architecture.Services
 {
@@ -9,15 +7,12 @@ namespace Assets.Scripts.Architecture.Services
     {
         public event Action OnCoinsChanged;
 
-        private readonly AllLevelsSettings _levels;
+        private readonly ICurrentLevelSettingsProvider _currentLevelSettingsProvider;
 
         public int Coins { get; set; }
 
-        public LocalCoinService(AllLevelsSettings levels)
-        {
-            _levels = levels;
-            SetCoins();
-        }
+        public LocalCoinService(ICurrentLevelSettingsProvider currentLevelSettingsProvider) =>
+            _currentLevelSettingsProvider = currentLevelSettingsProvider;
 
         public void Buy(int price)
         {
@@ -25,13 +20,7 @@ namespace Assets.Scripts.Architecture.Services
             OnCoinsChanged?.Invoke();
         }
 
-        private void SetCoins()
-        {
-            LevelSettings currentLevel = GetCurrentLevel();
-            Coins = currentLevel.Coins;
-        }
-
-        private LevelSettings GetCurrentLevel() => 
-            _levels.Levels.Find(x=>x.Id.ToString() == SceneManager.GetActiveScene().name);
+        public void SetCoins() => 
+            Coins = _currentLevelSettingsProvider.GetCurrentLevelSettings().Coins;
     }
 }

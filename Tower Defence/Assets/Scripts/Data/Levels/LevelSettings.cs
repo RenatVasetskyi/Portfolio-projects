@@ -16,5 +16,6 @@ namespace Assets.Scripts.Data.Levels
 
         [Header("Settings")] 
         public int Coins;
+        public int Hp;
     }
 }

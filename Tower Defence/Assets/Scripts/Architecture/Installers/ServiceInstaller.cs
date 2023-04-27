@@ -23,8 +23,35 @@ namespace Assets.Scripts.Architecture.Installers
             BindStaticDataService();
             BindCoroutineRunner();
             BindAllLevels();
+            BindLocalCoinService();
+            BindCurrentLevelSettingsProvider();
+            BindPlayerHpService();
         }
-        
+
+        private void BindPlayerHpService()
+        {
+            Container
+                .Bind<IPlayerHpService>()
+                .To<PlayerHpService>()
+                .AsSingle();
+        }
+
+        private void BindCurrentLevelSettingsProvider()
+        {
+            Container
+                .Bind<ICurrentLevelSettingsProvider>()
+                .To<CurrentLevelSettingsProvider>().AsSingle();
+        }
+
+        private void BindLocalCoinService()
+        {
+            Container
+                .Bind<ILocalCoinService>()
+                .To<LocalCoinService>()
+                .AsSingle()
+                .NonLazy();
+        }
+
         private void BindUIFactory()
         {
             Container

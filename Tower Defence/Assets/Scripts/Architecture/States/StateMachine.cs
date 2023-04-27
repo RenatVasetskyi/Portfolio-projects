@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Assets.Scripts.Architecture.Factories;
 using Assets.Scripts.Architecture.Main;
+using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 
 namespace Assets.Scripts.Architecture.States
@@ -11,14 +12,14 @@ namespace Assets.Scripts.Architecture.States
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public StateMachine(ISceneLoader sceneLoader, IUIFactory uiFactory)
+        public StateMachine(ISceneLoader sceneLoader, IUIFactory uiFactory, ILocalCoinService localCoinService, IPlayerHpService playerHpService)
         {
             _states = new Dictionary<Type, IExitableState>
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
                 [typeof(LoadMainMenuState)] = new LoadMainMenuState(sceneLoader, uiFactory),
                 [typeof(LoadProgressState)] = new LoadProgressState(this),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, uiFactory),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, uiFactory, localCoinService, playerHpService),
                 [typeof(GameLoopState)] = new GameLoopState(),
             };
         }
