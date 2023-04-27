@@ -14,8 +14,11 @@ namespace Assets.Scripts.Data.Levels
         public GameObject WaveCounter;
         public GameObject PlayersHp;
 
-        [Header("Settings")] 
+        [Header("GeneralSettings")] 
         public int Coins;
         public int Hp;
+
+        [Header("WaveSettings")]
+        public WaveSettings WaveSettings;
     }
 }
