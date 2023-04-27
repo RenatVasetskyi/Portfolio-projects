@@ -7,6 +7,5 @@ namespace Assets.Scripts.Data
         public const string UIRootCanvas = "UI/UIRootCanvas";
         public const string UIRoot = "UI/UIRoot";
         public const string LevelTransferButton = "UI/Buttons/Main/LevelTransferButton";
-        public const string AllLevelSettings = "LevelsData/LevelsHolder";
     }
 }
