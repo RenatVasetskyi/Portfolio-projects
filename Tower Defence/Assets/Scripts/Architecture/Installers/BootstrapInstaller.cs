@@ -21,8 +21,6 @@ namespace Assets.Scripts.Architecture.Installers
             stateMachine.States.Add(typeof(BootstrapState), Container.Resolve<BootstrapState>());
             stateMachine.States.Add(typeof(LoadProgressState), Container.Resolve<LoadProgressState>());
             stateMachine.States.Add(typeof(LoadMainMenuState), Container.Resolve<LoadMainMenuState>());
-            stateMachine.States.Add(typeof(LoadLevelState), Container.Resolve<LoadLevelState>());
-            stateMachine.States.Add(typeof(GameLoopState), Container.Resolve<GameLoopState>());
         }
 
         private void BindStates()
@@ -30,8 +28,6 @@ namespace Assets.Scripts.Architecture.Installers
             Container.Bind<BootstrapState>().AsSingle();
             Container.Bind<LoadProgressState>().AsSingle();
             Container.Bind<LoadMainMenuState>().AsSingle();
-            Container.Bind<LoadLevelState>().AsSingle();
-            Container.Bind<GameLoopState>().AsSingle();
         }
 
         public void Initialize() => 

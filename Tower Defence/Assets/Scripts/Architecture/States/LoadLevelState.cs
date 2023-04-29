@@ -2,36 +2,36 @@ using Assets.Scripts.Architecture.Factories;
 using Assets.Scripts.Architecture.Main;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
+using UnityEngine;
 
 namespace Assets.Scripts.Architecture.States
 {
-    public class LoadLevelState : IPayloadedState<string>
+    public class LoadLevelState : IState/*IPayloadedState<string>*/
     {
         private readonly IStateMachine _stateMachine;
-        private readonly ISceneLoader _sceneLoader;
-        private readonly IUIFactory _uiFactory;
+        private readonly ILevelUIFactory _levelUIFactory;
         private readonly ILocalCoinService _localCoinService;
         private readonly IPlayerHpService _playerHpService;
 
-        public LoadLevelState(IStateMachine stateMachine, ISceneLoader sceneLoader, IUIFactory uiFactory, ILocalCoinService localCoinService, IPlayerHpService playerHpService)
+        public LoadLevelState(IStateMachine stateMachine, ILevelUIFactory levelUIFactory, ILocalCoinService localCoinService, IPlayerHpService playerHpService)
         {
             _stateMachine = stateMachine;
-            _sceneLoader = sceneLoader;
-            _uiFactory = uiFactory;
+            _levelUIFactory = levelUIFactory;
             _localCoinService = localCoinService;
             _playerHpService = playerHpService;
+            Debug.Log("LoadLevelState");
         }
 
         public void Exit()
         {
         }
 
-        public void Enter(string nextScene) =>
-            _sceneLoader.Load(nextScene, OnLoaded);
+        public void Enter() => 
+            OnLoaded();
 
         private void InitGameWorld()
         {
-            _uiFactory.CreateLevelUI();
+            _levelUIFactory.CreateLevelUI();
             _localCoinService.SetCoins();
             _playerHpService.SetHp();
         }

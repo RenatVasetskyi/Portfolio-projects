@@ -18,13 +18,11 @@ namespace Assets.Scripts.Architecture.States
         public void Enter()
         {
             LoadProgressOrInitNew();
-
             _stateMachine.Enter<LoadMainMenuState>();
         }
 
         private void LoadProgressOrInitNew()
         {
-
         }
     }
 }

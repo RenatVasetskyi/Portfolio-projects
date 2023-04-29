@@ -10,10 +10,8 @@ namespace Assets.Scripts.Scenes
     {
         private readonly ICoroutineRunner _coroutineRunner;
 
-        public SceneLoader(ICoroutineRunner coroutineRunner)
-        {
+        public SceneLoader(ICoroutineRunner coroutineRunner) =>
             _coroutineRunner = coroutineRunner;
-        }
 
         public void Load(string nextScene, Action onLoaded = null) =>
             _coroutineRunner.StartCoroutine(LoadScene(nextScene, onLoaded));
