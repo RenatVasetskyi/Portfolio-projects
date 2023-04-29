@@ -9,7 +9,29 @@ namespace Assets.Scripts.Architecture.Installers
         public override void InstallBindings()
         {
             BindInterfaces();
-            BindStateMachine();
+            BindStateMachine(); 
+            BindStates();
+            AddStatesToStateMachine();
+        }
+
+        private void AddStatesToStateMachine()
+        {
+            IStateMachine stateMachine = Container.Resolve<IStateMachine>();
+
+            stateMachine.States.Add(typeof(BootstrapState), Container.Resolve<BootstrapState>());
+            stateMachine.States.Add(typeof(LoadProgressState), Container.Resolve<LoadProgressState>());
+            stateMachine.States.Add(typeof(LoadMainMenuState), Container.Resolve<LoadMainMenuState>());
+            stateMachine.States.Add(typeof(LoadLevelState), Container.Resolve<LoadLevelState>());
+            stateMachine.States.Add(typeof(GameLoopState), Container.Resolve<GameLoopState>());
+        }
+
+        private void BindStates()
+        {
+            Container.Bind<BootstrapState>().AsSingle();
+            Container.Bind<LoadProgressState>().AsSingle();
+            Container.Bind<LoadMainMenuState>().AsSingle();
+            Container.Bind<LoadLevelState>().AsSingle();
+            Container.Bind<GameLoopState>().AsSingle();
         }
 
         public void Initialize() => 

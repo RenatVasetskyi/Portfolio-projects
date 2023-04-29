@@ -9,20 +9,8 @@ namespace Assets.Scripts.Architecture.States
 {
     public class StateMachine : IStateMachine
     {
-        private readonly Dictionary<Type, IExitableState> _states;
+        public Dictionary<Type, IExitableState> States { get; set; } = new();
         private IExitableState _activeState;
-
-        public StateMachine(ISceneLoader sceneLoader, IUIFactory uiFactory, ILocalCoinService localCoinService, IPlayerHpService playerHpService)
-        {
-            _states = new Dictionary<Type, IExitableState>
-            {
-                [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
-                [typeof(LoadMainMenuState)] = new LoadMainMenuState(sceneLoader, uiFactory),
-                [typeof(LoadProgressState)] = new LoadProgressState(this),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, uiFactory, localCoinService, playerHpService),
-                [typeof(GameLoopState)] = new GameLoopState(),
-            };
-        }
 
         public void Enter<TState>() where TState : class, IState
         {
@@ -47,6 +35,6 @@ namespace Assets.Scripts.Architecture.States
         }
 
         private TState GetState<TState>() where TState : class, IExitableState =>
-            _states[typeof(TState)] as TState;
+            States[typeof(TState)] as TState;
     }
 }
