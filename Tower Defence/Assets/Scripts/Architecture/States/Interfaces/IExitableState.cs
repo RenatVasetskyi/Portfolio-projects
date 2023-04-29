@@ -1,4 +1,4 @@
-namespace Assets.Scripts.Architecture.States
+namespace Assets.Scripts.Architecture.States.Interfaces
 {
     public interface IExitableState
     {

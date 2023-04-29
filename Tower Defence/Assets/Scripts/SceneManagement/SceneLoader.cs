@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
-using Assets.Scripts.Architecture.Main;
+using Assets.Scripts.Architecture.States.Interfaces;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.Scenes
+namespace Assets.Scripts.SceneManagement
 {
     public class SceneLoader : ISceneLoader
     {

@@ -1,7 +1,8 @@
+using Assets.Scripts.EnemyPath;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Assets.Scripts.Architecture.Factories
+namespace Assets.Scripts.Enemy
 {
     public class Enemy : MonoBehaviour
     {

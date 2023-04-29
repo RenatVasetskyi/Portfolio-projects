@@ -1,7 +1,7 @@
 using Assets.Scripts.Data;
 using UnityEngine;
 
-namespace Assets.Scripts.Architecture.Factories
+namespace Assets.Scripts.EnemyPath
 {
     public class Finish : MonoBehaviour
     {

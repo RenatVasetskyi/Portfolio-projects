@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
 
-namespace Assets.Scripts.UI
+namespace Assets.Scripts.UI.MainMenu
 {
     [RequireComponent(typeof(UIDocument))]
     public class MainMenu : MonoBehaviour

@@ -14,14 +14,11 @@ namespace Assets.Scripts.Architecture.Installers
             AddStatesToStateMachine();
         }
 
-        private void AddStatesToStateMachine()
-        {
-            IStateMachine stateMachine = Container.Resolve<IStateMachine>();
+        public void Initialize() => 
+            Container.Resolve<IStateMachine>().Enter<BootstrapState>();
 
-            stateMachine.States.Add(typeof(BootstrapState), Container.Resolve<BootstrapState>());
-            stateMachine.States.Add(typeof(LoadProgressState), Container.Resolve<LoadProgressState>());
-            stateMachine.States.Add(typeof(LoadMainMenuState), Container.Resolve<LoadMainMenuState>());
-        }
+        private void BindInterfaces() =>
+            Container.BindInterfacesTo<BootstrapInstaller>().FromInstance(this).AsSingle().NonLazy();
 
         private void BindStates()
         {
@@ -30,11 +27,14 @@ namespace Assets.Scripts.Architecture.Installers
             Container.Bind<LoadMainMenuState>().AsSingle();
         }
 
-        public void Initialize() => 
-            Container.Resolve<IStateMachine>().Enter<BootstrapState>();
+        private void AddStatesToStateMachine()
+        {
+            IStateMachine stateMachine = Container.Resolve<IStateMachine>();
 
-        private void BindInterfaces() =>
-            Container.BindInterfacesTo<BootstrapInstaller>().FromInstance(this).AsSingle().NonLazy();
+            stateMachine.States.Add(typeof(BootstrapState), Container.Resolve<BootstrapState>());
+            stateMachine.States.Add(typeof(LoadProgressState), Container.Resolve<LoadProgressState>());
+            stateMachine.States.Add(typeof(LoadMainMenuState), Container.Resolve<LoadMainMenuState>());
+        }
 
         private void BindStateMachine()
         {

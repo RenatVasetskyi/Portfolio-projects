@@ -1,14 +1,13 @@
-using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
-using Assets.Scripts.Data.Levels;
+using Assets.Scripts.Data.Windows;
 using Assets.Scripts.UI;
+using Assets.Scripts.UI.MainMenu;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Zenject;
 using Object = UnityEngine.Object;
 
-namespace Assets.Scripts.Architecture.Factories
+namespace Assets.Scripts.Architecture.Services.Factories
 {
     public class UIFactory : IUIFactory
     {

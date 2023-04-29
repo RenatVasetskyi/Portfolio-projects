@@ -1,11 +1,11 @@
+using System.Collections.Generic;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
 using Assets.Scripts.Enemy;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Architecture.Factories
+namespace Assets.Scripts.Architecture.Services.Factories
 {
     public class EnemyFactory : IEnemyFactory
     {
@@ -21,8 +21,8 @@ namespace Assets.Scripts.Architecture.Factories
             Initialize();
         }
 
-        public Enemy CreateEnemy(GameObject prefab, Vector3 at, Quaternion rotation, Transform parent) =>
-            _container.InstantiatePrefabForComponent<Enemy>(prefab, at, rotation, parent);
+        public Enemy.Enemy CreateEnemy(GameObject prefab, Vector3 at, Quaternion rotation, Transform parent) =>
+            _container.InstantiatePrefabForComponent<Enemy.Enemy>(prefab, at, rotation, parent);
 
         private void Initialize()
         {

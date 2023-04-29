@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
+using Assets.Scripts.Data.Windows;
 using UnityEngine;
 
 namespace Assets.Scripts.Architecture.Services
@@ -9,6 +10,7 @@ namespace Assets.Scripts.Architecture.Services
     public class StaticDataService : IStaticDataService
     {
         private Dictionary<WindowId, WindowConfig> _windows;
+
         public StaticDataService() => Load();
 
         public void Load()

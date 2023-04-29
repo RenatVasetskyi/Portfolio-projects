@@ -1,6 +1,6 @@
 using System;
 
-namespace Assets.Scripts.Architecture.Main
+namespace Assets.Scripts.SceneManagement
 {
     public interface ISceneLoader
     {

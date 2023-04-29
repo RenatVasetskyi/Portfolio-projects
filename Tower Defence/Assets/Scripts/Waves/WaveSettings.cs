@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Assets.Scripts.Waves;
 
-namespace Assets.Scripts.Data.Levels
+namespace Assets.Scripts.Waves
 {
     [Serializable]
     public class WaveSettings

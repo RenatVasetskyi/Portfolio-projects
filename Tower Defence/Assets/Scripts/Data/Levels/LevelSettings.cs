@@ -1,4 +1,5 @@
 using System;
+using Assets.Scripts.Waves;
 using UnityEngine;
 
 namespace Assets.Scripts.Data.Levels

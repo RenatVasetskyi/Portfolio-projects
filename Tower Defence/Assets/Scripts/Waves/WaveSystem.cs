@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using Assets.Scripts.Architecture.Factories;
-using Assets.Scripts.Architecture.Main;
+using Assets.Scripts.Architecture.Services.Factories;
 using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data;
 using UnityEngine;
 using Assets.Scripts.Enemy;
+using Assets.Scripts.EnemyPath;
 
 namespace Assets.Scripts.Waves
 {
@@ -20,9 +21,9 @@ namespace Assets.Scripts.Waves
         [SerializeField] private GameObject _skeletonPrefab;
         [SerializeField] private GameObject _goblinPrefab;
 
-        private Dictionary<EnemyType, GameObject> _prefabs;
-
-        public WaveSystem(ICurrentLevelSettingsProvider currentLevelSettingsProvider, StartPoint startPoint, IAssetProvider assetProvider, IEnemyFactory enemyFactory, ICoroutineRunner coroutineRunner)
+        public WaveSystem(ICurrentLevelSettingsProvider currentLevelSettingsProvider,
+            StartPoint startPoint, IAssetProvider assetProvider, 
+            IEnemyFactory enemyFactory, ICoroutineRunner coroutineRunner)
         {
             _currentLevelSettingsProvider = currentLevelSettingsProvider;
             _startPoint = startPoint;
@@ -30,7 +31,10 @@ namespace Assets.Scripts.Waves
             _enemyFactory = enemyFactory;
             _coroutineRunner = coroutineRunner;
         }
-            
+
+        public void RunStartWaveCoroutine() =>
+            _coroutineRunner.StartCoroutine(StartWave());
+
         private IEnumerator StartWave()
         { 
             Transform parent = Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.EnemyParent));
@@ -41,32 +45,16 @@ namespace Assets.Scripts.Waves
                 {
                     yield return new WaitForSeconds(enemyOnWaveData.TimeDelayBetweenWaves);
 
-                    //OnWaveNumberChange?.Invoke(waveData.WaveNumber);
-
                     foreach (var enemySpawnData in enemyOnWaveData.EnemySpawnDatas)
                     {
                         for (int i = 0; i < enemySpawnData.EnemyCount; i++)
                         {
-                            _enemyFactory.CreateEnemy(_prefabs[enemySpawnData.Enemy], _startPoint.transform.position, Quaternion.identity, parent);
-                            //_container.InstantiatePrefab(_prefabs[enemySpawnData.Enemy], _startPoint.transform.position, _startPoint.transform.rotation, parent.transform);
+                            _enemyFactory.CreateEnemy(_enemyFactory.Prefabs[enemySpawnData.Enemy], _startPoint.transform.position, Quaternion.identity, parent);
                             yield return new WaitForSeconds(enemyOnWaveData.TimeDelayBetweenSpawns);
                         }
                     }
                 }
             }
         }
-
-        public void RunStartWaveCoroutine() =>
-            _coroutineRunner.StartCoroutine(StartWave());
-
-        //private void OnDestroy()
-        //{
-        //    _startWaveButton.OnStartWave -= StartCreation;
-        //}
-
-        //private void StartCreation()
-        //{
-        //    StartCoroutine(Create());
-        //}
     }
 }

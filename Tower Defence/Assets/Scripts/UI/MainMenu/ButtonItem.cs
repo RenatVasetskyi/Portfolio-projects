@@ -1,7 +1,7 @@
 using System;
-using Assets.Scripts.Architecture.Services;
+using Assets.Scripts.Data.Windows;
 
-namespace Assets.Scripts.UI
+namespace Assets.Scripts.UI.MainMenu
 {
     [Serializable]
     public class ButtonItem

@@ -1,4 +1,4 @@
-namespace Assets.Scripts.Architecture.Factories
+namespace Assets.Scripts.Architecture.Services.Factories
 {
     public interface ILevelUIFactory
     {

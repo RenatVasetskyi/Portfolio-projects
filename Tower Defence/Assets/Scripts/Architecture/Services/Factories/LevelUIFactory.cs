@@ -6,7 +6,7 @@ using Assets.Scripts.UI.OnLevel.StartWave;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Architecture.Factories
+namespace Assets.Scripts.Architecture.Services.Factories
 {
     public class LevelUIFactory : ILevelUIFactory
     {

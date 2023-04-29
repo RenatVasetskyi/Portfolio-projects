@@ -1,12 +1,11 @@
-using Assets.Scripts.Architecture.Factories;
-using Assets.Scripts.Architecture.Main;
+using Assets.Scripts.Architecture.Services.Factories;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts.Architecture.States
 {
-    public class LoadLevelState : IState/*IPayloadedState<string>*/
+    public class LoadLevelState : IState
     {
         private readonly IStateMachine _stateMachine;
         private readonly ILevelUIFactory _levelUIFactory;

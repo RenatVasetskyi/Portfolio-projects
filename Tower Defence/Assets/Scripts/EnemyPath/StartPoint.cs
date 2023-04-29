@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Scripts.Architecture.Factories
+namespace Assets.Scripts.EnemyPath
 {
     public class StartPoint : MonoBehaviour
     {

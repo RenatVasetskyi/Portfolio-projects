@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Architecture.Services
+﻿namespace Assets.Scripts.Data.Windows
 {
     public enum WindowId
     {

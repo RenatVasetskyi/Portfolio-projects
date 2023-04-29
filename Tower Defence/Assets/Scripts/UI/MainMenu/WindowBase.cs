@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WindowBase : MonoBehaviour
+namespace Assets.Scripts.UI.MainMenu
 {
-    [SerializeField] private Button _button;
+    public class WindowBase : MonoBehaviour
+    {
+        [SerializeField] private Button _button;
 
-    private void Awake() =>
-        _button.onClick.AddListener(() => Destroy(gameObject));
+        private void Awake() =>
+            _button.onClick.AddListener(() => Destroy(gameObject));
+    }
 }

@@ -1,7 +1,8 @@
 using System;
+using Assets.Scripts.Architecture.Services;
 using UnityEngine;
 
-namespace Assets.Scripts.Architecture.Services
+namespace Assets.Scripts.Data.Windows
 {
     [Serializable]
     public class WindowConfig

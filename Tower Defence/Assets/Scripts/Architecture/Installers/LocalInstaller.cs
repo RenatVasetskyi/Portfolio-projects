@@ -1,6 +1,7 @@
-using Assets.Scripts.Architecture.Factories;
+using Assets.Scripts.Architecture.Services.Factories;
 using Assets.Scripts.Architecture.States;
 using Assets.Scripts.Architecture.States.Interfaces;
+using Assets.Scripts.EnemyPath;
 using Assets.Scripts.Waves;
 using UnityEngine;
 using Zenject;
@@ -21,7 +22,6 @@ namespace Assets.Scripts.Architecture.Installers
             BindStartPoint();
             BindFinish();
             BindWaveSystem();
-            Debug.Log("LocalInstaller");
         }
 
         private void BindLevelUIFactory()
