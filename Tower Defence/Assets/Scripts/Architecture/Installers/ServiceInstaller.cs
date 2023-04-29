@@ -5,6 +5,7 @@ using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data.Levels;
 using Assets.Scripts.SceneManagement;
+using Assets.Scripts.UI.ShowProgress;
 using UnityEngine;
 using Zenject;
 
@@ -14,9 +15,11 @@ namespace Assets.Scripts.Architecture.Installers
     {
         [SerializeField] private MyCoroutineRunner _coroutineRunner;
         [SerializeField] private AllLevelsSettings _allLevelsSettings;
+        [SerializeField] private LoadingCurtain _loadingCurtain;
 
         public override void InstallBindings()
         {
+            BindLoadingCurtain();
             BindSceneLoader();
             BindUIFactory();
             BindWindowService();
@@ -27,6 +30,17 @@ namespace Assets.Scripts.Architecture.Installers
             BindLocalCoinService();
             BindCurrentLevelSettingsProvider();
             BindPlayerHpService();
+        }
+
+        private void BindLoadingCurtain()
+        {
+            LoadingCurtain loadingCurtain = Container
+                .InstantiatePrefabForComponent<LoadingCurtain>(_loadingCurtain);
+
+            Container
+                .Bind<LoadingCurtain>()
+                .FromInstance(loadingCurtain)
+                .AsSingle();
         }
 
         private void BindPlayerHpService()

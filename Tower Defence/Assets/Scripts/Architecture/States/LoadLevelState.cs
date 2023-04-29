@@ -1,44 +1,33 @@
-using Assets.Scripts.Architecture.Services.Factories;
-using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
-using UnityEngine;
+using Assets.Scripts.SceneManagement;
+using Assets.Scripts.UI.ShowProgress;
 
 namespace Assets.Scripts.Architecture.States
 {
-    public class LoadLevelState : IState
+    public class LoadLevelState : IPayloadedState<string>
     {
+        private readonly LoadingCurtain _loadingCurtain;
+        private readonly ISceneLoader _sceneLoader;
         private readonly IStateMachine _stateMachine;
-        private readonly ILevelUIFactory _levelUIFactory;
-        private readonly ILocalCoinService _localCoinService;
-        private readonly IPlayerHpService _playerHpService;
 
-        public LoadLevelState(IStateMachine stateMachine, ILevelUIFactory levelUIFactory, ILocalCoinService localCoinService, IPlayerHpService playerHpService)
+        public LoadLevelState(IStateMachine stateMachine, LoadingCurtain loadingCurtain, ISceneLoader sceneLoader)
         {
+            _loadingCurtain = loadingCurtain;
+            _sceneLoader = sceneLoader;
             _stateMachine = stateMachine;
-            _levelUIFactory = levelUIFactory;
-            _localCoinService = localCoinService;
-            _playerHpService = playerHpService;
-            Debug.Log("LoadLevelState");
         }
 
         public void Exit()
         {
         }
 
-        public void Enter() => 
-            OnLoaded();
-
-        private void InitGameWorld()
+        public void Enter(string nextScene)
         {
-            _levelUIFactory.CreateLevelUI();
-            _localCoinService.SetCoins();
-            _playerHpService.SetHp();
+            _loadingCurtain.Show();
+            _sceneLoader.Load(nextScene, OnLoaded);
         }
 
-        private void OnLoaded()
-        {
-            InitGameWorld();
-            _stateMachine.Enter<GameLoopState>();
-        }
+        private void OnLoaded() =>
+            _stateMachine.Enter<InitializeGameWorld>();
     }
 }

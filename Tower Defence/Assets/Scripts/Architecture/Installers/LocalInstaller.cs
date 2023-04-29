@@ -65,14 +65,14 @@ namespace Assets.Scripts.Architecture.Installers
 
         private void BindStates()
         {
-            Container.Bind<LoadLevelState>().AsSingle();
+            Container.Bind<InitializeGameWorld>().AsSingle();
             Container.Bind<GameLoopState>().AsSingle();
         }
 
         private void AddStatesToStateMachine()
         {
             IStateMachine stateMachine = Container.Resolve<IStateMachine>();
-            stateMachine.States.Add(typeof(LoadLevelState), Container.Resolve<LoadLevelState>());
+            stateMachine.States.Add(typeof(InitializeGameWorld), Container.Resolve<InitializeGameWorld>());
             stateMachine.States.Add(typeof(GameLoopState), Container.Resolve<GameLoopState>());
         }
     }
