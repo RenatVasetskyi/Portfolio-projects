@@ -1,7 +1,7 @@
 using Assets.Scripts.Data;
 using UnityEngine;
 
-namespace Assets.Scripts.UI
+namespace Assets.Scripts.UI.MainMenu
 {
     public class LevelTransferButtonMarker : MonoBehaviour
     {

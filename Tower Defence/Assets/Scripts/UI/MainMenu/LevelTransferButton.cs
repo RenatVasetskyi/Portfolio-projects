@@ -1,8 +1,6 @@
 using Assets.Scripts.Architecture.States;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data;
-using Assets.Scripts.SceneManagement;
-using Assets.Scripts.UI.ShowProgress;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -22,9 +20,9 @@ namespace Assets.Scripts.UI.MainMenu
             _stateMachine = stateMachine;
 
         private void Awake() =>
-            _button.onClick.AddListener(OnLoaded);
+            _button.onClick.AddListener(EnterLoadLevelState);
 
-        private void OnLoaded() =>
+        private void EnterLoadLevelState() =>
             _stateMachine.Enter<LoadLevelState, string>(LevelId.ToString());
     }
 }

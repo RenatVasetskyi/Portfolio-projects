@@ -22,16 +22,14 @@ namespace Assets.Scripts.Camera
             _camera = GetComponent<UnityEngine.Camera>();
             _initialSize = _camera.orthographicSize;
 
-            _targetAspect = DefaultResolution.x / DefaultResolution.y;
+            _targetAspect = GetTargetAspect();
 
             _initialFov = _camera.fieldOfView;
             _horizontalFov = CalculateCameraFov(_initialFov, 1 / _targetAspect);
         }
 
-        private void LateUpdate()
-        {
+        private void LateUpdate() =>
             CameraProjection();
-        }
 
         private void CameraProjection()
         {
@@ -57,5 +55,8 @@ namespace Assets.Scripts.Camera
 
         private float CalculateConstantWidthSize() =>
             _initialSize * (_targetAspect / _camera.aspect);
+
+        private float GetTargetAspect() =>
+            DefaultResolution.x / DefaultResolution.y;
     }
 }

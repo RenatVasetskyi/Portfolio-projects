@@ -17,9 +17,8 @@ namespace Assets.Scripts.Architecture.States
             _stateMachine = stateMachine;
         }
 
-        public void Exit()
-        {
-        }
+        public void Exit() =>
+            _loadingCurtain.Hide();
 
         public void Enter(string nextScene)
         {
