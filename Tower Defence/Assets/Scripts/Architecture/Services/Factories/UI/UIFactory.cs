@@ -1,7 +1,6 @@
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
 using Assets.Scripts.Data.Windows;
-using Assets.Scripts.UI;
 using Assets.Scripts.UI.MainMenu;
 using UnityEngine;
 using Zenject;
