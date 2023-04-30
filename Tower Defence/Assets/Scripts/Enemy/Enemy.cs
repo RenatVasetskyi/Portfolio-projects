@@ -1,15 +1,18 @@
 using Assets.Scripts.EnemyPath;
 using UnityEngine;
 using UnityEngine.AI;
+using Zenject;
 
 namespace Assets.Scripts.Enemy
 {
     public class Enemy : MonoBehaviour
     {
-        private readonly Finish _finish;
-        private NavMeshAgent _agent;
+        [SerializeField] private NavMeshAgent _agent;
 
-        public Enemy(Finish finish) =>
+        private Finish _finish;
+        
+        [Inject]
+        public void Construct(Finish finish) =>
             _finish = finish;
 
         public void Start() =>

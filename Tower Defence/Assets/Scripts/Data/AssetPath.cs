@@ -8,7 +8,7 @@ namespace Assets.Scripts.Data
         public const string UIRoot = "UI/UIRoot";
         public const string LevelTransferButton = "UI/Buttons/Main/LevelTransferButton";
         public const string EnemyParent = "Enemies/EnemyParent";
-        public const string SkeletonPrefab = "";
-        public const string GoblinPrefab = "";
+        public const string GoblinPrefab = "Enemies/Goblin/Goblin";
+        public const string SkeletonPrefab = "Enemies/Skeleton/Skeleton";
     }
 }
