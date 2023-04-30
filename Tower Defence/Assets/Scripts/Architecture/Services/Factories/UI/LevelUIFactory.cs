@@ -1,8 +1,10 @@
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
 using Assets.Scripts.Data.Levels;
+using Assets.Scripts.Tower.TowerSelection;
 using Assets.Scripts.UI.OnLevel.Coins;
 using Assets.Scripts.UI.OnLevel.StartWave;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
@@ -24,12 +26,22 @@ namespace Assets.Scripts.Architecture.Services.Factories
         public void CreateLevelUI()
         {
             LevelSettings currentLevel = GetCurrentLevel();
-            Transform parent = CreateUIRootCanvas();
-
+            Transform parent = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
+            
             CreateButtonForComponent<ShowCoinsCount>(currentLevel.CoinsCounter, parent);
             CreateButtonForComponent<StartWaveButton>(currentLevel.StartWavesButton, parent);
             CreateButton(currentLevel.WaveCounter, parent);
             CreateButton(currentLevel.PlayersHp, parent);
+
+            GameObject towerSelectionButtonChanger = CreateTowerSelectionButtonChanger(parent);
+
+            CreateTowerSelectionButtons(towerSelectionButtonChanger.transform);
+        }
+
+        private void CreateTowerSelectionButtons(Transform parent)
+        {
+            foreach (var button in GetCurrentLevel().TowerSelectionButtons.Buttons)
+                _container.InstantiatePrefab(button.ButtonPrefab, parent);
         }
 
         private void CreateButtonForComponent<T>(GameObject button, Transform parent)
@@ -47,7 +59,10 @@ namespace Assets.Scripts.Architecture.Services.Factories
         private LevelSettings GetCurrentLevel() =>
             _currentLevelSettingProvider.GetCurrentLevelSettings();
 
-        private Transform CreateUIRootCanvas() =>
-            Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
+        private Transform CreateParent(Transform parent) =>
+            Object.Instantiate(parent);
+
+        private GameObject CreateTowerSelectionButtonChanger(Transform parent) =>
+            Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.LayoutGroup), parent);
     }
 }

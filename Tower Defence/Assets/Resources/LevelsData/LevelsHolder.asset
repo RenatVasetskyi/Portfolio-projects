@@ -47,6 +47,38 @@ MonoBehaviour:
             _enemyCount: 7
           _timeDelayBetweenWaves: 15
           _timeDelayBetweenSpawns: 0.5
+    TowerSelectionButtons:
+      Buttons:
+      - ButtonPrefab: {fileID: 2937308549608602985, guid: 6d0aefbd90bdba848a151f4434ec0894, type: 3}
+        Tower:
+          TowerType: 0
+          TowerPrefab: {fileID: 100000, guid: 43b738391b30e7241896b94b0c789b6b, type: 3}
+          TowerModel: {fileID: 100000, guid: e36cf732b73e87f458b5e69d2c1f6417, type: 3}
+          Price: 50
+          UpgradePrice: 50
+          AttackRange: 12
+          FireSpeed: 1
+          RotateSpeed: 6
+      - ButtonPrefab: {fileID: 8604397196665533124, guid: 2683b66f7192945479c54c6e1d96b877, type: 3}
+        Tower:
+          TowerType: 1
+          TowerPrefab: {fileID: 1326093064322132, guid: a425124410f363a43adb6788601cc3e0, type: 3}
+          TowerModel: {fileID: 919132149155446097, guid: 7e0687e18ba31bc468fc713856395f1a, type: 3}
+          Price: 70
+          UpgradePrice: 70
+          AttackRange: 15
+          FireSpeed: 0.8
+          RotateSpeed: 4
+      - ButtonPrefab: {fileID: 6367546166977766153, guid: 3364b29a88a6b1343abf17a15759f75f, type: 3}
+        Tower:
+          TowerType: 2
+          TowerPrefab: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+          TowerModel: {fileID: 919132149155446097, guid: a940d0a0d7c867e4696c7c49b53bdf4c, type: 3}
+          Price: 90
+          UpgradePrice: 90
+          AttackRange: 18
+          FireSpeed: 1.6
+          RotateSpeed: 8
   - Id: 2
     StartWavesButton: {fileID: 5689525047379739414, guid: 40bd3e56c0c297347b44886b18d173c0, type: 3}
     CoinsCounter: {fileID: 4057524601541569357, guid: 80404fff643a25c43955dbf5f6900f7b, type: 3}
@@ -56,3 +88,5 @@ MonoBehaviour:
     Hp: 4
     WaveSettings:
       WaveDatas: []
+    TowerSelectionButtons:
+      Buttons: []
