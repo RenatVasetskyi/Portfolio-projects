@@ -10,6 +10,6 @@ namespace Assets.Scripts.Data
         public const string EnemyParent = "Enemies/EnemyParent";
         public const string GoblinPrefab = "Enemies/Goblin/Goblin";
         public const string SkeletonPrefab = "Enemies/Skeleton/Skeleton";
-        public const string LayoutGroup = "UI/LayoutGroup";
+        public const string TowerSelection = "UI/TowerSelection";
     }
 }

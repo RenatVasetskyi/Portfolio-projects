@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1919007015479092398}
   - component: {fileID: 1919007015479092397}
+  - component: {fileID: 3713917689302166875}
   m_Layer: 5
-  m_Name: LayoutGroup
+  m_Name: TowerSelection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,3 +64,15 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &3713917689302166875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919007015479092399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8cb0bf62d99e944b2ca077d2d3309f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
