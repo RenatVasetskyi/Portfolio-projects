@@ -21,8 +21,8 @@ namespace Assets.Scripts.Architecture.Services.Factories
             Initialize();
         }
 
-        public Enemy.Enemy CreateEnemy(GameObject prefab, Vector3 at, Quaternion rotation, Transform parent) =>
-            _container.InstantiatePrefabForComponent<Enemy.Enemy>(prefab, at, rotation, parent);
+        public GameObject CreateEnemy(GameObject prefab, Vector3 at, Quaternion rotation, Transform parent) =>
+            _container.InstantiatePrefab(prefab, at, rotation, parent);
 
         private void Initialize()
         {

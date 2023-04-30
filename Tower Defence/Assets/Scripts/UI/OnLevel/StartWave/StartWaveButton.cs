@@ -16,6 +16,12 @@ namespace Assets.Scripts.UI.OnLevel.StartWave
             _waveSystem = waveSystem;
 
         private void Awake() =>
-            _button.onClick.AddListener(()=> _waveSystem.RunStartWaveCoroutine());
+            _button.onClick.AddListener(OnClick);
+
+        private void OnClick()
+        {
+            _button.interactable = false;
+            _waveSystem.RunStartWaveCoroutine();
+        }
     }
 }

@@ -1,11 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using Assets.Scripts.Architecture.Services.Factories;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data;
 using UnityEngine;
-using Assets.Scripts.Enemy;
 using Assets.Scripts.EnemyPath;
 
 namespace Assets.Scripts.Waves
@@ -49,7 +47,7 @@ namespace Assets.Scripts.Waves
                     {
                         for (int i = 0; i < enemySpawnData.EnemyCount; i++)
                         {
-                            _enemyFactory.CreateEnemy(_enemyFactory.Prefabs[enemySpawnData.Enemy], _startPoint.transform.position, Quaternion.identity, parent);
+                            _enemyFactory.CreateEnemy(_enemyFactory.Prefabs[enemySpawnData.Enemy], _startPoint.transform.position, _startPoint.transform.rotation, parent);
                             yield return new WaitForSeconds(enemyOnWaveData.TimeDelayBetweenSpawns);
                         }
                     }
