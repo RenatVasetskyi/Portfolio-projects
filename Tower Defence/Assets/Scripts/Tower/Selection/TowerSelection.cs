@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using Assets.Scripts.Tower.Selection;
 using UnityEngine;
 
-namespace Assets.Scripts.Architecture.Services.Factories.UI
+namespace Assets.Scripts.Tower.Selection
 {
     public class TowerSelection : MonoBehaviour
     {
