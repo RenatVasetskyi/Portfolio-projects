@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Assets.Scripts.Tower.TowerSelection
+namespace Assets.Scripts.Tower.Selection
 {
     [Serializable]
     public class TowerSelectionButton

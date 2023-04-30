@@ -1,15 +1,16 @@
 using System;
 using Assets.Scripts.Enemy.Animation;
+using Assets.Scripts.Enemy.Movement;
 using UnityEngine;
 
-namespace Assets.Scripts.Enemy
+namespace Assets.Scripts.Enemy.Health
 {
     public class EnemyHealth : MonoBehaviour
     {
         public event Action OnDamageTaken;
         public event Action OnDied;
 
-        [SerializeField] private Enemy _enemy;
+        [SerializeField] private Main.Enemy _enemy;
         [SerializeField] private EnemyAnimator _enemyAnimator;
         [SerializeField] private EnemyMovement _enemyMovement;
 

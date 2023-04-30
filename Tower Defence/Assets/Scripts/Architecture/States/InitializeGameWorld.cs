@@ -1,7 +1,7 @@
 using Assets.Scripts.Architecture.Services.Factories;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
-using Assets.Scripts.UI.ShowProgress;
+using Assets.Scripts.UI.Loading;
 
 namespace Assets.Scripts.Architecture.States
 {

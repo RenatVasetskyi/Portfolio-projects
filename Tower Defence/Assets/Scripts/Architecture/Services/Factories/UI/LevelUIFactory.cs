@@ -2,13 +2,12 @@ using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
 using Assets.Scripts.Data.Levels;
 using Assets.Scripts.Tower.Selection;
-using Assets.Scripts.Tower.TowerSelection;
 using Assets.Scripts.UI.OnLevel.Coins;
 using Assets.Scripts.UI.OnLevel.StartWave;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Architecture.Services.Factories
+namespace Assets.Scripts.Architecture.Services.Factories.UI
 {
     public class LevelUIFactory : ILevelUIFactory
     {

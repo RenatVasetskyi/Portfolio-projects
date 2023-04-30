@@ -1,6 +1,6 @@
 using System;
 
-namespace Assets.Scripts.Enemy
+namespace Assets.Scripts.Enemy.Main
 {
     [Serializable]
     public class EnemyData

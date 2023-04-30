@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
-using Assets.Scripts.Enemy;
+using Assets.Scripts.Enemy.Main;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Architecture.Services.Factories
+namespace Assets.Scripts.Architecture.Services.Factories.Enemy
 {
     public class EnemyFactory : IEnemyFactory
     {

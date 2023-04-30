@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Assets.Scripts.Enemy;
+using Assets.Scripts.Enemy.Main;
 using UnityEngine;
 
 namespace Assets.Scripts.Waves

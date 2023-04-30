@@ -1,10 +1,10 @@
 using System.Collections;
-using Assets.Scripts.Architecture.Services.Factories;
+using Assets.Scripts.Architecture.Services.Factories.Enemy;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data;
+using Assets.Scripts.Enemy.Path;
 using UnityEngine;
-using Assets.Scripts.EnemyPath;
 
 namespace Assets.Scripts.Waves
 {

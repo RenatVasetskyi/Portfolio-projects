@@ -5,7 +5,7 @@ using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data.Levels;
 using Assets.Scripts.SceneManagement;
-using Assets.Scripts.UI.ShowProgress;
+using Assets.Scripts.UI.Loading;
 using UnityEngine;
 using Zenject;
 

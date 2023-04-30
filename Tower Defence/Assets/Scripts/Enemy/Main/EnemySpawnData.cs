@@ -1,5 +1,5 @@
-using Assets.Scripts.Enemy;
 using System;
+using Assets.Scripts.Enemy.Main;
 using UnityEngine;
 
 [Serializable]

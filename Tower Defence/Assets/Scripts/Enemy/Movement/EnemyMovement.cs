@@ -1,14 +1,14 @@
 using Assets.Scripts.Enemy.Animation;
-using Assets.Scripts.EnemyPath;
+using Assets.Scripts.Enemy.Path;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
 
-namespace Assets.Scripts.Enemy
+namespace Assets.Scripts.Enemy.Movement
 {
     public class EnemyMovement : MonoBehaviour
     {
-        [SerializeField] private Enemy _enemy;
+        [SerializeField] private Main.Enemy _enemy;
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private EnemyAnimator _animator;
 

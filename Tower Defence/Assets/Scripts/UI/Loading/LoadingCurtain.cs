@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.UI.ShowProgress
+namespace Assets.Scripts.UI.Loading
 {
     public class LoadingCurtain : MonoBehaviour
     {

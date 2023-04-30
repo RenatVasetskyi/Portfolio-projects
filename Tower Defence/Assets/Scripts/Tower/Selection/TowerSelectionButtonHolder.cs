@@ -1,4 +1,3 @@
-using Assets.Scripts.Tower.TowerSelection;
 using UnityEngine;
 
 namespace Assets.Scripts.Tower.Selection

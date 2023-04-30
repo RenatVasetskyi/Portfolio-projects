@@ -1,7 +1,9 @@
 using Assets.Scripts.Architecture.Services.Factories;
+using Assets.Scripts.Architecture.Services.Factories.Enemy;
+using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.States;
 using Assets.Scripts.Architecture.States.Interfaces;
-using Assets.Scripts.EnemyPath;
+using Assets.Scripts.Enemy.Path;
 using Assets.Scripts.Waves;
 using UnityEngine;
 using Zenject;

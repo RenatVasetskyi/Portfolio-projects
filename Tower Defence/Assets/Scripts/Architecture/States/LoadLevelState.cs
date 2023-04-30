@@ -1,6 +1,6 @@
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.SceneManagement;
-using Assets.Scripts.UI.ShowProgress;
+using Assets.Scripts.UI.Loading;
 
 namespace Assets.Scripts.Architecture.States
 {
