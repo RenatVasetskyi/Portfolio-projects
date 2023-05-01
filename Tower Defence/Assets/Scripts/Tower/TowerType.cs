@@ -1,4 +1,4 @@
-namespace Assets.Scripts.Tower.Selection
+namespace Assets.Scripts.Tower
 {
     public enum TowerType
     {

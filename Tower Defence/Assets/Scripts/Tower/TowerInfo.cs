@@ -1,7 +1,8 @@
 using System;
+using Assets.Scripts.Tower.Selection;
 using UnityEngine;
 
-namespace Assets.Scripts.Tower.Selection
+namespace Assets.Scripts.Tower
 {
     [Serializable]
     public class TowerInfo

@@ -149,6 +149,8 @@ GameObject:
   - component: {fileID: 6367546166977766155}
   - component: {fileID: 6748852361265781519}
   - component: {fileID: 5479844684108130870}
+  - component: {fileID: -3666655540938848717}
+  - component: {fileID: -4633565631430729627}
   m_Layer: 5
   m_Name: SpeedTowerButton
   m_TagString: Untagged
@@ -285,3 +287,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _holder: {fileID: 6748852361265781519}
   _priceText: {fileID: 1326485842891131039}
+--- !u!114 &-3666655540938848717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367546166977766153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773c6ea39b1bfbc4694c4b085d193c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 6748852361265781519}
+--- !u!114 &-4633565631430729627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367546166977766153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c500abad5aa2b7b4c98e53ebc44af6f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: -3666655540938848717}

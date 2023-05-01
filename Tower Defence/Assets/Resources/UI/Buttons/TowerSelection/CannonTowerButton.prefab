@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2937308549608602987}
   - component: {fileID: -7248581612465174108}
   - component: {fileID: -3160040599885738911}
+  - component: {fileID: -8895633065976192342}
+  - component: {fileID: 6067791490376050344}
   m_Layer: 5
   m_Name: CannonTowerButton
   m_TagString: Untagged
@@ -150,6 +152,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _holder: {fileID: -7248581612465174108}
   _priceText: {fileID: 3865460455508953840}
+--- !u!114 &-8895633065976192342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2937308549608602985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773c6ea39b1bfbc4694c4b085d193c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: -7248581612465174108}
+--- !u!114 &6067791490376050344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2937308549608602985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c500abad5aa2b7b4c98e53ebc44af6f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: -8895633065976192342}
 --- !u!1 &8745329713592869818
 GameObject:
   m_ObjectHideFlags: 0
