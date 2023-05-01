@@ -273,6 +273,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795c78751dc0d8849bcdcb9269adc758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectTowerButton: {fileID: 1111039288292052053}
+  ScaleButton: {fileID: 5000960905345987770}
+  DisplayTowerPrice: {fileID: 5689537234223354702}
 --- !u!114 &5689537234223354702
 MonoBehaviour:
   m_ObjectHideFlags: 0

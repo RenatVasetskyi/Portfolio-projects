@@ -10,11 +10,13 @@ namespace Assets.Scripts.Tower.Selection
         private Vector3 _scaledSize = new Vector3(0.85f, 0.85f, 0.85f);
         private float _scaleDuration = 0.3f;
 
+        public void SetStartSize() =>
+            gameObject.transform.localScale = _startSize;
+
         private void Awake()
         {
             _button.OnButtonSelected += Select;
             _button.OnButtonDeselected += Deselect;
-            SetStartSize();
         }
 
         private void Select() =>
@@ -22,8 +24,5 @@ namespace Assets.Scripts.Tower.Selection
 
         private void Deselect(TowerSelectionButtonHolder button) =>
             LeanTween.scale(button.gameObject, _startSize, _scaleDuration);
-
-        private void SetStartSize() =>
-            gameObject.transform.localScale = _startSize;
     }
 }

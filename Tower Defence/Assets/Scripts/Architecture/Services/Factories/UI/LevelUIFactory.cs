@@ -41,6 +41,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             {
                 TowerSelectionButtonHolder spawnedButton = _container.InstantiatePrefabForComponent<TowerSelectionButtonHolder>(button.ButtonPrefab, parent.transform);
                 spawnedButton.Tower = button.Tower;
+                spawnedButton.ScaleButton.SetStartSize();
             }
         }
 
