@@ -67,14 +67,14 @@ namespace Assets.Scripts.Architecture.Installers
 
         private void BindStates()
         {
-            Container.Bind<InitializeGameWorld>().AsSingle();
+            Container.Bind<InitializeGameWorldState>().AsSingle();
             Container.Bind<GameLoopState>().AsSingle();
         }
 
         private void AddStatesToStateMachine()
         {
             IStateMachine stateMachine = Container.Resolve<IStateMachine>();
-            stateMachine.States.Add(typeof(InitializeGameWorld), Container.Resolve<InitializeGameWorld>());
+            stateMachine.States.Add(typeof(InitializeGameWorldState), Container.Resolve<InitializeGameWorldState>());
             stateMachine.States.Add(typeof(GameLoopState), Container.Resolve<GameLoopState>());
         }
     }

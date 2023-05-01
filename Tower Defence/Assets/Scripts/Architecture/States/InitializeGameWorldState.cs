@@ -5,7 +5,7 @@ using Assets.Scripts.UI.Loading;
 
 namespace Assets.Scripts.Architecture.States
 {
-    public class InitializeGameWorld : IState
+    public class InitializeGameWorldState : IState
     {
         private readonly IStateMachine _stateMachine;
         private readonly ILevelUIFactory _levelUIFactory;
@@ -13,7 +13,9 @@ namespace Assets.Scripts.Architecture.States
         private readonly IPlayerHpService _playerHpService;
         private readonly LoadingCurtain _loadingCurtain;
 
-        public InitializeGameWorld(IStateMachine stateMachine, ILevelUIFactory levelUIFactory, ILocalCoinService localCoinService, IPlayerHpService playerHpService, LoadingCurtain loadingCurtain)
+        public InitializeGameWorldState(IStateMachine stateMachine, ILevelUIFactory levelUIFactory, 
+            ILocalCoinService localCoinService, IPlayerHpService playerHpService,
+            LoadingCurtain loadingCurtain)
         {
             _stateMachine = stateMachine;
             _levelUIFactory = levelUIFactory;

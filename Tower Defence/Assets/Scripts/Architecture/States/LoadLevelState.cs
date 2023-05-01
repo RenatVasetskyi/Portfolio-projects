@@ -17,8 +17,10 @@ namespace Assets.Scripts.Architecture.States
             _stateMachine = stateMachine;
         }
 
-        public void Exit() =>
-            _loadingCurtain.Hide();
+        public void Exit()
+        {
+            //_loadingCurtain.Hide();
+        }
 
         public void Enter(string nextScene)
         {
@@ -27,6 +29,6 @@ namespace Assets.Scripts.Architecture.States
         }
 
         private void OnLoaded() =>
-            _stateMachine.Enter<InitializeGameWorld>();
+            _stateMachine.Enter<InitializeGameWorldState>();
     }
 }
