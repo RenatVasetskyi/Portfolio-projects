@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Assets.Scripts.UI.OnLevel.StartWave
+namespace Assets.Scripts.UI.OnLevel.Wave
 {
     public class StartWaveButton : MonoBehaviour
     {

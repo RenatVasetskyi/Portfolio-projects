@@ -2,8 +2,6 @@ using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
 using Assets.Scripts.Data.Levels;
 using Assets.Scripts.Tower.Selection;
-using Assets.Scripts.UI.OnLevel.Coins;
-using Assets.Scripts.UI.OnLevel.StartWave;
 using UnityEngine;
 using Zenject;
 
@@ -27,8 +25,8 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             LevelSettings currentLevel = GetCurrentLevel();
             Transform parent = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
             
-            CreateButtonForComponent<ShowCoinsCount>(currentLevel.CoinsCounter, parent);
-            CreateButtonForComponent<StartWaveButton>(currentLevel.StartWavesButton, parent);
+            CreateButton(currentLevel.CoinsCounter, parent);
+            CreateButton(currentLevel.StartWavesButton, parent);
             CreateButton(currentLevel.WaveCounter, parent);
             CreateButton(currentLevel.PlayersHp, parent);
 
@@ -44,12 +42,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
                 TowerSelectionButtonHolder spawnedButton = _container.InstantiatePrefabForComponent<TowerSelectionButtonHolder>(button.ButtonPrefab, parent.transform);
                 spawnedButton.Tower = button.Tower;
             }
-        }
-
-        private void CreateButtonForComponent<T>(GameObject button, Transform parent)
-        {
-            if (button != null)
-                _container.InstantiatePrefabForComponent<T>(button, parent);
         }
 
         private void CreateButton(GameObject button, Transform parent)

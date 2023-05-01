@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Assets.Scripts.Architecture.Services.Factories.Enemy;
 using Assets.Scripts.Architecture.Services.Interfaces;
@@ -15,6 +16,8 @@ namespace Assets.Scripts.Waves
         private readonly IAssetProvider _assetProvider;
         private readonly IEnemyFactory _enemyFactory;
         private readonly ICoroutineRunner _coroutineRunner;
+
+        public event Action<int> OnWaveNumberChanged;
 
         [SerializeField] private GameObject _skeletonPrefab;
         [SerializeField] private GameObject _goblinPrefab;
@@ -35,13 +38,15 @@ namespace Assets.Scripts.Waves
 
         private IEnumerator StartWave()
         { 
-            Transform parent = Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.EnemyParent));
+            Transform parent = UnityEngine.Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.EnemyParent));
 
             foreach (var waveData in _currentLevelSettingsProvider.GetCurrentLevelSettings().WaveSettings.WaveDatas)
             {
                 foreach (var enemyOnWaveData in waveData.EnemyDatas)
                 {
                     yield return new WaitForSeconds(enemyOnWaveData.TimeDelayBetweenWaves);
+
+                    OnWaveNumberChanged?.Invoke(waveData.WaveNumber);
 
                     foreach (var enemySpawnData in enemyOnWaveData.EnemySpawnDatas)
                     {
