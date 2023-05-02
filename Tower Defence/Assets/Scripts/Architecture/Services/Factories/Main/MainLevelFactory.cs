@@ -21,9 +21,13 @@ namespace Assets.Scripts.Architecture.Services.Factories.Main
             GameObject parent = Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.MainLevelComponentsParent));
 
             CreateTowerSpawner(parent.transform);
+            CreateTowerModelDisplayer(parent.transform);
         }
 
         private void CreateTowerSpawner(Transform parent) =>
             _container.InstantiatePrefab(_assetProvider.Initialize<GameObject>(AssetPath.TowerSpawner), parent);
+
+        private void CreateTowerModelDisplayer(Transform parent) =>
+            _container.InstantiatePrefab(_assetProvider.Initialize<GameObject>(AssetPath.TowerModelDisplayer), parent);
     }
 }
