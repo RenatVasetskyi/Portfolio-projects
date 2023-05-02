@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 5180334387422381598}
   - component: {fileID: 5180334387422381599}
   - component: {fileID: 5180334387422381592}
+  - component: {fileID: -5416675648609520664}
+  - component: {fileID: -3606011177750218935}
+  - component: {fileID: -3706903452722845510}
+  - component: {fileID: -7565150599915018879}
+  - component: {fileID: 6666582066486017589}
   m_Layer: 0
   m_Name: SpeedTowerBullet
   m_TagString: Untagged
@@ -83,3 +88,72 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-5416675648609520664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180334387422381593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c0192cf8f06194781539764cc3849b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerType: 2
+  _levelsSettings: {fileID: 11400000, guid: 446cbff9546467e48a9d196d0f67fe32, type: 2}
+--- !u!114 &-3606011177750218935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180334387422381593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f98b00c15dd1a7428a08c3d3637708d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3706903452722845510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180334387422381593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f58c2dd52752b1488fc7e2afeaaa8a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroyBulletEffect: {fileID: 9095153614082709596, guid: 04a63804afc88ba48aa00152e6c897f9, type: 3}
+--- !u!114 &-7565150599915018879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180334387422381593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32ff49c3ad8de746afb22b2720ca229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: -5416675648609520664}
+  _checkTarget: {fileID: -3606011177750218935}
+  _destroyEffect: {fileID: -3706903452722845510}
+--- !u!114 &6666582066486017589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180334387422381593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962180de2a32d654183f56338871af4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: -5416675648609520664}
+  _checkTarget: {fileID: -3606011177750218935}
+  _hitTarget: {fileID: -7565150599915018879}

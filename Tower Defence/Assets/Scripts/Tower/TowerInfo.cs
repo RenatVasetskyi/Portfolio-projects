@@ -1,5 +1,5 @@
 using System;
-using Assets.Scripts.Tower.Selection;
+using Assets.Scripts.Tower.Bullet;
 using UnityEngine;
 
 namespace Assets.Scripts.Tower
@@ -12,12 +12,12 @@ namespace Assets.Scripts.Tower
         public GameObject TowerPrefab;
         public GameObject TowerModel;
 
-        //public BulletInfo Bullet;
+        public BulletInfo Bullet;
 
         public int Price;
         public int UpgradePrice;
         public int AttackRange;
-        public float FireSpeed;
         public int RotateSpeed;
+        public float FireSpeed;
     }
 }

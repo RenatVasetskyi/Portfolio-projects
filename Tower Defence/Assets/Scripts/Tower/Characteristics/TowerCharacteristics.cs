@@ -46,7 +46,7 @@ namespace Assets.Scripts.Tower.Characteristics
 
         private void Initialize()
         {
-            GetCurrentTower();
+            GetCurrentTowerSettings();
 
             CannonRotateSpeed = _tower.RotateSpeed;
             //Damage = _tower.Bullet.Damage;
@@ -60,7 +60,7 @@ namespace Assets.Scripts.Tower.Characteristics
             PriceIncreasing = UpgradePrice / 2;
         }
 
-        private void GetCurrentTower()
+        private void GetCurrentTowerSettings()
         {
             foreach (LevelSettings level in _levelsSettings.Levels)
             {

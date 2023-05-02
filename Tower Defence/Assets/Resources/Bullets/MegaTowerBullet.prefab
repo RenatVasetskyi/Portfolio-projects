@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 2200551220870504166}
   - component: {fileID: 96609698711234671}
   - component: {fileID: 341996455762396009}
+  - component: {fileID: -928973717325308410}
+  - component: {fileID: -5378143936585395413}
+  - component: {fileID: 6230295797303993412}
+  - component: {fileID: 4677422448056896668}
+  - component: {fileID: -3930125258417273867}
   m_Layer: 0
   m_Name: MegaTowerBullet
   m_TagString: Untagged
@@ -83,3 +88,72 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-928973717325308410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339029724570663836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c0192cf8f06194781539764cc3849b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerType: 1
+  _levelsSettings: {fileID: 11400000, guid: 446cbff9546467e48a9d196d0f67fe32, type: 2}
+--- !u!114 &-5378143936585395413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339029724570663836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f98b00c15dd1a7428a08c3d3637708d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6230295797303993412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339029724570663836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f58c2dd52752b1488fc7e2afeaaa8a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroyBulletEffect: {fileID: 9095153614082709596, guid: 04a63804afc88ba48aa00152e6c897f9, type: 3}
+--- !u!114 &4677422448056896668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339029724570663836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32ff49c3ad8de746afb22b2720ca229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: -928973717325308410}
+  _checkTarget: {fileID: -5378143936585395413}
+  _destroyEffect: {fileID: 6230295797303993412}
+--- !u!114 &-3930125258417273867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339029724570663836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962180de2a32d654183f56338871af4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: -928973717325308410}
+  _checkTarget: {fileID: -5378143936585395413}
+  _hitTarget: {fileID: 4677422448056896668}
