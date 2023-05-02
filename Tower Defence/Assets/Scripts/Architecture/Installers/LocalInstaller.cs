@@ -1,9 +1,12 @@
 using Assets.Scripts.Architecture.Services.Factories;
 using Assets.Scripts.Architecture.Services.Factories.Enemy;
+using Assets.Scripts.Architecture.Services.Factories.Main;
+using Assets.Scripts.Architecture.Services.Factories.Tower;
 using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.States;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Enemy.Path;
+using Assets.Scripts.Tower.Selection;
 using Assets.Scripts.Waves;
 using UnityEngine;
 using Zenject;
@@ -18,12 +21,30 @@ namespace Assets.Scripts.Architecture.Installers
         public override void InstallBindings()
         {
             BindLevelUIFactory();
-            BindStates();
-            AddStatesToStateMachine();
             BindEnemyFactory();
             BindStartPoint();
             BindFinish();
             BindWaveSystem();
+            BindTowerFactory();
+            BindMainLevelFactory();
+            BindStates();
+            AddStatesToStateMachine();
+        }
+
+        private void BindMainLevelFactory()
+        {
+            Container
+                .Bind<IMainLevelFactory>()
+                .To<MainLevelFactory>()
+                .AsSingle();
+        }
+
+        private void BindTowerFactory()
+        {
+            Container
+                .Bind<ITowerFactory>()
+                .To<TowerFactory>()
+                .AsSingle();
         }
 
         private void BindLevelUIFactory()

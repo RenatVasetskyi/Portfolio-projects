@@ -9,7 +9,7 @@ namespace Assets.Scripts.Architecture.Services
 
         private readonly ICurrentLevelSettingsProvider _currentLevelSettingsProvider;
 
-        public int Coins { get; set; }
+        public int Coins { get; private set; }
 
         public LocalCoinService(ICurrentLevelSettingsProvider currentLevelSettingsProvider) =>
             _currentLevelSettingsProvider = currentLevelSettingsProvider;

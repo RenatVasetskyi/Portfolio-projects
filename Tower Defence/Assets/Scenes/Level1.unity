@@ -201,7 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 47360329}
   - component: {fileID: 47360330}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zone10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 177221237}
   - component: {fileID: 177221238}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zone5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 409815813}
   - component: {fileID: 409815814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zone9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 647264666}
   - component: {fileID: 647264667}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zone8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 727722567}
   - component: {fileID: 727722568}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zone6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -769,7 +769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 959907205}
   - component: {fileID: 959907206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zone7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1108,7 +1108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1222546484}
   - component: {fileID: 1222546485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zone3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1153,7 +1153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1229239227}
   - component: {fileID: 1229239228}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zone4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,7 +1423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1320744488}
   - component: {fileID: 1320744489}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1542,7 +1542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1657189749}
   - component: {fileID: 1657189750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

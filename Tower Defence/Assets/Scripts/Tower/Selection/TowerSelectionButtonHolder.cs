@@ -7,7 +7,6 @@ namespace Assets.Scripts.Tower.Selection
     {
         public TowerInfo Tower { get; set; }
         public SelectTowerButton SelectTowerButton;
-        public ScaleButton ScaleButton;
         public DisplayTowerPrice DisplayTowerPrice;
     }
 }
