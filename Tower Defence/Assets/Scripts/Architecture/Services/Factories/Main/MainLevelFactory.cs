@@ -24,6 +24,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.Main
         }
 
         private void CreateTowerSpawner(Transform parent) =>
-            _container.InstantiatePrefab(_assetProvider.Initialize<GameObject>(AssetPath.TowerSpawner));
+            _container.InstantiatePrefab(_assetProvider.Initialize<GameObject>(AssetPath.TowerSpawner), parent);
     }
 }

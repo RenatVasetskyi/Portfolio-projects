@@ -12,12 +12,14 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         private readonly DiContainer _container;
         private readonly ICurrentLevelSettingsProvider _currentLevelSettingProvider;
         private readonly IAssetProvider _assetProvider;
+        private readonly TowerSelection _towerSelection;
 
-        public LevelUIFactory(DiContainer container, ICurrentLevelSettingsProvider currentLevelSettingProvider, IAssetProvider assetProvider)
+        public LevelUIFactory(DiContainer container, ICurrentLevelSettingsProvider currentLevelSettingProvider, IAssetProvider assetProvider, TowerSelection towerSelection)
         {
             _container = container;
             _currentLevelSettingProvider = currentLevelSettingProvider;
             _assetProvider = assetProvider;
+            _towerSelection = towerSelection;
         }
 
         public void CreateLevelUI()
@@ -30,9 +32,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             CreateButton(currentLevel.WaveCounter, parent);
             CreateButton(currentLevel.PlayersHp, parent);
 
-            Transform towerSelection = CreateTowerSelection(parent);
-
-            CreateTowerSelectionButtons(towerSelection);
+            CreateTowerSelectionButtons(_towerSelection.transform);
         }
 
         private void CreateTowerSelectionButtons(Transform parent)
@@ -55,9 +55,5 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         private Transform CreateParent(Transform parent) =>
             Object.Instantiate(parent);
-
-        private Transform CreateTowerSelection(Transform parent) =>
-            _container.InstantiatePrefabForComponent<Transform>(
-                _assetProvider.Initialize<GameObject>(AssetPath.TowerSelection), parent);
     }
 }
