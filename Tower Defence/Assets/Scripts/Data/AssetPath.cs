@@ -10,7 +10,6 @@ namespace Assets.Scripts.Data
         public const string EnemyParent = "Enemies/EnemyParent";
         public const string GoblinPrefab = "Enemies/Goblin/Goblin";
         public const string SkeletonPrefab = "Enemies/Skeleton/Skeleton";
-        public const string TowerSelection = "UI/TowerSelection";
         public const string TowerSpawner = "Towers/TowerSpawner";
         public const string MainLevelComponentsParent = "MainLevelComponentsParent";
         public const string TowerModelDisplayer = "Towers/TowerModelDisplayer";

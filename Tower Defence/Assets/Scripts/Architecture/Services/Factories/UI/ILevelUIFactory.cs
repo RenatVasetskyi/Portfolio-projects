@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Assets.Scripts.Architecture.Services.Factories
 {
     public interface ILevelUIFactory
