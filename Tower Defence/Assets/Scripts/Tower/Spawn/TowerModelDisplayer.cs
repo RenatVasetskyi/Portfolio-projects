@@ -42,7 +42,7 @@ namespace Assets.Scripts.Tower.Spawn
             {
                 if (_isModelCreated == false)
                 {
-                    GameObject model = _towerFactory.CreateTowerModel();
+                    GameObject model = _towerFactory.CreateTowerModel(_towerSelection.SelectedButton.Tower.TowerModel);
                     AddToSpawned(model);
                     _isModelCreated = true;
                 }
@@ -70,7 +70,7 @@ namespace Assets.Scripts.Tower.Spawn
         {
             Destroy(_createdModel.First().Value);
             Cleanup();
-            GameObject towerModel = _towerFactory.CreateTowerModel();
+            GameObject towerModel = _towerFactory.CreateTowerModel(_towerSelection.SelectedButton.Tower.TowerModel);
             _createdModel.Add(_towerSelection.SelectedButton.Tower.TowerType, towerModel);
         }
 

@@ -18,7 +18,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.Tower
         public GameObject CreateTower(GameObject prefab, Vector3 at, Quaternion rotation, Transform parent) =>
             _container.InstantiatePrefab(prefab, at, rotation, parent);
 
-        public GameObject CreateTowerModel() =>
-            Object.Instantiate(_towerSelection.SelectedButton.Tower.TowerModel);
+        public GameObject CreateTowerModel(GameObject model) =>
+            Object.Instantiate(model);
     }
 }
