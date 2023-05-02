@@ -17,8 +17,8 @@ namespace Assets.Scripts.Architecture.Services.Factories.Main
         }
 
         public void InstantiateComponents()
-        {
-           GameObject parent = Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.MainLevelComponentsParent));
+        { 
+            GameObject parent = Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.MainLevelComponentsParent));
 
             CreateTowerSpawner(parent.transform);
         }

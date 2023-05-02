@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4519941387849242}
   - component: {fileID: 33089451506451912}
   - component: {fileID: 23466980061535014}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4939996705135754}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: MegaTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 4795538350151362}
   - component: {fileID: 33586998647412368}
   - component: {fileID: 23027622446349308}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Turret Tower 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5300377457760801772}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: BulletStartPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3900137561369989542}
   - component: {fileID: 4827873544726540550}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: DisplayUnavailableZoneForSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2009855506382673332, guid: 7050ae83155e4f04a8fe5aede21b7aa0, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7678704183621113317, guid: 7050ae83155e4f04a8fe5aede21b7aa0, type: 3}
       propertyPath: m_RootOrder

@@ -30,6 +30,19 @@ namespace Assets.Scripts.Architecture.Installers
             BindLocalCoinService();
             BindCurrentLevelSettingsProvider();
             BindPlayerHpService();
+            BindPlayerInput();
+        }
+
+        private void BindPlayerInput()
+        {
+            PlayerInput input = new PlayerInput();
+
+            input.Enable();
+
+            Container
+                .Bind<PlayerInput>()
+                .FromInstance(input)
+                .AsSingle();
         }
 
         private void BindLoadingCurtain()

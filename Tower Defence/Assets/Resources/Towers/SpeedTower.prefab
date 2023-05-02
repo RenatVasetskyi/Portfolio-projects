@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 449956}
   - component: {fileID: 3327622}
   - component: {fileID: 2351876}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Tower_Top_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 476426}
   - component: {fileID: 9554040}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Tower_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 446360}
   - component: {fileID: 3390032}
   - component: {fileID: 2366440}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Shield_Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 471166}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: SpeedTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 473270}
   - component: {fileID: 3362698}
   - component: {fileID: 2305772}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Tower_Base_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 463400}
   - component: {fileID: 3310352}
   - component: {fileID: 2327352}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Tower_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 482722}
   - component: {fileID: 3312734}
   - component: {fileID: 2383384}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Tower_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450448}
   - component: {fileID: 9524064}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Tower_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4425425514385978471}
   - component: {fileID: 134256946584240396}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: DisplayUnavailableZoneForSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6069448310642799564}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: BulletStartPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2009855506382673332, guid: 7050ae83155e4f04a8fe5aede21b7aa0, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7678704183621113317, guid: 7050ae83155e4f04a8fe5aede21b7aa0, type: 3}
       propertyPath: m_RootOrder

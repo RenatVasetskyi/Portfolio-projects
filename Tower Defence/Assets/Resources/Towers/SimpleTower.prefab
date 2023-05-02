@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 437228}
   - component: {fileID: 3334862}
   - component: {fileID: 2345090}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: flag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,8 +92,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 422446}
-  m_Layer: 8
-  m_Name: SimpeTower
+  m_Layer: 7
+  m_Name: SimpleTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 402528}
   - component: {fileID: 3372880}
   - component: {fileID: 2302692}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 481262}
   - component: {fileID: 3396022}
   - component: {fileID: 2387510}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 428052}
   - component: {fileID: 3328424}
   - component: {fileID: 2342932}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: flag_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 487344}
   - component: {fileID: 3363232}
   - component: {fileID: 2382990}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: rotater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 496820}
   - component: {fileID: 3307678}
   - component: {fileID: 2385996}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8445956244175416574}
   - component: {fileID: 241340336810639845}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: DisplayUnavailableZoneForSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2719042134056884947}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: BulletStartPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,7 +627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2009855506382673332, guid: 7050ae83155e4f04a8fe5aede21b7aa0, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7678704183621113317, guid: 7050ae83155e4f04a8fe5aede21b7aa0, type: 3}
       propertyPath: m_RootOrder

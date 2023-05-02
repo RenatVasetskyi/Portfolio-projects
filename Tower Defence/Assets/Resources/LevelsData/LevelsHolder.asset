@@ -52,8 +52,8 @@ MonoBehaviour:
       - ButtonPrefab: {fileID: 2937308549608602985, guid: 6d0aefbd90bdba848a151f4434ec0894, type: 3}
         Tower:
           TowerType: 0
-          TowerPrefab: {fileID: 100000, guid: 43b738391b30e7241896b94b0c789b6b, type: 3}
-          TowerModel: {fileID: 100000, guid: e36cf732b73e87f458b5e69d2c1f6417, type: 3}
+          TowerPrefab: {fileID: 129420, guid: d3ef549050e9b0542b4f3c3dd47a1085, type: 3}
+          TowerModel: {fileID: 919132149155446097, guid: 5c48f6ae46b08d64a97056a9875b8620, type: 3}
           Price: 50
           UpgradePrice: 50
           AttackRange: 12

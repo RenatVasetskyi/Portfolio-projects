@@ -4,9 +4,9 @@ using UnityEngine.InputSystem;
 namespace Assets.Scripts.Tower.Spawn
 {
     public class SpawnZoneChecker
-    {
-        [SerializeField] private LayerMask _spawnZoneLayer;
-        [SerializeField] private LayerMask _towerLayer;
+    { 
+        private LayerMask _spawnZoneLayer = 1<<6;
+        private LayerMask _towerLayer = 1<<7;
 
         private Ray _ray;
         private int _maxRaycastDistance = 200;
@@ -17,7 +17,8 @@ namespace Assets.Scripts.Tower.Spawn
         {
             GetMousePosition();
 
-            if (Physics.Raycast(_ray, out RaycastHit hit, _maxRaycastDistance, _spawnZoneLayer) & !Physics.Raycast(_ray, _maxRaycastDistance, _towerLayer))
+            if (Physics.Raycast(_ray, out RaycastHit hit, _maxRaycastDistance, _spawnZoneLayer) &&
+                !Physics.Raycast(_ray, _maxRaycastDistance, _towerLayer))
                 return hit;
             else
                 return default;

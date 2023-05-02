@@ -7,8 +7,8 @@ using Zenject;
 namespace Assets.Scripts.Tower.Spawn
 {
     public class TowerSpawner : MonoBehaviour
-    {
-        [SerializeField] private SpawnZoneChecker _spawnZoneChecker;
+    { 
+        private SpawnZoneChecker _spawnZoneChecker = new();
 
         private ITowerFactory _towerFactory;
         private ILocalCoinService _localCoinService;
@@ -17,11 +17,12 @@ namespace Assets.Scripts.Tower.Spawn
         private Vector3 _worldPosition;
 
         [Inject]
-        public void Construct(ITowerFactory towerFactory, ILocalCoinService localCoinService, TowerSelection towerSelection)
+        public void Construct(ITowerFactory towerFactory, ILocalCoinService localCoinService, TowerSelection towerSelection, PlayerInput input)
         {
             _towerFactory = towerFactory;
             _localCoinService = localCoinService;
             _towerSelection = towerSelection;
+            input.Player.CreateTower.performed += context => SpawnTower();
         }
 
         public void SpawnTower()
