@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 422446}
   - component: {fileID: 5188757847677104544}
+  - component: {fileID: -8733703756841247607}
   m_Layer: 7
   m_Name: SimpleTower
   m_TagString: Untagged
@@ -135,16 +136,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelsSettings: {fileID: 11400000, guid: 446cbff9546467e48a9d196d0f67fe32, type: 2}
-  _tower:
-    TowerType: 0
-    TowerPrefab: {fileID: 0}
-    TowerModel: {fileID: 0}
-    Price: 0
-    UpgradePrice: 0
-    AttackRange: 0
-    FireSpeed: 0
-    RotateSpeed: 0
   _towerType: 0
+--- !u!114 &-8733703756841247607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cad0e885a0f98443b08008cbe5fa80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cannonRotator: {fileID: 487344}
+  _towerCharacteristics: {fileID: 5188757847677104544}
 --- !u!1 &135976
 GameObject:
   m_ObjectHideFlags: 0
