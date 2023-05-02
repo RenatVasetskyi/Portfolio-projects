@@ -358,6 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy: {fileID: 6809604905857078147}
+  _enemyHealth: {fileID: -4611822252539077828}
   _slider: {fileID: 1559919483701342497}
   _fill: {fileID: 8646501352020797869}
   _gradient:

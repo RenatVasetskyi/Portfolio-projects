@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 4939996705135754}
   - component: {fileID: 3643031607253083636}
   - component: {fileID: -2080765917329311875}
+  - component: {fileID: 3397395222111333864}
   m_Layer: 7
   m_Name: MegaTower
   m_TagString: Untagged
@@ -149,6 +150,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cannonRotator: {fileID: 4519941387849242}
   _towerCharacteristics: {fileID: 3643031607253083636}
+  _towerShooting: {fileID: 3397395222111333864}
+--- !u!114 &3397395222111333864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326093064322132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddf52f2a8875804182a91aec782794a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletStartPoint: {fileID: 5300377457760801772}
 --- !u!1 &1414511323558576
 GameObject:
   m_ObjectHideFlags: 0

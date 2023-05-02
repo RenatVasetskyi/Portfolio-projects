@@ -11,10 +11,9 @@ namespace Assets.Scripts.Tower.Characteristics
         [SerializeField] AllLevelsSettings _levelsSettings; 
         [SerializeField] private TowerType _towerType;
 
-        private TowerInfo _tower;
-
         private ILocalCoinService _localCoinService;
 
+        public TowerInfo Tower { get; private set; }
         public int CannonRotateSpeed { get; private set; }
         public int Damage { get; private set; }
         public float FireSpeed { get; private set; }
@@ -48,11 +47,11 @@ namespace Assets.Scripts.Tower.Characteristics
         {
             GetCurrentTowerSettings();
 
-            CannonRotateSpeed = _tower.RotateSpeed;
-            //Damage = _tower.Bullet.Damage;
-            FireSpeed = _tower.FireSpeed;
-            AttackRange = _tower.AttackRange;
-            UpgradePrice = _tower.UpgradePrice;
+            CannonRotateSpeed = Tower.RotateSpeed;
+            Damage = Tower.Bullet.Damage;
+            FireSpeed = Tower.FireSpeed;
+            AttackRange = Tower.AttackRange;
+            UpgradePrice = Tower.UpgradePrice;
 
             DamageIncreasing = Damage / 3;
             FireSpeedIncreasing = FireSpeed / 4f;
@@ -67,7 +66,7 @@ namespace Assets.Scripts.Tower.Characteristics
                 foreach (TowerSelectionButton button in level.TowerSelectionButtons.Buttons)
                 {
                     if (button.Tower.TowerType == _towerType)
-                        _tower = button.Tower;
+                        Tower = button.Tower;
                 }
             }
         }

@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 471166}
   - component: {fileID: -7880521502323846769}
   - component: {fileID: -3290573841141570256}
+  - component: {fileID: -3497095974865073898}
   m_Layer: 7
   m_Name: SpeedTower
   m_TagString: Untagged
@@ -285,6 +286,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cannonRotator: {fileID: 450448}
   _towerCharacteristics: {fileID: -7880521502323846769}
+  _towerShooting: {fileID: -3497095974865073898}
+--- !u!114 &-3497095974865073898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddf52f2a8875804182a91aec782794a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletStartPoint: {fileID: 6069448310642799564}
 --- !u!1 &171538
 GameObject:
   m_ObjectHideFlags: 0

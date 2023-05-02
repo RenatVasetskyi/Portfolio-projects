@@ -1994,6 +1994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy: {fileID: 4509248011115913358}
+  _enemyHealth: {fileID: 2089554367589613201}
   _slider: {fileID: 4680544551208992205}
   _fill: {fileID: 6115232515073659827}
   _gradient:

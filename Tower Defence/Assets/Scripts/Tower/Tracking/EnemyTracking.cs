@@ -1,5 +1,6 @@
 using Assets.Scripts.Data;
 using Assets.Scripts.Tower.Characteristics;
+using Assets.Scripts.Tower.Shooting;
 using UnityEngine;
 
 namespace Assets.Scripts.Tower.Tracking
@@ -9,7 +10,7 @@ namespace Assets.Scripts.Tower.Tracking
         [SerializeField] private Transform _cannonRotator;
 
         [SerializeField] private TowerCharacteristics _towerCharacteristics;
-        //[SerializeField] private TowerShooting _towerShooting;
+        [SerializeField] private TowerShooting _towerShooting;
 
         private float _fireCountDown = 0f;
 
@@ -52,7 +53,7 @@ namespace Assets.Scripts.Tower.Tracking
 
             if (_fireCountDown <= 0)
             {
-                //_towerShooting.Shoot();
+                _towerShooting.Shoot();
                 _fireCountDown = 1f / _towerCharacteristics.FireSpeed;
             }
 

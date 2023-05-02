@@ -7,7 +7,7 @@ namespace Assets.Scripts.Enemy.Health
 {
     public class EnemyHealth : MonoBehaviour
     {
-        public event Action OnDamageTaken;
+        public event Action OnHealthChanged;
         public event Action OnDied;
 
         [SerializeField] private Main.Enemy _enemy;
@@ -16,12 +16,13 @@ namespace Assets.Scripts.Enemy.Health
 
         private int _maxHp;
         private int _minHp;
-        private int _currentHp;
+
+        public int CurrentHp { get; private set; }
 
         public void TakeDamage(int damage)
         {
-            _currentHp -= damage;
-            OnDamageTaken?.Invoke();
+            CurrentHp -= damage;
+            OnHealthChanged?.Invoke();
 
             CheckDeath();
         }
@@ -32,13 +33,13 @@ namespace Assets.Scripts.Enemy.Health
         private void Init()
         {
             _maxHp = _enemy.EnemyData.MaxHp;
-            _currentHp = _maxHp;
+            CurrentHp = _maxHp;
             _minHp = 0;
         }
 
         private void CheckDeath()
         {
-            if (_currentHp <= _minHp)
+            if (CurrentHp <= _minHp)
                 Die();
         }
 

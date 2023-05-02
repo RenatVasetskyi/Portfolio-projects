@@ -2,6 +2,7 @@ using Assets.Scripts.Architecture.Services.Factories;
 using Assets.Scripts.Architecture.Services.Factories.Enemy;
 using Assets.Scripts.Architecture.Services.Factories.Main;
 using Assets.Scripts.Architecture.Services.Factories.Tower;
+using Assets.Scripts.Architecture.Services.Factories.Tower.Bullet;
 using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.States;
 using Assets.Scripts.Architecture.States.Interfaces;
@@ -29,8 +30,17 @@ namespace Assets.Scripts.Architecture.Installers
             BindWaveSystem();
             BindTowerFactory();
             BindMainLevelFactory();
+            BindBulletFactory();
             BindStates();
             AddStatesToStateMachine();
+        }
+
+        private void BindBulletFactory()
+        {
+            Container
+                .Bind<IBulletFactory>()
+                .To<BulletFactory>()
+                .AsSingle();
         }
 
         private void BindTowerSelection()

@@ -6,12 +6,16 @@ namespace Assets.Scripts.Enemy.Health
     public class EnemyHealthBar : MonoBehaviour
     {
         [SerializeField] private Main.Enemy _enemy;
+        [SerializeField] private EnemyHealth _enemyHealth;
         [SerializeField] private Slider _slider;
         [SerializeField] private Image _fill;
         [SerializeField] private Gradient _gradient;
 
-        private void Awake() => 
+        private void Awake()
+        {
             Init();
+            _enemyHealth.OnHealthChanged += UpdateHealthBar;
+        }
 
         private void LateUpdate() =>
             transform.LookAt(UnityEngine.Camera.main.transform);
@@ -25,5 +29,8 @@ namespace Assets.Scripts.Enemy.Health
             _slider.value = _enemy.EnemyData.MaxHp;
             _fill.color = _gradient.Evaluate(_slider.normalizedValue);
         }
+
+        private void UpdateHealthBar() =>
+            _slider.value = _enemyHealth.CurrentHp;
     }
 }
