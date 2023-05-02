@@ -19,6 +19,7 @@ namespace Assets.Scripts.Tower.Characteristics
         public float FireSpeed { get; private set; }
         public int AttackRange { get; private set; }
         public int UpgradePrice { get; private set; }
+        public int BulletSpeed { get; private set; }
 
         public int DamageIncreasing { get; private set; }
         public float FireSpeedIncreasing { get; private set; }
@@ -33,6 +34,8 @@ namespace Assets.Scripts.Tower.Characteristics
         {
             if (_localCoinService.Coins >= UpgradePrice)
             {
+                _localCoinService.Buy(UpgradePrice);
+
                 Damage += DamageIncreasing;
                 FireSpeed += FireSpeedIncreasing;
                 AttackRange += AttackRangeIncreasing;
@@ -52,6 +55,7 @@ namespace Assets.Scripts.Tower.Characteristics
             FireSpeed = Tower.FireSpeed;
             AttackRange = Tower.AttackRange;
             UpgradePrice = Tower.UpgradePrice;
+            BulletSpeed = Tower.Bullet.Speed;
 
             DamageIncreasing = Damage / 3;
             FireSpeedIncreasing = FireSpeed / 4f;

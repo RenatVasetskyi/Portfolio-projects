@@ -18,7 +18,7 @@ MonoBehaviour:
     CoinsCounter: {fileID: 4057524601541569357, guid: 80404fff643a25c43955dbf5f6900f7b, type: 3}
     WaveCounter: {fileID: 1036435580197967665, guid: 695f10cd995a58c4199a5b3dac55736f, type: 3}
     PlayersHp: {fileID: 3655540014041048828, guid: c69ff24861b09fd428a6159c505fd81b, type: 3}
-    Coins: 120
+    Coins: 500
     Hp: 5
     WaveSettings:
       WaveDatas:
