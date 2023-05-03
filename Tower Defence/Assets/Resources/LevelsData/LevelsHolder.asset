@@ -56,13 +56,13 @@ MonoBehaviour:
           TowerModel: {fileID: 919132149155446097, guid: 5c48f6ae46b08d64a97056a9875b8620, type: 3}
           Bullet:
             Prefab: {fileID: 8943938515332123315, guid: 2ac94ed2d5b743f4dac4f9e957624719, type: 3}
-            Damage: 35
-            Speed: 50
-          Price: 50
-          UpgradePrice: 50
-          AttackRange: 12
-          RotateSpeed: 6
-          FireSpeed: 1
+            Damage: 100
+            Speed: 80
+          Price: 120
+          UpgradePrice: 80
+          AttackRange: 20
+          RotateSpeed: 10
+          FireSpeed: 2
       - ButtonPrefab: {fileID: 8604397196665533124, guid: 2683b66f7192945479c54c6e1d96b877, type: 3}
         Tower:
           TowerType: 1

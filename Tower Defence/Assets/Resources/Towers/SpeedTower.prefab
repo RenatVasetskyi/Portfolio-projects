@@ -334,6 +334,7 @@ MonoBehaviour:
   _attackRangeCountText: {fileID: 4290058007633661260}
   _towerCharacteristicsCanvas: {fileID: 5769925836502819230}
   _towerCharacteristicsWindow: {fileID: 6928091567436143336}
+  _upgradePriceText: {fileID: 1107876399080988655}
   _canvasScale: {x: 3, y: 3, z: 3}
 --- !u!1 &171538
 GameObject:
@@ -875,7 +876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 228435695874126428, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 6
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 228435695874126428, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -889,13 +890,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3815642745233380781, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6828788153276105130, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
       propertyPath: m_Name
       value: TowerCharacteristicsCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 6828788153276105130, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7416252222669767980, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
       propertyPath: m_LocalScale.x
@@ -923,6 +928,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
+--- !u!114 &1107876399080988655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3815642745233380781, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
+  m_PrefabInstance: {fileID: 4299835294698195522}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2036571047878240394 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2877606616328102600, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}

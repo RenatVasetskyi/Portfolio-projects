@@ -200,6 +200,7 @@ MonoBehaviour:
   _attackRangeCountText: {fileID: 5280355830535662868}
   _towerCharacteristicsCanvas: {fileID: 2511929266211897798}
   _towerCharacteristicsWindow: {fileID: 1363262698036902576}
+  _upgradePriceText: {fileID: 9048075895468490679}
   _canvasScale: {x: 5, y: 5, z: 5}
 --- !u!1 &135976
 GameObject:
@@ -971,6 +972,17 @@ RectTransform:
 --- !u!114 &7966186260115884242 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2877606616328102600, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
+  m_PrefabInstance: {fileID: 5288030576358648346}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9048075895468490679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3815642745233380781, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
   m_PrefabInstance: {fileID: 5288030576358648346}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

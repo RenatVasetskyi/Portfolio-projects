@@ -13,7 +13,7 @@ namespace Assets.Scripts.Tower.Characteristics
 
         [SerializeField] private Canvas _towerCharacteristicsCanvas;
         [SerializeField] private GameObject _towerCharacteristicsWindow;
-        //[SerializeField] private TextMeshProUGUI _upgradePriceText;
+        [SerializeField] private TextMeshProUGUI _upgradePriceText;
 
         [SerializeField] private Vector3 _canvasScale;
 
@@ -21,8 +21,9 @@ namespace Assets.Scripts.Tower.Characteristics
 
         private bool _isUpgrageWindowOpened = false;
 
-        private void Start()
+        private void Awake()
         {
+            _towerCharacteristics.OnTowerCharacteristicsUpgraded += UpdateCharacteristics;
             UpdateCharacteristics();
             _towerCharacteristicsCanvas.worldCamera = UnityEngine.Camera.main;
         }
@@ -52,6 +53,7 @@ namespace Assets.Scripts.Tower.Characteristics
                                        $" <color=green>{(_towerCharacteristics.FireSpeed + _towerCharacteristics.FireSpeedIncreasing) - _towerCharacteristics.FireSpeed}</color=green>";
             _attackRangeCountText.text = $"{_towerCharacteristics.AttackRange} +" +
                                          $" <color=green>{(_towerCharacteristics.AttackRange + _towerCharacteristics.AttackRangeIncreasing) - _towerCharacteristics.AttackRange}</color=green>";
+            _upgradePriceText.text = $"{_towerCharacteristics.UpgradePrice}";
         }
 
         private void OpenTowerCharacteristicsWindow()

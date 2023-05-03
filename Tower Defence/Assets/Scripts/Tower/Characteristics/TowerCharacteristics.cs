@@ -1,3 +1,4 @@
+using System;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data.Levels;
 using Assets.Scripts.Tower.Selection;
@@ -8,6 +9,8 @@ namespace Assets.Scripts.Tower.Characteristics
 {
     public class TowerCharacteristics : MonoBehaviour
     {
+        public event Action OnTowerCharacteristicsUpgraded;
+
         [SerializeField] AllLevelsSettings _levelsSettings; 
         [SerializeField] private TowerType _towerType;
 
@@ -40,6 +43,8 @@ namespace Assets.Scripts.Tower.Characteristics
                 FireSpeed += FireSpeedIncreasing;
                 AttackRange += AttackRangeIncreasing;
                 UpgradePrice += PriceIncreasing;
+
+                OnTowerCharacteristicsUpgraded.Invoke();
             }
         }
 
