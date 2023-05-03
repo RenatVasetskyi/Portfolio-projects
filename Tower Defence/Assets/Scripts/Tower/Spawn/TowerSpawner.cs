@@ -28,7 +28,7 @@ namespace Assets.Scripts.Tower.Spawn
 
         public void SpawnTower()
         {
-            if (EventSystem.current.IsPointerOverGameObject())
+            if (IsPointerOverUI())
                 return;
 
             _worldPosition = _spawnZoneChecker.CheckAccess().point;
@@ -41,6 +41,13 @@ namespace Assets.Scripts.Tower.Spawn
                 _localCoinService.Buy(_towerSelection.SelectedButton.Tower.Price);
                 _towerFactory.CreateTower(_towerSelection.SelectedButton.Tower.TowerPrefab, _worldPosition, Quaternion.identity, transform);
             }
+        }
+
+        private bool IsPointerOverUI()
+        {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return true;
+            return false;
         }
     }
 }

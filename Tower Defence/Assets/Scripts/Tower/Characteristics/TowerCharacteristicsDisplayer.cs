@@ -37,7 +37,7 @@ namespace Assets.Scripts.Tower.Characteristics
 
         private void OnMouseDown()
         {
-            if (EventSystem.current.IsPointerOverGameObject())
+            if (IsPointerOverUI())
                 return;
 
             if (_isUpgrageWindowOpened == false)
@@ -71,5 +71,12 @@ namespace Assets.Scripts.Tower.Characteristics
 
         private void OffTowerCharacteristicsCanvas() =>
             _towerCharacteristicsCanvas.gameObject.SetActive(false);
+
+        private bool IsPointerOverUI()
+        {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return true;
+            return false;
+        }
     }
 }
