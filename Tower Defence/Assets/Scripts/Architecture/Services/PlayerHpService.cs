@@ -1,5 +1,6 @@
 using System;
 using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Architecture.States;
 using Assets.Scripts.Architecture.States.Interfaces;
 
 namespace Assets.Scripts.Architecture.Services
@@ -26,8 +27,8 @@ namespace Assets.Scripts.Architecture.Services
         {
             Hp -= damage;
             OnHpChanged?.Invoke();
-            //if (Hp <= 0)
-                //_stateMachine.Enter<GameOverState>();
+            if (Hp <= 0)
+                _stateMachine.Enter<GameOverState>();
         }
     }
 }

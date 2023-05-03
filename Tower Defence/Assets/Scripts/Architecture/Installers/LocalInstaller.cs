@@ -110,6 +110,7 @@ namespace Assets.Scripts.Architecture.Installers
         {
             Container.Bind<InitializeGameWorldState>().AsSingle();
             Container.Bind<GameLoopState>().AsSingle();
+            Container.Bind<GameOverState>().AsSingle();
         }
 
         private void AddStatesToStateMachine()
@@ -117,6 +118,7 @@ namespace Assets.Scripts.Architecture.Installers
             IStateMachine stateMachine = Container.Resolve<IStateMachine>();
             stateMachine.States.Add(typeof(InitializeGameWorldState), Container.Resolve<InitializeGameWorldState>());
             stateMachine.States.Add(typeof(GameLoopState), Container.Resolve<GameLoopState>());
+            stateMachine.States.Add(typeof(GameOverState), Container.Resolve<GameOverState>());
         }
     }
 }
