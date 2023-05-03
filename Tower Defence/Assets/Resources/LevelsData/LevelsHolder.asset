@@ -53,7 +53,7 @@ MonoBehaviour:
         Tower:
           TowerType: 0
           TowerPrefab: {fileID: 129420, guid: d3ef549050e9b0542b4f3c3dd47a1085, type: 3}
-          TowerModel: {fileID: 919132149155446097, guid: 5c48f6ae46b08d64a97056a9875b8620, type: 3}
+          TowerModel: {fileID: 8552850671451201328, guid: 9dcdadf213fa02e4d992ee7995d88a66, type: 3}
           Bullet:
             Prefab: {fileID: 8943938515332123315, guid: 2ac94ed2d5b743f4dac4f9e957624719, type: 3}
             Damage: 100
@@ -67,7 +67,7 @@ MonoBehaviour:
         Tower:
           TowerType: 1
           TowerPrefab: {fileID: 1326093064322132, guid: a425124410f363a43adb6788601cc3e0, type: 3}
-          TowerModel: {fileID: 919132149155446097, guid: 7e0687e18ba31bc468fc713856395f1a, type: 3}
+          TowerModel: {fileID: 5030161030180692135, guid: 02a4b0b037890f048979dbef4fd5fd85, type: 3}
           Bullet:
             Prefab: {fileID: 339029724570663836, guid: f761d988f0445ca47b9e5bfd9aed7a0a, type: 3}
             Damage: 50
@@ -81,7 +81,7 @@ MonoBehaviour:
         Tower:
           TowerType: 2
           TowerPrefab: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
-          TowerModel: {fileID: 919132149155446097, guid: a940d0a0d7c867e4696c7c49b53bdf4c, type: 3}
+          TowerModel: {fileID: 1721469738240161675, guid: d08ac94aec5bb1f4c8a9c2ff02438b9d, type: 3}
           Bullet:
             Prefab: {fileID: 5180334387422381593, guid: ca7d035f9d337e74a83364fb5b916ec3, type: 3}
             Damage: 30
