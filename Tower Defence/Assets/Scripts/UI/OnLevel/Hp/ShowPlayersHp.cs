@@ -15,8 +15,11 @@ namespace Assets.Scripts.UI.OnLevel.Hp
         public void Construct(IPlayerHpService playerHpService) =>
             _playerHpService = playerHpService;
 
-        private void Start() =>
+        private void Start()
+        {
+            _playerHpService.OnHpChanged += UpdatePlayersHp;
             UpdatePlayersHp();
+        }
 
         private void UpdatePlayersHp() =>
             _hpText.text = _playerHpService.Hp.ToString();

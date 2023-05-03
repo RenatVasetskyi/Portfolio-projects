@@ -23,8 +23,8 @@ namespace Assets.Scripts.Tower.Characteristics
 
         private void Awake()
         {
-            _towerCharacteristics.OnTowerCharacteristicsUpgraded += UpdateCharacteristics;
             UpdateCharacteristics();
+            _towerCharacteristics.OnTowerCharacteristicsUpgraded += UpdateCharacteristics;
             _towerCharacteristicsCanvas.worldCamera = UnityEngine.Camera.main;
         }
 
