@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Assets.Scripts.Architecture.States.Interfaces;
 
 namespace Assets.Scripts.Architecture.States

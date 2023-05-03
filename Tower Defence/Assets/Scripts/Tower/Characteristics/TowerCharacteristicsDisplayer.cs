@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Assets.Scripts.Tower.Characteristics
 {
@@ -21,6 +22,9 @@ namespace Assets.Scripts.Tower.Characteristics
 
         private bool _isUpgrageWindowOpened = false;
 
+        public void CloseTowerCharacteristicsWindow() =>
+            LeanTween.scale(_towerCharacteristicsWindow.gameObject, Vector3.zero, _windowScaleDuration).setOnComplete(OffTowerCharacteristicsCanvas);
+
         private void Awake()
         {
             UpdateCharacteristics();
@@ -33,6 +37,9 @@ namespace Assets.Scripts.Tower.Characteristics
 
         private void OnMouseDown()
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
             if (_isUpgrageWindowOpened == false)
             {
                 _isUpgrageWindowOpened = true;
@@ -61,9 +68,6 @@ namespace Assets.Scripts.Tower.Characteristics
             _towerCharacteristicsCanvas.gameObject.SetActive(true);
             LeanTween.scale(_towerCharacteristicsWindow.gameObject, _canvasScale, _windowScaleDuration);
         }
-
-        private void CloseTowerCharacteristicsWindow() =>
-            LeanTween.scale(_towerCharacteristicsWindow.gameObject, Vector3.zero, _windowScaleDuration).setOnComplete(OffTowerCharacteristicsCanvas);
 
         private void OffTowerCharacteristicsCanvas() =>
             _towerCharacteristicsCanvas.gameObject.SetActive(false);

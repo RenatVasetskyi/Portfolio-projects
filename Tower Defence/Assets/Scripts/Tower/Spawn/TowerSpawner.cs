@@ -2,6 +2,7 @@ using Assets.Scripts.Architecture.Services.Factories.Tower;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Tower.Selection;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Zenject;
 
 namespace Assets.Scripts.Tower.Spawn
@@ -27,6 +28,9 @@ namespace Assets.Scripts.Tower.Spawn
 
         public void SpawnTower()
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
             _worldPosition = _spawnZoneChecker.CheckAccess().point;
 
             if (_worldPosition == default)
