@@ -6,7 +6,7 @@ using UnityEngine;
 using Zenject;
 using Object = UnityEngine.Object;
 
-namespace Assets.Scripts.Architecture.Services.Factories
+namespace Assets.Scripts.Architecture.Services.Factories.UI
 {
     public class UIFactory : IUIFactory
     {

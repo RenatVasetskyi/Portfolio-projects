@@ -1,6 +1,6 @@
 using Assets.Scripts.Architecture.Main;
 using Assets.Scripts.Architecture.Services;
-using Assets.Scripts.Architecture.Services.Factories;
+using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data.Levels;

@@ -39,7 +39,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         {
             foreach (TowerSelectionButton button in GetCurrentLevel().TowerSelectionButtons.Buttons)
             {
-                TowerSelectionButtonHolder spawnedButton = _container.InstantiatePrefabForComponent<TowerSelectionButtonHolder>(button.ButtonPrefab, parent.transform);
+                TowerSelectionButtonHolder spawnedButton = _container.InstantiatePrefabForComponent<TowerSelectionButtonHolder>(button.ButtonPrefab, parent);
                 spawnedButton.Tower = button.Tower;
             }
         }

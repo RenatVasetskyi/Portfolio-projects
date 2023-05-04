@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Assets.Scripts.Architecture.Services;
 using UnityEngine;
 
 namespace Assets.Scripts.Data.Windows

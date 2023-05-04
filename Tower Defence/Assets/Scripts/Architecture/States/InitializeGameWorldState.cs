@@ -1,5 +1,5 @@
-using Assets.Scripts.Architecture.Services.Factories;
 using Assets.Scripts.Architecture.Services.Factories.Main;
+using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.UI.Loading;

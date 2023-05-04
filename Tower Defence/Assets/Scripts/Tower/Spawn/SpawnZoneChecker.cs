@@ -15,7 +15,7 @@ namespace Assets.Scripts.Tower.Spawn
 
         public RaycastHit CheckAccess()
         {
-            GetMousePosition();
+            InitRay();
 
             if (Physics.Raycast(_ray, out RaycastHit hit, _maxRaycastDistance, _spawnZoneLayer) &&
                 !Physics.Raycast(_ray, _maxRaycastDistance, _towerLayer))
@@ -24,7 +24,7 @@ namespace Assets.Scripts.Tower.Spawn
                 return default;
         }
 
-        private void GetMousePosition()
+        private void InitRay()
         {
             _mousePosition = Mouse.current.position.ReadValue();
             _ray = UnityEngine.Camera.main.ScreenPointToRay(_mousePosition);

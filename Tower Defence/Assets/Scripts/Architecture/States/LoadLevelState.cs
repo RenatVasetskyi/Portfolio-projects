@@ -19,7 +19,6 @@ namespace Assets.Scripts.Architecture.States
 
         public void Exit()
         {
-            //_loadingCurtain.Hide();
         }
 
         public void Enter(string nextScene)

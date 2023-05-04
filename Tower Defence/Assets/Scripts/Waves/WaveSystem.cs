@@ -4,6 +4,7 @@ using Assets.Scripts.Architecture.Services.Factories.Enemy;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data;
+using Assets.Scripts.Enemy.Main;
 using Assets.Scripts.Enemy.Path;
 using UnityEngine;
 
@@ -40,15 +41,15 @@ namespace Assets.Scripts.Waves
         { 
             Transform parent = UnityEngine.Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.EnemyParent));
 
-            foreach (var waveData in _currentLevelSettingsProvider.GetCurrentLevelSettings().WaveSettings.WaveDatas)
+            foreach (WaveData waveData in _currentLevelSettingsProvider.GetCurrentLevelSettings().WaveSettings.WaveDatas)
             {
-                foreach (var enemyOnWaveData in waveData.EnemyDatas)
+                foreach (EnemyOnWaveData enemyOnWaveData in waveData.EnemyDatas)
                 {
                     yield return new WaitForSeconds(enemyOnWaveData.TimeDelayBetweenWaves);
 
                     OnWaveNumberChanged?.Invoke(waveData.WaveNumber);
 
-                    foreach (var enemySpawnData in enemyOnWaveData.EnemySpawnDatas)
+                    foreach (EnemySpawnData enemySpawnData in enemyOnWaveData.EnemySpawnDatas)
                     {
                         for (int i = 0; i < enemySpawnData.EnemyCount; i++)
                         {

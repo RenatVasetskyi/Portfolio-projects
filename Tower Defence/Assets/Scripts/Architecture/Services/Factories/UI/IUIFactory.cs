@@ -1,4 +1,4 @@
-namespace Assets.Scripts.Architecture.Services.Factories
+namespace Assets.Scripts.Architecture.Services.Factories.UI
 {
     public interface IUIFactory
     {
