@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 3181200688467393042}
   - component: {fileID: 8781154794899884699}
   - component: {fileID: 7509302103241376324}
-  - component: {fileID: -5042929693171175533}
   m_Layer: 5
   m_Name: MeteorButton
   m_TagString: Untagged
@@ -199,17 +198,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-5042929693171175533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7210652460168709070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0cd375876edae041ba9fb4aa7012fc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 50
-  DestroyEffect: {fileID: 100000, guid: 972561acbe31e7147b76d1a430caf37d, type: 3}
