@@ -14,7 +14,7 @@ namespace Assets.Scripts.Boosters
         private Vector2 _mousePosition;
         private Ray _ray;
         private int _maxRaycastDistance = 200;
-        private int _strikeZoneLayer = 1<<8;
+        private int _strikeZoneLayer = 1 << 8;
 
         [Inject]
         public void Construct(ILevelUIFactory levelUIFactory, IBoosterFactory boosterFactory)
@@ -29,7 +29,7 @@ namespace Assets.Scripts.Boosters
             {
                 if (boosterBuuton.IsActivated)
                 {
-                    var booster = _boosterFactory.CreateBooster(boosterBuuton.BoosterType, GetBoosterSpawnPosition(), transform.rotation, transform);
+                    Booster booster = _boosterFactory.CreateBooster(boosterBuuton.BoosterType, GetBoosterSpawnPosition(), transform.rotation, transform);
                     StartCoroutine(booster.Move(GetTargetPosition()));
                 }
             }
