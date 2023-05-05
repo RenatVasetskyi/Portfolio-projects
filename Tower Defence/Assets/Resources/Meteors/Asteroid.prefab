@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8880819237238517064}
   - component: {fileID: 2947506860702644318}
   - component: {fileID: 1015945075444073679}
+  - component: {fileID: -1093950360136460051}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -25,10 +26,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6123279987556253554}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -5.94, y: 0.10764115, z: -0.0007337332}
-  m_LocalScale: {x: 124.54529, y: 124.54529, z: 124.54529}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 200, y: 200, z: 200}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-1093950360136460051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6123279987556253554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf3a8674b3c8b1444994ff20a5630e24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 50

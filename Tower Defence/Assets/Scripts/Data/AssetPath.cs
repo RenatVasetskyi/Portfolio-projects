@@ -14,6 +14,6 @@ namespace Assets.Scripts.Data
         public const string MainLevelComponentsParent = "MainLevelComponentsParent";
         public const string TowerModelDisplayer = "Towers/TowerModelDisplayer";
         public const string MeteorBooster = "Meteors/Asteroid";
-        public const string BoosterLayoutGroup = "UI/BoosterLayoutGroup";
+        public const string BoosterHolder = "UI/BoosterHolder";
     }
 }

@@ -1,4 +1,5 @@
 using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Boosters;
 using Assets.Scripts.Data;
 using Assets.Scripts.Data.Levels;
 using Assets.Scripts.Tower.Selection;
@@ -13,6 +14,8 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         private readonly ICurrentLevelSettingsProvider _currentLevelSettingProvider;
         private readonly IAssetProvider _assetProvider;
         private readonly TowerSelection _towerSelection;
+
+        public BoosterHolder BoosterHolder { get; private set; }
 
         public LevelUIFactory(DiContainer container, ICurrentLevelSettingsProvider currentLevelSettingProvider, IAssetProvider assetProvider, TowerSelection towerSelection)
         {
@@ -33,6 +36,9 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             CreateButton(currentLevel.PlayersHp, parent);
 
             CreateTowerSelectionButtons(_towerSelection.transform);
+
+            CreateBoosterHolder(parent);
+            CreateBoosterButtons();
         }
 
         private void CreateTowerSelectionButtons(Transform parent)
@@ -41,6 +47,15 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             {
                 TowerSelectionButtonHolder spawnedButton = _container.InstantiatePrefabForComponent<TowerSelectionButtonHolder>(button.ButtonPrefab, parent);
                 spawnedButton.Tower = button.Tower;
+            }
+        }
+
+        private void CreateBoosterButtons()
+        {
+            foreach (BoosterButton boosterButton in GetCurrentLevel().Boosters)
+            {
+                BoosterButton spawnedBoosterButton = _container.InstantiatePrefabForComponent<BoosterButton>(boosterButton, BoosterHolder.transform);
+                BoosterHolder.BoosterButtons.Add(spawnedBoosterButton);
             }
         }
 
@@ -55,5 +70,11 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         private Transform CreateParent(Transform parent) =>
             Object.Instantiate(parent);
+
+        private void CreateBoosterHolder(Transform parent)
+        {
+            BoosterHolder = _container.InstantiatePrefabForComponent<BoosterHolder>(
+                _assetProvider.Initialize<BoosterHolder>(AssetPath.BoosterHolder), parent);
+        }
     }
 }

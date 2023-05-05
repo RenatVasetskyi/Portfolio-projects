@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 617683832624525791}
   - component: {fileID: 617683832624525785}
   - component: {fileID: 617683832624525790}
+  - component: {fileID: -358738518540139104}
   m_Layer: 5
-  m_Name: BoosterLayoutGroup
+  m_Name: BoosterHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,3 +73,15 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &-358738518540139104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617683832624525788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e736c3b00d64ee04097517aa8c6a7dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
