@@ -1,3 +1,4 @@
+using Assets.Scripts.Architecture.Services.Factories.Booster;
 using Assets.Scripts.Architecture.Services.Factories.Enemy;
 using Assets.Scripts.Architecture.Services.Factories.Main;
 using Assets.Scripts.Architecture.Services.Factories.Tower;
@@ -32,6 +33,15 @@ namespace Assets.Scripts.Architecture.Installers
             BindBulletFactory();
             BindStates();
             AddStatesToStateMachine();
+            BindBoosterFactory();
+        }
+
+        private void BindBoosterFactory()
+        {
+            Container
+                .Bind<IBoosterFactory>()
+                .To<BoosterFactory>()
+                .AsSingle();
         }
 
         private void BindBulletFactory()
