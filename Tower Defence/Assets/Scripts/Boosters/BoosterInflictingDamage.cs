@@ -1,4 +1,3 @@
-using System;
 using Assets.Scripts.Data;
 using Assets.Scripts.Enemy.Health;
 using UnityEngine;
@@ -12,14 +11,7 @@ namespace Assets.Scripts.Boosters
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag == Tags.Enemy)
-            {
                 other.GetComponent<EnemyHealth>().TakeDamage(_booster.Damage);
-                //Destroy(gameObject);
-            }
-            else
-            {
-                //Destroy(gameObject);       
-            }
         }
     }
 }

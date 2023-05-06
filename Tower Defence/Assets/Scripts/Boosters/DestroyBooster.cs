@@ -18,7 +18,7 @@ namespace Assets.Scripts.Boosters
             PlayEffect();
         }
 
-        public void PlayEffect()
+        private void PlayEffect()
         {
             GameObject effect = Instantiate(_destroyMeteorEffect, transform.position, transform.rotation);
             Destroy(effect, _destroyEffectDelay);

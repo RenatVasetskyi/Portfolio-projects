@@ -117,7 +117,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
+  m_Radius: 0.03
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-1093950360136460051
 MonoBehaviour:
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3a8674b3c8b1444994ff20a5630e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 70
   Speed: 100
 --- !u!114 &-4468692855283905203
 MonoBehaviour:
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _booster: {fileID: -1093950360136460051}
-  _destroyMeteorEffect: {fileID: 8126599521040383807, guid: 92ee095efb37ef44b975b349fb7d04b1, type: 3}
+  _destroyMeteorEffect: {fileID: 6151434728137987988, guid: 92ee095efb37ef44b975b349fb7d04b1, type: 3}
 --- !u!1001 &1592603066779697102
 PrefabInstance:
   m_ObjectHideFlags: 0

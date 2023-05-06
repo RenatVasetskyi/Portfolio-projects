@@ -13,12 +13,9 @@ namespace Assets.Scripts.Boosters
 
         public IEnumerator Move(Vector3 targetPosition)
         {
-            if (gameObject==null)
-                yield break;
-
             while (transform.position != targetPosition)
             {
-                transform.position = Vector3.MoveTowards(transform.position,targetPosition, Speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, Speed * Time.deltaTime);
                 yield return null;
             }
 
