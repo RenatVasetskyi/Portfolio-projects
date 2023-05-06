@@ -25,11 +25,11 @@ namespace Assets.Scripts.Boosters
 
         private void OnMouseDown()
         {
-            foreach (BoosterButton boosterBuuton in _levelUIFactory.BoosterHolder.BoosterButtons)
+            foreach (BoosterButton boosterButton in _levelUIFactory.BoosterHolder.BoosterButtons)
             {
-                if (boosterBuuton.IsActivated)
+                if (boosterButton.IsActivated)
                 {
-                    Booster booster = _boosterFactory.CreateBooster(boosterBuuton.BoosterType, GetBoosterSpawnPosition(), transform.rotation, transform);
+                    Booster booster = _boosterFactory.CreateBooster(boosterButton.BoosterType, GetBoosterSpawnPosition(), transform.rotation, transform);
                     StartCoroutine(booster.Move(GetTargetPosition()));
                 }
             }

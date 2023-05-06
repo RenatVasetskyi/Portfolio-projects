@@ -6,7 +6,6 @@ namespace Assets.Scripts.Boosters
     public class BoosterButton : MonoBehaviour
     {
         public BoosterType BoosterType;
-        public Booster Booster;
         public bool IsActivated;
 
         [SerializeField] private Button _button;

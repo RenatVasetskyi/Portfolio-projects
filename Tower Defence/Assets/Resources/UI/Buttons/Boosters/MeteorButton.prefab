@@ -212,6 +212,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoosterType: 0
-  Booster: {fileID: -1093950360136460051, guid: 543f85c367b24464098124fcc11a6955, type: 3}
   IsActivated: 0
   _button: {fileID: 8781154794899884699}
