@@ -9,11 +9,13 @@ namespace Assets.Scripts.Architecture.States
     {
         private readonly ILevelUIFactory _levelUIFactory;
         private readonly IWaveSystem _waveSystem;
+        private readonly IEnemyFactory _enemyFactory;
 
-        public GameOverState(ILevelUIFactory levelUIFactory, IWaveSystem waveSystem)
+        public GameOverState(ILevelUIFactory levelUIFactory, IWaveSystem waveSystem, IEnemyFactory enemyFactory)
         {
             _levelUIFactory = levelUIFactory;
             _waveSystem = waveSystem;
+            _enemyFactory = enemyFactory;
         }
 
         public void Exit()
@@ -23,6 +25,7 @@ namespace Assets.Scripts.Architecture.States
         public void Enter()
         {
             _waveSystem.StopWavesCoroutine();
+            _enemyFactory.EnemyParent.DestroyEnemies();
             _levelUIFactory.CreateGameOverWindow();
         }
     }

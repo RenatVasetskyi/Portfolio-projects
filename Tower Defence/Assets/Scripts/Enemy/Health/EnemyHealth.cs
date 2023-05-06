@@ -1,5 +1,6 @@
 using System;
 using Assets.Scripts.Enemy.Animation;
+using Assets.Scripts.Enemy.Main;
 using Assets.Scripts.Enemy.Movement;
 using UnityEngine;
 
@@ -45,6 +46,7 @@ namespace Assets.Scripts.Enemy.Health
 
         private void Die()
         {
+            GetComponentInParent<EnemyParent>().Enemies.Remove(gameObject);
             _enemyMovement.enabled = false;
             _enemyAnimator.PlayDeath();
             Destroy(gameObject);

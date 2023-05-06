@@ -13,7 +13,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.Enemy
         private readonly IAssetProvider _assetProvider;
 
         public Dictionary<EnemyType, GameObject> Prefabs { get; set; } = new();
-        public Transform EnemyParent { get; private set; }
+        public EnemyParent EnemyParent { get; private set; }
 
         public EnemyFactory(DiContainer container, IAssetProvider assetProvider)
         {
@@ -22,11 +22,15 @@ namespace Assets.Scripts.Architecture.Services.Factories.Enemy
             Initialize();
         }
 
-        public GameObject CreateEnemy(GameObject prefab, Vector3 at, Quaternion rotation, Transform parent) =>
-            _container.InstantiatePrefab(prefab, at, rotation, parent);
+        public GameObject CreateEnemy(GameObject prefab, Vector3 at, Quaternion rotation, EnemyParent parent)
+        {
+            GameObject enemy = _container.InstantiatePrefab(prefab, at, rotation, parent.transform);
+            parent.Enemies.Add(enemy);
+            return enemy;
+        }
 
         public void CreateEnemyParent() =>
-            EnemyParent = _container.InstantiatePrefab(_assetProvider.Initialize<Transform>(AssetPath.EnemyParent)).transform;
+            EnemyParent = _container.InstantiatePrefabForComponent<EnemyParent>(_assetProvider.Initialize<EnemyParent>(AssetPath.EnemyParent));
 
         private void Initialize()
         {
