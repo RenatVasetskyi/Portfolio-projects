@@ -652,7 +652,7 @@ GameObject:
   - component: {fileID: 4425425514385978471}
   - component: {fileID: 134256946584240396}
   m_Layer: 7
-  m_Name: DisplayUnavailableZoneForSpawn
+  m_Name: UnavailableZoneForSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -894,13 +894,17 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5297826477146839267, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6828788153276105130, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
       propertyPath: m_Name
       value: TowerCharacteristicsCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 6828788153276105130, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7416252222669767980, guid: b3a8df201c0aacc46af4dd4e7f48faa8, type: 3}
       propertyPath: m_LocalScale.x

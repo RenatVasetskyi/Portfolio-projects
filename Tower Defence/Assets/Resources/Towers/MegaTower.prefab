@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 3900137561369989542}
   - component: {fileID: 4827873544726540550}
   m_Layer: 7
-  m_Name: DisplayUnavailableZoneForSpawn
+  m_Name: UnavailableZoneForSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
