@@ -114,6 +114,7 @@ namespace Assets.Scripts.Architecture.Installers
         private void AddStatesToStateMachine()
         {
             IStateMachine stateMachine = Container.Resolve<IStateMachine>();
+
             stateMachine.States.Add(typeof(InitializeGameWorldState), Container.Resolve<InitializeGameWorldState>());
             stateMachine.States.Add(typeof(GameLoopState), Container.Resolve<GameLoopState>());
             stateMachine.States.Add(typeof(GameOverState), Container.Resolve<GameOverState>());

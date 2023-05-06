@@ -3,7 +3,6 @@ using System.Collections;
 using Assets.Scripts.Architecture.Services.Factories.Enemy;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
-using Assets.Scripts.Data;
 using Assets.Scripts.Enemy.Main;
 using Assets.Scripts.Enemy.Path;
 using UnityEngine;
@@ -20,8 +19,7 @@ namespace Assets.Scripts.Waves
 
         public event Action<int> OnWaveNumberChanged;
 
-        [SerializeField] private GameObject _skeletonPrefab;
-        [SerializeField] private GameObject _goblinPrefab;
+        public Coroutine WaveCoroutine;
 
         public WaveSystem(ICurrentLevelSettingsProvider currentLevelSettingsProvider,
             StartPoint startPoint, IAssetProvider assetProvider, 
@@ -35,11 +33,14 @@ namespace Assets.Scripts.Waves
         }
 
         public void RunStartWaveCoroutine() =>
-            _coroutineRunner.StartCoroutine(StartWave());
+            WaveCoroutine = _coroutineRunner.StartCoroutine(StartWave());
+
+        public void StopWavesCoroutine() =>
+            _coroutineRunner.StopCoroutine(WaveCoroutine);
 
         private IEnumerator StartWave()
-        { 
-            Transform parent = UnityEngine.Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.EnemyParent));
+        {
+            _enemyFactory.CreateEnemyParent();
 
             foreach (WaveData waveData in _currentLevelSettingsProvider.GetCurrentLevelSettings().WaveSettings.WaveDatas)
             {
@@ -53,7 +54,7 @@ namespace Assets.Scripts.Waves
                     {
                         for (int i = 0; i < enemySpawnData.EnemyCount; i++)
                         {
-                            _enemyFactory.CreateEnemy(_enemyFactory.Prefabs[enemySpawnData.Enemy], _startPoint.transform.position, _startPoint.transform.rotation, parent);
+                            _enemyFactory.CreateEnemy(_enemyFactory.Prefabs[enemySpawnData.Enemy], _startPoint.transform.position, _startPoint.transform.rotation, _enemyFactory.EnemyParent);
                             yield return new WaitForSeconds(enemyOnWaveData.TimeDelayBetweenSpawns);
                         }
                     }

@@ -6,5 +6,6 @@ namespace Assets.Scripts.Waves
     {
         public event Action<int> OnWaveNumberChanged;
         void RunStartWaveCoroutine();
+        void StopWavesCoroutine();
     }
 }

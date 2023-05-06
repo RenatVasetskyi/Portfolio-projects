@@ -17,9 +17,6 @@ namespace Assets.Scripts.Architecture.Installers
         public void Initialize() => 
             Container.Resolve<IStateMachine>().Enter<LoadMainMenuState>();
 
-        private void BindInterfaces() =>
-            Container.BindInterfacesTo<BootstrapInstaller>().FromInstance(this).AsSingle().NonLazy();
-
         private void BindStates()
         {
             Container.Bind<LoadMainMenuState>().AsSingle();
@@ -41,5 +38,8 @@ namespace Assets.Scripts.Architecture.Installers
                 .To<StateMachine>()
                 .AsSingle();
         }
+
+        private void BindInterfaces() =>
+            Container.BindInterfacesTo<BootstrapInstaller>().FromInstance(this).AsSingle().NonLazy();
     }
 }

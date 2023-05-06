@@ -1,4 +1,3 @@
-using System;
 using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.SceneManagement;

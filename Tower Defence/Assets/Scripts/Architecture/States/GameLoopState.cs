@@ -4,10 +4,6 @@ namespace Assets.Scripts.Architecture.States
 {
     public class GameLoopState : IState
     {
-        public GameLoopState()
-        {
-        }
-
         public void Exit()
         {
         }
