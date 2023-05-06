@@ -8,7 +8,6 @@ namespace Assets.Scripts.Boosters
     {
         public event Action OnTargetReached;
 
-        public int Damage;
         public int Speed;
 
         public IEnumerator Move(Vector3 targetPosition)

@@ -6,12 +6,13 @@ namespace Assets.Scripts.Boosters
 {
     public class BoosterInflictingDamage : MonoBehaviour
     {
+        [SerializeField] private int _damage;
         [SerializeField] private Booster _booster;
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag == Tags.Enemy)
-                other.GetComponent<EnemyHealth>().TakeDamage(_booster.Damage);
+                other.GetComponent<EnemyHealth>().TakeDamage(_damage);
         }
     }
 }
