@@ -31,6 +31,7 @@ namespace Assets.Scripts.Boosters
                 {
                     Booster booster = _boosterFactory.CreateBooster(boosterButton.BoosterType, GetBoosterSpawnPosition(), transform.rotation, transform);
                     StartCoroutine(booster.Move(GetTargetPosition()));
+                    boosterButton.Button.interactable = false;
                 }
             }
         }

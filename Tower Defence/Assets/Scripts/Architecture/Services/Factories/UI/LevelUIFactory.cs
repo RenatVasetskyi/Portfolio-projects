@@ -1,3 +1,4 @@
+using Assets.Scripts.Architecture.Services.Factories.Main;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Boosters;
 using Assets.Scripts.Data;
@@ -29,11 +30,8 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         {
             LevelSettings currentLevel = GetCurrentLevel();
             Transform parent = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
-            
-            CreateButton(currentLevel.CoinsCounter, parent);
-            CreateButton(currentLevel.StartWavesButton, parent);
-            CreateButton(currentLevel.WaveCounter, parent);
-            CreateButton(currentLevel.PlayersHp, parent);
+
+            CreateMainUIElements(parent);
 
             CreateTowerSelectionButtons(_towerSelection);
 
@@ -60,10 +58,10 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             }
         }
 
-        private void CreateButton(GameObject button, Transform parent)
+        private void CreateMainUIElements(Transform parent)
         {
-            if (button != null)
-                _container.InstantiatePrefab(button, parent);
+            foreach (GameObject element in GetCurrentLevel().MainLevelUIElements)
+                _container.InstantiatePrefab(element, parent);
         }
 
         private LevelSettings GetCurrentLevel() =>

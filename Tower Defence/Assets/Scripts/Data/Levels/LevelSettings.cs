@@ -12,11 +12,13 @@ namespace Assets.Scripts.Data.Levels
     {
         public LevelId Id;
 
-        [Header("Prefabs")]
-        public GameObject StartWavesButton;
-        public GameObject CoinsCounter;
-        public GameObject WaveCounter;
-        public GameObject PlayersHp;
+        [Header("Prefabs")] 
+        public List<GameObject> MainLevelUIElements;
+
+        //public GameObject StartWavesButton;
+        //public GameObject CoinsCounter;
+        //public GameObject WaveCounter;
+        //public GameObject PlayersHp;
 
         [Header("General Settings")] 
         public int Coins;

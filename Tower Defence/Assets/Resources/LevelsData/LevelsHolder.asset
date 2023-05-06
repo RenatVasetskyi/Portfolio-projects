@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levels:
   - Id: 1
-    StartWavesButton: {fileID: 5689525047379739414, guid: 40bd3e56c0c297347b44886b18d173c0, type: 3}
-    CoinsCounter: {fileID: 4057524601541569357, guid: 80404fff643a25c43955dbf5f6900f7b, type: 3}
-    WaveCounter: {fileID: 1036435580197967665, guid: 695f10cd995a58c4199a5b3dac55736f, type: 3}
-    PlayersHp: {fileID: 3655540014041048828, guid: c69ff24861b09fd428a6159c505fd81b, type: 3}
+    MainLevelUIElements:
+    - {fileID: 3655540014041048828, guid: c69ff24861b09fd428a6159c505fd81b, type: 3}
+    - {fileID: 4057524601541569357, guid: 80404fff643a25c43955dbf5f6900f7b, type: 3}
+    - {fileID: 1036435580197967665, guid: 695f10cd995a58c4199a5b3dac55736f, type: 3}
+    - {fileID: 5689525047379739414, guid: 40bd3e56c0c297347b44886b18d173c0, type: 3}
     Coins: 500
     Hp: 5
     WaveSettings:
@@ -94,10 +95,7 @@ MonoBehaviour:
     Boosters:
     - {fileID: -5360755552216759923, guid: c2248891a711f7b4c81df3cd60c69b70, type: 3}
   - Id: 2
-    StartWavesButton: {fileID: 5689525047379739414, guid: 40bd3e56c0c297347b44886b18d173c0, type: 3}
-    CoinsCounter: {fileID: 4057524601541569357, guid: 80404fff643a25c43955dbf5f6900f7b, type: 3}
-    WaveCounter: {fileID: 1036435580197967665, guid: 695f10cd995a58c4199a5b3dac55736f, type: 3}
-    PlayersHp: {fileID: 3655540014041048828, guid: c69ff24861b09fd428a6159c505fd81b, type: 3}
+    MainLevelUIElements: []
     Coins: 140
     Hp: 4
     WaveSettings:
