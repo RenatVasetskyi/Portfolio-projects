@@ -29,9 +29,9 @@ namespace Assets.Scripts.Boosters
             {
                 if (boosterButton.IsActivated)
                 {
+                    boosterButton.OffButton();
                     Booster booster = _boosterFactory.CreateBooster(boosterButton.BoosterType, GetBoosterSpawnPosition(), transform.rotation, transform);
                     StartCoroutine(booster.Move(GetTargetPosition()));
-                    boosterButton.Button.interactable = false;
                 }
             }
         }
@@ -49,8 +49,8 @@ namespace Assets.Scripts.Boosters
 
         private Vector3 GetBoosterSpawnPosition()
         {
-            return new Vector3(UnityEngine.Camera.main.transform.position.x
-                               + 10, UnityEngine.Camera.main.transform.position.y
+            return new Vector3(UnityEngine.Camera.main.transform.position.x 
+                               + 10, UnityEngine.Camera.main.transform.position.y 
                                      + 40, UnityEngine.Camera.main.transform.position.z);
         }
     }

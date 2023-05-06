@@ -1,4 +1,3 @@
-using Assets.Scripts.Architecture.Services.Factories.Main;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Boosters;
 using Assets.Scripts.Data;
@@ -14,16 +13,15 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         private readonly DiContainer _container;
         private readonly ICurrentLevelSettingsProvider _currentLevelSettingProvider;
         private readonly IAssetProvider _assetProvider;
-        private readonly TowerSelection _towerSelection;
 
+        public TowerSelection TowerSelection { get; private set; }
         public BoosterHolder BoosterHolder { get; private set; }
 
-        public LevelUIFactory(DiContainer container, ICurrentLevelSettingsProvider currentLevelSettingProvider, IAssetProvider assetProvider, TowerSelection towerSelection)
+        public LevelUIFactory(DiContainer container, ICurrentLevelSettingsProvider currentLevelSettingProvider, IAssetProvider assetProvider)
         {
             _container = container;
             _currentLevelSettingProvider = currentLevelSettingProvider;
             _assetProvider = assetProvider;
-            _towerSelection = towerSelection;
         }
 
         public void CreateLevelUI()
@@ -33,7 +31,8 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
             CreateMainUIElements(parent);
 
-            CreateTowerSelectionButtons(_towerSelection);
+            CreateTowerSelection(parent);
+            CreateTowerSelectionButtons(TowerSelection);
 
             CreateBoosterHolder(parent);
             CreateBoosterButtons();
@@ -64,16 +63,22 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
                 _container.InstantiatePrefab(element, parent);
         }
 
-        private LevelSettings GetCurrentLevel() =>
-            _currentLevelSettingProvider.GetCurrentLevelSettings();
-
-        private Transform CreateParent(Transform parent) =>
-            Object.Instantiate(parent);
-
         private void CreateBoosterHolder(Transform parent)
         {
             BoosterHolder = _container.InstantiatePrefabForComponent<BoosterHolder>(
                 _assetProvider.Initialize<BoosterHolder>(AssetPath.BoosterHolder), parent);
         }
+
+        private void CreateTowerSelection(Transform parent)
+        {
+            TowerSelection = _container.InstantiatePrefabForComponent<TowerSelection>(
+                _assetProvider.Initialize<TowerSelection>(AssetPath.TowerSelection), parent);
+        }
+
+        private LevelSettings GetCurrentLevel() =>
+            _currentLevelSettingProvider.GetCurrentLevelSettings();
+
+        private Transform CreateParent(Transform parent) =>
+            Object.Instantiate(parent);
     }
 }

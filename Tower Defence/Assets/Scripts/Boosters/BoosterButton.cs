@@ -8,10 +8,16 @@ namespace Assets.Scripts.Boosters
         public BoosterType BoosterType;
         public bool IsActivated;
 
-        public Button Button;
+        [SerializeField] private Button _button;
+
+        public void OffButton()
+        {
+            IsActivated = false;
+            _button.interactable = false;
+        }
 
         private void Awake() =>
-            Button.onClick.AddListener(OnClick);
+            _button.onClick.AddListener(OnClick);
 
         private void OnClick()
         {

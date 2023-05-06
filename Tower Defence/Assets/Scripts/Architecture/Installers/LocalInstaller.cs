@@ -18,11 +18,9 @@ namespace Assets.Scripts.Architecture.Installers
     {
         [SerializeField] private StartPoint _startPoint;
         [SerializeField] private Finish _finish;
-        [SerializeField] private TowerSelection _towerSelection;
 
         public override void InstallBindings()
         {
-            BindTowerSelection();
             BindLevelUIFactory();
             BindEnemyFactory();
             BindStartPoint();
@@ -49,14 +47,6 @@ namespace Assets.Scripts.Architecture.Installers
             Container
                 .Bind<IBulletFactory>()
                 .To<BulletFactory>()
-                .AsSingle();
-        }
-
-        private void BindTowerSelection()
-        {
-            Container
-                .Bind<TowerSelection>()
-                .FromInstance(_towerSelection)
                 .AsSingle();
         }
 

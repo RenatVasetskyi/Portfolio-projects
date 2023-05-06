@@ -1,4 +1,5 @@
 using Assets.Scripts.Architecture.Services.Factories.Tower;
+using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Tower.Selection;
 using UnityEngine;
@@ -13,16 +14,16 @@ namespace Assets.Scripts.Tower.Spawn
 
         private ITowerFactory _towerFactory;
         private ILocalCoinService _localCoinService;
-        private TowerSelection _towerSelection;
+        private ILevelUIFactory _levelUIFactory;
 
         private Vector3 _worldPosition;
 
         [Inject]
-        public void Construct(ITowerFactory towerFactory, ILocalCoinService localCoinService, TowerSelection towerSelection, PlayerInput input)
+        public void Construct(ITowerFactory towerFactory, ILocalCoinService localCoinService, PlayerInput input, ILevelUIFactory levelUIFactory)
         {
             _towerFactory = towerFactory;
             _localCoinService = localCoinService;
-            _towerSelection = towerSelection;
+            _levelUIFactory = levelUIFactory;
             input.Player.CreateTower.performed += context => SpawnTower();
         }
 
@@ -36,10 +37,10 @@ namespace Assets.Scripts.Tower.Spawn
             if (_worldPosition == default)
                 return;
 
-            if (_localCoinService.Coins >= _towerSelection.SelectedButton?.Tower.Price)
+            if (_localCoinService.Coins >= _levelUIFactory.TowerSelection.SelectedButton?.Tower.Price)
             {
-                _localCoinService.Buy(_towerSelection.SelectedButton.Tower.Price);
-                _towerFactory.CreateTower(_towerSelection.SelectedButton.Tower.TowerPrefab, _worldPosition, Quaternion.identity, transform);
+                _localCoinService.Buy(_levelUIFactory.TowerSelection.SelectedButton.Tower.Price);
+                _towerFactory.CreateTower(_levelUIFactory.TowerSelection.SelectedButton.Tower.TowerPrefab, _worldPosition, Quaternion.identity, transform);
             }
         }
 
@@ -47,7 +48,8 @@ namespace Assets.Scripts.Tower.Spawn
         {
             if (EventSystem.current.IsPointerOverGameObject())
                 return true;
-            return false;
+            else
+                return false;
         }
     }
 }
