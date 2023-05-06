@@ -35,18 +35,19 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             CreateButton(currentLevel.WaveCounter, parent);
             CreateButton(currentLevel.PlayersHp, parent);
 
-            CreateTowerSelectionButtons(_towerSelection.transform);
+            CreateTowerSelectionButtons(_towerSelection);
 
             CreateBoosterHolder(parent);
             CreateBoosterButtons();
         }
 
-        private void CreateTowerSelectionButtons(Transform parent)
+        private void CreateTowerSelectionButtons(TowerSelection towerSelection)
         {
             foreach (TowerSelectionButton button in GetCurrentLevel().TowerSelectionButtons.Buttons)
             {
-                TowerSelectionButtonHolder spawnedButton = _container.InstantiatePrefabForComponent<TowerSelectionButtonHolder>(button.ButtonPrefab, parent);
+                TowerSelectionButtonHolder spawnedButton = _container.InstantiatePrefabForComponent<TowerSelectionButtonHolder>(button.ButtonPrefab, towerSelection.transform);
                 spawnedButton.Tower = button.Tower;
+                towerSelection.Buttons.Add(spawnedButton);
             }
         }
 

@@ -10,14 +10,5 @@ namespace Assets.Scripts.Tower.Selection
 
         public void ChangeSelection(TowerSelectionButtonHolder button) =>
             SelectedButton = button;
-
-        private void Start() =>
-            Init();
-
-        private void Init()
-        {
-            foreach (TowerSelectionButtonHolder button in GetComponentsInChildren<TowerSelectionButtonHolder>())
-                Buttons.Add(button);
-        }
     }
 }
