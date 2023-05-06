@@ -7,7 +7,6 @@ using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.States;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Enemy.Path;
-using Assets.Scripts.Tower.Selection;
 using Assets.Scripts.Waves;
 using UnityEngine;
 using Zenject;

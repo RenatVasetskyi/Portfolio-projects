@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Assets.Scripts.Data
 {
     public static class AssetPath
@@ -18,5 +16,7 @@ namespace Assets.Scripts.Data
         public const string MeteorBooster = "Meteors/Asteroid";
         public const string BoosterHolder = "UI/BoosterHolder";
         public const string TowerSelection = "UI/TowerSelection";
+        public const string GameOverWindowCanvas = "UI/Windows/GameOverWindowCanvas";
+        public const string GameOverWindow = "UI/Windows/GameOverWindow";
     }
 }

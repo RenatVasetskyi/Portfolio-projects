@@ -2,6 +2,7 @@ using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Boosters;
 using Assets.Scripts.Data;
 using Assets.Scripts.Data.Levels;
+using Assets.Scripts.GameOver;
 using Assets.Scripts.Tower.Selection;
 using UnityEngine;
 using Zenject;
@@ -26,7 +27,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         public void CreateLevelUI()
         {
-            LevelSettings currentLevel = GetCurrentLevel();
             Transform parent = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
 
             CreateMainUIElements(parent);
@@ -38,11 +38,28 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             CreateBoosterButtons();
         }
 
+        public void CreateGameOverWindow()
+        {
+            Vector3 startPosition = new Vector3(0, Screen.height, 0);
+
+            GameObject parent = _container
+                .InstantiatePrefab(_assetProvider
+                    .Initialize<Transform>(AssetPath.GameOverWindowCanvas));
+
+            GameOverWindow window = _container
+                .InstantiatePrefabForComponent<GameOverWindow>(_assetProvider
+                    .Initialize<GameOverWindow>(AssetPath.GameOverWindow), parent.transform);
+
+            window.transform.localPosition = startPosition;
+        }
+
         private void CreateTowerSelectionButtons(TowerSelection towerSelection)
         {
             foreach (TowerSelectionButton button in GetCurrentLevel().TowerSelectionButtons.Buttons)
             {
-                TowerSelectionButtonHolder spawnedButton = _container.InstantiatePrefabForComponent<TowerSelectionButtonHolder>(button.ButtonPrefab, towerSelection.transform);
+                TowerSelectionButtonHolder spawnedButton = _container
+                    .InstantiatePrefabForComponent<TowerSelectionButtonHolder>(button.ButtonPrefab, towerSelection.transform);
+
                 spawnedButton.Tower = button.Tower;
                 towerSelection.Buttons.Add(spawnedButton);
             }
@@ -52,7 +69,9 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         {
             foreach (BoosterButton boosterButton in GetCurrentLevel().Boosters)
             {
-                BoosterButton spawnedBoosterButton = _container.InstantiatePrefabForComponent<BoosterButton>(boosterButton, BoosterHolder.transform);
+                BoosterButton spawnedBoosterButton = _container.
+                    InstantiatePrefabForComponent<BoosterButton>(boosterButton, BoosterHolder.transform);
+
                 BoosterHolder.BoosterButtons.Add(spawnedBoosterButton);
             }
         }
@@ -65,14 +84,16 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         private void CreateBoosterHolder(Transform parent)
         {
-            BoosterHolder = _container.InstantiatePrefabForComponent<BoosterHolder>(
-                _assetProvider.Initialize<BoosterHolder>(AssetPath.BoosterHolder), parent);
+            BoosterHolder = _container
+                .InstantiatePrefabForComponent<BoosterHolder>(_assetProvider
+                    .Initialize<BoosterHolder>(AssetPath.BoosterHolder), parent);
         }
 
         private void CreateTowerSelection(Transform parent)
         {
-            TowerSelection = _container.InstantiatePrefabForComponent<TowerSelection>(
-                _assetProvider.Initialize<TowerSelection>(AssetPath.TowerSelection), parent);
+            TowerSelection = _container
+                .InstantiatePrefabForComponent<TowerSelection>(_assetProvider
+                    .Initialize<TowerSelection>(AssetPath.TowerSelection), parent);
         }
 
         private LevelSettings GetCurrentLevel() =>

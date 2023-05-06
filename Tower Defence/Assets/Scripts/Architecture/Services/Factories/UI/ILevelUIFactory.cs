@@ -8,5 +8,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         TowerSelection TowerSelection { get; }
         BoosterHolder BoosterHolder { get; }
         void CreateLevelUI();
+        void CreateGameOverWindow();
     }
 }
