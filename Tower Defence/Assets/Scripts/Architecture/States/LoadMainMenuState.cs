@@ -1,6 +1,8 @@
+using System;
 using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.SceneManagement;
+using Assets.Scripts.UI.Loading;
 
 namespace Assets.Scripts.Architecture.States
 {
@@ -10,24 +12,29 @@ namespace Assets.Scripts.Architecture.States
 
         private readonly ISceneLoader _sceneLoader;
         private readonly IUIFactory _uiFactory;
+        private readonly LoadingCurtain _loadingCurtain;
 
-        public LoadMainMenuState(ISceneLoader sceneLoader, IUIFactory uiFactory)
+        public LoadMainMenuState(ISceneLoader sceneLoader, IUIFactory uiFactory, LoadingCurtain loadingCurtain)
         {
             _sceneLoader = sceneLoader;
             _uiFactory = uiFactory;
+            _loadingCurtain = loadingCurtain;
         }
 
         public void Exit()
         {
         }
 
-        public void Enter() =>
-            _sceneLoader.Load(MainMenuScene, OnLoaded);
+        public void Enter()
+        {
+            _loadingCurtain.Show();
+            _sceneLoader.Load(MainMenuScene, InitMainMenu);
+        }
 
-        private void OnLoaded() =>
-            InitMainMenu();
-
-        private void InitMainMenu() =>
+        private void InitMainMenu()
+        {
             _uiFactory.CreateMainMenu();
+            _loadingCurtain.Hide();
+        }
     }
 }
