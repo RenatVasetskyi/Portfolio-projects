@@ -1,5 +1,8 @@
+using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.Services.Factories.Tower.Bullet;
-using Assets.Scripts.Tower.Bullet;
+using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Audio;
+using Assets.Scripts.Tower.Bullets;
 using Assets.Scripts.Tower.Characteristics;
 using Assets.Scripts.Tower.Tracking;
 using UnityEngine;
@@ -9,22 +12,28 @@ namespace Assets.Scripts.Tower.Shooting
 {
     public class TowerShooting : MonoBehaviour
     {
+        [SerializeField] private SfxType _shotSfxType;
         [SerializeField] private Transform _bulletStartPoint;
 
         private IBulletFactory _bulletFactory;
+        private IAudioService _audioService;
 
         private TowerCharacteristics _towerCharacteristics;
         private EnemyTracking _enemyTracking;
 
         [Inject]
-        public void Construct(IBulletFactory bulletFactory) =>
+        public void Construct(IBulletFactory bulletFactory, IAudioService audioService)
+        {
             _bulletFactory = bulletFactory;
+            _audioService = audioService;
+        }
 
         public void Shoot()
         {
+            _audioService.PlaySfx(_shotSfxType);
             GameObject bulletObj = _bulletFactory
                 .CreateBullet(_towerCharacteristics.Tower.Bullet.Prefab, _bulletStartPoint.position, _bulletStartPoint.rotation, transform);
-            Bullet.Bullet bullet = SetDamage(bulletObj);
+            Bullet bullet = SetDamage(bulletObj);
 
             if (bullet != null)
                 bullet.GetComponent<BulletCheckTarget>().Seek(_enemyTracking.Target);
@@ -36,9 +45,9 @@ namespace Assets.Scripts.Tower.Shooting
             _towerCharacteristics = GetComponent<TowerCharacteristics>();
         }
 
-        private Bullet.Bullet SetDamage(GameObject bulletObj)
+        private Bullet SetDamage(GameObject bulletObj)
         {
-            Bullet.Bullet bullet = bulletObj.GetComponent<Bullet.Bullet>();
+            Bullet bullet = bulletObj.GetComponent<Bullet>();
             bullet.Damage = _towerCharacteristics.Damage;
             return bullet;
         }

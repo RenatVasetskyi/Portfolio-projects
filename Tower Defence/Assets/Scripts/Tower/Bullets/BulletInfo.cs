@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Assets.Scripts.Tower.Bullet
+namespace Assets.Scripts.Tower.Bullets
 {
     [Serializable]
     public class BulletInfo

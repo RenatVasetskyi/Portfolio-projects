@@ -13,5 +13,15 @@ MonoBehaviour:
   m_Name: Sound Effects Holder
   m_EditorClassIdentifier: 
   SoundEffects:
+  - _sfxType: 1
+    _clip: {fileID: 8300000, guid: a92e4b5c2bf28a14285c847f2a19211e, type: 3}
+  - _sfxType: 3
+    _clip: {fileID: 8300000, guid: 2c0d26c7debfb1346a4b9bd9bdc51c9d, type: 3}
+  - _sfxType: 2
+    _clip: {fileID: 8300000, guid: 199268350986bb045bcb025218f5b5a6, type: 3}
   - _sfxType: 0
-    _clip: {fileID: 0}
+    _clip: {fileID: 8300000, guid: 73741b103e51af445acd0df407c3f7b1, type: 3}
+  - _sfxType: 4
+    _clip: {fileID: 8300000, guid: 6f0456c7f34a836468b4f100f0af26eb, type: 3}
+  - _sfxType: 5
+    _clip: {fileID: 8300000, guid: 51a6a89f19ad1594a953e383739705f6, type: 3}

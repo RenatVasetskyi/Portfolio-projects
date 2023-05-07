@@ -1,5 +1,7 @@
+using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States;
 using Assets.Scripts.Architecture.States.Interfaces;
+using Assets.Scripts.Audio;
 using Assets.Scripts.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,15 +16,22 @@ namespace Assets.Scripts.UI.MainMenu
         [SerializeField] private Button _button;
 
         private IStateMachine _stateMachine;
+        private IAudioService _audioService;
 
         [Inject]
-        public void Construct(IStateMachine stateMachine) =>
+        public void Construct(IStateMachine stateMachine, IAudioService audioService)
+        {
             _stateMachine = stateMachine;
+            _audioService = audioService;
+        }
 
         private void Awake() =>
-            _button.onClick.AddListener(EnterLoadLevelState);
+            _button.onClick.AddListener(OnClick);
 
-        private void EnterLoadLevelState() =>
+        private void OnClick()
+        {
+            _audioService.PlaySfx(SfxType.Click);
             _stateMachine.Enter<LoadLevelState, string>(LevelId.ToString());
+        }
     }
 }

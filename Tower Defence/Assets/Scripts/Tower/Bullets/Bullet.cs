@@ -1,7 +1,7 @@
 using Assets.Scripts.Tower.Characteristics;
 using UnityEngine;
 
-namespace Assets.Scripts.Tower.Bullet
+namespace Assets.Scripts.Tower.Bullets
 {
     public class Bullet : MonoBehaviour
     {

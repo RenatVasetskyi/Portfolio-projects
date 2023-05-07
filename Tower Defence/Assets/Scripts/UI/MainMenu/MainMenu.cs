@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Audio;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
@@ -30,10 +31,14 @@ namespace Assets.Scripts.UI.MainMenu
         private VisualElement _container;
 
         private IWindowService _windowService;
+        private IAudioService _audioService;
 
         [Inject]
-        public void Construct(IWindowService windowService) =>
+        public void Construct(IWindowService windowService, IAudioService audioService)
+        {
             _windowService = windowService;
+            _audioService = audioService;
+        }
 
         private void Start() =>
             StartCoroutine(CreateMainMenu());
@@ -75,12 +80,15 @@ namespace Assets.Scripts.UI.MainMenu
             {
                 case ButtonType.Play:
                     button.clicked += () => _windowService.Open(item.WindowId);
+                    button.clicked += () => _audioService.PlaySfx(SfxType.Click);
                     break;
                 case ButtonType.Settings:
                     button.clicked += () => Debug.Log("Settings")/*_windowService.Open(item.WindowId)*/;
+                    button.clicked += () => _audioService.PlaySfx(SfxType.Click);
                     break;
                 case ButtonType.Exit:
                     button.clicked += () => Application.Quit();
+                    button.clicked += () => _audioService.PlaySfx(SfxType.Click);
                     break;
             }
         }

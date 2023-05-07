@@ -1,5 +1,8 @@
+using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Audio;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Assets.Scripts.Boosters
 {
@@ -9,6 +12,12 @@ namespace Assets.Scripts.Boosters
         public bool IsActivated;
 
         [SerializeField] private Button _button;
+
+        private IAudioService _audioService;
+
+        [Inject]
+        public void Construct(IAudioService audioService) => 
+            _audioService = audioService;
 
         public void OffButton()
         {
@@ -21,6 +30,8 @@ namespace Assets.Scripts.Boosters
 
         private void OnClick()
         {
+            _audioService.PlaySfx(SfxType.Click);
+
             if (IsActivated == true)
                 IsActivated = false;
             else

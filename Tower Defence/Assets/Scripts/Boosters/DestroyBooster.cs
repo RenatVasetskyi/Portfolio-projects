@@ -1,4 +1,7 @@
+using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Audio;
 using UnityEngine;
+using Zenject;
 
 namespace Assets.Scripts.Boosters
 {
@@ -9,6 +12,12 @@ namespace Assets.Scripts.Boosters
 
         private float _destroyEffectDelay = 1f;
 
+        private IAudioService _audioService;
+
+        [Inject]
+        public void Construct(IAudioService audioService) =>
+            _audioService = audioService;
+
         private void Awake() =>
             _booster.OnTargetReached += Destroy;
 
@@ -16,6 +25,7 @@ namespace Assets.Scripts.Boosters
         {
             Destroy(gameObject);
             PlayEffect();
+            _audioService.PlaySfx(SfxType.DestroyingMeteorite);
         }
 
         private void PlayEffect()

@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ddf52f2a8875804182a91aec782794a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shotSfxType: 1
   _bulletStartPoint: {fileID: 2719042134056884947}
 --- !u!114 &-9071627690422157338
 MonoBehaviour:

@@ -1,12 +1,21 @@
+using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Audio;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Assets.Scripts.Tower.Selection
 {
     public class SelectTowerButton : MonoBehaviour
     {
         [SerializeField] private TowerSelectionButtonHolder _button;
+
         private TowerSelection _towerSelection;
+        private IAudioService _audioService;
+
+        [Inject]
+        public void Construct(IAudioService audioService) =>
+            _audioService = audioService;
 
         private void Awake()
         {
@@ -22,6 +31,8 @@ namespace Assets.Scripts.Tower.Selection
 
         private void OnButtonClickHandler()
         {
+            _audioService.PlaySfx(SfxType.Click);
+
             if (_towerSelection.SelectedButton == null)
             {
                 Select();

@@ -1,5 +1,5 @@
 using System;
-using Assets.Scripts.Tower.Bullet;
+using Assets.Scripts.Tower.Bullets;
 using UnityEngine;
 
 namespace Assets.Scripts.Tower
