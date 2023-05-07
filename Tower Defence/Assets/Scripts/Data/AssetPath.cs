@@ -13,7 +13,7 @@ namespace Assets.Scripts.Data
         public const string TowerSpawner = "Towers/TowerSpawner";
         public const string MainLevelComponentsParent = "MainLevelComponentsParent";
         public const string TowerModelDisplayer = "Towers/TowerModelDisplayer";
-        public const string MeteorBooster = "Meteors/Asteroid";
+        public const string MeteorBooster = "Meteor/Meteor";
         public const string BoosterHolder = "UI/BoosterHolder";
         public const string TowerSelection = "UI/TowerSelection";
         public const string GameOverWindowCanvas = "UI/Windows/GameOverWindowCanvas";

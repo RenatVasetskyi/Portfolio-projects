@@ -59,9 +59,9 @@ MonoBehaviour:
             Prefab: {fileID: 8943938515332123315, guid: 2ac94ed2d5b743f4dac4f9e957624719, type: 3}
             Damage: 30
             Speed: 60
-          Price: 120
-          UpgradePrice: 80
-          AttackRange: 20
+          Price: 50
+          UpgradePrice: 50
+          AttackRange: 15
           RotateSpeed: 10
           FireSpeed: 1
       - ButtonPrefab: {fileID: 8604397196665533124, guid: 2683b66f7192945479c54c6e1d96b877, type: 3}
