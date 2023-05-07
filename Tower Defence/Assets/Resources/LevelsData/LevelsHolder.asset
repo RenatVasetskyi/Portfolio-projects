@@ -19,8 +19,8 @@ MonoBehaviour:
     - {fileID: 4057524601541569357, guid: 80404fff643a25c43955dbf5f6900f7b, type: 3}
     - {fileID: 1036435580197967665, guid: 695f10cd995a58c4199a5b3dac55736f, type: 3}
     - {fileID: 5689525047379739414, guid: 40bd3e56c0c297347b44886b18d173c0, type: 3}
-    Coins: 500
-    Hp: 5
+    Coins: 150
+    Hp: 7
     WaveSettings:
       WaveDatas:
       - _waveNumber: 1
@@ -57,13 +57,13 @@ MonoBehaviour:
           TowerModel: {fileID: 8552850671451201328, guid: 9dcdadf213fa02e4d992ee7995d88a66, type: 3}
           Bullet:
             Prefab: {fileID: 8943938515332123315, guid: 2ac94ed2d5b743f4dac4f9e957624719, type: 3}
-            Damage: 100
-            Speed: 80
+            Damage: 30
+            Speed: 60
           Price: 120
           UpgradePrice: 80
           AttackRange: 20
           RotateSpeed: 10
-          FireSpeed: 2
+          FireSpeed: 1
       - ButtonPrefab: {fileID: 8604397196665533124, guid: 2683b66f7192945479c54c6e1d96b877, type: 3}
         Tower:
           TowerType: 1

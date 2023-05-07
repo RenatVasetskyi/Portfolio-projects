@@ -1,5 +1,6 @@
 using Assets.Scripts.Architecture.Main;
 using Assets.Scripts.Architecture.Services;
+using Assets.Scripts.Architecture.Services.Factories.Audio;
 using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
@@ -31,6 +32,24 @@ namespace Assets.Scripts.Architecture.Installers
             BindCurrentLevelSettingsProvider();
             BindPlayerHpService();
             BindPlayerInput();
+            BindAudioFactory();
+            BindAudioService();
+        }
+
+        private void BindAudioFactory()
+        {
+            Container
+                .Bind<IAudioFactory>()
+                .To<AudioFactory>()
+                .AsSingle();
+        }
+
+        private void BindAudioService()
+        {
+            Container
+                .Bind<IAudioService>()
+                .To<AudioService>()
+                .AsSingle();
         }
 
         private void BindPlayerInput()

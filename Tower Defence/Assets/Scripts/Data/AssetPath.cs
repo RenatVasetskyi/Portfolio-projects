@@ -3,7 +3,7 @@ namespace Assets.Scripts.Data
     public static class AssetPath
     {
         public const string MainMenuWindow = "UI/Windows/MainMenu";
-        public const string UIWindows = "StaticData/UI/WindowsData";
+        public const string UIWindows = "UI/Windows/WindowsData";
         public const string UIRootCanvas = "UI/UIRootCanvas";
         public const string UIRoot = "UI/UIRoot";
         public const string LevelTransferButton = "UI/Buttons/Main/LevelTransferButton";
@@ -18,5 +18,9 @@ namespace Assets.Scripts.Data
         public const string TowerSelection = "UI/TowerSelection";
         public const string GameOverWindowCanvas = "UI/Windows/GameOverWindowCanvas";
         public const string GameOverWindow = "UI/Windows/GameOverWindow";
+        public const string SfxHolder = "AudioData/Sound Effects Holder";
+        public const string MusicHolder = "AudioData/Music Holder";
+        public const string SfxAudioSource = "AudioData/SfxAudioSource";
+        public const string MusicAudioSource = "AudioData/MusicAudioSource";
     }
 }
