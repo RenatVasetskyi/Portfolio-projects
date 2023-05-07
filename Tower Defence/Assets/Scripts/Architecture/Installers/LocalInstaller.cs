@@ -115,9 +115,18 @@ namespace Assets.Scripts.Architecture.Installers
         {
             IStateMachine stateMachine = Container.Resolve<IStateMachine>();
 
+            RemoveStates(stateMachine);
+
             stateMachine.States.Add(typeof(InitializeGameWorldState), Container.Resolve<InitializeGameWorldState>());
             stateMachine.States.Add(typeof(GameLoopState), Container.Resolve<GameLoopState>());
             stateMachine.States.Add(typeof(GameOverState), Container.Resolve<GameOverState>());
+        }
+
+        private void RemoveStates(IStateMachine stateMachine)
+        {
+            stateMachine.States.Remove(typeof(InitializeGameWorldState));
+            stateMachine.States.Remove(typeof(GameLoopState));
+            stateMachine.States.Remove(typeof(GameOverState));
         }
     }
 }

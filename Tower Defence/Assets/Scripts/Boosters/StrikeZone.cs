@@ -1,6 +1,7 @@
 using Assets.Scripts.Architecture.Services.Factories.Booster;
 using Assets.Scripts.Architecture.Services.Factories.UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using Zenject;
 
@@ -31,7 +32,7 @@ namespace Assets.Scripts.Boosters
                 {
                     boosterButton.OffButton();
                     Booster booster = _boosterFactory.CreateBooster(boosterButton.BoosterType, GetBoosterSpawnPosition(), transform.rotation, transform);
-                    StartCoroutine(booster.Move(GetTargetPosition()));
+                    StartCoroutine(booster?.Move(GetTargetPosition()));
                 }
             }
         }

@@ -19,17 +19,15 @@ namespace Assets.Scripts.Architecture.Services.Factories.Booster
 
         public Boosters.Booster CreateBooster(BoosterType boosterType, Vector3 at, Quaternion rotation, Transform parent)
         {
-            Boosters.Booster booster = new Boosters.Booster();
-            
             switch (boosterType)
             {
                 case BoosterType.Meteor: 
-                    booster = _container.InstantiatePrefabForComponent<Boosters.Booster>(
+                   Boosters.Booster booster = _container.InstantiatePrefabForComponent<Boosters.Booster>(
                         _assetProvider.Initialize<Boosters.Booster>(AssetPath.MeteorBooster), at, rotation, parent);
-                    break;
+                   return booster;
             }
 
-            return booster;
+            return null;
         }
     }
 }
