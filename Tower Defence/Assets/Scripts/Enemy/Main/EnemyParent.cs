@@ -7,10 +7,7 @@ namespace Assets.Scripts.Enemy.Main
     {
         public List<GameObject> Enemies { get; set; } = new();
 
-        public void DestroyEnemies()
-        {
-            foreach (GameObject enemy in Enemies)
-                Destroy(enemy);
-        }
+        public void DestroyEnemies() =>
+            Destroy(gameObject);
     }
 }

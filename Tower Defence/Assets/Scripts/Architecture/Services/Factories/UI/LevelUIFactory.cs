@@ -82,6 +82,11 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
                 _container.InstantiatePrefab(element, parent);
         }
 
+        private void CreateCoinsDisplayer()
+        {
+
+        }
+
         private void CreateBoosterHolder(Transform parent)
         {
             BoosterHolder = _container
