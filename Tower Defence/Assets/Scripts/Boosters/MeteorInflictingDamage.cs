@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Boosters
 {
-    public class BoosterInflictingDamage : MonoBehaviour
+    public class MeteorInflictingDamage : MonoBehaviour
     {
         [SerializeField] private int _damage;
-        [SerializeField] private Booster _booster;
+        [SerializeField] private Meteor _booster;
 
         private void OnTriggerEnter(Collider other)
         {

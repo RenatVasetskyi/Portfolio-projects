@@ -5,9 +5,9 @@ using Zenject;
 
 namespace Assets.Scripts.Boosters
 {
-    public class DestroyBooster : MonoBehaviour
+    public class DestroyMeteor : MonoBehaviour
     {
-        [SerializeField] private Booster _booster;
+        [SerializeField] private Meteor _booster;
         [SerializeField] private GameObject _destroyMeteorEffect;
 
         private float _destroyEffectDelay = 1f;

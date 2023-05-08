@@ -34,7 +34,7 @@ namespace Assets.Scripts.Boosters
                 if (boosterButton.IsActivated)
                 {
                     boosterButton.OffButton();
-                    Booster booster = _boosterFactory.CreateBooster(boosterButton.BoosterType, GetBoosterSpawnPosition(), transform.rotation, transform);
+                    MovableBooster booster = _boosterFactory.CreateBooster(boosterButton.BoosterType, GetBoosterSpawnPosition(), transform.rotation, transform);
                     StartCoroutine(booster?.Move(GetTargetPosition()));
                     _audioService.PlaySfx(SfxType.FlyingMeteorite);
                 }

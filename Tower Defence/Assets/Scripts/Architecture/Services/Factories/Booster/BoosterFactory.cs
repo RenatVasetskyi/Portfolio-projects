@@ -17,14 +17,14 @@ namespace Assets.Scripts.Architecture.Services.Factories.Booster
             _assetProvider = assetProvider;
         }
 
-        public Boosters.Booster CreateBooster(BoosterType boosterType, Vector3 at, Quaternion rotation, Transform parent)
+        public MovableBooster CreateBooster(BoosterType boosterType, Vector3 at, Quaternion rotation, Transform parent)
         {
             switch (boosterType)
             {
                 case BoosterType.Meteor: 
-                   Boosters.Booster booster = _container.InstantiatePrefabForComponent<Boosters.Booster>(
-                        _assetProvider.Initialize<Boosters.Booster>(AssetPath.MeteorBooster), at, rotation, parent);
-                   return booster;
+                   Meteor meteor = _container.InstantiatePrefabForComponent<Meteor>(
+                        _assetProvider.Initialize<Meteor>(AssetPath.MeteorBooster), at, rotation, parent);
+                   return meteor;
             }
 
             return null;

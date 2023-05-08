@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ab82cc05440ae4bbf977cbb5c1c147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 50
+  _damage: 40
   _booster: {fileID: -1093950360136460051}
 --- !u!1 &2305815668130428291
 GameObject:
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ab82cc05440ae4bbf977cbb5c1c147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 80
+  _damage: 60
   _booster: {fileID: -1093950360136460051}
 --- !u!1 &6123279987556253554
 GameObject:

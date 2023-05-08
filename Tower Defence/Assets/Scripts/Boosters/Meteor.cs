@@ -4,13 +4,11 @@ using UnityEngine;
 
 namespace Assets.Scripts.Boosters
 {
-    public class Booster : MonoBehaviour
+    public class Meteor : MovableBooster
     {
         public event Action OnTargetReached;
 
-        public int Speed;
-
-        public IEnumerator Move(Vector3 targetPosition)
+        public override IEnumerator Move(Vector3 targetPosition)
         {
             while (transform.position != targetPosition)
             {
