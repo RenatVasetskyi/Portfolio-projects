@@ -2,7 +2,7 @@ using Assets.Scripts.Data;
 using Assets.Scripts.Enemy.Health;
 using UnityEngine;
 
-namespace Assets.Scripts.Boosters
+namespace Assets.Scripts.Boosters.Meteorite
 {
     public class MeteorInflictingDamage : MonoBehaviour
     {

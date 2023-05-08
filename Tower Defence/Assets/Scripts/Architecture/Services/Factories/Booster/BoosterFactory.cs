@@ -1,5 +1,6 @@
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Boosters;
+using Assets.Scripts.Boosters.Meteorite;
 using Assets.Scripts.Data;
 using UnityEngine;
 using Zenject;
@@ -17,7 +18,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.Booster
             _assetProvider = assetProvider;
         }
 
-        public MovableBooster CreateBooster(BoosterType boosterType, Vector3 at, Quaternion rotation, Transform parent)
+        public MovableBooster CreateMovableBooster(BoosterType boosterType, Vector3 at, Quaternion rotation, Transform parent)
         {
             switch (boosterType)
             {

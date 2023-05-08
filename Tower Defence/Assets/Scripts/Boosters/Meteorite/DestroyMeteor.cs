@@ -3,11 +3,11 @@ using Assets.Scripts.Audio;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Boosters
+namespace Assets.Scripts.Boosters.Meteorite
 {
     public class DestroyMeteor : MonoBehaviour
     {
-        [SerializeField] private Meteor _booster;
+        [SerializeField] private Meteor _meteor;
         [SerializeField] private GameObject _destroyMeteorEffect;
 
         private float _destroyEffectDelay = 1f;
@@ -19,7 +19,7 @@ namespace Assets.Scripts.Boosters
             _audioService = audioService;
 
         private void Awake() =>
-            _booster.OnTargetReached += Destroy;
+            _meteor.OnTargetReached += Destroy;
 
         private void Destroy()
         {

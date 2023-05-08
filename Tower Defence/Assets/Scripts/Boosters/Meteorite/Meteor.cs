@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Boosters
+namespace Assets.Scripts.Boosters.Meteorite
 {
     public class Meteor : MovableBooster
     {

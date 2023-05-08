@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 
-namespace Assets.Scripts.Boosters
+namespace Assets.Scripts.Boosters.Meteorite
 {
     public class StrikeZone : MonoBehaviour
     {
@@ -34,7 +34,7 @@ namespace Assets.Scripts.Boosters
                 if (boosterButton.IsActivated)
                 {
                     boosterButton.OffButton();
-                    MovableBooster booster = _boosterFactory.CreateBooster(boosterButton.BoosterType, GetBoosterSpawnPosition(), transform.rotation, transform);
+                    MovableBooster booster = _boosterFactory.CreateMovableBooster(boosterButton.BoosterType, GetBoosterSpawnPosition(), transform.rotation, transform);
                     StartCoroutine(booster?.Move(GetTargetPosition()));
                     _audioService.PlaySfx(SfxType.FlyingMeteorite);
                 }
