@@ -4,5 +4,6 @@ namespace Assets.Scripts.Audio
     {
         MainMenu = 0,
         FirstLevel = 1,
+        SecondLevel = 2,
     }
 }
