@@ -30,7 +30,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.Enemy
         }
 
         public void CreateEnemyParent() =>
-            EnemyParent = _container.InstantiatePrefabForComponent<EnemyParent>(_assetProvider.Initialize<EnemyParent>(AssetPath.EnemyParent));
+            EnemyParent = Object.Instantiate(_assetProvider.Initialize<EnemyParent>(AssetPath.EnemyParent));
 
         private void Initialize()
         {

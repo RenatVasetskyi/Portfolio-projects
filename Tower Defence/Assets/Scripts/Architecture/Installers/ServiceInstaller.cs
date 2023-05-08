@@ -1,14 +1,20 @@
 using Assets.Scripts.Architecture.Main;
 using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.Services.Factories.Audio;
+using Assets.Scripts.Architecture.Services.Factories.Booster;
+using Assets.Scripts.Architecture.Services.Factories.Main;
+using Assets.Scripts.Architecture.Services.Factories.Tower.Bullet;
+using Assets.Scripts.Architecture.Services.Factories.Tower;
 using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data.Levels;
 using Assets.Scripts.SceneManagement;
 using Assets.Scripts.UI.Loading;
+using Assets.Scripts.Waves;
 using UnityEngine;
 using Zenject;
+using Assets.Scripts.Architecture.Services.Factories.Enemy;
 
 namespace Assets.Scripts.Architecture.Installers
 {
@@ -34,6 +40,14 @@ namespace Assets.Scripts.Architecture.Installers
             BindPlayerInput();
             BindAudioFactory();
             BindAudioService();
+            BindEnemyFactory();
+            BindLevelUIFactory();
+            BindWaveSystem();
+            BindTowerFactory();
+            BindMainLevelFactory();
+            BindBulletFactory();
+            BindBoosterFactory();
+
         }
 
         private void BindAudioFactory()
@@ -150,6 +164,62 @@ namespace Assets.Scripts.Architecture.Installers
             Container
                 .Bind<AllLevelsSettings>()
                 .FromScriptableObject(_allLevelsSettings)
+                .AsSingle();
+        }
+
+        private void BindBoosterFactory()
+        {
+            Container
+                .Bind<IBoosterFactory>()
+                .To<BoosterFactory>()
+                .AsSingle();
+        }
+
+        private void BindBulletFactory()
+        {
+            Container
+                .Bind<IBulletFactory>()
+                .To<BulletFactory>()
+                .AsSingle();
+        }
+
+        private void BindMainLevelFactory()
+        {
+            Container
+                .Bind<IMainLevelFactory>()
+                .To<MainLevelFactory>()
+                .AsSingle();
+        }
+
+        private void BindTowerFactory()
+        {
+            Container
+                .Bind<ITowerFactory>()
+                .To<TowerFactory>()
+                .AsSingle();
+        }
+
+        private void BindLevelUIFactory()
+        {
+            Container
+                .Bind<ILevelUIFactory>()
+                .To<LevelUIFactory>()
+                .AsSingle();
+        }
+
+        private void BindWaveSystem()
+        {
+            Container
+                .Bind<IWaveSystem>()
+                .To<WaveSystem>()
+                .AsSingle();
+        }
+
+        private void BindEnemyFactory()
+        {
+            Container
+                .Bind<IEnemyFactory>()
+                .To<EnemyFactory>()
                 .AsSingle();
         }
     }

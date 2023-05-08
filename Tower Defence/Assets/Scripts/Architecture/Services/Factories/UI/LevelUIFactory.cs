@@ -42,9 +42,8 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         {
             Vector3 startPosition = new Vector3(0, Screen.height, 0);
 
-            GameObject parent = _container
-                .InstantiatePrefab(_assetProvider
-                    .Initialize<Transform>(AssetPath.GameOverWindowCanvas));
+            GameObject parent = Object.Instantiate(_assetProvider
+                    .Initialize<GameObject>(AssetPath.GameOverWindowCanvas));
 
             GameOverWindow window = _container
                 .InstantiatePrefabForComponent<GameOverWindow>(_assetProvider
