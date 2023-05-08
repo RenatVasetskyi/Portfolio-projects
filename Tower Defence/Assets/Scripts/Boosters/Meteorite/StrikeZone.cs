@@ -10,7 +10,7 @@ namespace Assets.Scripts.Boosters.Meteorite
 {
     public class StrikeZone : MonoBehaviour
     {
-        private ILevelUIFactory _levelUIFactory;
+        private IUIFactory _uiFactory;
         private IBoosterFactory _boosterFactory;
         private IAudioService _audioService;
 
@@ -20,16 +20,16 @@ namespace Assets.Scripts.Boosters.Meteorite
         private int _strikeZoneLayer = 1 << 8;
 
         [Inject]
-        public void Construct(ILevelUIFactory levelUIFactory, IBoosterFactory boosterFactory, IAudioService audioService)
+        public void Construct(IUIFactory uiFactory, IBoosterFactory boosterFactory, IAudioService audioService)
         {
-            _levelUIFactory = levelUIFactory;
+            _uiFactory = uiFactory;
             _boosterFactory = boosterFactory;
             _audioService = audioService;
         }
 
         private void OnMouseDown()
         {
-            foreach (BoosterButton boosterButton in _levelUIFactory.BoosterHolder.BoosterButtons)
+            foreach (BoosterButton boosterButton in _uiFactory.BoosterHolder.BoosterButtons)
             {
                 if (boosterButton.IsActivated)
                 {

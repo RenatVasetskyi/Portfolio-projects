@@ -41,7 +41,6 @@ namespace Assets.Scripts.Architecture.Installers
             BindAudioFactory();
             BindAudioService();
             BindEnemyFactory();
-            BindLevelUIFactory();
             BindWaveSystem();
             BindTowerFactory();
             BindMainLevelFactory();
@@ -196,14 +195,6 @@ namespace Assets.Scripts.Architecture.Installers
             Container
                 .Bind<ITowerFactory>()
                 .To<TowerFactory>()
-                .AsSingle();
-        }
-
-        private void BindLevelUIFactory()
-        {
-            Container
-                .Bind<ILevelUIFactory>()
-                .To<LevelUIFactory>()
                 .AsSingle();
         }
 

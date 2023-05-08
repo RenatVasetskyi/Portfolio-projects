@@ -9,14 +9,14 @@ namespace Assets.Scripts.Architecture.States
 {
     public class GameOverState : IState
     {
-        private readonly ILevelUIFactory _levelUIFactory;
+        private readonly IUIFactory _uiFactory;
         private readonly IWaveSystem _waveSystem;
         private readonly IEnemyFactory _enemyFactory;
         private readonly IAudioService _audioService;
 
-        public GameOverState(ILevelUIFactory levelUIFactory, IWaveSystem waveSystem, IEnemyFactory enemyFactory, IAudioService audioService)
+        public GameOverState(IUIFactory uiFactory, IWaveSystem waveSystem, IEnemyFactory enemyFactory, IAudioService audioService)
         {
-            _levelUIFactory = levelUIFactory;
+            _uiFactory = uiFactory;
             _waveSystem = waveSystem;
             _enemyFactory = enemyFactory;
             _audioService = audioService;
@@ -32,7 +32,7 @@ namespace Assets.Scripts.Architecture.States
             _audioService.PlaySfx(SfxType.GameOver);
             _waveSystem.StopWavesCoroutine();
             _enemyFactory.EnemyParent.DestroyEnemies();
-            _levelUIFactory.CreateGameOverWindow();
+            _uiFactory.CreateGameOverWindow();
         }
     }
 }

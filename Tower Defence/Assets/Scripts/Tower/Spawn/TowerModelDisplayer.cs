@@ -13,7 +13,7 @@ namespace Assets.Scripts.Tower.Spawn
     {
         private readonly Dictionary<TowerType, GameObject> _createdModel = new();
 
-        private ILevelUIFactory _levelUIFactory;
+        private IUIFactory _uiFactory;
         private ITowerFactory _towerFactory;
 
         private Ray _ray;
@@ -24,9 +24,9 @@ namespace Assets.Scripts.Tower.Spawn
         private bool _isModelCreated = false;
 
         [Inject]
-        public void Construct(ILevelUIFactory levelUIFactory, ITowerFactory towerFactory)
+        public void Construct(IUIFactory uiFactory, ITowerFactory towerFactory)
         {
-            _levelUIFactory = levelUIFactory;
+            _uiFactory = uiFactory;
             _towerFactory = towerFactory;
         }
 
@@ -38,18 +38,18 @@ namespace Assets.Scripts.Tower.Spawn
 
         private void Show()
         {
-            if (_levelUIFactory.TowerSelection.SelectedButton != null)
+            if (_uiFactory.TowerSelection.SelectedButton != null)
             {
                 if (_isModelCreated == false)
                 {
-                    GameObject model = _towerFactory.CreateTowerModel(_levelUIFactory.TowerSelection.SelectedButton.Tower.TowerModel);
+                    GameObject model = _towerFactory.CreateTowerModel(_uiFactory.TowerSelection.SelectedButton.Tower.TowerModel);
                     AddToSpawned(model);
                     _isModelCreated = true;
                 }
                 else
                     MoveModel();
 
-                if (_createdModel.First().Key != _levelUIFactory.TowerSelection.SelectedButton.Tower.TowerType)
+                if (_createdModel.First().Key != _uiFactory.TowerSelection.SelectedButton.Tower.TowerType)
                     ChangeModel();
             }
             else
@@ -70,8 +70,8 @@ namespace Assets.Scripts.Tower.Spawn
         {
             Destroy(_createdModel.First().Value);
             Cleanup();
-            GameObject towerModel = _towerFactory.CreateTowerModel(_levelUIFactory.TowerSelection.SelectedButton.Tower.TowerModel);
-            _createdModel.Add(_levelUIFactory.TowerSelection.SelectedButton.Tower.TowerType, towerModel);
+            GameObject towerModel = _towerFactory.CreateTowerModel(_uiFactory.TowerSelection.SelectedButton.Tower.TowerModel);
+            _createdModel.Add(_uiFactory.TowerSelection.SelectedButton.Tower.TowerType, towerModel);
         }
 
         private void MoveModel()
@@ -83,7 +83,7 @@ namespace Assets.Scripts.Tower.Spawn
         private void AddToSpawned(GameObject model)
         {
             Cleanup();
-            _createdModel.Add(_levelUIFactory.TowerSelection.SelectedButton.Tower.TowerType, model);
+            _createdModel.Add(_uiFactory.TowerSelection.SelectedButton.Tower.TowerType, model);
             _isModelCreated = true;
         }
 

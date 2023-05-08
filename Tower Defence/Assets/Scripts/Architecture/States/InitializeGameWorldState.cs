@@ -9,7 +9,7 @@ namespace Assets.Scripts.Architecture.States
     public class InitializeGameWorldState : IState
     {
         private readonly IStateMachine _stateMachine;
-        private readonly ILevelUIFactory _levelUIFactory;
+        private readonly IUIFactory _uiFactory;
         private readonly ILocalCoinService _localCoinService;
         private readonly IPlayerHpService _playerHpService;
         private readonly LoadingCurtain _loadingCurtain;
@@ -17,13 +17,13 @@ namespace Assets.Scripts.Architecture.States
         private readonly IAudioService _audioService;
         private readonly ICurrentLevelSettingsProvider _currentLevelSettingsProvider;
 
-        public InitializeGameWorldState(IStateMachine stateMachine, ILevelUIFactory levelUIFactory, 
+        public InitializeGameWorldState(IStateMachine stateMachine, IUIFactory uiFactory, 
             ILocalCoinService localCoinService, IPlayerHpService playerHpService,
             LoadingCurtain loadingCurtain, IMainLevelFactory mainLevelFactory, IAudioService audioService,
             ICurrentLevelSettingsProvider currentLevelSettingsProvider)
         {
             _stateMachine = stateMachine;
-            _levelUIFactory = levelUIFactory;
+            _uiFactory = uiFactory;
             _localCoinService = localCoinService;
             _playerHpService = playerHpService;
             _loadingCurtain = loadingCurtain;
@@ -45,7 +45,7 @@ namespace Assets.Scripts.Architecture.States
         {
             _audioService.PlayMusic(_currentLevelSettingsProvider.GetCurrentLevelSettings().MusicType);
             _mainLevelFactory.InstantiateComponents();
-            _levelUIFactory.CreateLevelUI();
+            _uiFactory.CreateLevelUI();
             _localCoinService.SetCoins();
             _playerHpService.SetHp();
         }

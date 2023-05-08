@@ -16,17 +16,17 @@ namespace Assets.Scripts.Tower.Spawn
 
         private ITowerFactory _towerFactory;
         private ILocalCoinService _localCoinService;
-        private ILevelUIFactory _levelUIFactory;
+        private IUIFactory _uiFactory;
         private IAudioService _audioService;
 
         private Vector3 _worldPosition;
 
         [Inject]
-        public void Construct(ITowerFactory towerFactory, ILocalCoinService localCoinService, PlayerInput input, ILevelUIFactory levelUIFactory, IAudioService audioService)
+        public void Construct(ITowerFactory towerFactory, ILocalCoinService localCoinService, PlayerInput input, IUIFactory uiFactory, IAudioService audioService)
         {
             _towerFactory = towerFactory;
             _localCoinService = localCoinService;
-            _levelUIFactory = levelUIFactory;
+            _uiFactory = uiFactory;
             _audioService = audioService;
             input.Player.CreateTower.performed += context => SpawnTower();
         }
@@ -41,11 +41,11 @@ namespace Assets.Scripts.Tower.Spawn
             if (_worldPosition == default)
                 return;
 
-            if (_localCoinService.Coins >= _levelUIFactory.TowerSelection.SelectedButton?.Tower.Price)
+            if (_localCoinService.Coins >= _uiFactory.TowerSelection.SelectedButton?.Tower.Price)
             {
                 _audioService.PlaySfx(SfxType.SpawnTower);
-                _localCoinService.Buy(_levelUIFactory.TowerSelection.SelectedButton.Tower.Price);
-                _towerFactory.CreateTower(_levelUIFactory.TowerSelection.SelectedButton.Tower.TowerPrefab, _worldPosition, Quaternion.identity, transform);
+                _localCoinService.Buy(_uiFactory.TowerSelection.SelectedButton.Tower.Price);
+                _towerFactory.CreateTower(_uiFactory.TowerSelection.SelectedButton.Tower.TowerPrefab, _worldPosition, Quaternion.identity, transform);
             }
         }
 
