@@ -19482,7 +19482,6 @@ GameObject:
   - component: {fileID: 7361595299579603875}
   - component: {fileID: 6886640687231735863}
   - component: {fileID: 356001848050739755}
-  - component: {fileID: -9216418579859318321}
   m_Layer: 0
   m_Name: StartPoint
   m_TagString: Untagged
@@ -24346,15 +24345,3 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-9216418579859318321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7455104521827203606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70bedc3c57305fc44a37e5b27a565374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
