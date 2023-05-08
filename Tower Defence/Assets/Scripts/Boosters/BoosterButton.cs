@@ -10,8 +10,7 @@ namespace Assets.Scripts.Boosters
     {
         public BoosterType BoosterType;
         public bool IsActivated;
-
-        [SerializeField] private Button _button;
+        public Button Button;
 
         private IAudioService _audioService;
 
@@ -19,16 +18,16 @@ namespace Assets.Scripts.Boosters
         public void Construct(IAudioService audioService) => 
             _audioService = audioService;
 
-        public void OffButton()
+        public virtual void OffButton()
         {
             IsActivated = false;
-            _button.interactable = false;
+            Button.interactable = false;
         }
 
         private void Awake() =>
-            _button.onClick.AddListener(OnClick);
+            Button.onClick.AddListener(OnClick);
 
-        private void OnClick()
+        protected virtual void OnClick()
         {
             _audioService.PlaySfx(SfxType.Click);
 

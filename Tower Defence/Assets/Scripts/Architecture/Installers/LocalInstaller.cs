@@ -20,8 +20,8 @@ namespace Assets.Scripts.Architecture.Installers
 
         public override void InstallBindings()
         {
-            BindLevelUIFactory();
             BindEnemyFactory();
+            BindLevelUIFactory();
             BindStartPoint();
             BindFinish();
             BindWaveSystem();
