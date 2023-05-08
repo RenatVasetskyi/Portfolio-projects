@@ -46,7 +46,6 @@ namespace Assets.Scripts.Architecture.Installers
             BindMainLevelFactory();
             BindBulletFactory();
             BindBoosterFactory();
-
         }
 
         private void BindAudioFactory()
