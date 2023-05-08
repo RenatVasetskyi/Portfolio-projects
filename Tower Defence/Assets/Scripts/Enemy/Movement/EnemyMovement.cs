@@ -1,5 +1,5 @@
+using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Enemy.Animation;
-using Assets.Scripts.Enemy.Path;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
@@ -12,16 +12,16 @@ namespace Assets.Scripts.Enemy.Movement
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private EnemyAnimator _animator;
 
-        private Finish _finish;
+        private ICurrentLevelSettingsProvider _currentLevelSettingsProvider;
 
         [Inject]
-        public void Construct(Finish finish) =>
-            _finish = finish;
+        public void Construct(ICurrentLevelSettingsProvider currentLevelSettingsProvider) =>
+            _currentLevelSettingsProvider = currentLevelSettingsProvider;
 
         private void Start()
         {
             Init();
-            _agent.SetDestination(_finish.transform.position);
+            _agent.SetDestination(_currentLevelSettingsProvider.GetCurrentLevelSettings().FinishPoint);
         }
 
         private void Init() =>

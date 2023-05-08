@@ -4,7 +4,6 @@ using Assets.Scripts.Architecture.Services.Factories.Enemy;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Enemy.Main;
-using Assets.Scripts.Enemy.Path;
 using UnityEngine;
 
 namespace Assets.Scripts.Waves
@@ -12,7 +11,6 @@ namespace Assets.Scripts.Waves
     public class WaveSystem : IWaveSystem
     {
         private readonly ICurrentLevelSettingsProvider _currentLevelSettingsProvider;
-        private readonly StartPoint _startPoint;
         private readonly IEnemyFactory _enemyFactory;
         private readonly ICoroutineRunner _coroutineRunner;
 
@@ -20,11 +18,10 @@ namespace Assets.Scripts.Waves
 
         public Coroutine WaveCoroutine;
 
-        public WaveSystem(ICurrentLevelSettingsProvider currentLevelSettingsProvider,
-            StartPoint startPoint, IEnemyFactory enemyFactory, ICoroutineRunner coroutineRunner)
+        public WaveSystem(ICurrentLevelSettingsProvider currentLevelSettingsProvider, 
+            IEnemyFactory enemyFactory, ICoroutineRunner coroutineRunner)
         {
             _currentLevelSettingsProvider = currentLevelSettingsProvider;
-            _startPoint = startPoint;
             _enemyFactory = enemyFactory;
             _coroutineRunner = coroutineRunner;
         }
@@ -51,7 +48,8 @@ namespace Assets.Scripts.Waves
                     {
                         for (int i = 0; i < enemySpawnData.EnemyCount; i++)
                         {
-                            _enemyFactory.CreateEnemy(_enemyFactory.Prefabs[enemySpawnData.Enemy], _startPoint.transform.position, _startPoint.transform.rotation, _enemyFactory.EnemyParent);
+                            _enemyFactory.CreateEnemy(_enemyFactory.Prefabs[enemySpawnData.Enemy], _currentLevelSettingsProvider
+                                .GetCurrentLevelSettings().SpawnPoint, Quaternion.identity, _enemyFactory.EnemyParent);
                             yield return new WaitForSeconds(enemyOnWaveData.TimeDelayBetweenSpawns);
                         }
                     }

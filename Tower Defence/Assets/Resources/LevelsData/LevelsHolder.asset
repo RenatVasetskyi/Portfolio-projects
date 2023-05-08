@@ -96,6 +96,8 @@ MonoBehaviour:
     - {fileID: 2380251769018670246, guid: c2248891a711f7b4c81df3cd60c69b70, type: 3}
     - {fileID: 1732835670616134362, guid: 1da466717a896d845925583df6dd50eb, type: 3}
     MusicType: 1
+    SpawnPoint: {x: 72, y: 0, z: 120}
+    FinishPoint: {x: 176.55, y: 0, z: 57.08}
   - Id: 2
     MainLevelUIElements: []
     Coins: 140
@@ -106,3 +108,5 @@ MonoBehaviour:
       Buttons: []
     Boosters: []
     MusicType: 0
+    SpawnPoint: {x: 0, y: 0, z: 0}
+    FinishPoint: {x: 0, y: 0, z: 0}
