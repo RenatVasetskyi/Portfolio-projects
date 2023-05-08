@@ -95,6 +95,7 @@ MonoBehaviour:
     Boosters:
     - {fileID: 2380251769018670246, guid: c2248891a711f7b4c81df3cd60c69b70, type: 3}
     - {fileID: 1732835670616134362, guid: 1da466717a896d845925583df6dd50eb, type: 3}
+    MusicType: 1
   - Id: 2
     MainLevelUIElements: []
     Coins: 140
@@ -104,3 +105,4 @@ MonoBehaviour:
     TowerSelectionButtons:
       Buttons: []
     Boosters: []
+    MusicType: 0

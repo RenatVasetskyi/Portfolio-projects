@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Assets.Scripts.Audio;
 using Assets.Scripts.Boosters;
 using Assets.Scripts.Data.TowerSelection;
 using Assets.Scripts.Waves;
@@ -27,5 +28,8 @@ namespace Assets.Scripts.Data.Levels
 
         [Header("Boosters")]
         public List<BoosterButton> Boosters;
+
+        [Header("Music")]
+        public MusicType MusicType;
     }
 }
