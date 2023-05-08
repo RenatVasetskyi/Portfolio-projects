@@ -8,5 +8,7 @@ namespace Assets.Scripts.Audio
         SpeedTowerShot = 3,
         FlyingMeteorite = 4,
         DestroyingMeteorite = 5,
+        UpgradeTower = 6,
+        BoosterSelection = 7,
     }
 }

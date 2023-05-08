@@ -1,8 +1,11 @@
 using System;
+using Assets.Scripts.Architecture.Services;
+using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Enemy.Animation;
 using Assets.Scripts.Enemy.Main;
 using Assets.Scripts.Enemy.Movement;
 using UnityEngine;
+using Zenject;
 
 namespace Assets.Scripts.Enemy.Health
 {
@@ -18,7 +21,13 @@ namespace Assets.Scripts.Enemy.Health
         private int _maxHp;
         private int _minHp;
 
+        private ILocalCoinService _localCoinService;
+
         public int CurrentHp { get; private set; }
+
+        [Inject]
+        public void Construct(ILocalCoinService localCoinService) => 
+            _localCoinService = localCoinService;
 
         public void TakeDamage(int damage)
         {
@@ -46,6 +55,7 @@ namespace Assets.Scripts.Enemy.Health
 
         private void Die()
         {
+            _localCoinService.GetBonus(_enemy.EnemyData.KillBonus);
             GetComponentInParent<EnemyParent>().Enemies.Remove(gameObject);
             _enemyMovement.enabled = false;
             _enemyAnimator.PlayDeath();

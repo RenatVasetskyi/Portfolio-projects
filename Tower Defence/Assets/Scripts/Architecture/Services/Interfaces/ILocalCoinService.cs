@@ -8,5 +8,6 @@ namespace Assets.Scripts.Architecture.Services.Interfaces
         int Coins { get; }
         void Buy(int price);
         void SetCoins();
+        void GetBonus(int bonus);
     }
 }

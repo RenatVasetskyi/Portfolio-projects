@@ -7,5 +7,6 @@ namespace Assets.Scripts.Enemy.Main
     {
         public int MaxHp;
         public float Speed;
+        public int KillBonus;
     }
 }

@@ -21,7 +21,7 @@ namespace Assets.Scripts.Boosters.SlowDownEnemies
 
         protected override void OnClick()
         {
-            _audioService.PlaySfx(SfxType.Click);
+            _audioService.PlaySfx(SfxType.BoosterSelection);
             OffButton();
             _slowDownEnemies.SlowEnemies();
         }

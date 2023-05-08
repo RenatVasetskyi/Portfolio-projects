@@ -1,5 +1,7 @@
 using System;
+using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Audio;
 using Assets.Scripts.Data.Levels;
 using Assets.Scripts.Tower.Selection;
 using UnityEngine;
@@ -15,6 +17,7 @@ namespace Assets.Scripts.Tower.Characteristics
         [SerializeField] private TowerType _towerType;
 
         private ILocalCoinService _localCoinService;
+        private IAudioService _audioService;
 
         public TowerInfo Tower { get; private set; }
         public int CannonRotateSpeed { get; private set; }
@@ -30,13 +33,17 @@ namespace Assets.Scripts.Tower.Characteristics
         public int PriceIncreasing { get; private set; }
 
         [Inject]
-        public void Construct(ILocalCoinService localCoinService) => 
+        public void Construct(ILocalCoinService localCoinService, IAudioService audioService)
+        {
             _localCoinService = localCoinService;
+            _audioService = audioService;
+        }
 
         public void Upgrade()
         {
             if (_localCoinService.Coins >= UpgradePrice)
             {
+                _audioService.PlaySfx(SfxType.UpgradeTower);
                 _localCoinService.Buy(UpgradePrice);
 
                 Damage += DamageIncreasing;

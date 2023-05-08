@@ -29,7 +29,7 @@ namespace Assets.Scripts.Boosters
 
         protected virtual void OnClick()
         {
-            _audioService.PlaySfx(SfxType.Click);
+            _audioService.PlaySfx(SfxType.BoosterSelection);
 
             if (IsActivated == true)
                 IsActivated = false;

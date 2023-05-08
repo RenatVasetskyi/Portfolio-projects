@@ -605,6 +605,7 @@ MonoBehaviour:
   EnemyData:
     MaxHp: 100
     Speed: 7
+    KillBonus: 15
 --- !u!114 &1810838296727244946
 MonoBehaviour:
   m_ObjectHideFlags: 0

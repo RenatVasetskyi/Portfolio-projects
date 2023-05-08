@@ -20,6 +20,12 @@ namespace Assets.Scripts.Architecture.Services
             OnCoinsChanged?.Invoke();
         }
 
+        public void GetBonus(int bonus)
+        {
+            Coins += bonus;
+            OnCoinsChanged?.Invoke();
+        }
+
         public void SetCoins() => 
             Coins = _currentLevelSettingsProvider.GetCurrentLevelSettings().Coins;
     }
