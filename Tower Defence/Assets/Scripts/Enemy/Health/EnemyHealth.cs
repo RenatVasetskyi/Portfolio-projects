@@ -43,9 +43,9 @@ namespace Assets.Scripts.Enemy.Health
         }
 
         private void Awake() =>
-            Init();
+            Initialize();
 
-        private void Init()
+        private void Initialize()
         {
             _maxHp = _enemy.EnemyData.MaxHp;
             CurrentHp = _maxHp;

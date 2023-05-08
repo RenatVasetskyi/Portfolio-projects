@@ -13,14 +13,14 @@ namespace Assets.Scripts.Enemy.Health
 
         private void Awake()
         {
-            Init();
+            Initialize();
             _enemyHealth.OnHealthChanged += UpdateHealthBar;
         }
 
         private void LateUpdate() =>
             transform.LookAt(UnityEngine.Camera.main.transform);
 
-        private void Init()
+        private void Initialize()
         {
             _slider.maxValue = _enemy.EnemyData.MaxHp;
 

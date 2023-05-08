@@ -19,7 +19,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.Enemy
         {
             _container = container;
             _assetProvider = assetProvider;
-            Initialize();
+            InitializeEnemies();
         }
 
         public GameObject CreateEnemy(GameObject prefab, Vector3 at, Quaternion rotation, EnemyParent parent)
@@ -32,7 +32,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.Enemy
         public void CreateEnemyParent() =>
             EnemyParent = Object.Instantiate(_assetProvider.Initialize<EnemyParent>(AssetPath.EnemyParent));
 
-        private void Initialize()
+        private void InitializeEnemies()
         {
             Prefabs = new Dictionary<EnemyType, GameObject>()
             {
