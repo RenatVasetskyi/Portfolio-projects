@@ -13,7 +13,6 @@ namespace Assets.Scripts.Waves
     {
         private readonly ICurrentLevelSettingsProvider _currentLevelSettingsProvider;
         private readonly StartPoint _startPoint;
-        private readonly IAssetProvider _assetProvider;
         private readonly IEnemyFactory _enemyFactory;
         private readonly ICoroutineRunner _coroutineRunner;
 
@@ -22,12 +21,10 @@ namespace Assets.Scripts.Waves
         public Coroutine WaveCoroutine;
 
         public WaveSystem(ICurrentLevelSettingsProvider currentLevelSettingsProvider,
-            StartPoint startPoint, IAssetProvider assetProvider, 
-            IEnemyFactory enemyFactory, ICoroutineRunner coroutineRunner)
+            StartPoint startPoint, IEnemyFactory enemyFactory, ICoroutineRunner coroutineRunner)
         {
             _currentLevelSettingsProvider = currentLevelSettingsProvider;
             _startPoint = startPoint;
-            _assetProvider = assetProvider;
             _enemyFactory = enemyFactory;
             _coroutineRunner = coroutineRunner;
         }

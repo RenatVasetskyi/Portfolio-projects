@@ -31,5 +31,9 @@ namespace Assets.Scripts.Data.Levels
 
         [Header("Music")]
         public MusicType MusicType;
+
+        [Header("EnemyPath")] 
+        public Vector3 SpawnPoint;
+        public Vector3 FinishPoint;
     }
 }

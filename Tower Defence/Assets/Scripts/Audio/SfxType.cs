@@ -17,5 +17,6 @@ namespace Assets.Scripts.Audio
         EnemyDeath = 12,
         PlayerGetsDamage = 13,
         GetCoins = 14,
+        OpenWindow = 15,
     }
 }
