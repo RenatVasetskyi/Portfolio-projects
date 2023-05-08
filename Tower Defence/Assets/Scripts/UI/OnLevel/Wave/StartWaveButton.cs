@@ -27,6 +27,7 @@ namespace Assets.Scripts.UI.OnLevel.Wave
         private void OnClick()
         {
             _audioService.PlaySfx(SfxType.Click);
+            _audioService.PlaySfx(SfxType.WaveIncoming);
             _button.interactable = false;
             _waveSystem.RunStartWaveCoroutine();
         }

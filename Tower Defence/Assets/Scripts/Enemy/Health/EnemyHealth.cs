@@ -1,6 +1,7 @@
 using System;
 using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Audio;
 using Assets.Scripts.Enemy.Animation;
 using Assets.Scripts.Enemy.Main;
 using Assets.Scripts.Enemy.Movement;
@@ -22,12 +23,16 @@ namespace Assets.Scripts.Enemy.Health
         private int _minHp;
 
         private ILocalCoinService _localCoinService;
+        private IAudioService _audioService;
 
         public int CurrentHp { get; private set; }
 
         [Inject]
-        public void Construct(ILocalCoinService localCoinService) => 
+        public void Construct(ILocalCoinService localCoinService, IAudioService audioService)
+        {
             _localCoinService = localCoinService;
+            _audioService = audioService;
+        }
 
         public void TakeDamage(int damage)
         {
@@ -55,6 +60,8 @@ namespace Assets.Scripts.Enemy.Health
 
         private void Die()
         {
+            _audioService.PlaySfx(SfxType.EnemyDeath);
+            _audioService.PlaySfx(SfxType.GetCoins);
             _localCoinService.GetBonus(_enemy.EnemyData.KillBonus);
             GetComponentInParent<EnemyParent>().Enemies.Remove(gameObject);
             _enemyMovement.enabled = false;

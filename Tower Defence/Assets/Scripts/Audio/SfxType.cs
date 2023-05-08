@@ -10,5 +10,12 @@ namespace Assets.Scripts.Audio
         DestroyingMeteorite = 5,
         UpgradeTower = 6,
         BoosterSelection = 7,
+        Win = 8,
+        GameOver = 9,
+        WaveIncoming = 10,
+        SpawnTower = 11,
+        EnemyDeath = 12,
+        PlayerGetsDamage = 13,
+        GetCoins = 14,
     }
 }

@@ -1,6 +1,8 @@
+using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.Services.Factories.Tower;
 using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Audio;
 using Assets.Scripts.Tower.Selection;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,15 +17,17 @@ namespace Assets.Scripts.Tower.Spawn
         private ITowerFactory _towerFactory;
         private ILocalCoinService _localCoinService;
         private ILevelUIFactory _levelUIFactory;
+        private IAudioService _audioService;
 
         private Vector3 _worldPosition;
 
         [Inject]
-        public void Construct(ITowerFactory towerFactory, ILocalCoinService localCoinService, PlayerInput input, ILevelUIFactory levelUIFactory)
+        public void Construct(ITowerFactory towerFactory, ILocalCoinService localCoinService, PlayerInput input, ILevelUIFactory levelUIFactory, IAudioService audioService)
         {
             _towerFactory = towerFactory;
             _localCoinService = localCoinService;
             _levelUIFactory = levelUIFactory;
+            _audioService = audioService;
             input.Player.CreateTower.performed += context => SpawnTower();
         }
 
@@ -39,6 +43,7 @@ namespace Assets.Scripts.Tower.Spawn
 
             if (_localCoinService.Coins >= _levelUIFactory.TowerSelection.SelectedButton?.Tower.Price)
             {
+                _audioService.PlaySfx(SfxType.SpawnTower);
                 _localCoinService.Buy(_levelUIFactory.TowerSelection.SelectedButton.Tower.Price);
                 _towerFactory.CreateTower(_levelUIFactory.TowerSelection.SelectedButton.Tower.TowerPrefab, _worldPosition, Quaternion.identity, transform);
             }
