@@ -165,7 +165,7 @@ MonoBehaviour:
         Tower:
           TowerType: 1
           TowerPrefab: {fileID: 1326093064322132, guid: a425124410f363a43adb6788601cc3e0, type: 3}
-          TowerModel: {fileID: 8604397196665533124, guid: 2683b66f7192945479c54c6e1d96b877, type: 3}
+          TowerModel: {fileID: 5030161030180692135, guid: 02a4b0b037890f048979dbef4fd5fd85, type: 3}
           Bullet:
             Prefab: {fileID: 339029724570663836, guid: f761d988f0445ca47b9e5bfd9aed7a0a, type: 3}
             Damage: 54
@@ -179,7 +179,7 @@ MonoBehaviour:
         Tower:
           TowerType: 2
           TowerPrefab: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
-          TowerModel: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+          TowerModel: {fileID: 1721469738240161675, guid: d08ac94aec5bb1f4c8a9c2ff02438b9d, type: 3}
           Bullet:
             Prefab: {fileID: 5180334387422381593, guid: ca7d035f9d337e74a83364fb5b916ec3, type: 3}
             Damage: 25
