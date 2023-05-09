@@ -76,6 +76,7 @@ namespace Assets.Scripts.Tower.Characteristics
         {
             if (EventSystem.current.IsPointerOverGameObject())
                 return true;
+
             return false;
         }
     }

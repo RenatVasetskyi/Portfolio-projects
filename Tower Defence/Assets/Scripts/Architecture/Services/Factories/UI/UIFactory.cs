@@ -25,6 +25,8 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         public TowerSelection TowerSelection { get; private set; }
         public BoosterHolder BoosterHolder { get; private set; }
 
+        public Transform LevelUIRoot { get; private set; }
+
         public UIFactory(DiContainer container, IAssetProvider assetProvider, IStaticDataService staticData, ICurrentLevelSettingsProvider currentLevelSettingProvider)
         {
             _container = container;
@@ -43,10 +45,10 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         public void CreateLevelSelectionWindow()
         {
-            Transform uiRootCanvas = CreateUIRootCanvas();
+            Transform parent = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
 
             WindowConfig config = _staticData.ForWindow(WindowId.LevelSelection);
-            _levelSelectionWindow = _container.InstantiatePrefab(config?.Prefab, uiRootCanvas);
+            _levelSelectionWindow = _container.InstantiatePrefab(config?.Prefab, parent);
 
             InitTransferButtonMarkers();
             CreateLevelTransferButton();
@@ -54,14 +56,14 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         public void CreateLevelUI()
         {
-            Transform parent = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
+            LevelUIRoot = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
 
-            CreateMainUIElements(parent);
+            CreateMainUIElements(LevelUIRoot);
 
-            CreateTowerSelection(parent);
+            CreateTowerSelection(LevelUIRoot);
             CreateTowerSelectionButtons(TowerSelection);
 
-            CreateBoosterHolder(parent);
+            CreateBoosterHolder(LevelUIRoot);
             CreateBoosterButtons();
         }
 
@@ -141,9 +143,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         private Transform CreateUIRoot() => 
             Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.UIRoot));
-
-        private Transform CreateUIRootCanvas() => 
-            Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
 
         private void InitTransferButtonMarkers() => 
             _markers = _levelSelectionWindow.GetComponentsInChildren<LevelTransferButtonMarker>();
