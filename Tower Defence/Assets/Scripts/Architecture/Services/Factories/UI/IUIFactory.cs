@@ -1,4 +1,5 @@
 using Assets.Scripts.Boosters;
+using Assets.Scripts.Tower.Characteristics;
 using Assets.Scripts.Tower.Selection;
 using UnityEngine;
 
@@ -13,5 +14,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         void CreateLevelSelectionWindow();
         void CreateLevelUI();
         void CreateGameOverWindow();
+        UpgradeTowerWindow CreateUpgradeTowerWindow(Transform parent, TowerCharacteristics towerCharacteristics);
     }
 }

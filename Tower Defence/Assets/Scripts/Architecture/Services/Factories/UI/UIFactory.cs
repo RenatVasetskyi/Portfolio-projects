@@ -3,8 +3,10 @@ using Assets.Scripts.Boosters;
 using Assets.Scripts.Data;
 using Assets.Scripts.Data.Windows;
 using Assets.Scripts.GameOver;
+using Assets.Scripts.Tower.Characteristics;
 using Assets.Scripts.Tower.Selection;
 using Assets.Scripts.UI.MainMenu;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using Zenject;
 using Object = UnityEngine.Object;
@@ -79,6 +81,20 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
                     .Initialize<GameOverWindow>(AssetPath.GameOverWindow), parent.transform);
 
             window.transform.localPosition = startPosition;
+        }
+
+        public UpgradeTowerWindow CreateUpgradeTowerWindow(Transform parent, TowerCharacteristics towerCharacteristics)
+        {
+            UpgradeTowerWindow window = _container
+                .InstantiatePrefabForComponent<UpgradeTowerWindow>(_assetProvider
+                    .Initialize<UpgradeTowerWindow>(AssetPath.UpgradeTowerWindow), parent);
+
+            window.TowerCharacteristics = towerCharacteristics;
+            window.UpdateCharacteristics();
+            window.TowerCharacteristics.OnTowerCharacteristicsUpgraded += window.UpdateCharacteristics;
+            window.UpgradeButton.onClick.AddListener(window.TowerCharacteristics.Upgrade);
+
+            return window;
         }
 
         private void CreateLevelTransferButton()

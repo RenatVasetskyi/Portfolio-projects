@@ -22,5 +22,6 @@ namespace Assets.Scripts.Data
         public const string MusicHolder = "AudioData/Music Holder";
         public const string SfxAudioSource = "AudioData/SfxAudioSource";
         public const string MusicAudioSource = "AudioData/MusicAudioSource";
+        public const string UpgradeTowerWindow = "Towers/UpgradeTowerWindow";
     }
 }
