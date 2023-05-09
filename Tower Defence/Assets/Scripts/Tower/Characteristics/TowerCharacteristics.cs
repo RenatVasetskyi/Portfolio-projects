@@ -1,8 +1,6 @@
 using System;
-using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Audio;
-using Assets.Scripts.Data.Levels;
 using Assets.Scripts.Tower.Selection;
 using UnityEngine;
 using Zenject;
@@ -13,11 +11,11 @@ namespace Assets.Scripts.Tower.Characteristics
     {
         public event Action OnTowerCharacteristicsUpgraded;
 
-        [SerializeField] AllLevelsSettings _levelsSettings; 
         [SerializeField] private TowerType _towerType;
 
         private ILocalCoinService _localCoinService;
         private IAudioService _audioService;
+        private ICurrentLevelSettingsProvider _currentLevelSettingsProvider;
 
         public TowerInfo Tower { get; private set; }
         public int CannonRotateSpeed { get; private set; }
@@ -33,10 +31,11 @@ namespace Assets.Scripts.Tower.Characteristics
         public int PriceIncreasing { get; private set; }
 
         [Inject]
-        public void Construct(ILocalCoinService localCoinService, IAudioService audioService)
+        public void Construct(ILocalCoinService localCoinService, IAudioService audioService, ICurrentLevelSettingsProvider currentLevelSettingsProvider)
         {
             _localCoinService = localCoinService;
             _audioService = audioService;
+            _currentLevelSettingsProvider = currentLevelSettingsProvider;
         }
 
         public void Upgrade()
@@ -77,13 +76,10 @@ namespace Assets.Scripts.Tower.Characteristics
 
         private void GetCurrentTowerSettings()
         {
-            foreach (LevelSettings level in _levelsSettings.Levels)
+            foreach (TowerSelectionButton button in _currentLevelSettingsProvider.GetCurrentLevelSettings().TowerSelectionButtons.Buttons) 
             {
-                foreach (TowerSelectionButton button in level.TowerSelectionButtons.Buttons)
-                {
-                    if (button.Tower.TowerType == _towerType)
-                        Tower = button.Tower;
-                }
+                if (button.Tower.TowerType == _towerType) 
+                    Tower = button.Tower;
             }
         }
     }

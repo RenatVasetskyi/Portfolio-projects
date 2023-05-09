@@ -1,5 +1,4 @@
 using System;
-using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Audio;
 using Assets.Scripts.Enemy.Animation;

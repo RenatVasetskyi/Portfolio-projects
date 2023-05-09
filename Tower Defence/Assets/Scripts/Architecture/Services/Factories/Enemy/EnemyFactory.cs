@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
+using Assets.Scripts.Enemy.Health;
 using Assets.Scripts.Enemy.Main;
 using UnityEngine;
 using Zenject;
