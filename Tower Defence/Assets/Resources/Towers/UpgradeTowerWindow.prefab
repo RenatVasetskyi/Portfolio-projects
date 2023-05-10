@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeButton: {fileID: 744030126299901398}
+  CloseWindowButton: {fileID: 644110448390887443}
   _damageCountText: {fileID: 7233446604993523062}
   _fireSpeedCountText: {fileID: 1969313518140247048}
   _attackRangeCountText: {fileID: 4875250810622527664}

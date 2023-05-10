@@ -7,6 +7,7 @@ namespace Assets.Scripts.Tower.Characteristics
     public class UpgradeTowerWindow : MonoBehaviour
     {
         public Button UpgradeButton;
+        public Button CloseWindowButton;
 
         [SerializeField] private TextMeshProUGUI _damageCountText;
         [SerializeField] private TextMeshProUGUI _fireSpeedCountText;

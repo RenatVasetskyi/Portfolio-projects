@@ -11,7 +11,6 @@ namespace Assets.Scripts.Tower.Characteristics
         [SerializeField] private TowerCharacteristics _towerCharacteristics;
 
         private float _windowScaleDuration = 0.3f;
-
         private bool _isUpgrageWindowOpened = false;
 
         private IUIFactory _uiFactory;
@@ -24,6 +23,7 @@ namespace Assets.Scripts.Tower.Characteristics
 
         public void CloseWindow()
         {
+            _isUpgrageWindowOpened = false;
             LeanTween.scale(_window.gameObject, Vector3.zero, _windowScaleDuration)
                 .setOnComplete(DestroyWindow);
         }
@@ -36,21 +36,17 @@ namespace Assets.Scripts.Tower.Characteristics
             if (_uiFactory.TowerSelection.SelectedButton != null) 
                 return;                
 
-            if (_isUpgrageWindowOpened == false)
-            {
-                _isUpgrageWindowOpened = true;
+            if (_isUpgrageWindowOpened == false) 
                 OpenWindow();
-            }
-            else
-            {
-                _isUpgrageWindowOpened = false;
+            else 
                 CloseWindow();
-            }
         }
 
         private void OpenWindow()
         {
+            _isUpgrageWindowOpened = true;
             _window = _uiFactory.CreateUpgradeTowerWindow(_uiFactory.LevelUIRoot, _towerCharacteristics);
+            _window.CloseWindowButton.onClick.AddListener(CloseWindow);
             LeanTween.scale(_window.gameObject, Vector2.one, _windowScaleDuration);
         }
 
