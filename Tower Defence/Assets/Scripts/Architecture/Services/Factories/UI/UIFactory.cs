@@ -89,9 +89,9 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
                     .Initialize<UpgradeTowerWindow>(AssetPath.UpgradeTowerWindow), parent);
 
             window.TowerCharacteristics = towerCharacteristics;
+            window.UpgradeButton.onClick.AddListener(towerCharacteristics.Upgrade);
             window.UpdateCharacteristics();
             window.TowerCharacteristics.OnTowerCharacteristicsUpgraded += window.UpdateCharacteristics;
-            window.UpgradeButton.onClick.AddListener(window.TowerCharacteristics.Upgrade);
 
             return window;
         }
