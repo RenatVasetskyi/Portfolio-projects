@@ -1,5 +1,6 @@
 using System.Collections;
 using Assets.Scripts.Architecture.Services.Factories.Enemy;
+using Assets.Scripts.Architecture.States.Interfaces;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
@@ -7,15 +8,19 @@ using Zenject;
 namespace Assets.Scripts.Boosters.SlowDownEnemies
 {
     public class SlowDownEnemies : MonoBehaviour
-    {
+    { 
         [SerializeField] private float _slowingDuration;
         [SerializeField] private float _slowing;
 
         private IEnemyFactory _enemyFactory;
+        private ICoroutineRunner _coroutineRunner;
 
         [Inject]
-        public void Construct(IEnemyFactory enemyFactory) =>
+        public void Construct(IEnemyFactory enemyFactory, ICoroutineRunner coroutineRunner)
+        {
             _enemyFactory = enemyFactory;
+            _coroutineRunner = coroutineRunner;
+        }
 
         public void SlowEnemies()
         {
@@ -25,7 +30,7 @@ namespace Assets.Scripts.Boosters.SlowDownEnemies
             foreach (GameObject enemy in _enemyFactory.EnemyParent.Enemies)
                 enemy.GetComponent<NavMeshAgent>().speed /= _slowing;
 
-            StartCoroutine(StopSlowing());
+            _coroutineRunner.StartCoroutine(StopSlowing());
         }
 
         private IEnumerator StopSlowing()

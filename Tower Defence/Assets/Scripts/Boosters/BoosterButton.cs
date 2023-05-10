@@ -12,7 +12,7 @@ namespace Assets.Scripts.Boosters
         public bool IsActivated;
         public Button Button;
 
-        private IAudioService _audioService;
+        protected IAudioService _audioService;
 
         [Inject]
         public void Construct(IAudioService audioService) => 
