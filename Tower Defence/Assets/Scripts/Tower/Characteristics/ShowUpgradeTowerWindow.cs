@@ -33,6 +33,9 @@ namespace Assets.Scripts.Tower.Characteristics
             if (IsPointerOverUI())
                 return;
 
+            if (_uiFactory.TowerSelection.SelectedButton != null) 
+                return;                
+
             if (_isUpgrageWindowOpened == false)
             {
                 _isUpgrageWindowOpened = true;

@@ -6,7 +6,6 @@ using Assets.Scripts.GameOver;
 using Assets.Scripts.Tower.Characteristics;
 using Assets.Scripts.Tower.Selection;
 using Assets.Scripts.UI.MainMenu;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using Zenject;
 using Object = UnityEngine.Object;

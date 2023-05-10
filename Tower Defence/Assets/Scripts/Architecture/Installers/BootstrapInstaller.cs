@@ -14,7 +14,7 @@ namespace Assets.Scripts.Architecture.Installers
             AddStatesToStateMachine();
         }
 
-        public void Initialize() => 
+        public void Initialize() =>
             Container.Resolve<IStateMachine>().Enter<LoadMainMenuState>();
 
         private void BindStates()
