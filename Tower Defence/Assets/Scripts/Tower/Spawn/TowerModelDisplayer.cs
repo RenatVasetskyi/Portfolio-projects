@@ -32,9 +32,12 @@ namespace Assets.Scripts.Tower.Spawn
 
         private void LateUpdate()
         {
-            GetWorldPosition();
+            if (_uiFactory.TowerSelection.SelectedButton != null) 
+                GetWorldPosition(); 
+
             Show();
         }
+                
 
         private void Show()
         {

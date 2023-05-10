@@ -2,13 +2,13 @@ using Assets.Scripts.Architecture.Services.Factories.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Zenject;
+using Vector2 = UnityEngine.Vector2;
 
 namespace Assets.Scripts.Tower.Characteristics
 {
     public class ShowUpgradeTowerWindow : MonoBehaviour
     {
         [SerializeField] private TowerCharacteristics _towerCharacteristics;
-        [SerializeField] private Vector3 _windowScale;
 
         private float _windowScaleDuration = 0.3f;
 
@@ -51,10 +51,10 @@ namespace Assets.Scripts.Tower.Characteristics
         private void OpenWindow()
         {
             _window = _uiFactory.CreateUpgradeTowerWindow(_uiFactory.LevelUIRoot, _towerCharacteristics);
-            LeanTween.scale(_window.gameObject, _windowScale, _windowScaleDuration);
+            LeanTween.scale(_window.gameObject, Vector2.one, _windowScaleDuration);
         }
 
-        private void DestroyWindow() =>
+        private void DestroyWindow() => 
             Destroy(_window);
 
         private bool IsPointerOverUI()
