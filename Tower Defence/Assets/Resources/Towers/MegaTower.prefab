@@ -165,6 +165,7 @@ MonoBehaviour:
   _cannonRotator: {fileID: 4519941387849242}
   _towerCharacteristics: {fileID: 3643031607253083636}
   _towerShooting: {fileID: 3397395222111333864}
+  _updateTargetInterval: 0.25
 --- !u!114 &3397395222111333864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +193,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _towerCharacteristics: {fileID: 3643031607253083636}
-  _windowScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1414511323558576
 GameObject:
   m_ObjectHideFlags: 0

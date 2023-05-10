@@ -19,13 +19,13 @@ namespace Assets.Scripts.Tower.Spawn
 
         private void OnMouseEnter()
         {
-            if (_uiFactory.TowerSelection.SelectedButton != null)
+            if (_uiFactory.TowerSelection?.SelectedButton != null)
                 ChangeColor(_lightRedColor);
         }
 
         private void OnMouseExit()
         {
-            if (_uiFactory.TowerSelection.SelectedButton != null)
+            if (_uiFactory.TowerSelection?.SelectedButton != null)
                 ChangeColor(_lightGreenColor);
         }
 
