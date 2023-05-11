@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: -8733703756841247607}
   - component: {fileID: 170257860283764515}
   - component: {fileID: 8286815064784907755}
+  - component: {fileID: 4076691293463408110}
   m_Layer: 7
   m_Name: SimpleTower
   m_TagString: Untagged
@@ -167,7 +168,6 @@ MonoBehaviour:
   _cannonRotator: {fileID: 487344}
   _towerCharacteristics: {fileID: 5188757847677104544}
   _towerShooting: {fileID: 170257860283764515}
-  _updateTargetInterval: 0.25
 --- !u!114 &170257860283764515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +195,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _towerCharacteristics: {fileID: 5188757847677104544}
+--- !u!114 &4076691293463408110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45dfea0e28a077e4090fc84d2610558b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _modelMaterial: {fileID: 2100000, guid: a88973e8ca3457e42a103c03ab078212, type: 2}
 --- !u!1 &135976
 GameObject:
   m_ObjectHideFlags: 0

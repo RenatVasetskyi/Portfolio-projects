@@ -28,15 +28,21 @@ namespace Assets.Scripts.Tower.Characteristics
                 return;
 
             if (_isUpgrageWindowOpened == false)
+            {
+                _isUpgrageWindowOpened = true;
                 ShowWindow();
+            }
             else
-                _window.Hide(out _isUpgrageWindowOpened);
+            {
+                _isUpgrageWindowOpened = false;
+                _window.Hide();
+            }
         }
 
         private void ShowWindow()
         {
             _window = _uiFactory.CreateUpgradeTowerWindow(_uiFactory.LevelUIRoot, _towerCharacteristics);
-            _window.Show(out _isUpgrageWindowOpened);
+            _window.Show();
         }
 
         private bool IsPointerOverUI()

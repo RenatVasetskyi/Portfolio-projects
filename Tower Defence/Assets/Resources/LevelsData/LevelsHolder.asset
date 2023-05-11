@@ -19,7 +19,7 @@ MonoBehaviour:
     - {fileID: 4057524601541569357, guid: 80404fff643a25c43955dbf5f6900f7b, type: 3}
     - {fileID: 1036435580197967665, guid: 695f10cd995a58c4199a5b3dac55736f, type: 3}
     - {fileID: 5689525047379739414, guid: 40bd3e56c0c297347b44886b18d173c0, type: 3}
-    Coins: 150
+    Coins: 200
     Hp: 7
     WaveSettings:
       WaveDatas:

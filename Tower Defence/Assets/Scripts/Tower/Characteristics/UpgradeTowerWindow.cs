@@ -28,18 +28,12 @@ namespace Assets.Scripts.Tower.Characteristics
             _upgradePriceText.text = $"{TowerCharacteristics.UpgradePrice}";
         }
 
-        public void Show(out bool isOpened)
-        {
-            isOpened = true;
+        public void Show() =>
             LeanTween.scale(gameObject, Vector2.one, _windowScaleDuration);
-        }
 
-        public void Hide(out bool isOpened)
-        {
-            isOpened = false;
+        public void Hide() =>
             LeanTween.scale(gameObject, Vector3.zero, _windowScaleDuration)
                 .setOnComplete(() => Destroy(gameObject));
-        }
 
         private void OnDestroy() =>
             TowerCharacteristics.OnTowerCharacteristicsUpgraded -= UpdateCharacteristics;
