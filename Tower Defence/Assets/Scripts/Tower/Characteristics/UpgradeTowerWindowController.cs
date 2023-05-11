@@ -8,8 +8,6 @@ namespace Assets.Scripts.Tower.Characteristics
 {
     public class UpgradeTowerWindowController : MonoBehaviour
     {
-        [SerializeField] private Vector2 _upgradeWindowOffset;
-
         [SerializeField] private TowerCharacteristics _towerCharacteristics;
         private UpgradeTowerWindowView _window;
 
@@ -46,7 +44,7 @@ namespace Assets.Scripts.Tower.Characteristics
             _window.TowerCharacteristics.OnTowerCharacteristicsUpgraded += _window.UpdateCharacteristics;
 
             _window.UpdateCharacteristics();
-            _window.Show(out _isUpgrageWindowOpened,Mouse.current.position.ReadValue(), _upgradeWindowOffset);
+            _window.Show(out _isUpgrageWindowOpened,Mouse.current.position.ReadValue());
         }
 
         private void HideWindow() =>

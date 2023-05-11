@@ -9,6 +9,8 @@ namespace Assets.Scripts.Tower.Characteristics
         public Button UpgradeButton;
         public Button CloseWindow;
 
+        [SerializeField] private Vector2 _upgradeWindowOffset;
+
         [SerializeField] private TextMeshProUGUI _damageCountText;
         [SerializeField] private TextMeshProUGUI _fireSpeedCountText;
         [SerializeField] private TextMeshProUGUI _attackRangeCountText;
@@ -29,10 +31,10 @@ namespace Assets.Scripts.Tower.Characteristics
             _upgradePriceText.text = $"{TowerCharacteristics.UpgradePrice}";
         }
 
-        public void Show(out bool IsOpened,Vector2 position, Vector2 offset)
+        public void Show(out bool IsOpened,Vector2 position)
         {
             IsOpened = true;
-            gameObject.transform.position = position + offset;
+            gameObject.transform.position = position + _upgradeWindowOffset;
             LeanTween.scale(gameObject, Vector2.one, _windowScaleDuration);
         }
 
