@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,10 +32,11 @@ namespace Assets.Scripts.Tower.Characteristics
             _upgradePriceText.text = $"{TowerCharacteristics.UpgradePrice}";
         }
 
-        public void Show(out bool IsOpened,Vector2 position)
+        public void Show(out bool isOpened, Vector2 position)
         {
-            IsOpened = true;
-            gameObject.transform.position = position + _upgradeWindowOffset;
+            isOpened = true;
+            transform.position = position + _upgradeWindowOffset;
+            ControlWindowInFrames();
             LeanTween.scale(gameObject, Vector2.one, _windowScaleDuration);
         }
 
@@ -47,5 +49,37 @@ namespace Assets.Scripts.Tower.Characteristics
 
         private void OnDestroy() =>
             TowerCharacteristics.OnTowerCharacteristicsUpgraded -= UpdateCharacteristics;
+
+        private void ControlWindowInFrames()
+        {
+            RectTransform rectTransform = GetComponent<RectTransform>();
+
+            if (transform.localPosition.y >= GetFramePosition(Screen.height, 2))
+            {
+                float offsetY = transform.localPosition.y - Math.Abs(GetFramePosition(Screen.height, -2));
+                transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y - offsetY - (rectTransform.rect.height / 2));
+            }
+
+            if (transform.localPosition.y <= GetFramePosition(Screen.height, -2))
+            {
+                float offsetY = transform.localPosition.y + Math.Abs(GetFramePosition(Screen.height, -2));
+                transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y - offsetY + (rectTransform.rect.height / 2));
+            }
+
+            if (transform.localPosition.x <= GetFramePosition(Screen.width, -2))
+            {
+                float offsetX = transform.localPosition.x + Math.Abs(GetFramePosition(Screen.width, -2));
+                transform.localPosition = new Vector2(transform.localPosition.x - offsetX + (rectTransform.rect.width / 2), transform.localPosition.y);
+            }
+
+            if (transform.localPosition.x >= GetFramePosition(Screen.width, 2))
+            {
+                float offsetX = transform.localPosition.x - Math.Abs(GetFramePosition(Screen.width, 2));
+                transform.localPosition = new Vector2(transform.localPosition.x - offsetX - (rectTransform.rect.width / 2), transform.localPosition.y);
+            }
+        }
+
+        private float GetFramePosition(float size, float valueToDevide) =>
+            size / valueToDevide;
     }
 }
