@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Assets.Scripts.Tower.Characteristics
 {
-    public class ShowUpgradeTowerWindow : MonoBehaviour
+    public class UpgradeTowerWindowController : MonoBehaviour
     {
         [SerializeField] private TowerCharacteristics _towerCharacteristics;
         private UpgradeTowerWindowView _window;
@@ -41,6 +41,10 @@ namespace Assets.Scripts.Tower.Characteristics
         private void ShowWindow()
         {
             _window = _uiFactory.CreateUpgradeTowerWindow(_uiFactory.LevelUIRoot, _towerCharacteristics);
+            _window.TowerCharacteristics = _towerCharacteristics;
+            _window.UpgradeButton.onClick.AddListener(_towerCharacteristics.Upgrade);
+            _window.UpdateCharacteristics();
+            _window.TowerCharacteristics.OnTowerCharacteristicsUpgraded += _window.UpdateCharacteristics;
             _window.Show();
         }
 

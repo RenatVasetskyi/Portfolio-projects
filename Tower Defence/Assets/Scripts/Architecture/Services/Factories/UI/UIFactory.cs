@@ -88,11 +88,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
                 .InstantiatePrefabForComponent<UpgradeTowerWindowView>(_assetProvider
                     .Initialize<UpgradeTowerWindowView>(AssetPath.UpgradeTowerWindow), parent);
 
-            window.TowerCharacteristics = towerCharacteristics;
-            window.UpgradeButton.onClick.AddListener(towerCharacteristics.Upgrade);
-            window.UpdateCharacteristics();
-            window.TowerCharacteristics.OnTowerCharacteristicsUpgraded += window.UpdateCharacteristics;
-
             return window;
         }
 
