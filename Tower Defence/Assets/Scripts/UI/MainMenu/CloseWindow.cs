@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.UI.MainMenu
 {
-    public class WindowBase : MonoBehaviour
+    public class CloseWindow : MonoBehaviour
     {
         [SerializeField] private Button _button;
 

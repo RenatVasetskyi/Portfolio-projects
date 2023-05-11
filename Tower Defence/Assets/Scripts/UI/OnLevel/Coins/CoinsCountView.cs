@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Assets.Scripts.UI.OnLevel.Coins
 {
-    public class ShowCoinsCount : MonoBehaviour
+    public class CoinsCountView : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _coinsText;
 
@@ -17,14 +17,14 @@ namespace Assets.Scripts.UI.OnLevel.Coins
 
         private void Start()
         {
-            _localCoinService.OnCoinsChanged += UpdateText;
-            UpdateText();
+            _localCoinService.OnCoinsChanged += UpdateCoins;
+            UpdateCoins();
         }
 
         private void OnDestroy() =>
-            _localCoinService.OnCoinsChanged -= UpdateText;
+            _localCoinService.OnCoinsChanged -= UpdateCoins;
 
-        private void UpdateText() =>
+        private void UpdateCoins() =>
             _coinsText.text = _localCoinService.Coins.ToString();
     }
 }

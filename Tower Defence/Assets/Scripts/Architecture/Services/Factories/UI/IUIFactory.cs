@@ -6,9 +6,9 @@ using UnityEngine;
 namespace Assets.Scripts.Architecture.Services.Factories.UI
 {
     public interface IUIFactory
-    {
-        public TowerSelection TowerSelection { get; }
-        public BoosterHolder BoosterHolder { get; }
+    { 
+        TowerSelection TowerSelection { get; } 
+        BoosterHolder BoosterHolder { get; }
         Transform LevelUIRoot { get; }
         void CreateMainMenu();
         void CreateLevelSelectionWindow();
