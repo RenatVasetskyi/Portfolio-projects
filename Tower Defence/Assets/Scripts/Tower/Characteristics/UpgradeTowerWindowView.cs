@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Tower.Characteristics
 {
-    public class UpgradeTowerWindow : MonoBehaviour
+    public class UpgradeTowerWindowView : MonoBehaviour
     {
         public Button UpgradeButton;
 

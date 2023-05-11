@@ -8,12 +8,11 @@ namespace Assets.Scripts.Tower.Characteristics
     public class ShowUpgradeTowerWindow : MonoBehaviour
     {
         [SerializeField] private TowerCharacteristics _towerCharacteristics;
+        private UpgradeTowerWindowView _window;
 
         private bool _isUpgrageWindowOpened = false;
 
         private IUIFactory _uiFactory;
-
-        private UpgradeTowerWindow _window;
 
         [Inject]
         public void Construct(IUIFactory uiFactory) =>

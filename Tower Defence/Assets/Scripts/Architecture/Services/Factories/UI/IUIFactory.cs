@@ -14,6 +14,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         void CreateLevelSelectionWindow();
         void CreateLevelUI();
         void CreateGameOverWindow();
-        UpgradeTowerWindow CreateUpgradeTowerWindow(Transform parent, TowerCharacteristics towerCharacteristics);
+        UpgradeTowerWindowView CreateUpgradeTowerWindow(Transform parent, TowerCharacteristics towerCharacteristics);
     }
 }

@@ -82,11 +82,11 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             window.transform.localPosition = startPosition;
         }
 
-        public UpgradeTowerWindow CreateUpgradeTowerWindow(Transform parent, TowerCharacteristics towerCharacteristics)
+        public UpgradeTowerWindowView CreateUpgradeTowerWindow(Transform parent, TowerCharacteristics towerCharacteristics)
         {
-            UpgradeTowerWindow window = _container
-                .InstantiatePrefabForComponent<UpgradeTowerWindow>(_assetProvider
-                    .Initialize<UpgradeTowerWindow>(AssetPath.UpgradeTowerWindow), parent);
+            UpgradeTowerWindowView window = _container
+                .InstantiatePrefabForComponent<UpgradeTowerWindowView>(_assetProvider
+                    .Initialize<UpgradeTowerWindowView>(AssetPath.UpgradeTowerWindow), parent);
 
             window.TowerCharacteristics = towerCharacteristics;
             window.UpgradeButton.onClick.AddListener(towerCharacteristics.Upgrade);
