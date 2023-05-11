@@ -30,26 +30,27 @@ namespace Assets.Scripts.Tower.Characteristics
                 return;
 
             if (_isUpgrageWindowOpened == false)
-            {
-                _isUpgrageWindowOpened = true;
                 ShowWindow();
-            }
             else
-            {
-                _isUpgrageWindowOpened = false;
-                _window.Hide();
-            }
+                _window.Hide(out _isUpgrageWindowOpened);
         }
 
         private void ShowWindow()
         {
             _window = _uiFactory.CreateUpgradeTowerWindow(_uiFactory.LevelUIRoot, _towerCharacteristics);
+
             _window.TowerCharacteristics = _towerCharacteristics;
+
             _window.UpgradeButton.onClick.AddListener(_towerCharacteristics.Upgrade);
+            _window.CloseWindow.onClick.AddListener(HideWindow);
             _window.TowerCharacteristics.OnTowerCharacteristicsUpgraded += _window.UpdateCharacteristics;
+
             _window.UpdateCharacteristics();
-            _window.Show(Mouse.current.position.ReadValue(), _upgradeWindowOffset);
+            _window.Show(out _isUpgrageWindowOpened,Mouse.current.position.ReadValue(), _upgradeWindowOffset);
         }
+
+        private void HideWindow() =>
+            _window.Hide(out _isUpgrageWindowOpened);
 
         private bool IsPointerOverUI()
         {

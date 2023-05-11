@@ -7,6 +7,7 @@ namespace Assets.Scripts.Tower.Characteristics
     public class UpgradeTowerWindowView : MonoBehaviour
     {
         public Button UpgradeButton;
+        public Button CloseWindow;
 
         [SerializeField] private TextMeshProUGUI _damageCountText;
         [SerializeField] private TextMeshProUGUI _fireSpeedCountText;
@@ -28,15 +29,19 @@ namespace Assets.Scripts.Tower.Characteristics
             _upgradePriceText.text = $"{TowerCharacteristics.UpgradePrice}";
         }
 
-        public void Show(Vector2 position, Vector2 offset)
+        public void Show(out bool IsOpened,Vector2 position, Vector2 offset)
         {
+            IsOpened = true;
             gameObject.transform.position = position + offset;
             LeanTween.scale(gameObject, Vector2.one, _windowScaleDuration);
         }
 
-        public void Hide() =>
+        public void Hide(out bool isOpened)
+        {
+            isOpened = false;
             LeanTween.scale(gameObject, Vector3.zero, _windowScaleDuration)
                 .setOnComplete(() => Destroy(gameObject));
+        }
 
         private void OnDestroy() =>
             TowerCharacteristics.OnTowerCharacteristicsUpgraded -= UpdateCharacteristics;
