@@ -11,7 +11,20 @@ namespace Assets.Scripts.Architecture.Services
         public CurrentLevelSettingsProvider(AllLevelsSettings levels) =>
             _levels = levels;
 
-        public LevelSettings GetCurrentLevelSettings() => 
-            _levels.Levels.Find(x => x.Id.ToString() == SceneManager.GetActiveScene().name);
+        public LevelSettings GetCurrentLevelSettings()
+        {
+            LevelSettings levelSettings = new LevelSettings();
+
+            foreach (LevelSettings level in _levels.Levels)
+            {
+                if (level.Id.ToString() == SceneManager.GetActiveScene().name)
+                {
+                    levelSettings = level;
+                    return levelSettings;
+                }
+            }
+
+            return levelSettings;
+        }
     }
 }
