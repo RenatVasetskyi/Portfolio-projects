@@ -43,8 +43,8 @@ namespace Assets.Scripts.Tower.Characteristics
             _window = _uiFactory.CreateUpgradeTowerWindow(_uiFactory.LevelUIRoot, _towerCharacteristics);
             _window.TowerCharacteristics = _towerCharacteristics;
             _window.UpgradeButton.onClick.AddListener(_towerCharacteristics.Upgrade);
-            _window.UpdateCharacteristics();
             _window.TowerCharacteristics.OnTowerCharacteristicsUpgraded += _window.UpdateCharacteristics;
+            _window.UpdateCharacteristics();
             _window.Show();
         }
 
