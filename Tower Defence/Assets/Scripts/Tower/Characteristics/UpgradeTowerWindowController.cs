@@ -1,12 +1,15 @@
 using Assets.Scripts.Architecture.Services.Factories.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using Zenject;
 
 namespace Assets.Scripts.Tower.Characteristics
 {
     public class UpgradeTowerWindowController : MonoBehaviour
     {
+        [SerializeField] private Vector2 _upgradeWindowOffset;
+
         [SerializeField] private TowerCharacteristics _towerCharacteristics;
         private UpgradeTowerWindowView _window;
 
@@ -45,7 +48,7 @@ namespace Assets.Scripts.Tower.Characteristics
             _window.UpgradeButton.onClick.AddListener(_towerCharacteristics.Upgrade);
             _window.TowerCharacteristics.OnTowerCharacteristicsUpgraded += _window.UpdateCharacteristics;
             _window.UpdateCharacteristics();
-            _window.Show();
+            _window.Show(Mouse.current.position.ReadValue(), _upgradeWindowOffset);
         }
 
         private bool IsPointerOverUI()

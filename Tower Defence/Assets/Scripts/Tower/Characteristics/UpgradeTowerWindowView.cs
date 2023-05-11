@@ -28,8 +28,11 @@ namespace Assets.Scripts.Tower.Characteristics
             _upgradePriceText.text = $"{TowerCharacteristics.UpgradePrice}";
         }
 
-        public void Show() =>
+        public void Show(Vector2 position, Vector2 offset)
+        {
+            gameObject.transform.position = position + offset;
             LeanTween.scale(gameObject, Vector2.one, _windowScaleDuration);
+        }
 
         public void Hide() =>
             LeanTween.scale(gameObject, Vector3.zero, _windowScaleDuration)

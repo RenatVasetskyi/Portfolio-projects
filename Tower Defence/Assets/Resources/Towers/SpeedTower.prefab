@@ -328,6 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511a13585f79991489998792ddbf2fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _upgradeWindowOffset: {x: 150, y: -150}
   _towerCharacteristics: {fileID: -7880521502323846769}
 --- !u!114 &7471896545007771645
 MonoBehaviour:
