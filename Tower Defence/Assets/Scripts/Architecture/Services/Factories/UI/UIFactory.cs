@@ -6,6 +6,7 @@ using Assets.Scripts.Tower.Characteristics;
 using Assets.Scripts.Tower.Selection;
 using Assets.Scripts.UI.MainMenu;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 using Object = UnityEngine.Object;
 
@@ -37,7 +38,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         public void CreateMainMenu()
         {
-            Transform uiRoot = CreateUIRoot();
+            Transform uiRoot = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRoot));
 
             MainMenu mainMenu = _assetProvider.Initialize<MainMenu>(AssetPath.MainMenuWindow);
             _container.InstantiatePrefabForComponent<MainMenu>(mainMenu, uiRoot);
@@ -46,6 +47,8 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         public void CreateLevelSelectionWindow()
         {
             Transform parent = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
+
+            parent.GetComponent<CanvasScaler>().referenceResolution = new Vector2(Screen.width, Screen.height);
 
             WindowConfig config = _staticData.ForWindow(WindowId.LevelSelection);
             _levelSelectionWindow = _container.InstantiatePrefab(config?.Prefab, parent);
@@ -57,6 +60,8 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         public void CreateLevelUI()
         {
             LevelUIRoot = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
+
+            LevelUIRoot.GetComponent<CanvasScaler>().referenceResolution = new Vector2(Screen.width, Screen.height);
 
             CreateMainUIElements(LevelUIRoot);
 
@@ -149,10 +154,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         private Transform CreateParent(Transform parent) =>
             Object.Instantiate(parent);
-
-        private Transform CreateUIRoot() =>
-            Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.UIRoot));
-
+        
         private void InitTransferButtonMarkers() =>
             _markers = _levelSelectionWindow.GetComponentsInChildren<LevelTransferButtonMarker>();
     }
