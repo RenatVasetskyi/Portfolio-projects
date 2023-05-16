@@ -4,6 +4,7 @@
     {
         Known = 0,
         LevelSelection,
-        GameOver
+        GameOver,
+        Victory
     }
 }

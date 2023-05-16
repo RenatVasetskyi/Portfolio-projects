@@ -1,5 +1,6 @@
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States;
+using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Audio;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,13 +11,16 @@ namespace Assets.Scripts.GameOver.Buttons
     public class BackToMenuButton : MonoBehaviour
     {
         [SerializeField] private Button _button;
-        [SerializeField] private GameOverWindow _gameOverWindow;
 
         private IAudioService _audioService;
+        private IStateMachine _stateMachine;
 
         [Inject]
-        public void Construct(IAudioService audioService) =>
+        public void Construct(IAudioService audioService, IStateMachine stateMachine)
+        {
             _audioService = audioService;
+            _stateMachine = stateMachine;
+        }
 
         private void Awake() =>
             _button.onClick.AddListener(OnClick);
@@ -24,7 +28,7 @@ namespace Assets.Scripts.GameOver.Buttons
         private void OnClick()
         {
             _audioService.PlaySfx(SfxType.Click);
-            _gameOverWindow.StateMachine.Enter<LoadMainMenuState>();
+            _stateMachine.Enter<LoadMainMenuState>();
         }
     }
 }

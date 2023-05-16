@@ -2,7 +2,7 @@ using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
 using Assets.Scripts.Data.Windows;
-using Assets.Scripts.GameOver;
+using Assets.Scripts.UI;
 
 namespace Assets.Scripts.Architecture.Services
 {
@@ -23,7 +23,10 @@ namespace Assets.Scripts.Architecture.Services
                     _uiFactory.CreateLevelSelectionWindow();
                     break;
                 case WindowId.GameOver:
-                    _uiFactory.CreateWindow<GameOverWindow>(AssetPath.GameOverWindow);
+                    _uiFactory.CreateWindow<MovableWindow>(AssetPath.GameOverWindow);
+                    break;
+                case WindowId.Victory:
+                    _uiFactory.CreateWindow<MovableWindow>(AssetPath.VictoryWindow);
                     break;
             }
         }

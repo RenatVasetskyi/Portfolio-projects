@@ -27,7 +27,7 @@ MonoBehaviour:
         _enemyOnWaveDatas:
         - _enemySpawnDatas:
           - _enemy: 0
-            _enemyCount: 5
+            _enemyCount: 7
           _timeDelayBetweenWaves: 3
           _timeDelayBetweenSpawns: 0.5
       - _waveNumber: 2
