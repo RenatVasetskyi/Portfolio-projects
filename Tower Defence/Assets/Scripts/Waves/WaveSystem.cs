@@ -1,15 +1,18 @@
 using System;
 using System.Collections;
 using Assets.Scripts.Architecture.Services.Factories.Enemy;
+using Assets.Scripts.Architecture.Services.Factories.Main;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Enemy.Main;
+using Assets.Scripts.Victory;
 using UnityEngine;
 
 namespace Assets.Scripts.Waves
 {
     public class WaveSystem : IWaveSystem
     {
+        private readonly ICheckVictory _victoryChecker;
         private readonly ICurrentLevelSettingsProvider _currentLevelSettingsProvider;
         private readonly IEnemyFactory _enemyFactory;
         private readonly ICoroutineRunner _coroutineRunner;
@@ -18,9 +21,10 @@ namespace Assets.Scripts.Waves
 
         public Coroutine WaveCoroutine;
 
-        public WaveSystem(ICurrentLevelSettingsProvider currentLevelSettingsProvider, 
+        public WaveSystem(ICheckVictory victoryChecker, ICurrentLevelSettingsProvider currentLevelSettingsProvider, 
             IEnemyFactory enemyFactory, ICoroutineRunner coroutineRunner)
         {
+            _victoryChecker = victoryChecker;
             _currentLevelSettingsProvider = currentLevelSettingsProvider;
             _enemyFactory = enemyFactory;
             _coroutineRunner = coroutineRunner;
@@ -55,6 +59,8 @@ namespace Assets.Scripts.Waves
                     }
                 }
             }
+            
+            _coroutineRunner.StartCoroutine(_victoryChecker.Check());
         }
     }
 }

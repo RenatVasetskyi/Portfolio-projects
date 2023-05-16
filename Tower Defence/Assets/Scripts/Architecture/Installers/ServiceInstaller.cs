@@ -15,6 +15,7 @@ using Assets.Scripts.Waves;
 using UnityEngine;
 using Zenject;
 using Assets.Scripts.Architecture.Services.Factories.Enemy;
+using Assets.Scripts.Victory;
 
 namespace Assets.Scripts.Architecture.Installers
 {
@@ -46,6 +47,15 @@ namespace Assets.Scripts.Architecture.Installers
             BindMainLevelFactory();
             BindBulletFactory();
             BindBoosterFactory();
+            BindVictoryChecker();
+        }
+
+        private void BindVictoryChecker()
+        {
+            Container
+                .Bind<ICheckVictory>()
+                .To<CheckVictory>()
+                .AsSingle();
         }
 
         private void BindAudioFactory()
