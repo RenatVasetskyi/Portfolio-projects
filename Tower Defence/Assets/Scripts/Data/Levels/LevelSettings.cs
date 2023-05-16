@@ -12,6 +12,7 @@ namespace Assets.Scripts.Data.Levels
     public class LevelSettings
     {
         public LevelId Id;
+        public LevelId NextLevel;
 
         [Header("Prefabs")] 
         public List<GameObject> MainLevelUIElements;

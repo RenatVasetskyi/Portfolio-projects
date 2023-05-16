@@ -26,12 +26,10 @@ namespace Assets.Scripts.Victory
             {
                 if (CheckAreAllEnemiesDied())
                 {
-                    Debug.Log("A");
                     _stateMachine.Enter<VictoryState>();
                     yield break;
                 }
 
-                Debug.Log(_enemyFactory.EnemyParent.Enemies.Count);
                 yield return new WaitForSeconds(_checkFrequency);
             }
         }
