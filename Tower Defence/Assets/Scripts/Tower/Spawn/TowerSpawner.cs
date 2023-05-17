@@ -1,11 +1,10 @@
-using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.Services.Factories.Tower;
 using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Audio;
-using Assets.Scripts.Tower.Selection;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using Zenject;
 
 namespace Assets.Scripts.Tower.Spawn
@@ -18,6 +17,7 @@ namespace Assets.Scripts.Tower.Spawn
         private ILocalCoinService _localCoinService;
         private IUIFactory _uiFactory;
         private IAudioService _audioService;
+        private PlayerInput _input;
 
         private Vector3 _worldPosition;
 
@@ -28,10 +28,10 @@ namespace Assets.Scripts.Tower.Spawn
             _localCoinService = localCoinService;
             _uiFactory = uiFactory;
             _audioService = audioService;
-            input.Player.CreateTower.performed += context => SpawnTower();
+            _input = input;
         }
 
-        public void SpawnTower()
+        public void SpawnTower(InputAction.CallbackContext context)
         {
             if (IsPointerOverUI())
                 return;
@@ -48,6 +48,12 @@ namespace Assets.Scripts.Tower.Spawn
                 _towerFactory.CreateTower(_uiFactory.TowerSelection.SelectedButton.Tower.TowerPrefab, _worldPosition, Quaternion.identity, transform);
             }
         }
+
+        private void OnEnable() =>
+            _input.Player.CreateTower.performed += SpawnTower;
+
+        private void OnDisable() =>
+            _input.Player.CreateTower.performed -= SpawnTower;
 
         private bool IsPointerOverUI()
         {

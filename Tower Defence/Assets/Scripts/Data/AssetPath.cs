@@ -16,12 +16,12 @@ namespace Assets.Scripts.Data
         public const string MeteorBooster = "Meteor/Meteor";
         public const string BoosterHolder = "UI/BoosterHolder";
         public const string TowerSelection = "UI/TowerSelection";
-        public const string GameOverWindowCanvas = "UI/Windows/GameOverWindowCanvas";
         public const string GameOverWindow = "UI/Windows/GameOverWindow";
         public const string SfxHolder = "AudioData/Sound Effects Holder";
         public const string MusicHolder = "AudioData/Music Holder";
         public const string SfxAudioSource = "AudioData/SfxAudioSource";
         public const string MusicAudioSource = "AudioData/MusicAudioSource";
         public const string UpgradeTowerWindow = "Towers/UpgradeTowerWindow";
+        public const string WindowParent = "UI/Windows/WindowParent";
     }
 }

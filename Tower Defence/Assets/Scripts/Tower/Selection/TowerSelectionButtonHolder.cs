@@ -1,4 +1,3 @@
-using Assets.Scripts.Tower.Price;
 using UnityEngine;
 
 namespace Assets.Scripts.Tower.Selection

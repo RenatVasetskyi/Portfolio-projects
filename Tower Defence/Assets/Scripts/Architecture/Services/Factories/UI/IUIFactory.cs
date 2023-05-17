@@ -6,14 +6,14 @@ using UnityEngine;
 namespace Assets.Scripts.Architecture.Services.Factories.UI
 {
     public interface IUIFactory
-    { 
-        TowerSelection TowerSelection { get; } 
+    {
+        TowerSelection TowerSelection { get; }
         BoosterHolder BoosterHolder { get; }
         Transform LevelUIRoot { get; }
         void CreateMainMenu();
         void CreateLevelSelectionWindow();
         void CreateLevelUI();
-        void CreateGameOverWindow();
+        void CreateWindow<T>(string path) where T : MonoBehaviour;
         UpgradeTowerWindowView CreateUpgradeTowerWindow(Transform parent, TowerCharacteristics towerCharacteristics);
     }
 }

@@ -1,22 +1,22 @@
 using Assets.Scripts.Architecture.Services.Factories.Enemy;
-using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Audio;
+using Assets.Scripts.Data.Windows;
 using Assets.Scripts.Waves;
 
 namespace Assets.Scripts.Architecture.States
 {
     public class GameOverState : IState
     {
-        private readonly IUIFactory _uiFactory;
+        private readonly IWindowService _windowService;
         private readonly IWaveSystem _waveSystem;
         private readonly IEnemyFactory _enemyFactory;
         private readonly IAudioService _audioService;
 
-        public GameOverState(IUIFactory uiFactory, IWaveSystem waveSystem, IEnemyFactory enemyFactory, IAudioService audioService)
+        public GameOverState(IWindowService windowService, IWaveSystem waveSystem, IEnemyFactory enemyFactory, IAudioService audioService)
         {
-            _uiFactory = uiFactory;
+            _windowService = windowService;
             _waveSystem = waveSystem;
             _enemyFactory = enemyFactory;
             _audioService = audioService;
@@ -32,7 +32,7 @@ namespace Assets.Scripts.Architecture.States
             _audioService.PlaySfx(SfxType.GameOver);
             _waveSystem.StopWavesCoroutine();
             _enemyFactory.EnemyParent.DestroyEnemies();
-            _uiFactory.CreateGameOverWindow();
+            _windowService.Open(WindowId.GameOver);
         }
     }
 }

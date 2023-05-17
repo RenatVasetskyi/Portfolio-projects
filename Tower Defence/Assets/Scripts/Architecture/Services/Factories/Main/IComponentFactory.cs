@@ -1,6 +1,6 @@
 namespace Assets.Scripts.Architecture.Services.Factories.Main
 {
-    public interface IMainLevelFactory
+    public interface IComponentFactory
     {
         void InstantiateComponents();
     }

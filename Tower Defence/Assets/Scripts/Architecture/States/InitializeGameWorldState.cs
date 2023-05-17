@@ -13,13 +13,13 @@ namespace Assets.Scripts.Architecture.States
         private readonly ILocalCoinService _localCoinService;
         private readonly IPlayerHpService _playerHpService;
         private readonly LoadingCurtain _loadingCurtain;
-        private readonly IMainLevelFactory _mainLevelFactory;
+        private readonly IComponentFactory _componentFactory;
         private readonly IAudioService _audioService;
         private readonly ICurrentLevelSettingsProvider _currentLevelSettingsProvider;
 
         public InitializeGameWorldState(IStateMachine stateMachine, IUIFactory uiFactory, 
             ILocalCoinService localCoinService, IPlayerHpService playerHpService,
-            LoadingCurtain loadingCurtain, IMainLevelFactory mainLevelFactory, IAudioService audioService,
+            LoadingCurtain loadingCurtain, IComponentFactory componentFactory, IAudioService audioService,
             ICurrentLevelSettingsProvider currentLevelSettingsProvider)
         {
             _stateMachine = stateMachine;
@@ -27,7 +27,7 @@ namespace Assets.Scripts.Architecture.States
             _localCoinService = localCoinService;
             _playerHpService = playerHpService;
             _loadingCurtain = loadingCurtain;
-            _mainLevelFactory = mainLevelFactory;
+            _componentFactory = componentFactory;
             _audioService = audioService;
             _currentLevelSettingsProvider = currentLevelSettingsProvider;
         }
@@ -44,10 +44,10 @@ namespace Assets.Scripts.Architecture.States
         private void InitGameWorld()
         {
             _audioService.PlayMusic(_currentLevelSettingsProvider.GetCurrentLevelSettings().MusicType);
-            _mainLevelFactory.InstantiateComponents();
             _uiFactory.CreateLevelUI();
             _localCoinService.SetCoins();
             _playerHpService.SetHp();
+            _componentFactory.InstantiateComponents();
         }
     }
 }

@@ -3,6 +3,7 @@
     public enum WindowId
     {
         Known = 0,
-        LevelSelection
+        LevelSelection,
+        GameOver
     }
 }

@@ -1,6 +1,8 @@
 using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.Services.Interfaces;
+using Assets.Scripts.Data;
 using Assets.Scripts.Data.Windows;
+using Assets.Scripts.GameOver;
 
 namespace Assets.Scripts.Architecture.Services
 {
@@ -19,6 +21,9 @@ namespace Assets.Scripts.Architecture.Services
                     break;
                 case WindowId.LevelSelection:
                     _uiFactory.CreateLevelSelectionWindow();
+                    break;
+                case WindowId.GameOver:
+                    _uiFactory.CreateWindow<GameOverWindow>(AssetPath.GameOverWindow);
                     break;
             }
         }

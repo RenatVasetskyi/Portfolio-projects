@@ -2,7 +2,6 @@ using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Boosters;
 using Assets.Scripts.Data;
 using Assets.Scripts.Data.Windows;
-using Assets.Scripts.GameOver;
 using Assets.Scripts.Tower.Characteristics;
 using Assets.Scripts.Tower.Selection;
 using Assets.Scripts.UI.MainMenu;
@@ -68,16 +67,16 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             CreateBoosterButtons();
         }
 
-        public void CreateGameOverWindow()
+        public void CreateWindow<T>(string path) where T : MonoBehaviour
         {
             Vector3 startPosition = new Vector3(0, Screen.height, 0);
 
             GameObject parent = Object.Instantiate(_assetProvider
-                .Initialize<GameObject>(AssetPath.GameOverWindowCanvas));
+                .Initialize<GameObject>(AssetPath.WindowParent));
 
-            GameOverWindow window = _container
-                .InstantiatePrefabForComponent<GameOverWindow>(_assetProvider
-                    .Initialize<GameOverWindow>(AssetPath.GameOverWindow), parent.transform);
+            T window = _container
+                .InstantiatePrefabForComponent<T>(_assetProvider
+                    .Initialize<T>(path), parent.transform);
 
             window.transform.localPosition = startPosition;
         }
@@ -151,10 +150,10 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         private Transform CreateParent(Transform parent) =>
             Object.Instantiate(parent);
 
-        private Transform CreateUIRoot() => 
+        private Transform CreateUIRoot() =>
             Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.UIRoot));
 
-        private void InitTransferButtonMarkers() => 
+        private void InitTransferButtonMarkers() =>
             _markers = _levelSelectionWindow.GetComponentsInChildren<LevelTransferButtonMarker>();
     }
 }

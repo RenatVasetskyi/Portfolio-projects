@@ -184,8 +184,8 @@ namespace Assets.Scripts.Architecture.Installers
         private void BindMainLevelFactory()
         {
             Container
-                .Bind<IMainLevelFactory>()
-                .To<MainLevelFactory>()
+                .Bind<IComponentFactory>()
+                .To<ComponentFactory>()
                 .AsSingle();
         }
 
