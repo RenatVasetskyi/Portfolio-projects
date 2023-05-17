@@ -1,6 +1,7 @@
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States;
 using Assets.Scripts.Architecture.States.Interfaces;
+using Assets.Scripts.Data;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -24,9 +25,15 @@ namespace Assets.Scripts.Victory.Buttons
         private void Awake() =>
             _button.onClick.AddListener(EnterNextLevel);
 
-        private void EnterNextLevel() =>
-            _stateMachine
-                .Enter<LoadLevelState, string>(_currentLevelSettingsProvider
-                    .GetCurrentLevelSettings().NextLevel.ToString());
+        private void EnterNextLevel()
+        {
+            if (_currentLevelSettingsProvider
+                .GetCurrentLevelSettings().NextLevel == LevelId.None)
+                _stateMachine.Enter<LoadMainMenuState>();
+            else
+                _stateMachine
+                    .Enter<LoadLevelState, string>(_currentLevelSettingsProvider
+                        .GetCurrentLevelSettings().NextLevel.ToString());
+        }
     }
 }

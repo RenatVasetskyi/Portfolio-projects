@@ -15,7 +15,7 @@ namespace Assets.Scripts.Enemy.Path
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == Tags.Enemy)
+            if (other.CompareTag(Tags.Enemy))
             {
                 Destroy(other.gameObject);
                 _playerHpService.TakeDamage(1);
