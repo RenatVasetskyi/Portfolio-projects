@@ -17,8 +17,8 @@ namespace Assets.Scripts.Tower.Shooting
         private IBulletFactory _bulletFactory;
         private IAudioService _audioService;
 
-        private TowerCharacteristics _towerCharacteristics;
-        private EnemyTracking _enemyTracking;
+        [SerializeField] private TowerCharacteristics _towerCharacteristics;
+        [SerializeField] private EnemyTracking _enemyTracking;
 
         [Inject]
         public void Construct(IBulletFactory bulletFactory, IAudioService audioService)
@@ -36,12 +36,6 @@ namespace Assets.Scripts.Tower.Shooting
 
             if (bullet != null)
                 bullet.GetComponent<BulletCheckTarget>().Seek(_enemyTracking.Target);
-        }
-
-        private void Awake()
-        {
-            _enemyTracking = GetComponent<EnemyTracking>();
-            _towerCharacteristics = GetComponent<TowerCharacteristics>();
         }
 
         private Bullet SetDamage(GameObject bulletObj)

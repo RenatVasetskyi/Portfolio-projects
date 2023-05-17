@@ -8,7 +8,7 @@ using Zenject;
 
 namespace Assets.Scripts.Boosters.Meteorite
 {
-    public class StrikeZone : MonoBehaviour
+    public class MeteorStrikeZone : MonoBehaviour
     {
         private IUIFactory _uiFactory;
         private IBoosterFactory _boosterFactory;

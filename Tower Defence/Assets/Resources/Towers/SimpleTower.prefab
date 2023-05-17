@@ -182,6 +182,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shotSfxType: 1
   _bulletStartPoint: {fileID: 2719042134056884947}
+  _towerCharacteristics: {fileID: 5188757847677104544}
+  _enemyTracking: {fileID: -8733703756841247607}
 --- !u!114 &8286815064784907755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511a13585f79991489998792ddbf2fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _upgradeWindowOffset: {x: 150, y: -150}
   _towerCharacteristics: {fileID: 5188757847677104544}
 --- !u!114 &4076691293463408110
 MonoBehaviour:

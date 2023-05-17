@@ -23,9 +23,9 @@ namespace Assets.Scripts.Boosters.Meteorite
 
         private void Destroy()
         {
+            _audioService.PlaySfx(SfxType.DestroyingMeteorite);
             Destroy(gameObject);
             PlayEffect();
-            _audioService.PlaySfx(SfxType.DestroyingMeteorite);
         }
 
         private void PlayEffect()
