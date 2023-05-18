@@ -8,7 +8,8 @@ namespace Assets.Scripts.Tower.Selection
 {
     public class SelectTowerButton : MonoBehaviour
     {
-        [SerializeField] private TowerSelectionButtonHolder _button;
+        [SerializeField] private TowerSelectionButtonHolder _buttonHolder;
+        [SerializeField] private Button _button;
 
         private TowerSelection _towerSelection;
         private IAudioService _audioService;
@@ -19,12 +20,12 @@ namespace Assets.Scripts.Tower.Selection
 
         private void Awake()
         {
-            GetComponent<Button>().onClick.AddListener(OnButtonClickHandler);
+            _button.onClick.AddListener(OnButtonClickHandler);
             _towerSelection = GetComponentInParent<TowerSelection>();
         }
 
         private void Select() =>
-            _towerSelection.ChangeSelection(_button);
+            _towerSelection.ChangeSelection(_buttonHolder);
 
         private void Deselect(TowerSelectionButtonHolder button) =>
             _towerSelection.ChangeSelection(null);
@@ -37,14 +38,14 @@ namespace Assets.Scripts.Tower.Selection
             {
                 Select();
             }
-            else if (_towerSelection.SelectedButton != null & _towerSelection.SelectedButton.Tower.TowerType != _button.Tower.TowerType)
+            else if (_towerSelection.SelectedButton != null & _towerSelection.SelectedButton.Tower.TowerType != _buttonHolder.Tower.TowerType)
             {
-                Deselect(_button);
+                Deselect(_buttonHolder);
                 Select();
             }
-            else if (_towerSelection.SelectedButton != null & _towerSelection.SelectedButton.Tower.TowerType == _button.Tower.TowerType)
+            else if (_towerSelection.SelectedButton != null & _towerSelection.SelectedButton.Tower.TowerType == _buttonHolder.Tower.TowerType)
             {
-                Deselect(_button);
+                Deselect(_buttonHolder);
             }
         }
     }

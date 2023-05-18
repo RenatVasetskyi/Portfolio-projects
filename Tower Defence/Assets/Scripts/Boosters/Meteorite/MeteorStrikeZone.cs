@@ -19,6 +19,8 @@ namespace Assets.Scripts.Boosters.Meteorite
         private int _maxRaycastDistance = 200;
         private int _strikeZoneLayer = 1 << 8;
 
+        private UnityEngine.Camera _camera;
+
         [Inject]
         public void Construct(IUIFactory uiFactory, IBoosterFactory boosterFactory, IAudioService audioService)
         {
@@ -26,6 +28,9 @@ namespace Assets.Scripts.Boosters.Meteorite
             _boosterFactory = boosterFactory;
             _audioService = audioService;
         }
+
+        private void Awake()
+            => _camera = UnityEngine.Camera.main;
 
         private void OnMouseDown()
         {
@@ -44,7 +49,7 @@ namespace Assets.Scripts.Boosters.Meteorite
         private Vector3 GetTargetPosition()
         {
             _mousePosition = Mouse.current.position.ReadValue();
-            _ray = UnityEngine.Camera.main.ScreenPointToRay(_mousePosition);
+            _ray = _camera.ScreenPointToRay(_mousePosition);
 
             if (Physics.Raycast(_ray, out RaycastHit hit, _maxRaycastDistance, _strikeZoneLayer))
                 return hit.point;
@@ -54,9 +59,9 @@ namespace Assets.Scripts.Boosters.Meteorite
 
         private Vector3 GetBoosterSpawnPosition()
         {
-            return new Vector3(UnityEngine.Camera.main.transform.position.x 
-                               + 10, UnityEngine.Camera.main.transform.position.y 
-                                     + 40, UnityEngine.Camera.main.transform.position.z);
+            return new Vector3(_camera.transform.position.x 
+                               + 10, _camera.transform.position.y 
+                                     + 40, _camera.transform.position.z);
         }
     }
 }

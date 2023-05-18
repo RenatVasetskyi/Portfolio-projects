@@ -24,8 +24,8 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         public TowerSelection TowerSelection { get; private set; }
         public BoosterHolder BoosterHolder { get; private set; }
-
         public Transform LevelUIRoot { get; private set; }
+        public GameObject MeteorCrosshair { get; private set; }
 
         public UIFactory(DiContainer container, IAssetProvider assetProvider, IStaticDataService staticData, ICurrentLevelSettingsProvider currentLevelSettingProvider)
         {
@@ -89,6 +89,9 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
             return window;
         }
+
+        public void CreateMeteorCrosshair() =>
+            MeteorCrosshair = _container.InstantiatePrefab(_assetProvider.Initialize<GameObject>(AssetPath.MeteorCrosshair));
 
         private void CreateLevelTransferButton()
         {

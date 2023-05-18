@@ -13,6 +13,8 @@ namespace Assets.Scripts.Tower.Spawn
 
         private Vector2 _mousePosition;
 
+        public UnityEngine.Camera Camera { get; set; }
+
         public RaycastHit CheckAccess()
         {
             InitRay();
@@ -27,7 +29,7 @@ namespace Assets.Scripts.Tower.Spawn
         private void InitRay()
         {
             _mousePosition = Mouse.current.position.ReadValue();
-            _ray = UnityEngine.Camera.main.ScreenPointToRay(_mousePosition);
+            _ray = Camera.ScreenPointToRay(_mousePosition);
         }
     }
 }

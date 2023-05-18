@@ -192,7 +192,6 @@ MonoBehaviour:
           RotateSpeed: 8
           FireSpeed: 1.6
     Boosters:
-    - {fileID: 2380251769018670246, guid: c2248891a711f7b4c81df3cd60c69b70, type: 3}
     - {fileID: 1732835670616134362, guid: 1da466717a896d845925583df6dd50eb, type: 3}
     MusicType: 2
     SpawnPoint: {x: 56, y: 0, z: 104}

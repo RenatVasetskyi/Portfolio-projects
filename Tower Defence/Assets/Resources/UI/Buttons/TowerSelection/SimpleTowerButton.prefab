@@ -137,9 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795c78751dc0d8849bcdcb9269adc758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectTowerButton: {fileID: -8895633065976192342}
-  ScaleButton: {fileID: 0}
-  DisplayTowerPrice: {fileID: -3160040599885738911}
 --- !u!114 &-3160040599885738911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773c6ea39b1bfbc4694c4b085d193c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: -7248581612465174108}
+  _buttonHolder: {fileID: -7248581612465174108}
+  _button: {fileID: 2937308549608602987}
 --- !u!1 &8745329713592869818
 GameObject:
   m_ObjectHideFlags: 0

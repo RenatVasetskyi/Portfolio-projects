@@ -24,5 +24,6 @@ namespace Assets.Scripts.Data
         public const string UpgradeTowerWindow = "Towers/UpgradeTowerWindow";
         public const string WindowParent = "UI/Windows/WindowParent";
         public const string VictoryWindow = "UI/Windows/VictoryWindow";
+        public const string MeteorCrosshair = "Meteor/MeteoriteCrosshair";
     }
 }

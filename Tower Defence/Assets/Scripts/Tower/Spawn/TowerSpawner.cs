@@ -49,6 +49,9 @@ namespace Assets.Scripts.Tower.Spawn
             }
         }
 
+        private void Awake() =>
+            _spawnZoneChecker.Camera = UnityEngine.Camera.main;
+
         private void OnEnable() =>
             _input.Player.CreateTower.performed += SpawnTower;
 

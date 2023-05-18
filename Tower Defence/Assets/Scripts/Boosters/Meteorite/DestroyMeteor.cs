@@ -1,3 +1,4 @@
+using Assets.Scripts.Architecture.Services.Factories.UI;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Audio;
 using UnityEngine;
@@ -13,17 +14,25 @@ namespace Assets.Scripts.Boosters.Meteorite
         private float _destroyEffectDelay = 1f;
 
         private IAudioService _audioService;
+        private IUIFactory _uiFactory;
 
         [Inject]
-        public void Construct(IAudioService audioService) =>
+        public void Construct(IAudioService audioService, IUIFactory uiFactory)
+        {
             _audioService = audioService;
+            _uiFactory = uiFactory;
+        }
 
         private void Awake() =>
             _meteor.OnTargetReached += Destroy;
 
+        private void OnDestroy() =>
+            _meteor.OnTargetReached -= Destroy;
+
         private void Destroy()
         {
             _audioService.PlaySfx(SfxType.DestroyingMeteorite);
+            Destroy(_uiFactory.MeteorCrosshair);
             Destroy(gameObject);
             PlayEffect();
         }

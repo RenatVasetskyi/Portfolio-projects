@@ -10,10 +10,12 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         TowerSelection TowerSelection { get; }
         BoosterHolder BoosterHolder { get; }
         Transform LevelUIRoot { get; }
+        GameObject MeteorCrosshair { get; }
         void CreateMainMenu();
         void CreateLevelSelectionWindow();
         void CreateLevelUI();
         void CreateWindow<T>(string path) where T : MonoBehaviour;
         UpgradeTowerWindowView CreateUpgradeTowerWindow(Transform parent);
+        void CreateMeteorCrosshair();
     }
 }

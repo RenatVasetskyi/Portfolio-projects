@@ -23,12 +23,17 @@ namespace Assets.Scripts.Tower.Spawn
 
         private bool _isModelCreated = false;
 
+        private UnityEngine.Camera _camera;
+
         [Inject]
         public void Construct(IUIFactory uiFactory, ITowerFactory towerFactory)
         {
             _uiFactory = uiFactory;
             _towerFactory = towerFactory;
         }
+
+        private void Awake() =>
+            _camera = UnityEngine.Camera.main;
 
         private void LateUpdate()
         {
@@ -37,8 +42,7 @@ namespace Assets.Scripts.Tower.Spawn
 
             Show();
         }
-                
-
+        
         private void Show()
         {
             if (_uiFactory.TowerSelection.SelectedButton != null)
@@ -93,7 +97,7 @@ namespace Assets.Scripts.Tower.Spawn
         private void GetWorldPosition()
         {
             _screenPosition = GetScreenPosition();
-            _ray = UnityEngine.Camera.main.ScreenPointToRay(_screenPosition);
+            _ray = _camera.ScreenPointToRay(_screenPosition);
 
             if (Physics.Raycast(_ray, out RaycastHit hit))
                 _worldPosition = hit.point;
