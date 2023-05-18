@@ -363,8 +363,8 @@ MonoBehaviour:
   _fill: {fileID: 8646501352020797869}
   _gradient:
     serializedVersion: 2
-    key0: {r: 0.9529412, g: 0.21960784, b: 0.34117648, a: 1}
-    key1: {r: 0.46666667, g: 0.8117647, b: 0.28627452, a: 1}
+    key0: {r: 0.42396975, g: 1, b: 0, a: 1}
+    key1: {r: 1, g: 0, b: 0, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -718,10 +718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a65c977a28c4b4192b15f07c27a1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyData:
-    MaxHp: 60
-    Speed: 9
-    KillBonus: 10
 --- !u!114 &-5984641871811406216
 MonoBehaviour:
   m_ObjectHideFlags: 0

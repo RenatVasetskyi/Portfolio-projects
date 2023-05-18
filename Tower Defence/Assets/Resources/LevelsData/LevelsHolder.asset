@@ -29,6 +29,9 @@ MonoBehaviour:
         - _enemySpawnDatas:
           - _enemy: 0
             _enemyCount: 7
+            _maxHp: 30
+            _speed: 5
+            _killBonus: 10
           _timeDelayBetweenWaves: 3
           _timeDelayBetweenSpawns: 0.5
       - _waveNumber: 2
@@ -36,8 +39,14 @@ MonoBehaviour:
         - _enemySpawnDatas:
           - _enemy: 1
             _enemyCount: 5
+            _maxHp: 40
+            _speed: 6
+            _killBonus: 15
           - _enemy: 1
             _enemyCount: 3
+            _maxHp: 50
+            _speed: 5
+            _killBonus: 7
           _timeDelayBetweenWaves: 10
           _timeDelayBetweenSpawns: 0.5
       - _waveNumber: 3
@@ -45,8 +54,14 @@ MonoBehaviour:
         - _enemySpawnDatas:
           - _enemy: 0
             _enemyCount: 7
+            _maxHp: 55
+            _speed: 8
+            _killBonus: 10
           - _enemy: 1
             _enemyCount: 7
+            _maxHp: 70
+            _speed: 7
+            _killBonus: 15
           _timeDelayBetweenWaves: 15
           _timeDelayBetweenSpawns: 0.5
     TowerSelectionButtons:
@@ -115,8 +130,14 @@ MonoBehaviour:
         - _enemySpawnDatas:
           - _enemy: 0
             _enemyCount: 5
+            _maxHp: 70
+            _speed: 8
+            _killBonus: 10
           - _enemy: 1
             _enemyCount: 3
+            _maxHp: 75
+            _speed: 8
+            _killBonus: 10
           _timeDelayBetweenWaves: 3
           _timeDelayBetweenSpawns: 0.5
       - _waveNumber: 2
@@ -124,13 +145,22 @@ MonoBehaviour:
         - _enemySpawnDatas:
           - _enemy: 1
             _enemyCount: 5
+            _maxHp: 80
+            _speed: 8
+            _killBonus: 10
           - _enemy: 0
             _enemyCount: 5
+            _maxHp: 85
+            _speed: 8
+            _killBonus: 10
           _timeDelayBetweenWaves: 10
           _timeDelayBetweenSpawns: 0.5
         - _enemySpawnDatas:
           - _enemy: 0
             _enemyCount: 8
+            _maxHp: 90
+            _speed: 9
+            _killBonus: 15
           _timeDelayBetweenWaves: 8
           _timeDelayBetweenSpawns: 0.5
       - _waveNumber: 3
@@ -138,13 +168,22 @@ MonoBehaviour:
         - _enemySpawnDatas:
           - _enemy: 1
             _enemyCount: 5
+            _maxHp: 100
+            _speed: 10
+            _killBonus: 20
           - _enemy: 0
             _enemyCount: 8
+            _maxHp: 110
+            _speed: 10
+            _killBonus: 15
           _timeDelayBetweenWaves: 15
           _timeDelayBetweenSpawns: 0.5
         - _enemySpawnDatas:
           - _enemy: 1
             _enemyCount: 10
+            _maxHp: 110
+            _speed: 10
+            _killBonus: 20
           _timeDelayBetweenWaves: 10
           _timeDelayBetweenSpawns: 0.5
     TowerSelectionButtons:

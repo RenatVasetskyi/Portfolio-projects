@@ -43,9 +43,6 @@ namespace Assets.Scripts.Boosters.Meteorite
             }
         }
 
-        private void MoveCrosshair(Vector3 position) =>
-            _uiFactory.MeteorCrosshair.transform.position = position;
-
         private Vector3 GetWorldPosition()
         {
             _screenPosition = GetScreenPosition();
@@ -56,6 +53,9 @@ namespace Assets.Scripts.Boosters.Meteorite
 
             return Vector3.zero;
         }
+
+        private void MoveCrosshair(Vector3 position) =>
+            _uiFactory.MeteorCrosshair.transform.position = position;
 
         private void Show() =>
             _uiFactory.CreateMeteorCrosshair();

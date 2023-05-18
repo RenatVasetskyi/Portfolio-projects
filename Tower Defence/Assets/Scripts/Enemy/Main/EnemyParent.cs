@@ -5,7 +5,7 @@ namespace Assets.Scripts.Enemy.Main
 {
     public class EnemyParent : MonoBehaviour
     {
-        public List<GameObject> Enemies { get; set; } = new();
+        public List<Enemy> Enemies { get; set; } = new();
 
         public void DestroyEnemies() =>
             Destroy(gameObject);

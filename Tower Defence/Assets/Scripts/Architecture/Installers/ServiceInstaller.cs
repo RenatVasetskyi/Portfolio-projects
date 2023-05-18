@@ -2,6 +2,7 @@ using Assets.Scripts.Architecture.Main;
 using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.Services.Factories.Audio;
 using Assets.Scripts.Architecture.Services.Factories.Booster;
+using Assets.Scripts.Architecture.Services.Factories.Enemies;
 using Assets.Scripts.Architecture.Services.Factories.Main;
 using Assets.Scripts.Architecture.Services.Factories.Tower.Bullet;
 using Assets.Scripts.Architecture.Services.Factories.Tower;
@@ -14,7 +15,6 @@ using Assets.Scripts.UI.Loading;
 using Assets.Scripts.Waves;
 using UnityEngine;
 using Zenject;
-using Assets.Scripts.Architecture.Services.Factories.Enemy;
 using Assets.Scripts.Victory;
 
 namespace Assets.Scripts.Architecture.Installers

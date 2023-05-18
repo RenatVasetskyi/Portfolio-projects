@@ -41,12 +41,12 @@ namespace Assets.Scripts.Enemy.Health
             CheckDeath();
         }
 
-        private void Awake() =>
+        private void Start() =>
             Initialize();
 
         private void Initialize()
         {
-            _maxHp = _enemy.EnemyData.MaxHp;
+            _maxHp = _enemy.MaxHp;
             CurrentHp = _maxHp;
             _minHp = 0;
         }
@@ -61,8 +61,8 @@ namespace Assets.Scripts.Enemy.Health
         {
             _audioService.PlaySfx(SfxType.EnemyDeath);
             _audioService.PlaySfx(SfxType.GetCoins);
-            _localCoinService.GetBonus(_enemy.EnemyData.KillBonus);
-            GetComponentInParent<EnemyParent>().Enemies.Remove(gameObject);
+            _localCoinService.GetBonus(_enemy.KillBonus);
+            GetComponentInParent<EnemyParent>().Enemies.Remove(_enemy);
             _enemyMovement.enabled = false;
             _enemyAnimator.PlayDeath();
             Destroy(gameObject);

@@ -25,6 +25,6 @@ namespace Assets.Scripts.Enemy.Movement
         }
 
         private void Init() =>
-            _agent.speed = _enemy.EnemyData.Speed;
+            _agent.speed = _enemy.Speed;
     }
 }

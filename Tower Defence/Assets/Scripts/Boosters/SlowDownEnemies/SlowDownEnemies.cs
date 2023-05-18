@@ -1,5 +1,5 @@
 using System.Collections;
-using Assets.Scripts.Architecture.Services.Factories.Enemy;
+using Assets.Scripts.Architecture.Services.Factories.Enemies;
 using Assets.Scripts.Architecture.States.Interfaces;
 using UnityEngine;
 using UnityEngine.AI;
@@ -27,7 +27,7 @@ namespace Assets.Scripts.Boosters.SlowDownEnemies
             if (_enemyFactory.EnemyParent == null)
                 return;
             
-            foreach (GameObject enemy in _enemyFactory.EnemyParent.Enemies)
+            foreach (Enemy.Main.Enemy enemy in _enemyFactory.EnemyParent.Enemies)
                 enemy.GetComponent<NavMeshAgent>().speed /= _slowing;
 
             _coroutineRunner.StartCoroutine(StopSlowing());
@@ -37,8 +37,8 @@ namespace Assets.Scripts.Boosters.SlowDownEnemies
         {
             yield return new WaitForSeconds(_slowingDuration);
 
-            foreach (GameObject enemy in _enemyFactory.EnemyParent.Enemies)
-                enemy.GetComponent<NavMeshAgent>().speed = enemy.GetComponent<Enemy.Main.Enemy>().EnemyData.Speed;
+            foreach (Enemy.Main.Enemy enemy in _enemyFactory.EnemyParent.Enemies)
+                enemy.GetComponent<NavMeshAgent>().speed = enemy.GetComponent<Enemy.Main.Enemy>().Speed;
         }
     }
 }

@@ -1,5 +1,5 @@
 using System.Collections;
-using Assets.Scripts.Architecture.Services.Factories.Enemy;
+using Assets.Scripts.Architecture.Services.Factories.Enemies;
 using Assets.Scripts.Architecture.States;
 using Assets.Scripts.Architecture.States.Interfaces;
 using ModestTree;

@@ -11,22 +11,25 @@ namespace Assets.Scripts.Enemy.Health
         [SerializeField] private Image _fill;
         [SerializeField] private Gradient _gradient;
 
-        private void Awake()
+        private void Start()
         {
             Initialize();
             _enemyHealth.OnHealthChanged += UpdateHealthBar;
         }
+
+        private void OnDestroy() =>
+            _enemyHealth.OnHealthChanged -= UpdateHealthBar;
 
         private void LateUpdate() =>
             transform.LookAt(UnityEngine.Camera.main.transform);
 
         private void Initialize()
         {
-            _slider.maxValue = _enemy.EnemyData.MaxHp;
+            _slider.maxValue = _enemy.MaxHp;
 
             _gradient.Evaluate(1f);
 
-            _slider.value = _enemy.EnemyData.MaxHp;
+            _slider.value = _enemy.MaxHp;
             _fill.color = _gradient.Evaluate(_slider.normalizedValue);
         }
 

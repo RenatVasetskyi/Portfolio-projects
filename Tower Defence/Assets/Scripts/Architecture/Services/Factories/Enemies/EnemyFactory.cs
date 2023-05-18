@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
-using Assets.Scripts.Enemy.Health;
 using Assets.Scripts.Enemy.Main;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Architecture.Services.Factories.Enemy
+namespace Assets.Scripts.Architecture.Services.Factories.Enemies
 {
     public class EnemyFactory : IEnemyFactory
     {
@@ -23,11 +22,15 @@ namespace Assets.Scripts.Architecture.Services.Factories.Enemy
             InitializeEnemies();
         }
 
-        public GameObject CreateEnemy(GameObject prefab, Vector3 at, Quaternion rotation, EnemyParent parent)
+        public void CreateEnemy(GameObject prefab, Vector3 at, Quaternion rotation, EnemyParent parent, int maxHp, float speed, int killBonus)
         {
-            GameObject enemy = _container.InstantiatePrefab(prefab, at, rotation, parent.transform);
+            Enemy.Main.Enemy enemy = _container.InstantiatePrefabForComponent<Enemy.Main.Enemy>(prefab, at, rotation, parent.transform);
+
+            enemy.MaxHp = maxHp;
+            enemy.Speed = speed;
+            enemy.KillBonus = killBonus;
+
             parent.Enemies.Add(enemy);
-            return enemy;
         }
 
         public void CreateEnemyParent() =>

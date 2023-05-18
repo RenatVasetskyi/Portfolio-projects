@@ -1,4 +1,4 @@
-using Assets.Scripts.Architecture.Services.Factories.Enemy;
+using Assets.Scripts.Architecture.Services.Factories.Enemies;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Audio;

@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-using Assets.Scripts.Architecture.Services.Factories.Enemy;
+using Assets.Scripts.Architecture.Services.Factories.Enemies;
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Enemy.Main;
@@ -52,7 +52,8 @@ namespace Assets.Scripts.Waves
                         for (int i = 0; i < enemySpawnData.EnemyCount; i++)
                         {
                             _enemyFactory.CreateEnemy(_enemyFactory.Prefabs[enemySpawnData.Enemy], _currentLevelSettingsProvider
-                                .GetCurrentLevelSettings().SpawnPoint, Quaternion.identity, _enemyFactory.EnemyParent);
+                                .GetCurrentLevelSettings().SpawnPoint, Quaternion.identity, _enemyFactory.EnemyParent, enemySpawnData.MaxHp, enemySpawnData.Speed, enemySpawnData.KillBonus);
+
                             yield return new WaitForSeconds(enemyOnWaveData.TimeDelayBetweenSpawns);
                         }
                     }

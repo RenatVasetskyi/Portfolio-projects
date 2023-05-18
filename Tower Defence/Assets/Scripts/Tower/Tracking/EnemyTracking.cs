@@ -1,5 +1,5 @@
 using System.Collections;
-using Assets.Scripts.Architecture.Services.Factories.Enemy;
+using Assets.Scripts.Architecture.Services.Factories.Enemies;
 using Assets.Scripts.Tower.Characteristics;
 using Assets.Scripts.Tower.Shooting;
 using UnityEngine;
@@ -55,14 +55,14 @@ namespace Assets.Scripts.Tower.Tracking
             if (_enemyFactory.EnemyParent == null)
                 return default;
 
-            foreach (GameObject enemy in _enemyFactory.EnemyParent.Enemies)
+            foreach (Enemy.Main.Enemy enemy in _enemyFactory.EnemyParent.Enemies)
             {
-                float distanceToEnemy = GetDistanceToEnemy(enemy);
+                float distanceToEnemy = GetDistanceToEnemy(enemy.gameObject);
 
                 if (distanceToEnemy < shortestDistance)
                 {
                     shortestDistance = distanceToEnemy;
-                    nearestEnemy = enemy;
+                    nearestEnemy = enemy.gameObject;
                 }
             }
 
