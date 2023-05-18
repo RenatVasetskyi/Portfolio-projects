@@ -14,6 +14,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         void CreateLevelSelectionWindow();
         void CreateLevelUI();
         void CreateWindow<T>(string path) where T : MonoBehaviour;
-        UpgradeTowerWindowView CreateUpgradeTowerWindow(Transform parent, TowerCharacteristics towerCharacteristics);
+        UpgradeTowerWindowView CreateUpgradeTowerWindow(Transform parent);
     }
 }

@@ -35,7 +35,7 @@ namespace Assets.Scripts.Tower.Characteristics
 
         private void ShowWindow()
         {
-            _window = _uiFactory.CreateUpgradeTowerWindow(_uiFactory.LevelUIRoot, _towerCharacteristics);
+            _window = _uiFactory.CreateUpgradeTowerWindow(_uiFactory.LevelUIRoot);
 
             _window.TowerCharacteristics = _towerCharacteristics;
 

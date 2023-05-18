@@ -6,7 +6,6 @@ using Assets.Scripts.Tower.Characteristics;
 using Assets.Scripts.Tower.Selection;
 using Assets.Scripts.UI.MainMenu;
 using UnityEngine;
-using UnityEngine.UI;
 using Zenject;
 using Object = UnityEngine.Object;
 
@@ -48,8 +47,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         {
             Transform parent = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
 
-            parent.GetComponent<CanvasScaler>().referenceResolution = new Vector2(Screen.width, Screen.height);
-
             WindowConfig config = _staticData.ForWindow(WindowId.LevelSelection);
             _levelSelectionWindow = _container.InstantiatePrefab(config?.Prefab, parent);
 
@@ -60,8 +57,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         public void CreateLevelUI()
         {
             LevelUIRoot = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
-
-            LevelUIRoot.GetComponent<CanvasScaler>().referenceResolution = new Vector2(Screen.width, Screen.height);
 
             CreateMainUIElements(LevelUIRoot);
 
@@ -86,7 +81,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             window.transform.localPosition = startPosition;
         }
 
-        public UpgradeTowerWindowView CreateUpgradeTowerWindow(Transform parent, TowerCharacteristics towerCharacteristics)
+        public UpgradeTowerWindowView CreateUpgradeTowerWindow(Transform parent)
         {
             UpgradeTowerWindowView window = _container
                 .InstantiatePrefabForComponent<UpgradeTowerWindowView>(_assetProvider
