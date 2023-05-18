@@ -27,16 +27,20 @@ namespace Assets.Scripts.Boosters.Meteorite
 
         private void LateUpdate()
         {
-            if (_boosterButton.IsActivated == false)
-                return;
-
-            if (_isCrosshairVisible == false)
+            if (_isCrosshairVisible == false && _boosterButton.IsActivated == true)
             {
                 _isCrosshairVisible = true;
                 Show();
             }
-            else
+            else if (_isCrosshairVisible == true && _boosterButton.IsActivated == true)
+            {
                 MoveCrosshair(GetWorldPosition());
+            }
+            else
+            {
+                _isCrosshairVisible = false;
+                Hide();
+            }
         }
 
         private void MoveCrosshair(Vector3 position) =>

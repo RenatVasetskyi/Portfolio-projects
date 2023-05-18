@@ -91,7 +91,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         }
 
         public void CreateMeteorCrosshair() =>
-            MeteorCrosshair = _container.InstantiatePrefab(_assetProvider.Initialize<GameObject>(AssetPath.MeteorCrosshair));
+            MeteorCrosshair = Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.MeteorCrosshair));
 
         private void CreateLevelTransferButton()
         {
