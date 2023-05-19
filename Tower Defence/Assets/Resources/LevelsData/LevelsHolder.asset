@@ -116,14 +116,14 @@ MonoBehaviour:
     SpawnPoint: {x: 72, y: 0, z: 120}
     FinishPoint: {x: 176.55, y: 0, z: 57.08}
   - Id: 2
-    NextLevel: 0
-    IsLevelOpened: 1
+    NextLevel: 3
+    IsLevelOpened: 0
     MainLevelUIElements:
     - {fileID: 3655540014041048828, guid: c69ff24861b09fd428a6159c505fd81b, type: 3}
     - {fileID: 4057524601541569357, guid: 80404fff643a25c43955dbf5f6900f7b, type: 3}
     - {fileID: 1036435580197967665, guid: 695f10cd995a58c4199a5b3dac55736f, type: 3}
     - {fileID: 5689525047379739414, guid: 40bd3e56c0c297347b44886b18d173c0, type: 3}
-    Coins: 500
+    Coins: 150
     Hp: 5
     WaveSettings:
       WaveDatas:
@@ -239,14 +239,14 @@ MonoBehaviour:
     FinishPoint: {x: 257, y: 0, z: 123}
   - Id: 3
     NextLevel: 4
-    IsLevelOpened: 1
+    IsLevelOpened: 0
     MainLevelUIElements:
     - {fileID: 3655540014041048828, guid: c69ff24861b09fd428a6159c505fd81b, type: 3}
     - {fileID: 4057524601541569357, guid: 80404fff643a25c43955dbf5f6900f7b, type: 3}
     - {fileID: 1036435580197967665, guid: 695f10cd995a58c4199a5b3dac55736f, type: 3}
     - {fileID: 5689525047379739414, guid: 40bd3e56c0c297347b44886b18d173c0, type: 3}
-    Coins: 500
-    Hp: 5
+    Coins: 150
+    Hp: 4
     WaveSettings:
       WaveDatas:
       - _waveNumber: 1
@@ -355,7 +355,8 @@ MonoBehaviour:
           RotateSpeed: 8
           FireSpeed: 1.6
     Boosters:
+    - {fileID: 2380251769018670246, guid: c2248891a711f7b4c81df3cd60c69b70, type: 3}
     - {fileID: 1732835670616134362, guid: 1da466717a896d845925583df6dd50eb, type: 3}
-    MusicType: 2
-    SpawnPoint: {x: 56, y: 0, z: 104}
-    FinishPoint: {x: 257, y: 0, z: 123}
+    MusicType: 3
+    SpawnPoint: {x: 84, y: 0, z: 117}
+    FinishPoint: {x: 269, y: 0, z: 99}

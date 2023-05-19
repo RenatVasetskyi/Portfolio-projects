@@ -57,6 +57,9 @@ namespace Assets.Scripts.Tower.Tracking
 
             foreach (Enemy.Main.Enemy enemy in _enemyFactory.EnemyParent.Enemies)
             {
+                if (enemy == null)
+                    return default;
+
                 float distanceToEnemy = GetDistanceToEnemy(enemy.gameObject);
 
                 if (distanceToEnemy < shortestDistance)
