@@ -23,10 +23,10 @@ namespace Assets.Scripts.Architecture.Services
                     _uiFactory.CreateLevelSelectionWindow();
                     break;
                 case WindowId.GameOver:
-                    _uiFactory.CreateWindow<MovableWindow>(AssetPath.GameOverWindow);
+                    _uiFactory.CreateBaseWindow<MovableWindow>(AssetPath.GameOverWindow);
                     break;
                 case WindowId.Victory:
-                    _uiFactory.CreateWindow<MovableWindow>(AssetPath.VictoryWindow);
+                    _uiFactory.CreateBaseWindow<MovableWindow>(AssetPath.VictoryWindow);
                     break;
             }
         }

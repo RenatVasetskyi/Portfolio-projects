@@ -15,24 +15,21 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
     {
         private readonly DiContainer _container;
         private readonly IAssetProvider _assetProvider;
-        private readonly IStaticDataService _staticData;
         private readonly ICurrentLevelSettingsProvider _currentLevelSettingProvider;
-
-        private GameObject _levelSelectionWindow;
-
-        private LevelTransferButtonMarker[] _markers;
 
         public TowerSelection TowerSelection { get; private set; }
         public BoosterHolder BoosterHolder { get; private set; }
         public Transform LevelUIRoot { get; private set; }
         public GameObject MeteorCrosshair { get; private set; }
+        public LevelSelectionWindow LevelSelectionWindow { get; private set; }
 
-        public UIFactory(DiContainer container, IAssetProvider assetProvider, IStaticDataService staticData, ICurrentLevelSettingsProvider currentLevelSettingProvider)
+        public UIFactory(DiContainer container, IAssetProvider assetProvider, ICurrentLevelSettingsProvider currentLevelSettingProvider)
         {
             _container = container;
             _currentLevelSettingProvider = currentLevelSettingProvider;
             _assetProvider = assetProvider;
-            _staticData = staticData;
+
+            CacheVariables();
         }
 
         public void CreateMainMenu()
@@ -47,11 +44,9 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         {
             Transform parent = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
 
-            WindowConfig config = _staticData.ForWindow(WindowId.LevelSelection);
-            _levelSelectionWindow = _container.InstantiatePrefab(config?.Prefab, parent);
+            LevelSelectionWindow window = _container.InstantiatePrefabForComponent<LevelSelectionWindow>(LevelSelectionWindow, parent);
 
-            InitTransferButtonMarkers();
-            CreateLevelTransferButton();
+            CreateLevelTransferButtons(window);
         }
 
         public void CreateLevelUI()
@@ -67,7 +62,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             CreateBoosterButtons();
         }
 
-        public void CreateWindow<T>(string path) where T : MonoBehaviour
+        public void CreateBaseWindow<T>(string path) where T : MonoBehaviour
         {
             Vector3 startPosition = new Vector3(0, Screen.height, 0);
 
@@ -93,20 +88,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         public void CreateMeteorCrosshair() =>
             MeteorCrosshair = Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.MeteorCrosshair));
 
-        private void CreateLevelTransferButton()
-        {
-            foreach (LevelTransferButtonMarker marker in _markers)
-            {
-                if (marker.IsOpened)
-                {
-                    LevelTransferButton button =
-                        _container.InstantiatePrefabForComponent<LevelTransferButton>(_assetProvider.Initialize<LevelTransferButton>(AssetPath.LevelTransferButton),
-                            marker.transform.position, Quaternion.identity, marker.transform);
-                    button.LevelId = marker.Id;
-                }
-            }
-        }
-
         private void CreateTowerSelectionButtons(TowerSelection towerSelection)
         {
             foreach (TowerSelectionButton button in _currentLevelSettingProvider.GetCurrentLevelSettings().TowerSelectionButtons.Buttons)
@@ -116,6 +97,25 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
                 spawnedButton.Tower = button.Tower;
                 towerSelection.Buttons.Add(spawnedButton);
+            }
+        }
+
+        private void CreateLevelTransferButtons(LevelSelectionWindow window)
+        {
+            foreach (LevelTransferButtonMarker marker in window.Markers)
+            {
+                if (marker.IsOpened == true)
+                {
+                    LevelTransferButton button = _container.InstantiatePrefabForComponent<LevelTransferButton>(marker.OpenedButton,
+                        marker.transform.position, Quaternion.identity, marker.transform);
+
+                    button.LevelId = marker.Id;
+                }
+                else
+                {
+                    _container.InstantiatePrefab(marker.ClosedButton,
+                        marker.transform.position, Quaternion.identity, marker.transform);
+                }
             }
         }
 
@@ -153,7 +153,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         private Transform CreateParent(Transform parent) =>
             Object.Instantiate(parent);
         
-        private void InitTransferButtonMarkers() =>
-            _markers = _levelSelectionWindow.GetComponentsInChildren<LevelTransferButtonMarker>();
+        private void CacheVariables() =>
+            LevelSelectionWindow = _assetProvider.Initialize<LevelSelectionWindow>(AssetPath.LevelSelectionWindow);
     }
 }

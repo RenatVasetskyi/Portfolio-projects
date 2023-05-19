@@ -7,5 +7,7 @@ namespace Assets.Scripts.UI.MainMenu
     {
         public LevelId Id;
         public bool IsOpened;
+        public LevelTransferButton OpenedButton;
+        public GameObject ClosedButton;
     }
 }

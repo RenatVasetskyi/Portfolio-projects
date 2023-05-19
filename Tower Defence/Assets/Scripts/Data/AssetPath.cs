@@ -6,7 +6,7 @@ namespace Assets.Scripts.Data
         public const string UIWindows = "UI/Windows/WindowsData";
         public const string UIRootCanvas = "UI/UIRootCanvas";
         public const string UIRoot = "UI/UIRoot";
-        public const string LevelTransferButton = "UI/Buttons/Main/LevelTransferButton";
+        public const string OpenedLevelTransferButton = "UI/Buttons/Main/LevelTransferButton";
         public const string EnemyParent = "Enemies/EnemyParent";
         public const string GoblinPrefab = "Enemies/Goblin/Goblin";
         public const string SkeletonPrefab = "Enemies/Skeleton/Skeleton";
@@ -25,5 +25,7 @@ namespace Assets.Scripts.Data
         public const string WindowParent = "UI/Windows/WindowParent";
         public const string VictoryWindow = "UI/Windows/VictoryWindow";
         public const string MeteorCrosshair = "Meteor/MeteoriteCrosshair";
+        public const string LevelSelectionWindow = "UI/Windows/LevelSelectionWindow";
+        public const string ClosedLevelTransferButton = "";
     }
 }
