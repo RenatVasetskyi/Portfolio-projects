@@ -18,6 +18,8 @@ namespace Assets.Scripts.Boosters.Meteorite
 
         private UnityEngine.Camera _camera;
 
+        private Vector3 _crosshairOffset = new Vector3(0, 0.5f, 0);
+
         [Inject]
         public void Construct(IUIFactory uiFactory) =>
             _uiFactory = uiFactory;
@@ -55,7 +57,7 @@ namespace Assets.Scripts.Boosters.Meteorite
         }
 
         private void MoveCrosshair(Vector3 position) =>
-            _uiFactory.MeteorCrosshair.transform.position = position;
+            _uiFactory.MeteorCrosshair.transform.position = position + _crosshairOffset;
 
         private void Show() =>
             _uiFactory.CreateMeteorCrosshair();
