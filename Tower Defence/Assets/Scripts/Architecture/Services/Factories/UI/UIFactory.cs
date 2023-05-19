@@ -1,6 +1,7 @@
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Boosters;
 using Assets.Scripts.Data;
+using Assets.Scripts.Data.Levels;
 using Assets.Scripts.Data.Windows;
 using Assets.Scripts.Tower.Characteristics;
 using Assets.Scripts.Tower.Selection;
@@ -17,12 +18,16 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         private readonly IAssetProvider _assetProvider;
         private readonly ICurrentLevelSettingsProvider _currentLevelSettingProvider;
 
+        private AllLevelsSettings _allLevelsSettings;
+        private LevelSettings _currentLevelSettings;
+
+        private LevelSelectionWindow _levelSelectionWindow;
+
         public TowerSelection TowerSelection { get; private set; }
         public BoosterHolder BoosterHolder { get; private set; }
         public Transform LevelUIRoot { get; private set; }
         public GameObject MeteorCrosshair { get; private set; }
-        public LevelSelectionWindow LevelSelectionWindow { get; private set; }
-
+        
         public UIFactory(DiContainer container, IAssetProvider assetProvider, ICurrentLevelSettingsProvider currentLevelSettingProvider)
         {
             _container = container;
@@ -44,7 +49,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         {
             Transform parent = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRootCanvas));
 
-            LevelSelectionWindow window = _container.InstantiatePrefabForComponent<LevelSelectionWindow>(LevelSelectionWindow, parent);
+            LevelSelectionWindow window = _container.InstantiatePrefabForComponent<LevelSelectionWindow>(_levelSelectionWindow, parent);
 
             CreateLevelTransferButtons(window);
         }
@@ -90,7 +95,9 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         private void CreateTowerSelectionButtons(TowerSelection towerSelection)
         {
-            foreach (TowerSelectionButton button in _currentLevelSettingProvider.GetCurrentLevelSettings().TowerSelectionButtons.Buttons)
+            GetCurrentLevelSettings();
+
+            foreach (TowerSelectionButton button in _currentLevelSettings.TowerSelectionButtons.Buttons)
             {
                 TowerSelectionButtonHolder spawnedButton = _container
                     .InstantiatePrefabForComponent<TowerSelectionButtonHolder>(button.ButtonPrefab, towerSelection.transform);
@@ -104,6 +111,12 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         {
             foreach (LevelTransferButtonMarker marker in window.Markers)
             {
+                foreach (LevelSettings level in _allLevelsSettings.Levels)
+                {
+                    if (level.Id == marker.Id)
+                        marker.IsOpened = level.IsLevelOpened;
+                }
+
                 if (marker.IsOpened == true)
                 {
                     LevelTransferButton button = _container.InstantiatePrefabForComponent<LevelTransferButton>(marker.OpenedButton,
@@ -121,7 +134,9 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         private void CreateBoosterButtons()
         {
-            foreach (BoosterButton boosterButton in _currentLevelSettingProvider.GetCurrentLevelSettings().Boosters)
+            GetCurrentLevelSettings();
+
+            foreach (BoosterButton boosterButton in _currentLevelSettings.Boosters)
             {
                 BoosterButton spawnedBoosterButton = _container.
                     InstantiatePrefabForComponent<BoosterButton>(boosterButton, BoosterHolder.transform);
@@ -132,7 +147,9 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         private void CreateMainUIElements(Transform parent)
         {
-            foreach (GameObject element in _currentLevelSettingProvider.GetCurrentLevelSettings().MainLevelUIElements)
+            GetCurrentLevelSettings();
+
+            foreach (GameObject element in _currentLevelSettings.MainLevelUIElements)
                 _container.InstantiatePrefab(element, parent);
         }
 
@@ -153,7 +170,13 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         private Transform CreateParent(Transform parent) =>
             Object.Instantiate(parent);
         
-        private void CacheVariables() =>
-            LevelSelectionWindow = _assetProvider.Initialize<LevelSelectionWindow>(AssetPath.LevelSelectionWindow);
+        private void CacheVariables()
+        {
+            _levelSelectionWindow = _assetProvider.Initialize<LevelSelectionWindow>(AssetPath.LevelSelectionWindow);
+            _allLevelsSettings = _assetProvider.Initialize<AllLevelsSettings>(AssetPath.AllLevelsSettings);
+        }
+
+        private void GetCurrentLevelSettings() =>
+            _currentLevelSettings = _currentLevelSettingProvider.GetCurrentLevelSettings();
     }
 }

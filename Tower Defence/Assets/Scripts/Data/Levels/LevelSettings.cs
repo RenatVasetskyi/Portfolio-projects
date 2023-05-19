@@ -14,6 +14,8 @@ namespace Assets.Scripts.Data.Levels
         public LevelId Id;
         public LevelId NextLevel;
 
+        public bool IsLevelOpened;
+
         [Header("Prefabs")] 
         public List<GameObject> MainLevelUIElements;
 

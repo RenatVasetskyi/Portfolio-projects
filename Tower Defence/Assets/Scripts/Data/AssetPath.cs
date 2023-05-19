@@ -26,6 +26,6 @@ namespace Assets.Scripts.Data
         public const string VictoryWindow = "UI/Windows/VictoryWindow";
         public const string MeteorCrosshair = "Meteor/MeteoriteCrosshair";
         public const string LevelSelectionWindow = "UI/Windows/LevelSelectionWindow";
-        public const string ClosedLevelTransferButton = "";
+        public const string AllLevelsSettings = "LevelsData/LevelsHolder";
     }
 }
