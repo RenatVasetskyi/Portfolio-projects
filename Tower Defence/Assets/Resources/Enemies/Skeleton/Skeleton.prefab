@@ -493,9 +493,10 @@ GameObject:
   - component: {fileID: 1810838296727244946}
   - component: {fileID: -5915160956728511290}
   - component: {fileID: 2089554367589613201}
+  - component: {fileID: 8446961801561669844}
   m_Layer: 10
   m_Name: Skeleton
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -645,6 +646,19 @@ MonoBehaviour:
   _enemy: {fileID: 4509248011115913358}
   _enemyAnimator: {fileID: 1810838296727244946}
   _enemyMovement: {fileID: -5915160956728511290}
+--- !u!114 &8446961801561669844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4779798492196701578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5797748f7edf044e8bf5dcefba8a711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 4509248011115913358}
 --- !u!1 &4779798492196701580
 GameObject:
   m_ObjectHideFlags: 0
