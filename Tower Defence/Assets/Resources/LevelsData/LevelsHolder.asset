@@ -362,7 +362,7 @@ MonoBehaviour:
     FinishPoint: {x: 269, y: 0, z: 99}
   - Id: 4
     NextLevel: 5
-    IsLevelOpened: 1
+    IsLevelOpened: 0
     MainLevelUIElements:
     - {fileID: 3655540014041048828, guid: c69ff24861b09fd428a6159c505fd81b, type: 3}
     - {fileID: 4057524601541569357, guid: 80404fff643a25c43955dbf5f6900f7b, type: 3}
@@ -480,6 +480,6 @@ MonoBehaviour:
     Boosters:
     - {fileID: 2380251769018670246, guid: c2248891a711f7b4c81df3cd60c69b70, type: 3}
     - {fileID: 1732835670616134362, guid: 1da466717a896d845925583df6dd50eb, type: 3}
-    MusicType: 3
+    MusicType: 4
     SpawnPoint: {x: 75.5, y: 0, z: 161}
     FinishPoint: {x: 300, y: 0, z: 65.5}
