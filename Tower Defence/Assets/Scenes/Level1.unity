@@ -537,23 +537,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7361595299579603875, guid: 874b26ff944f5b149a28ab75257dd639, type: 3}
   m_PrefabInstance: {fileID: 612281747}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &612281749 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7455104521827203606, guid: 874b26ff944f5b149a28ab75257dd639, type: 3}
-  m_PrefabInstance: {fileID: 612281747}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &612281750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612281749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70bedc3c57305fc44a37e5b27a565374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &647264665
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +771,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 175, y: 0.5, z: 90}
+  m_Size: {x: 175, y: 1, z: 90}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &908529379
 Transform:
@@ -1072,7 +1055,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 200
   field of view: 60
   orthographic: 0
   orthographic size: 5

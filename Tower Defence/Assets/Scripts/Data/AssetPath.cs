@@ -6,7 +6,6 @@ namespace Assets.Scripts.Data
         public const string UIWindows = "UI/Windows/WindowsData";
         public const string UIRootCanvas = "UI/UIRootCanvas";
         public const string UIRoot = "UI/UIRoot";
-        public const string OpenedLevelTransferButton = "UI/Buttons/Main/LevelTransferButton";
         public const string EnemyParent = "Enemies/EnemyParent";
         public const string GoblinPrefab = "Enemies/Goblin/Goblin";
         public const string SkeletonPrefab = "Enemies/Skeleton/Skeleton";

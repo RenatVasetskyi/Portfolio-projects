@@ -1,4 +1,3 @@
-using Assets.Scripts.Data;
 using Assets.Scripts.Enemy.Health;
 using UnityEngine;
 
@@ -9,10 +8,7 @@ namespace Assets.Scripts.Boosters.Meteorite
         [SerializeField] private int _damage;
         [SerializeField] private Meteor _booster;
 
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.tag == Tags.Enemy)
-                other.GetComponent<EnemyHealth>().TakeDamage(_damage);
-        }
+        private void OnTriggerEnter(Collider other) => 
+            other.GetComponent<EnemyHealth>().TakeDamage(_damage);
     }
 }

@@ -23,3 +23,5 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 05a6797f3c0bdee4995abaddecc4aa4b, type: 3}
   - _musicType: 4
     _clip: {fileID: 8300000, guid: 00a68abadfba4574f8a6408b9cec9583, type: 3}
+  - _musicType: 5
+    _clip: {fileID: 8300000, guid: 95cef69e0b959c94183c241adb7ac0f3, type: 3}
