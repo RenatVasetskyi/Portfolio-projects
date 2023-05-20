@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 535160151}
   - component: {fileID: 535160153}
   m_Layer: 8
-  m_Name: StrikeZone
+  m_Name: MeteorStrikeZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

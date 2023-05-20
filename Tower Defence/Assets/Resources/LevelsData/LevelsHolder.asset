@@ -360,3 +360,126 @@ MonoBehaviour:
     MusicType: 3
     SpawnPoint: {x: 84, y: 0, z: 117}
     FinishPoint: {x: 269, y: 0, z: 99}
+  - Id: 4
+    NextLevel: 5
+    IsLevelOpened: 1
+    MainLevelUIElements:
+    - {fileID: 3655540014041048828, guid: c69ff24861b09fd428a6159c505fd81b, type: 3}
+    - {fileID: 4057524601541569357, guid: 80404fff643a25c43955dbf5f6900f7b, type: 3}
+    - {fileID: 1036435580197967665, guid: 695f10cd995a58c4199a5b3dac55736f, type: 3}
+    - {fileID: 5689525047379739414, guid: 40bd3e56c0c297347b44886b18d173c0, type: 3}
+    Coins: 150
+    Hp: 4
+    WaveSettings:
+      WaveDatas:
+      - _waveNumber: 1
+        _enemyOnWaveDatas:
+        - _enemySpawnDatas:
+          - _enemy: 0
+            _enemyCount: 5
+            _maxHp: 70
+            _speed: 8
+            _killBonus: 10
+          - _enemy: 1
+            _enemyCount: 3
+            _maxHp: 75
+            _speed: 8
+            _killBonus: 10
+          _timeDelayBetweenWaves: 3
+          _timeDelayBetweenSpawns: 0.5
+      - _waveNumber: 2
+        _enemyOnWaveDatas:
+        - _enemySpawnDatas:
+          - _enemy: 1
+            _enemyCount: 5
+            _maxHp: 80
+            _speed: 8
+            _killBonus: 10
+          - _enemy: 0
+            _enemyCount: 5
+            _maxHp: 85
+            _speed: 8
+            _killBonus: 10
+          _timeDelayBetweenWaves: 10
+          _timeDelayBetweenSpawns: 0.5
+        - _enemySpawnDatas:
+          - _enemy: 0
+            _enemyCount: 8
+            _maxHp: 90
+            _speed: 9
+            _killBonus: 15
+          _timeDelayBetweenWaves: 8
+          _timeDelayBetweenSpawns: 0.5
+      - _waveNumber: 3
+        _enemyOnWaveDatas:
+        - _enemySpawnDatas:
+          - _enemy: 1
+            _enemyCount: 5
+            _maxHp: 100
+            _speed: 10
+            _killBonus: 20
+          - _enemy: 0
+            _enemyCount: 8
+            _maxHp: 110
+            _speed: 10
+            _killBonus: 15
+          _timeDelayBetweenWaves: 15
+          _timeDelayBetweenSpawns: 0.5
+        - _enemySpawnDatas:
+          - _enemy: 1
+            _enemyCount: 10
+            _maxHp: 110
+            _speed: 10
+            _killBonus: 20
+          _timeDelayBetweenWaves: 10
+          _timeDelayBetweenSpawns: 0.5
+    TowerSelectionButtons:
+      Buttons:
+      - ButtonPrefab: {fileID: 2937308549608602985, guid: 6d0aefbd90bdba848a151f4434ec0894, type: 3}
+        Tower:
+          TowerType: 0
+          TowerPrefab: {fileID: 129420, guid: d3ef549050e9b0542b4f3c3dd47a1085, type: 3}
+          TowerModel: {fileID: 8552850671451201328, guid: 9dcdadf213fa02e4d992ee7995d88a66, type: 3}
+          Bullet:
+            Prefab: {fileID: 8943938515332123315, guid: 2ac94ed2d5b743f4dac4f9e957624719, type: 3}
+            Damage: 25
+            Speed: 60
+          Price: 55
+          UpgradePrice: 55
+          AttackRange: 15
+          RotateSpeed: 10
+          FireSpeed: 1
+      - ButtonPrefab: {fileID: 8604397196665533124, guid: 2683b66f7192945479c54c6e1d96b877, type: 3}
+        Tower:
+          TowerType: 1
+          TowerPrefab: {fileID: 1326093064322132, guid: a425124410f363a43adb6788601cc3e0, type: 3}
+          TowerModel: {fileID: 5030161030180692135, guid: 02a4b0b037890f048979dbef4fd5fd85, type: 3}
+          Bullet:
+            Prefab: {fileID: 339029724570663836, guid: f761d988f0445ca47b9e5bfd9aed7a0a, type: 3}
+            Damage: 54
+            Speed: 40
+          Price: 75
+          UpgradePrice: 75
+          AttackRange: 20
+          RotateSpeed: 4
+          FireSpeed: 0.8
+      - ButtonPrefab: {fileID: 6367546166977766153, guid: 3364b29a88a6b1343abf17a15759f75f, type: 3}
+        Tower:
+          TowerType: 2
+          TowerPrefab: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+          TowerModel: {fileID: 1721469738240161675, guid: d08ac94aec5bb1f4c8a9c2ff02438b9d, type: 3}
+          Bullet:
+            Prefab: {fileID: 5180334387422381593, guid: ca7d035f9d337e74a83364fb5b916ec3, type: 3}
+            Damage: 25
+            Speed: 60
+          Price: 95
+          UpgradePrice: 95
+          AttackRange: 18
+          RotateSpeed: 8
+          FireSpeed: 1.6
+    Boosters:
+    - {fileID: 2380251769018670246, guid: c2248891a711f7b4c81df3cd60c69b70, type: 3}
+    - {fileID: 1732835670616134362, guid: 1da466717a896d845925583df6dd50eb, type: 3}
+    MusicType: 3
+    SpawnPoint: {x: 75.5, y: 0, z: 161}
+    FinishPoint: {x: 300, y: 0, z: 65.5}
