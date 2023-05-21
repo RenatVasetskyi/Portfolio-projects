@@ -48,6 +48,15 @@ namespace Assets.Scripts.Architecture.Installers
             BindBulletFactory();
             BindBoosterFactory();
             BindVictoryChecker();
+            BindSaveProgressService();
+        }
+
+        private void BindSaveProgressService()
+        {
+            Container
+                .Bind<ISaveProgressService>()
+                .To<SaveProgressService>()
+                .AsSingle();
         }
 
         private void BindVictoryChecker()
