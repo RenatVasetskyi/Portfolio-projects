@@ -47,6 +47,8 @@ namespace Assets.Scripts.Tower.Spawn
                 _localCoinService.Buy(_uiFactory.TowerSelection.SelectedButton.Tower.Price);
                 _towerFactory.CreateTower(_uiFactory.TowerSelection.SelectedButton.Tower.TowerPrefab, _worldPosition, Quaternion.identity, transform);
             }
+            else 
+                _audioService.PlaySfx(SfxType.NotEnoughMoney);
         }
 
         private void Awake() =>

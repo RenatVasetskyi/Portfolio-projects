@@ -18,5 +18,6 @@ namespace Assets.Scripts.Audio
         PlayerGetsDamage = 13,
         GetCoins = 14,
         OpenWindow = 15,
+        NotEnoughMoney = 16,
     }
 }

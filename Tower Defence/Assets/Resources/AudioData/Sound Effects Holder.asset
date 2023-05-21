@@ -45,3 +45,5 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 1db5504f07c013c4795247e4290173e9, type: 3}
   - _sfxType: 15
     _clip: {fileID: 8300000, guid: 1c0a1ad693836eb4d9c7fe04a0ab8f51, type: 3}
+  - _sfxType: 16
+    _clip: {fileID: 8300000, guid: 6ea41abc5d96870458dc197b57d7749d, type: 3}

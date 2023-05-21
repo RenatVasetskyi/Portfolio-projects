@@ -58,8 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ab82cc05440ae4bbf977cbb5c1c147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 15
-  _booster: {fileID: -1093950360136460051}
+  _damage: 40
 --- !u!1 &2305815668130428291
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,8 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ab82cc05440ae4bbf977cbb5c1c147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 20
-  _booster: {fileID: -1093950360136460051}
+  _damage: 100
 --- !u!1 &6123279987556253554
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,8 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ab82cc05440ae4bbf977cbb5c1c147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
-  _booster: {fileID: -1093950360136460051}
+  _damage: 20
 --- !u!1001 &1592603066779697102
 PrefabInstance:
   m_ObjectHideFlags: 0
