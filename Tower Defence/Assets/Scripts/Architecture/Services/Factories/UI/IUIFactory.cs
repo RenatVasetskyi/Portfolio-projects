@@ -16,6 +16,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         void CreateLevelUI();
         void CreateBaseWindow<T>(string path) where T : MonoBehaviour;
         void CreateMeteorCrosshair();
-        UpgradeTowerWindowView CreateUpgradeTowerWindow(Transform parent);
+        UpgradeTowerWindowView CreateUpgradeTowerWindow();
     }
 }

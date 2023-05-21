@@ -7,6 +7,9 @@ namespace Assets.Scripts.Tower.Characteristics
 {
     public class UpgradeTowerWindowView : MonoBehaviour
     {
+        public RectTransform Window;
+        public CanvasScaler WindowCanvasScaler;
+
         public Button UpgradeButton;
         public Button CloseWindow;
 
@@ -33,15 +36,15 @@ namespace Assets.Scripts.Tower.Characteristics
         public void Show(out bool isOpened, Vector2 position)
         {
             isOpened = true;
-            transform.position = position;
+            Window.transform.position = position;
             ControlWindowInFrames();
-            LeanTween.scale(gameObject, Vector2.one, _windowScaleDuration);
+            LeanTween.scale(Window, Vector2.one, _windowScaleDuration);
         }
 
         public void Hide(out bool isOpened)
         {
             isOpened = false;
-            LeanTween.scale(gameObject, Vector3.zero, _windowScaleDuration)
+            LeanTween.scale(Window, Vector3.zero, _windowScaleDuration)
                 .setOnComplete(() => Destroy(gameObject));
         }
 
@@ -50,30 +53,30 @@ namespace Assets.Scripts.Tower.Characteristics
 
         private void ControlWindowInFrames()
         {
-            RectTransform rectTransform = GetComponent<RectTransform>();
+            float offset;
 
-            if (transform.localPosition.y - (rectTransform.rect.height / 2) <= GetFramePosition(Screen.height, -2))
+            if (Window.transform.localPosition.y - (Window.rect.height / 2) <= GetFramePosition(Screen.height, -2))
             {
-                float offset = GetFramePosition(Screen.height, -2) + (rectTransform.rect.height / 2) - transform.localPosition.y;
-                transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + Math.Abs(offset));
+                offset = GetFramePosition(Screen.height, -2) + (Window.rect.height / 2) - Window.transform.localPosition.y;
+                Window.transform.localPosition = new Vector2(Window.transform.localPosition.x, Window.transform.localPosition.y + Math.Abs(offset));
             }
 
-            if (transform.localPosition.y + (rectTransform.rect.height / 2) >= GetFramePosition(Screen.height, 2))
+            if (Window.transform.localPosition.y + (Window.rect.height / 2) >= GetFramePosition(Screen.height, 2))
             {
-                float offset = GetFramePosition(Screen.height, 2) - (rectTransform.rect.height / 2) - transform.localPosition.y;
-                transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y - Math.Abs(offset));
+                offset = GetFramePosition(Screen.height, 2) - (Window.rect.height / 2) - Window.transform.localPosition.y;
+                Window.transform.localPosition = new Vector2(Window.transform.localPosition.x, Window.transform.localPosition.y - Math.Abs(offset));
             }
 
-            if (transform.localPosition.x - (rectTransform.rect.width / 2) <= GetFramePosition(Screen.width, -2))
+            if (Window.transform.localPosition.x - (Window.rect.width / 2) <= GetFramePosition(Screen.width, -2))
             {
-                float offset = GetFramePosition(Screen.width, -2) + (rectTransform.rect.width / 2) - transform.localPosition.x;
-                transform.localPosition = new Vector2(transform.localPosition.x + Math.Abs(offset), transform.localPosition.y);
+                offset = GetFramePosition(Screen.width, -2) + (Window.rect.width / 2) - Window.transform.localPosition.x;
+                Window.transform.localPosition = new Vector2(Window.transform.localPosition.x + Math.Abs(offset), Window.transform.localPosition.y);
             }
 
-            if (transform.localPosition.x + (rectTransform.rect.width / 2) >= GetFramePosition(Screen.width, 2))
+            if (Window.transform.localPosition.x + (Window.rect.width / 2) >= GetFramePosition(Screen.width, 2))
             {
-                float offset = GetFramePosition(Screen.width, 2) - (rectTransform.rect.width / 2) - transform.localPosition.x;
-                transform.localPosition = new Vector2(transform.localPosition.x - Math.Abs(offset), transform.localPosition.y);
+                offset = GetFramePosition(Screen.width, 2) - (Window.rect.width / 2) - Window.transform.localPosition.x;
+                Window.transform.localPosition = new Vector2(Window.transform.localPosition.x - Math.Abs(offset), Window.transform.localPosition.y);
             }
         }
 

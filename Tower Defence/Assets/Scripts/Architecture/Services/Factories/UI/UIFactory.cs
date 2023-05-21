@@ -23,6 +23,8 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         private LevelSelectionWindow _levelSelectionWindow;
 
+        private Transform _upgradeTowerWindowParent;
+
         public TowerSelection TowerSelection { get; private set; }
         public BoosterHolder BoosterHolder { get; private set; }
         public Transform LevelUIRoot { get; private set; }
@@ -65,6 +67,8 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
             CreateBoosterHolder(LevelUIRoot);
             CreateBoosterButtons();
+
+            _upgradeTowerWindowParent = CreateParent(_assetProvider.Initialize<Transform>(AssetPath.UIRoot));
         }
 
         public void CreateBaseWindow<T>(string path) where T : MonoBehaviour
@@ -81,11 +85,13 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             window.transform.localPosition = startPosition;
         }
 
-        public UpgradeTowerWindowView CreateUpgradeTowerWindow(Transform parent)
+        public UpgradeTowerWindowView CreateUpgradeTowerWindow()
         {
             UpgradeTowerWindowView window = _container
                 .InstantiatePrefabForComponent<UpgradeTowerWindowView>(_assetProvider
-                    .Initialize<UpgradeTowerWindowView>(AssetPath.UpgradeTowerWindow), parent);
+                    .Initialize<UpgradeTowerWindowView>(AssetPath.UpgradeTowerWindow), _upgradeTowerWindowParent);
+
+            window.WindowCanvasScaler.referenceResolution = new Vector2(Screen.width, Screen.height);
 
             return window;
         }

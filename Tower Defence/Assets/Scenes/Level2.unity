@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 144154321}
   - component: {fileID: 144154322}
   m_Layer: 6
-  m_Name: Zone13
+  m_Name: Zone12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,7 +268,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 143, z: 0}
 --- !u!65 &144154322
 BoxCollider:
@@ -391,51 +391,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &234341592
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 234341593}
-  - component: {fileID: 234341594}
-  m_Layer: 6
-  m_Name: Zone9
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &234341593
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234341592}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.68, y: 5, z: 117.95}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 545895379}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &234341594
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234341592}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 25, y: 0.01, z: 12}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &462986239
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +402,7 @@ GameObject:
   - component: {fileID: 462986240}
   - component: {fileID: 462986241}
   m_Layer: 6
-  m_Name: Zone19
+  m_Name: Zone18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -466,7 +421,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 277.4, z: 0}
 --- !u!65 &462986241
 BoxCollider:
@@ -589,7 +544,6 @@ Transform:
   - {fileID: 1488990794}
   - {fileID: 805987705}
   - {fileID: 656686498}
-  - {fileID: 234341593}
   - {fileID: 958577715}
   - {fileID: 1881260190}
   - {fileID: 1157423134}
@@ -619,7 +573,7 @@ GameObject:
   - component: {fileID: 587302794}
   - component: {fileID: 587302795}
   m_Layer: 6
-  m_Name: Zone24
+  m_Name: Zone23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -638,7 +592,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &587302795
 BoxCollider:
@@ -709,7 +663,7 @@ GameObject:
   - component: {fileID: 639543314}
   - component: {fileID: 639543315}
   m_Layer: 6
-  m_Name: Zone21
+  m_Name: Zone20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -728,7 +682,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 354.4, z: 0}
 --- !u!65 &639543315
 BoxCollider:
@@ -799,7 +753,7 @@ GameObject:
   - component: {fileID: 665346105}
   - component: {fileID: 665346106}
   m_Layer: 6
-  m_Name: Zone22
+  m_Name: Zone21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -818,7 +772,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 12, z: 0}
 --- !u!65 &665346106
 BoxCollider:
@@ -889,7 +843,7 @@ GameObject:
   - component: {fileID: 744026336}
   - component: {fileID: 744026337}
   m_Layer: 6
-  m_Name: Zone17
+  m_Name: Zone16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -908,7 +862,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 210, z: 0}
 --- !u!65 &744026337
 BoxCollider:
@@ -934,7 +888,7 @@ GameObject:
   - component: {fileID: 761471311}
   - component: {fileID: 761471312}
   m_Layer: 6
-  m_Name: Zone15
+  m_Name: Zone14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -953,7 +907,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 198, z: 0}
 --- !u!65 &761471312
 BoxCollider:
@@ -1024,7 +978,7 @@ GameObject:
   - component: {fileID: 958577715}
   - component: {fileID: 958577716}
   m_Layer: 6
-  m_Name: Zone10
+  m_Name: Zone9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1043,7 +997,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &958577716
 BoxCollider:
@@ -1069,7 +1023,7 @@ GameObject:
   - component: {fileID: 1011785876}
   - component: {fileID: 1011785877}
   m_Layer: 6
-  m_Name: Zone14
+  m_Name: Zone13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1088,7 +1042,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 178, z: 0}
 --- !u!65 &1011785877
 BoxCollider:
@@ -1239,7 +1193,7 @@ GameObject:
   - component: {fileID: 1157423134}
   - component: {fileID: 1157423135}
   m_Layer: 6
-  m_Name: Zone12
+  m_Name: Zone11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1258,7 +1212,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 93.5, z: 0}
 --- !u!65 &1157423135
 BoxCollider:
@@ -1284,7 +1238,7 @@ GameObject:
   - component: {fileID: 1182940812}
   - component: {fileID: 1182940813}
   m_Layer: 6
-  m_Name: Zone23
+  m_Name: Zone22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1303,7 +1257,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 7, z: 0}
 --- !u!65 &1182940813
 BoxCollider:
@@ -1374,7 +1328,7 @@ GameObject:
   - component: {fileID: 1287225990}
   - component: {fileID: 1287225991}
   m_Layer: 6
-  m_Name: Zone20
+  m_Name: Zone19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1393,7 +1347,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 315, z: 0}
 --- !u!65 &1287225991
 BoxCollider:
@@ -1666,7 +1620,7 @@ GameObject:
   - component: {fileID: 1881260190}
   - component: {fileID: 1881260191}
   m_Layer: 6
-  m_Name: Zone11
+  m_Name: Zone10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1685,7 +1639,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 54.81, z: 0}
 --- !u!65 &1881260191
 BoxCollider:
@@ -1844,7 +1798,7 @@ GameObject:
   - component: {fileID: 1940381704}
   - component: {fileID: 1940381705}
   m_Layer: 6
-  m_Name: Zone16
+  m_Name: Zone15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1863,7 +1817,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 198, z: 0}
 --- !u!65 &1940381705
 BoxCollider:
@@ -1934,7 +1888,7 @@ GameObject:
   - component: {fileID: 2144702741}
   - component: {fileID: 2144702742}
   m_Layer: 6
-  m_Name: Zone18
+  m_Name: Zone17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1953,7 +1907,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545895379}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 225, z: 0}
 --- !u!65 &2144702742
 BoxCollider:
