@@ -9,6 +9,7 @@ namespace Assets.Scripts.Tower.Characteristics
     public class UpgradeTowerWindowController : MonoBehaviour
     {
         [SerializeField] private TowerCharacteristics _towerCharacteristics;
+
         private UpgradeTowerWindowView _window;
 
         private bool _isUpgrageWindowOpened = false;

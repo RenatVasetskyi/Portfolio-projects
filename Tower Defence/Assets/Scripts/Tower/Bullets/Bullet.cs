@@ -5,6 +5,8 @@ namespace Assets.Scripts.Tower.Bullets
 {
     public class Bullet : MonoBehaviour
     {
+        public BulletCheckTarget BulletCheckTarget;
+
         [SerializeField] private TowerType _towerType;
 
         private TowerCharacteristics _towerCharacteristics;

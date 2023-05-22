@@ -3,10 +3,10 @@ namespace Assets.Scripts.Audio
     public enum MusicType
     {
         MainMenu = 0,
-        FirstLevel = 1,
-        SecondLevel = 2,
-        ThirdLevel = 3,
-        FourthLevel = 4,
-        FifthLevel = 5,
+        Level1 = 1,
+        Level2 = 2,
+        Level3 = 3,
+        Level4 = 4,
+        Level5 = 5,
     }
 }

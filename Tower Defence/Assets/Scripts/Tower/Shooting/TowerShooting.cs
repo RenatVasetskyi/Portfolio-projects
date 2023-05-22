@@ -30,12 +30,14 @@ namespace Assets.Scripts.Tower.Shooting
         public void Shoot()
         {
             _audioService.PlaySfx(_shotSfxType);
+
             GameObject bulletObj = _bulletFactory
                 .CreateBullet(_towerCharacteristics.Tower.Bullet.Prefab, _bulletStartPoint.position, _bulletStartPoint.rotation, transform);
+
             Bullet bullet = SetDamage(bulletObj);
 
             if (bullet != null)
-                bullet.GetComponent<BulletCheckTarget>().Seek(_enemyTracking.Target);
+                bullet.BulletCheckTarget.Seek(_enemyTracking.Target);
         }
 
         private Bullet SetDamage(GameObject bulletObj)

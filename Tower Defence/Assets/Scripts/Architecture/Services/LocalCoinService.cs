@@ -5,9 +5,9 @@ namespace Assets.Scripts.Architecture.Services
 {
     public class LocalCoinService : ILocalCoinService
     {
-        public event Action OnCoinsChanged;
-
         private readonly ICurrentLevelSettingsProvider _currentLevelSettingsProvider;
+
+        public event Action OnCoinsChanged;
 
         public int Coins { get; private set; }
 

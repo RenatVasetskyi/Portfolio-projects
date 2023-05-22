@@ -172,8 +172,13 @@ namespace Assets.Scripts.Architecture.Installers
 
         private void BindCoroutineRunner()
         {
-            MyCoroutineRunner runner = Container.InstantiatePrefabForComponent<MyCoroutineRunner>(_coroutineRunner);
-            Container.Bind<ICoroutineRunner>().To<MyCoroutineRunner>().FromInstance(runner);
+            MyCoroutineRunner runner = Container.
+                InstantiatePrefabForComponent<MyCoroutineRunner>(_coroutineRunner);
+
+            Container
+                .Bind<ICoroutineRunner>()
+                .To<MyCoroutineRunner>()
+                .FromInstance(runner);
         }
 
         private void BindAllLevels()

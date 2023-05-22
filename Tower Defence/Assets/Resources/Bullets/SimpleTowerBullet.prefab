@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c0192cf8f06194781539764cc3849b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletCheckTarget: {fileID: -4911818076139214409}
   _towerType: 0
-  _levelsSettings: {fileID: 11400000, guid: 446cbff9546467e48a9d196d0f67fe32, type: 2}
 --- !u!114 &-4911818076139214409
 MonoBehaviour:
   m_ObjectHideFlags: 0

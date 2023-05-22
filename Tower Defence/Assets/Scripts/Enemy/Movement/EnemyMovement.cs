@@ -20,11 +20,11 @@ namespace Assets.Scripts.Enemy.Movement
 
         private void Start()
         {
-            Init();
+            Initialize();
             _agent.SetDestination(_currentLevelSettingsProvider.GetCurrentLevelSettings().FinishPoint);
         }
 
-        private void Init() =>
+        private void Initialize() =>
             _agent.speed = _enemy.Speed;
     }
 }

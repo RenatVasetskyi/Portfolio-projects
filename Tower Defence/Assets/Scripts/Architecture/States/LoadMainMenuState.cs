@@ -24,10 +24,8 @@ namespace Assets.Scripts.Architecture.States
             _audioService = audioService;
         }
 
-        public void Exit()
-        {
+        public void Exit() =>
             _audioService.StopMusic();
-        }
 
         public void Enter()
         {

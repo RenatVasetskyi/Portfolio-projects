@@ -19,7 +19,6 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
         private readonly ICurrentLevelSettingsProvider _currentLevelSettingProvider;
 
         private AllLevelsSettings _allLevelsSettings;
-        private LevelSettings _currentLevelSettings;
 
         private LevelSelectionWindow _levelSelectionWindow;
 
@@ -101,9 +100,9 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         private void CreateTowerSelectionButtons(TowerSelection towerSelection)
         {
-            GetCurrentLevelSettings();
+            LevelSettings currentLevelSettings = _currentLevelSettingProvider.GetCurrentLevelSettings();
 
-            foreach (TowerSelectionButton button in _currentLevelSettings.TowerSelectionButtons.Buttons)
+            foreach (TowerSelectionButton button in currentLevelSettings.TowerSelectionButtons.Buttons)
             {
                 TowerSelectionButtonHolder spawnedButton = _container
                     .InstantiatePrefabForComponent<TowerSelectionButtonHolder>(button.ButtonPrefab, towerSelection.transform);
@@ -140,9 +139,9 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         private void CreateBoosterButtons()
         {
-            GetCurrentLevelSettings();
+            LevelSettings currentLevelSettings = _currentLevelSettingProvider.GetCurrentLevelSettings();
 
-            foreach (BoosterButton boosterButton in _currentLevelSettings.Boosters)
+            foreach (BoosterButton boosterButton in currentLevelSettings.Boosters)
             {
                 BoosterButton spawnedBoosterButton = _container.
                     InstantiatePrefabForComponent<BoosterButton>(boosterButton, BoosterHolder.transform);
@@ -153,9 +152,9 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
 
         private void CreateMainUIElements(Transform parent)
         {
-            GetCurrentLevelSettings();
+            LevelSettings currentLevelSettings = _currentLevelSettingProvider.GetCurrentLevelSettings();
 
-            foreach (GameObject element in _currentLevelSettings.MainLevelUIElements)
+            foreach (GameObject element in currentLevelSettings.MainLevelUIElements)
                 _container.InstantiatePrefab(element, parent);
         }
 
@@ -181,8 +180,5 @@ namespace Assets.Scripts.Architecture.Services.Factories.UI
             _levelSelectionWindow = _assetProvider.Initialize<LevelSelectionWindow>(AssetPath.LevelSelectionWindow);
             _allLevelsSettings = _assetProvider.Initialize<AllLevelsSettings>(AssetPath.AllLevelsSettings);
         }
-
-        private void GetCurrentLevelSettings() =>
-            _currentLevelSettings = _currentLevelSettingProvider.GetCurrentLevelSettings();
     }
 }

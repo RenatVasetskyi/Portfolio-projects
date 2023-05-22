@@ -4,7 +4,7 @@ namespace Assets.Scripts.Tower.Bullets
 {
     public class BulletMovement : MonoBehaviour
     { 
-        [SerializeField] private Bullets.Bullet _bullet;
+        [SerializeField] private Bullet _bullet;
         [SerializeField] private BulletCheckTarget _checkTarget;
         [SerializeField] private BulletHitTarget _hitTarget;
 

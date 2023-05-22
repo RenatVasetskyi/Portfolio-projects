@@ -12,7 +12,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.Enemies
         private readonly DiContainer _container;
         private readonly IAssetProvider _assetProvider;
 
-        public Dictionary<EnemyType, GameObject> Prefabs { get; set; } = new();
+        public Dictionary<EnemyType, GameObject> Prefabs { get; private set; }
         public EnemyParent EnemyParent { get; private set; }
 
         public EnemyFactory(DiContainer container, IAssetProvider assetProvider)
