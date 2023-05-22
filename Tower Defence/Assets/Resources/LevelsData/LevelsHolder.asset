@@ -195,7 +195,7 @@ MonoBehaviour:
     FinishPoint: {x: 257, y: 0, z: 123}
   - Id: 3
     NextLevel: 4
-    IsLevelOpened: 1
+    IsLevelOpened: 0
     MainLevelUIElements:
     - {fileID: 3655540014041048828, guid: c69ff24861b09fd428a6159c505fd81b, type: 3}
     - {fileID: 4057524601541569357, guid: 80404fff643a25c43955dbf5f6900f7b, type: 3}

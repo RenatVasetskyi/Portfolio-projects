@@ -31,20 +31,11 @@ namespace Assets.Scripts.Tower.Shooting
         {
             _audioService.PlaySfx(_shotSfxType);
 
-            GameObject bulletObj = _bulletFactory
+            Bullet bullet = _bulletFactory
                 .CreateBullet(_towerCharacteristics.Tower.Bullet.Prefab, _bulletStartPoint.position, _bulletStartPoint.rotation, transform);
-
-            Bullet bullet = SetDamage(bulletObj);
-
-            if (bullet != null)
-                bullet.BulletCheckTarget.Seek(_enemyTracking.Target);
-        }
-
-        private Bullet SetDamage(GameObject bulletObj)
-        {
-            Bullet bullet = bulletObj.GetComponent<Bullet>();
             bullet.Damage = _towerCharacteristics.Damage;
-            return bullet;
+
+            bullet.BulletCheckTarget.Seek(_enemyTracking.Target);
         }
     }
 }

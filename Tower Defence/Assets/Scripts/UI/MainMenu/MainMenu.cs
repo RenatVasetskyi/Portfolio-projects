@@ -82,10 +82,6 @@ namespace Assets.Scripts.UI.MainMenu
                     button.clicked += () => _windowService.Open(item.WindowId);
                     button.clicked += () => _audioService.PlaySfx(SfxType.Click);
                     break;
-                case ButtonType.Settings:
-                    button.clicked += () => Debug.Log("Settings")/*_windowService.Open(item.WindowId)*/;
-                    button.clicked += () => _audioService.PlaySfx(SfxType.Click);
-                    break;
                 case ButtonType.Exit:
                     button.clicked += () => Application.Quit();
                     button.clicked += () => _audioService.PlaySfx(SfxType.Click);

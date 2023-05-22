@@ -10,7 +10,7 @@ namespace Assets.Scripts.Architecture.Services.Factories.Tower.Bullet
         public BulletFactory(DiContainer container) =>
             _container = container;
 
-        public GameObject CreateBullet(GameObject bullet, Vector3 at, Quaternion rotation, Transform parent) =>
-            _container.InstantiatePrefab(bullet, at, rotation, parent);
+        public Scripts.Tower.Bullets.Bullet CreateBullet(GameObject bullet, Vector3 at, Quaternion rotation, Transform parent) =>
+            _container.InstantiatePrefabForComponent<Scripts.Tower.Bullets.Bullet>(bullet, at, rotation, parent);
     }
 }

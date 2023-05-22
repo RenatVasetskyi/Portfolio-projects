@@ -64,8 +64,6 @@ MonoBehaviour:
   _menuItems:
   - Type: 0
     WindowId: 1
-  - Type: 1
-    WindowId: 0
   - Type: 2
     WindowId: 0
   _itemTemplate: {fileID: 9197481963319205126, guid: 25e7f3b182999344ea92ec8ecfcb2b60, type: 3}
