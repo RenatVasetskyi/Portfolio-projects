@@ -58,13 +58,13 @@ namespace Assets.Scripts.Input
 
         private void SwipeDirection(Vector2 direction)
         {
-            if (Vector2.Dot(Vector2.up, direction) >= _directionThreshold)
+            if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
                 OnSwipeUp?.Invoke();
-            else if (Vector2.Dot(Vector2.down, direction) >= _directionThreshold)
+            else if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
                 OnSwipeDown?.Invoke();
-            else if (Vector2.Dot(Vector2.left, direction) >= _directionThreshold)
+            else if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
                 OnSwipeLeft?.Invoke();
-            else if (Vector2.Dot(Vector2.right, direction) >= _directionThreshold)
+            else if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
                 OnSwipeRight?.Invoke();
         }
     }
