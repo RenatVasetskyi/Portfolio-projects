@@ -24,20 +24,13 @@ namespace Assets.Scripts.Input
 
         private double _directionThreshold = 0.9f;
 
-        private UnityEngine.Camera _camera;
-
         public SwipeDetector(IInputService inputService)
         {
             _inputService = inputService;
 
-            //_inputService.SetCurrentCamera(_camera);
-
             _inputService.OnTouchStarted += SwipeStart;
             _inputService.OnTouchEnded += SwipeEnd;
         }
-
-        public void SetCurrentCamera(UnityEngine.Camera camera) =>
-            _camera = camera;
 
         private void SwipeStart(Vector2 position, float time)
         {

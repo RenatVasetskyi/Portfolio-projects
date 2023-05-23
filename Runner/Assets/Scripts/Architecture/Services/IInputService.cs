@@ -6,6 +6,6 @@ namespace Assets.Scripts.Architecture.Services
     {
         event StartTouch OnTouchStarted;
         event EndTouch OnTouchEnded;
-        //void SetCurrentCamera(UnityEngine.Camera camera);
+        void SetCurrentCamera(UnityEngine.Camera camera);
     }
 }

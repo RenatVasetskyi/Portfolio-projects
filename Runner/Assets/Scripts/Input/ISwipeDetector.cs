@@ -8,6 +8,5 @@ namespace Assets.Scripts.Input
         event Action OnSwipeDown;
         event Action OnSwipeLeft; 
         event Action OnSwipeRight;
-        void SetCurrentCamera(UnityEngine.Camera camera);
     }
 }
