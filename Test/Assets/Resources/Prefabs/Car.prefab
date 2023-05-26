@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: ceebe6b7772d6af4bad8599717ad2697, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -148,12 +148,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxSpeed: 15
+  _rigidbody: {fileID: 7642941613786073523}
   _forwardForce: 300
   _turningForce: 300
   _brakingForce: 200
-  _carControlView: {fileID: 0}
-  _rigidbody: {fileID: 7642941613786073523}
-  _startGame: {fileID: 0}
 --- !u!114 &7642941613786073516
 MonoBehaviour:
   m_ObjectHideFlags: 0

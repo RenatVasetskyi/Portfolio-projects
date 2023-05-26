@@ -7,5 +7,6 @@ namespace Assets.Scripts.Architecture.Services
         event Action OnCoinsChanged;
         int Coins { get; }
         void GetBonus(int bonus);
+        void ResetCoins();
     }
 }

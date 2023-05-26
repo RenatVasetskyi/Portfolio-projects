@@ -1,4 +1,6 @@
 using Assets.Scripts.Architecture.Services;
+using Assets.Scripts.Data;
+using Assets.Scripts.UI;
 using UnityEngine;
 
 namespace Assets.Scripts.Architecture.States
@@ -12,7 +14,7 @@ namespace Assets.Scripts.Architecture.States
         public void Enter()
         {
             IMainFactory mainFactory = AllServices.Container.Single<IMainFactory>();
-            mainFactory.CreateGameOverView();
+            mainFactory.CreateBaseComponent<GameOverView>(AssetPath.GameOverView);
             mainFactory.Car.GetComponent<Rigidbody2D>().isKinematic = true;
         }
     }

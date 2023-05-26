@@ -12,8 +12,8 @@ namespace Assets.Scripts.Architecture.Services
         void CreateCar(Vector2 at);
         void CreateCarControlView();
         void CreateStartGameView();
-        void CreateGameOverView();
-        void CreateCamera();
-        void CreateCoinsView();
+        void CreateBaseComponent<T>(string path) where T : Component;
+        void CreateBaseComponent<T>(string path, Transform parent) where T : Component;
+        Transform CreateUIRoot();
     }
 }

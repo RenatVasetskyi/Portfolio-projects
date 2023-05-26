@@ -1,4 +1,6 @@
 using Assets.Scripts.Architecture.Services;
+using Assets.Scripts.Data;
+using Assets.Scripts.UI;
 using UnityEngine;
 
 namespace Assets.Scripts.Architecture
@@ -10,6 +12,7 @@ namespace Assets.Scripts.Architecture
         private readonly AllServices _allServices;
         private IMainFactory _mainFactory;
         private ISceneLoader _sceneLoader;
+        private ICoinService _coinService;
 
         public LoadGameState(AllServices allServices) =>
             _allServices = allServices;
@@ -22,16 +25,18 @@ namespace Assets.Scripts.Architecture
         {
             _sceneLoader = _allServices.Single<ISceneLoader>();
             _mainFactory = _allServices.Single<IMainFactory>();
+            _coinService = _allServices.Single<ICoinService>();
             _sceneLoader.Load(GameScene, InitializeGameWorld);
         }
 
         private void InitializeGameWorld()
         {
+            _coinService.ResetCoins();
             _mainFactory.CreateStartGameView();
             _mainFactory.CreateCarControlView();
             _mainFactory.CreateCar(Vector2.zero);
-            _mainFactory.CreateCamera();
-            _mainFactory.CreateCoinsView();
+            _mainFactory.CreateBaseComponent<UnityEngine.Camera>(AssetPath.Camera);
+            _mainFactory.CreateBaseComponent<CoinView>(AssetPath.CoinsView, _mainFactory.CreateUIRoot());
         }
     }
 }

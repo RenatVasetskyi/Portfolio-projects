@@ -12,5 +12,8 @@ namespace Assets.Scripts.Architecture.Services
             Coins += bonus;
             OnCoinsChanged?.Invoke();
         }
+
+        public void ResetCoins() =>
+            Coins = 0;
     }
 }
