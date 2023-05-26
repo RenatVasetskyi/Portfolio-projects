@@ -14,5 +14,6 @@ namespace Assets.Scripts.Architecture.Services
         void CreateStartGameView();
         void CreateGameOverView();
         void CreateCamera();
+        void CreateCoinsView();
     }
 }

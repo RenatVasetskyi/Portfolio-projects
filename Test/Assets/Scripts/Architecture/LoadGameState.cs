@@ -31,6 +31,7 @@ namespace Assets.Scripts.Architecture
             _mainFactory.CreateCarControlView();
             _mainFactory.CreateCar(Vector2.zero);
             _mainFactory.CreateCamera();
+            _mainFactory.CreateCoinsView();
         }
     }
 }

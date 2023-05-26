@@ -35,6 +35,7 @@ namespace Assets.Scripts.Architecture
             _services.RegisterSingle<IAssetProvider>(new AssetProvider());
             _services.RegisterSingle<IMainFactory>(new MainFactory(_services.Single<IAssetProvider>()));
             _services.RegisterSingle<IStateMachine>(_stateMachine);
+            _services.RegisterSingle<ICoinService>(new CoinService());
         }
     }
 }

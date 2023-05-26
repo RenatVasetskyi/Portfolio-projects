@@ -9,6 +9,8 @@ namespace Assets.Scripts.Architecture.Services
     {
         private readonly IAssetProvider _assetProvider;
 
+        private Transform _uiRoot;
+
         public StartGame StartGameView { get; private set; }
         public CarControlView CarControlView { get; private set; }
         public Transform Car { get; private set; }
@@ -41,6 +43,20 @@ namespace Assets.Scripts.Architecture.Services
         {
             Object.Instantiate(_assetProvider
                 .Initialize<UnityEngine.Camera>(AssetPath.Camera));
+        }
+
+        public void CreateCoinsView()
+        {
+            CreateUIRoot();
+
+            Object.Instantiate(_assetProvider
+                .Initialize<CoinView>(AssetPath.CoinsView), _uiRoot);
+        }
+
+        private void CreateUIRoot()
+        {
+            _uiRoot = Object.Instantiate(_assetProvider
+                .Initialize<Transform>(AssetPath.UIRoot).transform);
         }
     }
 }

@@ -7,5 +7,7 @@ namespace Assets.Scripts.Data
         public const string StartGameView = "Prefabs/StartGameView";
         public const string GameOverView = "Prefabs/GameOverView";
         public const string Camera = "Prefabs/Camera";
+        public const string CoinsView = "Prefabs/Coins";
+        public const string UIRoot = "Prefabs/UIRoot";
     }
 }
