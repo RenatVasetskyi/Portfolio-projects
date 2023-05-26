@@ -1,23 +1,19 @@
 using Assets.Scripts.Architecture.Services;
+using UnityEngine;
 
 namespace Assets.Scripts.Architecture.States
 {
     public class GameOverState : IState
     {
-        private readonly AllServices _allServices;
-
-        public GameOverState(AllServices allServices)
-        {
-            _allServices = allServices;
-        }
-
         public void Exit()
         {
         }
 
         public void Enter()
         {
-            AllServices.Container.Single<IMainFactory>().CreateGameOverView();
+            IMainFactory mainFactory = AllServices.Container.Single<IMainFactory>();
+            mainFactory.CreateGameOverView();
+            mainFactory.Car.GetComponent<Rigidbody2D>().isKinematic = true;
         }
     }
 }

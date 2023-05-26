@@ -15,7 +15,7 @@ namespace Assets.Scripts.Architecture.States
             {
                 [typeof(BootstrapState)] = new BootstrapState(gameBootstrapper,this, allServices),
                 [typeof(LoadGameState)] = new LoadGameState(allServices),
-                [typeof(GameOverState)] = new GameOverState(allServices),
+                [typeof(GameOverState)] = new GameOverState(),
             };
         }
 
