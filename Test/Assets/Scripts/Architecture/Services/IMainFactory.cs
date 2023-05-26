@@ -12,5 +12,7 @@ namespace Assets.Scripts.Architecture.Services
         void CreateCar(Vector2 at);
         void CreateCarControlView();
         void CreateStartGameView();
+        void CreateGameOverView();
+        void CreateCamera();
     }
 }

@@ -4,9 +4,10 @@ using UnityEngine;
 namespace Assets.Scripts.Camera
 {
     public class FollowTarget : MonoBehaviour
-    {
-        [SerializeField] private Transform _target;
+    { 
         [SerializeField] private float _offsetY;
+
+        private Transform _target;
 
         private void Awake() =>
             _target = AllServices.Container.Single<IMainFactory>().Car;

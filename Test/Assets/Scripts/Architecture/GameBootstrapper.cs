@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Assets.Scripts.Architecture
 {
-    public class GameBootstrapper : MonoBehaviour
+    public class GameBootstrapper : MonoBehaviour, ICoroutineRunner
     {
         private StateMachine _stateMachine;
 
         private void Awake()
         {
-            _stateMachine = new StateMachine(AllServices.Container);
+            _stateMachine = new StateMachine(AllServices.Container, this);
             _stateMachine.Enter<BootstrapState>();
             DontDestroyOnLoad(this);
         }

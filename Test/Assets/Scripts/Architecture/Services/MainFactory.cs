@@ -25,10 +25,22 @@ namespace Assets.Scripts.Architecture.Services
                     .Initialize<CarControlView>(AssetPath.CarControlView))
                 .GetComponent<CarControlView>();
         
-        public void CreateStartGameView() =>
+        public void CreateStartGameView()
+        {
             StartGameView = Object
                 .Instantiate(_assetProvider
                     .Initialize<StartGame>(AssetPath.StartGameView))
                 .GetComponent<StartGame>();
+        }
+
+        public void CreateGameOverView() =>
+            Object.Instantiate(_assetProvider
+                    .Initialize<GameOverView>(AssetPath.GameOverView));
+
+        public void CreateCamera()
+        {
+            Object.Instantiate(_assetProvider
+                .Initialize<UnityEngine.Camera>(AssetPath.Camera));
+        }
     }
 }

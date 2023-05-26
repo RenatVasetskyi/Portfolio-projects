@@ -4,17 +4,18 @@ using Assets.Scripts.Architecture.Services;
 
 namespace Assets.Scripts.Architecture.States
 {
-    public class StateMachine
+    public class StateMachine : IStateMachine
     {
         private Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public StateMachine(AllServices allServices)
+        public StateMachine(AllServices allServices, GameBootstrapper gameBootstrapper)
         {
             _states = new Dictionary<Type, IExitableState>
             {
-                [typeof(BootstrapState)] = new BootstrapState(this, allServices),
+                [typeof(BootstrapState)] = new BootstrapState(gameBootstrapper,this, allServices),
                 [typeof(LoadGameState)] = new LoadGameState(allServices),
+                [typeof(GameOverState)] = new GameOverState(allServices),
             };
         }
 

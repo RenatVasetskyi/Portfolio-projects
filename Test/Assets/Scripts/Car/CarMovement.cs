@@ -18,13 +18,12 @@ namespace Assets.Scripts.Car
         private CarControlView _carControlView;
         private StartGame _startGame;
 
-        private IMainFactory _mainFactory;
-
         private void Awake()
         {
-            _mainFactory = AllServices.Container.Single<IMainFactory>();
-            _startGame = _mainFactory.StartGameView;
-            _carControlView = _mainFactory.CarControlView;
+            IMainFactory mainFactory = AllServices.Container.Single<IMainFactory>();
+
+            _startGame = mainFactory.StartGameView;
+            _carControlView = mainFactory.CarControlView;
 
             _rigidbody.isKinematic = true;
             _startGame.OnGameStarted += () => _rigidbody.isKinematic = false;

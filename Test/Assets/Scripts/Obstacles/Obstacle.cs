@@ -7,7 +7,10 @@ namespace Assets.Scripts.Obstacles
     {
         public float Damage;
 
-        public void GiveDamage(CarHealth carHealth, float damage) =>
+        public void GiveDamage(CarHealth carHealth, float damage)
+        {
             carHealth.Health -= damage;
+            carHealth.OnHealthChanged?.Invoke(carHealth.Health);
+        }
     }
 }

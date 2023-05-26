@@ -13,7 +13,6 @@ namespace Assets.Scripts.Obstacles
         {
             CarHealth carHealth = other.GetComponent<CarHealth>();
             GiveDamage(carHealth, Damage);
-            carHealth.OnHealthChanged?.Invoke(carHealth.Health);
             StartCoroutine(Slow(other.GetComponent<CarMovement>()));
         }
 
