@@ -22,6 +22,7 @@ namespace Assets.Scripts.UI
 
         private IEnumerator ShowCountdown()
         {
+            yield return new WaitForSeconds(_delay);
             _countdown.sprite = _twoSeconds;
             yield return new WaitForSeconds(_delay);
             _countdown.sprite = _oneSecond;
