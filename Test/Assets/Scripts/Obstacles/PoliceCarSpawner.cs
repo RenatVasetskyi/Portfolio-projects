@@ -6,7 +6,7 @@ namespace Assets.Scripts.Obstacles
 {
     public class PoliceCarSpawner : MonoBehaviour
     {
-        private float _spawnDelay = 10f;
+        private float _spawnDelay = 60f;
 
         private IMainFactory _mainFactory;
         private Vector3 _offset = new Vector3(0, -5, 0);
