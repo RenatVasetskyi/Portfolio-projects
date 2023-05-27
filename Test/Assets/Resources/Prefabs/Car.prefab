@@ -221,9 +221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd43947f0d9657241868e8fde8e75efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 15
+  MaxSpeed: 10
+  ForwardForce: 300
   _rigidbody: {fileID: 7642941613786073523}
-  _forwardForce: 300
   _turningForce: 300
   _brakingForce: 200
 --- !u!114 &7642941613786073516

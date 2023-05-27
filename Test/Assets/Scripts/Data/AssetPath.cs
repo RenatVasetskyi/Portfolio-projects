@@ -10,5 +10,7 @@ namespace Assets.Scripts.Data
         public const string CoinsView = "Prefabs/Coins";
         public const string UIRoot = "Prefabs/UIRoot";
         public const string RoadGenerator = "Prefabs/RoadGenerator";
+        public const string PoliceCar = "Prefabs/Police";
+        public const string PoliceCarSpawner = "Prefabs/PoliceCarSpawner";
     }
 }

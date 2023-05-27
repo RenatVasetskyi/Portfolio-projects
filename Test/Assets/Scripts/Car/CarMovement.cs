@@ -9,15 +9,23 @@ namespace Assets.Scripts.Car
     public class CarMovement : MonoBehaviour
     {
         public float MaxSpeed;
+        public float ForwardForce;
 
         [SerializeField] private Rigidbody2D _rigidbody;
-
-        [SerializeField] private float _forwardForce;
+        
         [SerializeField] private float _turningForce;
         [SerializeField] private float _brakingForce;
         
         private CarControlView _carControlView;
-        private StartGame _startGame;
+        private StartGameView _startGame;
+
+        public void ResetForces()
+        {
+            MaxSpeed = 0;
+            ForwardForce = 0;
+            _brakingForce = 0;
+            _turningForce = 0;
+        }
 
         public void StartBoost(float boost, float duration) =>
             StartCoroutine(Boost(boost, duration));
@@ -36,9 +44,9 @@ namespace Assets.Scripts.Car
         private void Update()
         {
             if (_carControlView.GasPedal.IsPressed)
-                AddForce(_rigidbody, Vector2.up, _forwardForce);
+                AddForce(_rigidbody, Vector2.up, ForwardForce);
             else if (_carControlView.BrakePedal.IsPressed)
-                AddForce(_rigidbody, Vector2.down, _forwardForce);
+                AddForce(_rigidbody, Vector2.down, ForwardForce);
 
             if (_carControlView.LeftArrow.IsPressed)
                 AddForce(_rigidbody, Vector2.left, _turningForce);
@@ -59,9 +67,11 @@ namespace Assets.Scripts.Car
 
         private IEnumerator Boost(float boost, float duration)
         {
-            _forwardForce += boost;
+            ForwardForce *= boost;
+            MaxSpeed *= boost;
             yield return new WaitForSeconds(duration);
-            _forwardForce -= boost;
+            ForwardForce /= boost;
+            MaxSpeed /= boost;
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
 {
-    public class StartGame : MonoBehaviour
+    public class StartGameView : MonoBehaviour
     {
         public event Action OnGameStarted;
 

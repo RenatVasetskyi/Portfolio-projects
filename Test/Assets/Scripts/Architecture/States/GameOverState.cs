@@ -1,8 +1,8 @@
 using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.States.Interfaces;
+using Assets.Scripts.Car;
 using Assets.Scripts.Data;
 using Assets.Scripts.UI;
-using UnityEngine;
 
 namespace Assets.Scripts.Architecture.States
 {
@@ -15,8 +15,8 @@ namespace Assets.Scripts.Architecture.States
         public void Enter()
         {
             IMainFactory mainFactory = AllServices.Container.Single<IMainFactory>();
-            mainFactory.CreateBaseComponent<GameOverView>(AssetPath.GameOverView);
-            mainFactory.Car.GetComponent<Rigidbody2D>().isKinematic = true;
+            mainFactory.CreateBaseComponent<GameOverView>(AssetPath.GameOverView); 
+            mainFactory.Car.GetComponent<CarMovement>().ResetForces();
         }
     }
 }
