@@ -3,8 +3,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Boosters
 {
-    public class Heart : Booster
+    public class Shield : Booster
     {
+        [SerializeField] private float _duration;
+
         private CarHealth _carHealth;
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -15,6 +17,6 @@ namespace Assets.Scripts.Boosters
         }
 
         protected override void Take() =>
-            _carHealth.GetHealth(_points);
+            _carHealth.StartBoost(_duration);
     }
 }

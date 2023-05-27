@@ -1,6 +1,7 @@
 using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.States;
-using Assets.Scripts.Architecture.States.Interfaces;
+using Unity.VisualScripting;
+using IState = Assets.Scripts.Architecture.States.Interfaces.IState;
 using StateMachine = Assets.Scripts.Architecture.States.StateMachine;
 
 namespace Assets.Scripts.Architecture

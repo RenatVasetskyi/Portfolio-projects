@@ -1,3 +1,4 @@
+using System.Collections;
 using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Car.UI;
 using Assets.Scripts.UI;
@@ -17,6 +18,9 @@ namespace Assets.Scripts.Car
         
         private CarControlView _carControlView;
         private StartGame _startGame;
+
+        public void StartBoost(float boost, float duration) =>
+            StartCoroutine(Boost(boost, duration));
 
         private void Awake()
         {
@@ -52,5 +56,12 @@ namespace Assets.Scripts.Car
 
         private void AddForce(Rigidbody2D rigidbody, Vector2 direction, float force) =>
             rigidbody.AddForce(direction * force * Time.deltaTime);
+
+        private IEnumerator Boost(float boost, float duration)
+        {
+            _forwardForce += boost;
+            yield return new WaitForSeconds(duration);
+            _forwardForce -= boost;
+        }
     }
 }
