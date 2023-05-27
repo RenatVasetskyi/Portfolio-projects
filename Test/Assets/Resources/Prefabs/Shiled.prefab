@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5164262460850331533}
   - component: {fileID: 5164262460850331532}
   - component: {fileID: 5164262460850331531}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shiled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
