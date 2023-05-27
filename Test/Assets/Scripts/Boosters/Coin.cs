@@ -3,10 +3,8 @@ using UnityEngine;
 
 namespace Assets.Scripts.Boosters
 {
-    public class Coin : MonoBehaviour
+    public class Coin : Booster
     {
-        [SerializeField] private int _points;
-
         private ICoinService _coinService;
 
         private void Awake() =>
@@ -18,7 +16,7 @@ namespace Assets.Scripts.Boosters
             Destroy(gameObject);
         }
 
-        private void Take() =>
+        protected override void Take() =>
             _coinService.GetBonus(_points);
     }
 }

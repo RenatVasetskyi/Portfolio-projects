@@ -4,19 +4,17 @@ using UnityEngine;
 
 namespace Assets.Scripts.Boosters
 {
-    public class Heart : MonoBehaviour
+    public class Heart : Booster
     {
-        [SerializeField] private int Points;
-
         private void OnTriggerEnter2D(Collider2D other) =>
             Take();
 
-        private void Take()
+        protected override void Take()
         {
             CarHealth carHealth = AllServices.Container
                 .Single<IMainFactory>().Car.GetComponent<CarHealth>();
 
-            carHealth.GetHealth(Points);
+            carHealth.GetHealth(_points);
             Destroy(gameObject);
         }
     }

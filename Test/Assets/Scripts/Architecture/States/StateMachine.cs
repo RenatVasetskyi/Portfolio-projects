@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Assets.Scripts.Architecture.Services;
+using Assets.Scripts.Architecture.States.Interfaces;
 
 namespace Assets.Scripts.Architecture.States
 {
@@ -23,12 +24,6 @@ namespace Assets.Scripts.Architecture.States
         {
             IState state = ChangeState<TState>();
             state.Enter();
-        }
-
-        public void Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadedState<TPayload>
-        {
-            TState state = ChangeState<TState>();
-            state.Enter(payload);
         }
 
         private TState ChangeState<TState>() where TState : class, IExitableState
