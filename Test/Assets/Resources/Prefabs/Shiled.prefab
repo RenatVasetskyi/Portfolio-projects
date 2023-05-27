@@ -125,4 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _points: 1
-  _duration: 3
+  _duration: 15

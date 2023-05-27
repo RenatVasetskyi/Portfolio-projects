@@ -1,13 +1,10 @@
-using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Car;
 using UnityEngine;
 
 namespace Assets.Scripts.Boosters
 {
-    public class Nitro : Booster
+    public class Nitro : ExtraBooster
     {
-        [SerializeField] private float _duration;
-
         private CarMovement _carMovement;
 
         private void OnTriggerEnter2D(Collider2D other)

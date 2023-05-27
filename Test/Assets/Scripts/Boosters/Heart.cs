@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Boosters
 {
-    public class Heart : Booster
+    public class Heart : SimpleBooster
     {
         private CarHealth _carHealth;
 

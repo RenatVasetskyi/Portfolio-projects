@@ -3,10 +3,8 @@ using UnityEngine;
 
 namespace Assets.Scripts.Boosters
 {
-    public class Magnet : Booster
+    public class Magnet : ExtraBooster
     {
-        [SerializeField] private float _duration;
-
         private CarCoinsCollider _coinsCollider;
 
         private void OnTriggerEnter2D(Collider2D other)

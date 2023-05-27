@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Boosters
 {
-    public class Coin : Booster
+    public class Coin : SimpleBooster
     {
         private ICoinService _coinService;
 
