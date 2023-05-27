@@ -7,19 +7,20 @@ namespace Assets.Scripts.UI
 {
     public class HealthBar : MonoBehaviour
     {
-        [SerializeField] private Slider _fill;
-        [SerializeField] private CarHealth _carHealth;
+        public Slider Fill;
+
+        private CarHealth _carHealth;
 
         private void Start()
         {
             _carHealth = AllServices.Container.Single<IMainFactory>().Car.GetComponent<CarHealth>();
 
             _carHealth.OnHealthChanged += UpdateHealthBar;
-            _fill.maxValue = _carHealth.Health;
-            UpdateHealthBar(_fill.maxValue);
+            Fill.maxValue = _carHealth.Health;
+            UpdateHealthBar();
         }
 
-        private void UpdateHealthBar(float hp) =>
-            _fill.value = hp;
+        private void UpdateHealthBar() =>
+            Fill.value = _carHealth.Health;
     }
 }

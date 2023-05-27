@@ -5,12 +5,9 @@ namespace Assets.Scripts.Obstacles
 {
     public class Obstacle : MonoBehaviour
     {
-        public float Damage;
+        [SerializeField] protected float _damage;
 
-        public void GiveDamage(CarHealth carHealth, float damage)
-        {
-            carHealth.Health -= damage;
-            carHealth.OnHealthChanged?.Invoke(carHealth.Health);
-        }
+        public void GiveDamage(CarHealth carHealth, float damage) =>
+            carHealth.TakeDamage(damage);
     }
 }

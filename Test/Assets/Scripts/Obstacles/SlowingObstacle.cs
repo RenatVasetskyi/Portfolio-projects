@@ -12,7 +12,7 @@ namespace Assets.Scripts.Obstacles
         private void OnTriggerEnter2D(Collider2D other)
         {
             CarHealth carHealth = other.GetComponent<CarHealth>();
-            GiveDamage(carHealth, Damage);
+            GiveDamage(carHealth, _damage);
             StartCoroutine(Slow(other.GetComponent<CarMovement>()));
         }
 

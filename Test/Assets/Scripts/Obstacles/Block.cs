@@ -9,7 +9,7 @@ namespace Assets.Scripts.Obstacles
     {
         private void OnTriggerEnter2D(Collider2D other)
         {
-            GiveDamage(other.GetComponent<CarHealth>(), Damage);
+            GiveDamage(other.GetComponent<CarHealth>(), _damage);
             AllServices.Container.Single<IStateMachine>().Enter<GameOverState>();
         }
     }
