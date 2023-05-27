@@ -1,6 +1,7 @@
 using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data;
+using Assets.Scripts.Road;
 using Assets.Scripts.UI;
 using UnityEngine;
 
@@ -38,6 +39,7 @@ namespace Assets.Scripts.Architecture
             _mainFactory.CreateCar(Vector2.zero);
             _mainFactory.CreateBaseComponent<UnityEngine.Camera>(AssetPath.Camera);
             _mainFactory.CreateBaseComponent<CoinView>(AssetPath.CoinsView, _mainFactory.CreateUIRoot());
+            _mainFactory.CreateBaseComponent<RoadGenerator>(AssetPath.RoadGenerator);
         }
     }
 }

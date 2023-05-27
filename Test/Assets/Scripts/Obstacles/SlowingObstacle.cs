@@ -18,9 +18,9 @@ namespace Assets.Scripts.Obstacles
 
         private IEnumerator Slow(CarMovement carMovement)
         {
-            carMovement.MaxSpeed -= Slowing;
+            carMovement.MaxSpeed /= Slowing;
             yield return new WaitForSeconds(SlowingDuration);
-            carMovement.MaxSpeed += Slowing;
+            carMovement.MaxSpeed *= Slowing;
         }
     }
 }

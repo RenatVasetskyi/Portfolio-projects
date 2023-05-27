@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
-  Slowing: 7.5
+  Slowing: 1.5
   SlowingDuration: 10

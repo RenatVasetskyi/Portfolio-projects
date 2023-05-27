@@ -9,7 +9,7 @@ namespace Assets.Scripts.Boosters
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            _carMovement = other.GetComponent<CarMovement>();
+            _carMovement = other.GetComponentInParent<CarMovement>();
             Take();
             Destroy(gameObject);
         }

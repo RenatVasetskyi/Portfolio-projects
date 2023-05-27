@@ -9,5 +9,6 @@ namespace Assets.Scripts.Data
         public const string Camera = "Prefabs/Camera";
         public const string CoinsView = "Prefabs/Coins";
         public const string UIRoot = "Prefabs/UIRoot";
+        public const string RoadGenerator = "Prefabs/RoadGenerator";
     }
 }
