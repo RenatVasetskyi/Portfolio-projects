@@ -27,8 +27,7 @@ namespace Assets.Scripts.Architecture.Installers
             Container
                 .Bind<PlayerInput>()
                 .FromInstance(input)
-                .AsSingle()
-                .NonLazy();
+                .AsSingle();
         }
 
         private void BindBaseFactory()

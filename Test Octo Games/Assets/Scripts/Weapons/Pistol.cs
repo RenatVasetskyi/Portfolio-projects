@@ -1,28 +1,16 @@
-using UnityEngine;
+using Zenject;
 
 namespace Assets.Scripts.Weapons
 {
-    public class Pistol : MonoBehaviour
+    public class Pistol : Firearms
     {
-        [SerializeField] private float _damage;
-        [SerializeField] private float _shotDistance;
+        private PlayerInput _playerInput;
 
-        [SerializeField] private WeaponInput _weaponInput;
+        [Inject]
+        public void Construct(PlayerInput playerInput) =>
+            _playerInput = playerInput;
 
         private void OnEnable() =>
-            _weaponInput.OnLeftMouseButtonPressed += Shoot;
-
-        private void Shoot()
-        {
-            RaycastHit hit;
-
-            if (Physics.Raycast(transform.position, transform.forward, out hit, _shotDistance))
-                Hit();
-        }
-
-        private void Hit()
-        {
-            Debug.Log("Hit");
-        }
+            _playerInput.Mouse.LeftClick.started += context => Shoot();
     }
 }

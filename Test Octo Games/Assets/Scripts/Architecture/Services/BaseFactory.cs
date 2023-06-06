@@ -1,5 +1,6 @@
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
+using Assets.Scripts.Weapons;
 using UnityEngine;
 using Zenject;
 
@@ -11,6 +12,7 @@ namespace Assets.Scripts.Architecture.Services
         private readonly IAssetProvider _assetProvider;
 
         public GameObject Player { get; private set; }
+        public PistolHolder PistolHolder { get; private set; }
 
         public BaseFactory(DiContainer container, IAssetProvider assetProvider)
         {
@@ -24,7 +26,10 @@ namespace Assets.Scripts.Architecture.Services
         public T CreateBaseObjectWithContainer<T>(string path, Transform parent) where T : Component =>
             _container.InstantiatePrefabForComponent<T>(_assetProvider.Initialize<T>(path), parent);
 
-        public void CreatePlayer() =>
+        public void CreatePlayer()
+        {
             Player = Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.Player));
+            PistolHolder = Player.GetComponentInChildren<PistolHolder>();
+        }
     }
 }

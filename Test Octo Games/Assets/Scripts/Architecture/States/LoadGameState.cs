@@ -1,6 +1,7 @@
 using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data;
+using Assets.Scripts.Weapons;
 using Opsive.UltimateCharacterController.Camera;
 using UnityEngine;
 
@@ -35,6 +36,8 @@ namespace Assets.Scripts.Architecture.States
             Transform cameraParent = _baseFactory.CreateBaseObjectWithObject(AssetPath.CameraParent);
             CameraController camera = _baseFactory.CreateBaseObjectWithContainer<CameraController>(AssetPath.Camera, cameraParent);
             camera.Character = _baseFactory.Player;
+
+            _baseFactory.CreateBaseObjectWithContainer<Pistol>(AssetPath.Pistol, _baseFactory.PistolHolder.transform);
         }
     }
 }
