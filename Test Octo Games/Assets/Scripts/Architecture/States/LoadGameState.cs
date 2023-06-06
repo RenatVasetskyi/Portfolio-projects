@@ -1,5 +1,8 @@
 using Assets.Scripts.Architecture.Services;
 using Assets.Scripts.Architecture.States.Interfaces;
+using Assets.Scripts.Data;
+using Opsive.UltimateCharacterController.Camera;
+using UnityEngine;
 
 namespace Assets.Scripts.Architecture.States
 {
@@ -8,10 +11,12 @@ namespace Assets.Scripts.Architecture.States
         private const string GameScene = "Game";
 
         private readonly ISceneLoader _sceneLoader;
+        private readonly IBaseFactory _baseFactory;
 
-        public LoadGameState(ISceneLoader sceneLoader)
+        public LoadGameState(ISceneLoader sceneLoader, IBaseFactory baseFactory)
         {
             _sceneLoader = sceneLoader;
+            _baseFactory = baseFactory;
         }
 
         public void Exit()
@@ -25,7 +30,11 @@ namespace Assets.Scripts.Architecture.States
 
         private void InitializeGameWorld()
         {
-            UnityEngine.Debug.Log("InitializeGameWorld");
+            _baseFactory.CreatePlayer();
+
+            Transform cameraParent = _baseFactory.CreateBaseObjectWithObject(AssetPath.CameraParent);
+            CameraController camera = _baseFactory.CreateBaseObjectWithContainer<CameraController>(AssetPath.Camera, cameraParent);
+            camera.Character = _baseFactory.Player;
         }
     }
 }

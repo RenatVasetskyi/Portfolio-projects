@@ -1,4 +1,5 @@
 using Assets.Scripts.Architecture.Services;
+using Assets.Scripts.Architecture.Services.Interfaces;
 using UnityEngine;
 using Zenject;
 
@@ -12,6 +13,38 @@ namespace Assets.Scripts.Architecture.Installers
         {
             BindCoroutineRunner();
             BindSceneLoader();
+            BindAssetProvider();
+            BindBaseFactory();
+            BindPlayerInput();
+        }
+
+        private void BindPlayerInput()
+        {
+            PlayerInput input = new PlayerInput();
+
+            input.Enable();
+
+            Container
+                .Bind<PlayerInput>()
+                .FromInstance(input)
+                .AsSingle()
+                .NonLazy();
+        }
+
+        private void BindBaseFactory()
+        {
+            Container
+                .Bind<IBaseFactory>()
+                .To<BaseFactory>()
+                .AsSingle();
+        }
+
+        private void BindAssetProvider()
+        {
+            Container
+                .Bind<IAssetProvider>()
+                .To<AssetProvider>()
+                .AsSingle();
         }
 
         private void BindSceneLoader()

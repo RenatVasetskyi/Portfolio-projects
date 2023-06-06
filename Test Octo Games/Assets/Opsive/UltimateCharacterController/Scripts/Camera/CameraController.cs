@@ -4,6 +4,8 @@
 /// https://www.opsive.com
 /// ---------------------------------------------
 
+using Zenject;
+
 namespace Opsive.UltimateCharacterController.Camera
 {
     using Opsive.Shared.Events;
@@ -62,7 +64,7 @@ namespace Opsive.UltimateCharacterController.Camera
         [SerializeField] protected UnityBoolEvent m_OnZoomEvent;
 
         [NonSerialized] public bool InitCharacterOnAwake { get { return m_InitCharacterOnAwake; } set { m_InitCharacterOnAwake = value; } }
-        [NonSerialized] public GameObject Character { get { return m_Character; } set { InitializeCharacter(value); } }
+        [NonSerialized] public GameObject Character { get { return m_Character; } set { } }
         [NonSerialized] public Transform Anchor { get { return m_Anchor; } set { m_Anchor = value; if (m_Character != null) { InitializeAnchor(); } } }
         public Vector3 AnchorOffset { get { return m_AnchorOffset; } set { m_AnchorOffset = value; if (Application.isPlaying) { EventHandler.ExecuteEvent(m_GameObject, "OnAnchorOffsetUpdated"); } } }
         public bool CanChangePerspectives { get { return m_CanChangePerspectives; } set { m_CanChangePerspectives = value; } }
