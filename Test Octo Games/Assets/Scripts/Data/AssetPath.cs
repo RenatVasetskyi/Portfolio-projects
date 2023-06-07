@@ -6,5 +6,6 @@ namespace Assets.Scripts.Data
         public const string Camera = "Prefabs/Camera";
         public const string CameraParent = "Prefabs/CameraParent";
         public const string Pistol = "Prefabs/Pistol";
+        public const string Environment = "Prefabs/Environment";
     }
 }

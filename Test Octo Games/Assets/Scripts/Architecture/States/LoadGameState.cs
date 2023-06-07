@@ -31,6 +31,8 @@ namespace Assets.Scripts.Architecture.States
 
         private void InitializeGameWorld()
         {
+            _baseFactory.CreateBaseObjectWithObject(AssetPath.Environment);
+
             _baseFactory.CreatePlayer();
 
             Transform cameraParent = _baseFactory.CreateBaseObjectWithObject(AssetPath.CameraParent);
