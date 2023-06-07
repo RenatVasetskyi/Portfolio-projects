@@ -16,6 +16,16 @@ namespace Assets.Scripts.Architecture.Installers
             BindAssetProvider();
             BindBaseFactory();
             BindPlayerInput();
+            BindAudioService();
+        }
+
+        private void BindAudioService()
+        {
+            Container
+                .Bind<IAudioService>()
+                .To<AudioService>()
+                .AsSingle()
+                .NonLazy();
         }
 
         private void BindPlayerInput()

@@ -1,4 +1,5 @@
 using Assets.Scripts.Architecture.Services;
+using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Architecture.States.Interfaces;
 using Assets.Scripts.Data;
 using Assets.Scripts.Weapons;
@@ -31,11 +32,11 @@ namespace Assets.Scripts.Architecture.States
 
         private void InitializeGameWorld()
         {
-            _baseFactory.CreateBaseObjectWithObject(AssetPath.Environment);
+            _baseFactory.CreateBaseObjectWithObject<Transform>(AssetPath.Environment);
 
             _baseFactory.CreatePlayer();
 
-            Transform cameraParent = _baseFactory.CreateBaseObjectWithObject(AssetPath.CameraParent);
+            Transform cameraParent = _baseFactory.CreateBaseObjectWithObject<Transform>(AssetPath.CameraParent);
             CameraController camera = _baseFactory.CreateBaseObjectWithContainer<CameraController>(AssetPath.Camera, cameraParent);
             camera.Character = _baseFactory.Player.gameObject;
         }

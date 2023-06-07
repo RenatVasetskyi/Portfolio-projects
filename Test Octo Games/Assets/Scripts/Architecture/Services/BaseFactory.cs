@@ -20,8 +20,11 @@ namespace Assets.Scripts.Architecture.Services
             _assetProvider = assetProvider;
         }
 
-        public Transform CreateBaseObjectWithObject(string path) =>
-            Object.Instantiate(_assetProvider.Initialize<Transform>(path));
+        public T CreateBaseObjectWithObject<T>(string path) where T : Component =>
+            Object.Instantiate(_assetProvider.Initialize<T>(path));
+
+        public T CreateBaseObjectWithContainer<T>(string path) where T : Component =>
+            _container.InstantiatePrefabForComponent<T>(_assetProvider.Initialize<T>(path));
 
         public T CreateBaseObjectWithContainer<T>(string path, Transform parent) where T : Component =>
             _container.InstantiatePrefabForComponent<T>(_assetProvider.Initialize<T>(path), parent);
