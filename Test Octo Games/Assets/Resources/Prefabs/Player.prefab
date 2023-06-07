@@ -1916,6 +1916,7 @@ GameObject:
   - component: {fileID: 8248024571605152475}
   - component: {fileID: 8248024571605152477}
   - component: {fileID: 1747749142022810865}
+  - component: {fileID: 314986031085983491}
   m_Layer: 30
   m_Name: Elbow_R
   m_TagString: Untagged
@@ -2028,6 +2029,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerHealth: {fileID: 6222088669556363552}
+  _animator: {fileID: 314986031085983491}
+--- !u!95 &314986031085983491
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8246613765866927521}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2bbac6fa15d3ac64f9b931dcfd7c6931, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8246656823343302185
 GameObject:
   m_ObjectHideFlags: 0
