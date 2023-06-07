@@ -4,6 +4,9 @@
 /// https://www.opsive.com
 /// ---------------------------------------------
 
+using Opsive.Shared.Input;
+using Zenject;
+
 namespace Opsive.UltimateCharacterController.Traits
 {
     using Opsive.Shared.Events;

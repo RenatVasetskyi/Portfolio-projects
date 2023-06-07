@@ -1,5 +1,6 @@
 using Assets.Scripts.Architecture.Services.Interfaces;
 using Assets.Scripts.Data;
+using Assets.Scripts.Player;
 using Assets.Scripts.Weapons;
 using UnityEngine;
 using Zenject;
@@ -11,7 +12,7 @@ namespace Assets.Scripts.Architecture.Services
         private readonly DiContainer _container;
         private readonly IAssetProvider _assetProvider;
 
-        public GameObject Player { get; private set; }
+        public PlayerHealth Player { get; private set; }
         public PistolHolder PistolHolder { get; private set; }
 
         public BaseFactory(DiContainer container, IAssetProvider assetProvider)
@@ -28,7 +29,9 @@ namespace Assets.Scripts.Architecture.Services
 
         public void CreatePlayer()
         {
-            Player = Object.Instantiate(_assetProvider.Initialize<GameObject>(AssetPath.Player));
+            Transform parent = Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.PlayerParent));
+
+            Player = _container.InstantiatePrefabForComponent<PlayerHealth>(_assetProvider.Initialize<GameObject>(AssetPath.Player), parent);
             PistolHolder = Player.GetComponentInChildren<PistolHolder>();
         }
     }
