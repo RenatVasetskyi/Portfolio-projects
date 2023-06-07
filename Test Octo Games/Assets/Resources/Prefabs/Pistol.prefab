@@ -305,7 +305,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 20
   _shotDistance: 50
-  _weaponInput: {fileID: 0}
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 67108864
 --- !u!1 &1971325369571456092
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,16 +1,13 @@
-using Zenject;
+using Assets.Scripts.Player;
+using UnityEngine;
 
 namespace Assets.Scripts.Weapons
 {
     public class Pistol : Firearms
     {
-        private PlayerInput _playerInput;
-
-        [Inject]
-        public void Construct(PlayerInput playerInput) =>
-            _playerInput = playerInput;
+        [SerializeField] private PlayerHealth _playerHealth;
 
         private void OnEnable() =>
-            _playerInput.Mouse.LeftClick.started += context => Shoot();
+            _playerHealth.PlayerInput.Mouse.LeftClick.started += context => Shoot();
     }
 }

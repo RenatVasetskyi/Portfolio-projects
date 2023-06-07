@@ -38,8 +38,6 @@ namespace Assets.Scripts.Architecture.States
             Transform cameraParent = _baseFactory.CreateBaseObjectWithObject(AssetPath.CameraParent);
             CameraController camera = _baseFactory.CreateBaseObjectWithContainer<CameraController>(AssetPath.Camera, cameraParent);
             camera.Character = _baseFactory.Player.gameObject;
-
-            _baseFactory.CreateBaseObjectWithContainer<Pistol>(AssetPath.Pistol, _baseFactory.PistolHolder.transform);
         }
     }
 }

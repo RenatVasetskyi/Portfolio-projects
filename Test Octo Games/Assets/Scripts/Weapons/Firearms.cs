@@ -1,21 +1,25 @@
+using Assets.Scripts.Enemy;
 using UnityEngine;
 
 namespace Assets.Scripts.Weapons
 {
     public abstract class Firearms : MonoBehaviour
     {
-        [SerializeField] protected float _damage;
+        [SerializeField] protected int _damage;
         [SerializeField] protected float _shotDistance;
+        [SerializeField] protected LayerMask _enemyLayer;
 
         protected virtual void Shoot()
         {
-            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, _shotDistance))
-                Hit();
+            Debug.Log("SHOT");
+            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, _shotDistance, _enemyLayer))
+                Hit(hit);
         }
 
-        protected virtual void Hit()
+        protected virtual void Hit(RaycastHit hit)
         {
-            Debug.Log("Hit");
+            hit.transform.GetComponent<EnemyHealth>().TakeDamage(_damage);
+            Debug.Log("HIT");
         }
     }
 }

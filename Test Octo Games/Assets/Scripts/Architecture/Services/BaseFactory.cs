@@ -13,7 +13,6 @@ namespace Assets.Scripts.Architecture.Services
         private readonly IAssetProvider _assetProvider;
 
         public PlayerHealth Player { get; private set; }
-        public PistolHolder PistolHolder { get; private set; }
 
         public BaseFactory(DiContainer container, IAssetProvider assetProvider)
         {
@@ -32,7 +31,6 @@ namespace Assets.Scripts.Architecture.Services
             Transform parent = Object.Instantiate(_assetProvider.Initialize<Transform>(AssetPath.PlayerParent));
 
             Player = _container.InstantiatePrefabForComponent<PlayerHealth>(_assetProvider.Initialize<GameObject>(AssetPath.Player), parent);
-            PistolHolder = Player.GetComponentInChildren<PistolHolder>();
         }
     }
 }
